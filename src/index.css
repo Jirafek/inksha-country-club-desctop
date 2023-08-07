@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: 'MontserratVariable', system-ui, sans-serif;
+    }
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .link {
+    @apply text-base font-medium transition-colors hover:bg-opacity-50;
+  }
+
+  .button {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-sm font-bold uppercase transition-colors hover:bg-opacity-50;
+  }
+
+  .button.button-small {
+    @apply text-lg lg:py-3 lg:text-lg;
+  }
+
+  .heading {
+    @apply text-3xl font-extrabold uppercase lg:text-4xl;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.slow-move > .swiper-wrapper {
+  align-items: center;
+  transition-timing-function: linear;
+}
+
+/* #areas::after, */
+#areas::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 24px;
+  z-index: 10;
+}
+
+#areas::after {
+  right: 0;
+  background-image: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+}
+
+@font-face {
+  font-family: 'Montserrat-R';
+  src: local('MontserratAlternates-Regular'),
+    url('./fonts/MontserratAlternates-Regular.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Montaga';
+  src: local('Montaga-Regular'),
+    url('./fonts/Montaga-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'MontaguSlab';
+  src: local('MontaguSlab-VariableFont_opsz,wght'),
+    url('./fonts/MontaguSlab-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 500;
+}
+
+.monterey {
+  font-family: 'Montserrat-R';
+}
+
+.montaga {
+  font-family: 'Montaga';
+}
+
+.slab {
+  font-family: 'MontaguSlab';
+}
+
+@keyframes arrowAnimation {
+  0% {
+    margin-left: -300px;
+  }
+  50% {
+    margin-left: -380px;
+  }
+  100% {
+    margin-left: -300px;
+  }
+}
+
+@keyframes arrowAnimationMd {
+  0% {
+    margin-left: -280px;
+  }
+  50% {
+    margin-left: -320px;
+  }
+  100% {
+    margin-left: -280px;
+  }
+}
+
+.gradient_title {
+  background: linear-gradient(90deg, #9E835F 400%, #C1AA8B 500%, #F4EADC 14%);
+  -webkit-background-clip: text; /* для Safari */
+  -webkit-text-fill-color: transparent; /* для Safari */
+  color: #AB8E67; /* запасной цвет текста, если браузер не поддерживает background-clip */
+}
