@@ -71,18 +71,18 @@ const Main = () => {
             <div className="absolute left-0 top-0 flex items-center">
                 <img className="h-screen lg:block hidden" src="/image/main_arrow_big.png" alt="" />
                 <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 lg:hidden block"></div>
-                <img className="2xl:h-full lg:block hidden h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.png" alt="" />
-                <img className="2xl:h-full lg:block hidden h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.png" alt="" />
+                <img className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.png" alt="" />
+                <img className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.png" alt="" />
             </div>
-            <div className="md:px-[90px] px-[40px] flex flex-col mt-[150px] relative">
+            <div className="md:px-[90px] px-[40px] flex flex-col lg:mt-[150px] mt-[50px] relative">
                 <div className="flex flex-col 2xl:mb-[115px] mb-[55px]">
                     <h1 className="uppercase text-white 2xl:text-[98px] md:text-[70px] text-[56px] font-extrabold 2xl:leading-[100px] leading-[60px]">Икша</h1>
                     <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2>
                 </div>
-                <p className="2xl:w-[600px] md:w-[400px] 2xl:text-[48px] md:text-[38px] text-[30px] lg:mb-0 mb-6 text-white font-semibold">
+                <p className="2xl:w-[600px] md:w-[400px] 2xl:text-[48px] md:text-[38px] text-[30px] lg:mb-[40px] mb-6 text-white font-semibold">
                     Ваш идеальный отдых в подмосковье!
                 </p>
-                <img className="mt-[70px] widget1:mb-[120px] lg:block hidden mb-[20px] w-[590px]" src="/image/palka_pending.png" alt="" />
+                {/* <img className="mt-[70px] widget1:mb-[120px] lg:block hidden mb-[20px] w-[590px]" src="/image/palka_pending.png" alt="" /> */}
                 <div id="znms-widget-1"></div>
                 {/* <button className="rounded-[15px] border-[2px] border-[#4D382B] bg-[#AB8E67] py-[18px] flex justify-center items-center w-[420px]">
                     <p className="text-[32px] text-white font-semibold">Забронировать</p>
