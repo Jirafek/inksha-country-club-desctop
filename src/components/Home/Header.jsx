@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import routes from '../../utils/routes';
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import { m } from "framer-motion";
 
 const Header = () => {
     const [burgerState, setBurgerState] = useState(false);
@@ -10,7 +11,15 @@ const Header = () => {
         setBurgerState(!burgerState);
     }
     return (
-        <header className="w-full pt-[25px] px-10 flex items-center relative justify-between h-14 z-10">
+        <m.header
+            initial={{ opacity: 0 }}
+            animate={{
+                opacity: 1,
+                transition: {
+                    delay: 1,
+                },
+            }}
+            className="w-full py-[35px] xl:bg-[#1e1c1dcc] px-10 flex items-center relative justify-between h-14 z-10">
             {
                 routes.map((el, i) => (
                     <Link key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" to={el.link}>
@@ -73,7 +82,7 @@ const Header = () => {
                     }
                 </div>
             </div>
-        </header>
+        </m.header>
     )
 }
 

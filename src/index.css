@@ -119,8 +119,8 @@ html {
 }
 
 .gradient_title {
-  background: linear-gradient(90deg, #9E835F 400%, #C1AA8B 500%, #F4EADC 14%);
-  -webkit-background-clip: text; /* для Safari */
-  -webkit-text-fill-color: transparent; /* для Safari */
-  color: #AB8E67; /* запасной цвет текста, если браузер не поддерживает background-clip */
+  background-image: linear-gradient(to right, #9E835F 30%, #C1AA8B);
+  background-clip: text;
+  -webkit-background-clip: text; /* Для поддержки веб-браузеров, основанных на WebKit */
+  color: transparent;
 }
