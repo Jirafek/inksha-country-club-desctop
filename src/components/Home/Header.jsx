@@ -19,19 +19,21 @@ const Header = () => {
                     delay: 1,
                 },
             }}
-            className="w-full py-[35px] xl:bg-[#1e1c1dcc] px-10 flex items-center relative justify-between h-14 z-10">
-            {
-                routes.map((el, i) => (
-                    <Link key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" to={el.link}>
-                        {
-                            el.title ?
-                                el.title
-                                :
-                                <img className="3xl:w-[65px] 2xl:w-[55px] w-[45px]" src={el.icon} alt="" />
-                        }
-                    </Link>
-                ))
-            }
+            className="w-full relative h-14 z-10">
+            <nav className="py-[10px] px-10 flex items-center justify-between xl:bg-[#1e1c1dcc]">
+                {
+                    routes.map((el, i) => (
+                        <Link key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" to={el.link}>
+                            {
+                                el.title ?
+                                    el.title
+                                    :
+                                    <img className="3xl:w-[65px] 2xl:w-[55px] w-[45px]" src={el.icon} alt="" />
+                            }
+                        </Link>
+                    ))
+                }
+            </nav>
             <button onClick={handleBurger} className="xl:hidden absolute top-10 left-10">
                 <svg xmlns="http://www.w3.org/2000/svg" width="42" height="34" viewBox="0 0 42 34" fill="none">
                     <path d="M33.2025 14.4563H5.49965C4.31302 14.4563 3.35107 15.298 3.35107 16.3363V16.5763C3.35107 17.6146 4.31302 18.4563 5.49965 18.4563H33.2025C34.3891 18.4563 35.3511 17.6146 35.3511 16.5763V16.3363C35.3511 15.298 34.3891 14.4563 33.2025 14.4563Z" fill="url(#paint0_linear_56_1462)" />

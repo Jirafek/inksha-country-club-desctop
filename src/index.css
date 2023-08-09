@@ -124,3 +124,12 @@ html {
   -webkit-background-clip: text; /* Для поддержки веб-браузеров, основанных на WebKit */
   color: transparent;
 }
+
+.slick-next {
+  margin-right: 70px;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center !important;
+}
