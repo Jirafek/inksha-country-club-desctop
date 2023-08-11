@@ -55,15 +55,15 @@ const aboutData = [
         img: '/image/towel.png',
         text: 'Русская баня с панорамным видом, где вы можете расслабиться после долгих прогулок',
     },
-    {
-        img: '/image/bicycle.png',
-        text: 'Велосипеды и спорт-оборудование позволит Вам активно провести время на свежем воздухе',
-    },
+    // {
+    //     img: '/image/bicycle.png',
+    //     text: 'Велосипеды и спорт-оборудование позволит Вам активно провести время на свежем воздухе',
+    // },
 ];
 
 const About = () => {
     return (
-        <section className="h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.png)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
+        <section className="min-h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.png)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
             <div className="absolute left-0 top-0 flex items-center">
                 <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 xl:hidden block"></div>
             </div>
@@ -74,8 +74,8 @@ const About = () => {
                     whileInView='visible'
                     viewport={{ once: true }}
                     variants={heading}
-                    className="pt-[70px] flex justify-between mb-[50px] items-center sm:pl-0 pl-2">
-                    <m.div variants={OpenLeft} className="flex flex-col lg:pt-10 pt-2">
+                    className="pt-[70px] flex justify-between mb-[50px] items-center sm:pl-0">
+                    <m.div variants={OpenLeft} className="flex flex-col lg:pt-10 pt-2 lg:pl-0 pl-[40px]">
                         <h3 className="text-[#AB8E67] 3xl:text-[38px] lg:text-[33px] text-[28px] font-bold lg:mb-7">Загородный клуб</h3>
                         <h2 className="3xl:text-[68px] 2xl:text-[60px] lg:text-[50px] sm:text-[40px] text-[30px] font-bold text-[#9E835F]"><span className="text-white 3xl:text-[78px] 2xl:text-[70px] lg:text-[60px] sm:text-[50px] text-[40px] font-extrabold">ИКША</span> КАНТРИ КЛАБ</h2>
                         <p className="3xl:w-[810px] 2xl:w-[650px] lg:w-[500px] w-[380px] text-white 3xl:text-[32px] 2xl:text-[26px] lg:text-[20px] text-[18px] font-medium mb-5">Икша Кантри Клаб на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в 25 км от м. Алтуфьево в лесной зоне на берегу водохранилища</p>
