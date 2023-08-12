@@ -5,6 +5,8 @@ import About from '../components/Home/About';
 import Happy from '../components/Home/Happy';
 import Eat from '../components/Home/Eat';
 import Locations from '../components/Home/Locations';
+import Events from '../components/Home/Events';
+import Gallery from '../components/Home/Gallery';
 
 
 const Home = () => {
@@ -15,6 +17,8 @@ const Home = () => {
             <Happy />
             <Eat />
             <Locations />
+            <Events />
+            <Gallery />
         </div>
     )
 }

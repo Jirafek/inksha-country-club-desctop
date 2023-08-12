@@ -26,7 +26,7 @@ const LocationsCard = ({ arrayData }) => {
                     <m.div variants={el.variant} key={uuid4()} className="lg:w-[830px] md:w-[660px] w-[380px] relative group cursor-pointer">
                         <img className="absolute lg:h-auto md:h-[260px] h-[170px] left-0 bottom-0" src={el.img} alt="" />
                         <div className="lg:h-[300px] md:h-[235px] h-[155px] w-full bg-[#221C1C] flex flex-col justify-between border border-[#AB8E67] rounded-[30px] lg:pl-[360px] md:pl-[270px] pl-[165px] md:py-6 py-5">
-                            <h4 className="text-[#AB8E67] lg:text-[38px] md:text-[32px] text-xl font-bold">
+                            <h4 className="text-[#AB8E67] lg:text-[38px] md:text-[32px] text-[1.25rem] font-bold">
                                 {el.title}
                             </h4>
                             <div className="flex items-center md:gap-3">
