@@ -140,6 +140,7 @@ const Gallery = () => {
                                     duration: 1
                                 },
                             }}
+                            key={uuid4()}
                             src={el} alt="" />
                     ))
                 }

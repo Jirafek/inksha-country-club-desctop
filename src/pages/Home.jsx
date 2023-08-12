@@ -7,6 +7,7 @@ import Eat from '../components/Home/Eat';
 import Locations from '../components/Home/Locations';
 import Events from '../components/Home/Events';
 import Gallery from '../components/Home/Gallery';
+import Review from '../components/Home/Review';
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
             <Locations />
             <Events />
             <Gallery />
+            <Review />
         </div>
     )
 }
