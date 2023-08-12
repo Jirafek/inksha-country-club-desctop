@@ -1,31 +1,31 @@
 const routes = [
     {
         title: 'О нас',
-        link: 'about',
+        link: '#about',
     },
     {
         title: 'Локации',
-        link: 'locations',
+        link: '#locations',
     },
     {
         title: 'Мероприятия',
-        link: 'events',
+        link: '#events',
     },
     {
         title: 'Галерея',
-        link: 'gallery',
+        link: '#gallery',
     },
     {
         title: 'Развлечения',
-        link: 'happy',
+        link: '#happy',
     },
     {
         title: 'Карта территории',
-        link: 'map',
+        link: '#map',
     },
     {
         title: 'FAQ',
-        link: 'faq',
+        link: '/faq',
     },
     {
         title: '',

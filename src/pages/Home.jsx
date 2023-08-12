@@ -8,6 +8,7 @@ import Locations from '../components/Home/Locations';
 import Events from '../components/Home/Events';
 import Gallery from '../components/Home/Gallery';
 import Review from '../components/Home/Review';
+import Bron from '../components/Home/Bron';
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
             <Events />
             <Gallery />
             <Review />
+            <Bron />
         </div>
     )
 }
