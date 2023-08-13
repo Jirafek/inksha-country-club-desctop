@@ -57,7 +57,7 @@ const happyData = [
 
 const Happy = () => {
     return (
-        <section className="bg-[#201E1F] min-h-screen w-full relative">
+        <section id="happy" className="bg-[#201E1F] min-h-screen w-full relative">
             <Title text={'Развлечения'} />
             <Logo />
             <m.div

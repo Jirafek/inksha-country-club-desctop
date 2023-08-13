@@ -92,7 +92,7 @@ const Gallery = () => {
     };
 
     return (
-        <section className="relative min-h-screen w-full bg-[#201E1F]">
+        <section id="gallery" className="relative min-h-screen w-full bg-[#201E1F]">
             <Title text={'Галерея'} />
             <div style={{ display: `${isMenuOpen ? 'block' : 'none'}` }} className="absolute py-7 z-10 left-1/2 -translate-x-1/2 lg:top-[190px] top-[156px] lg:w-[550px] w-[360px] border border-[#AB8E67] bg-[#75624A] rounded-[22px]">
                 <div className="relative w-full pl-12 flex flex-col gap-2 items-start">

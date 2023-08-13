@@ -93,9 +93,9 @@ const Eat = () => {
                                     </div>
                                 ))
                             }
-                            <button className="bg-[#AB8E67] z-10 w-2/3 py-3 px-10 mt-4 border-[2px] lg:text-[28px] sm:text-[22px] text-[15px] text-white font-medium rounded-[40px] border-[#4D382B] shadow-[4px_4px_10px_0px_rgba(0,_0,_0,_0.30)]">
+                            <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="bg-[#AB8E67] z-10 w-2/3 py-3 px-10 mt-4 border-[2px] lg:text-[28px] sm:text-[22px] text-[15px] text-white font-medium rounded-[40px] border-[#4D382B] shadow-[4px_4px_10px_0px_rgba(0,_0,_0,_0.30)]">
                                 Посмотреть меню
-                            </button>
+                            </a>
                         </div>
                     </m.div>
                     <h4 className="md:pl-[180px] text-white lg:text-[32px] sm:text-[28px] text-[22px] font-semibold z-10 relative">

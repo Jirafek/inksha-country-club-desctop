@@ -96,7 +96,7 @@ const Events = () => {
         prevArrow: <CustomPrevArrow />,
     };
     return (
-        <section className="relative min-h-screen w-full bg-[#201E1F]">
+        <section id="events" className="relative min-h-screen w-full bg-[#201E1F]">
             <Title text={'Мероприятия'} />
             <Logo />
             <button style={{ background: 'linear-gradient(90deg, #EDE6DD 0%, rgba(171, 142, 103, 0.87) 100%), #75624A' }} className="text-[rgba(34,_28,_28,_0.70)] absolute left-1/2 -translate-x-1/2 top-[7.5rem] lg:py-5 py-3 px-10 lg:text-[30px] text-[23px] font-semibold border-[3px] border-[#604E3A] rounded-[10px]">
@@ -105,7 +105,7 @@ const Events = () => {
             <Slider {...sliderSettings} className="flex xl:justify-between justify-center sm:pl-14 pt-[250px]">
                 {
                     eventsData.map((el, i) => (
-                        <div className="sm:w-[400px_!important] w-[380px_!important] flex flex-col items-center h-[700px_!important] border border-[#AB8E67] bg-[#221C1C] rounded-[30px]" key={uuid4()}>
+                        <div className="sm:w-[400px_!important] w-[380px_!important] flex flex-col items-center h-[700px_!important] border border-[#AB8E67] bg-[#221C1C] rounded-[30px] pb-4" key={uuid4()}>
                             <img className="]" src={el.img} alt="" />
                             <h3 className="text-[30px] text-[#AB8E67] font-bold text-center">
                                 {el.title}

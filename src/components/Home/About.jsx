@@ -63,7 +63,7 @@ const aboutData = [
 
 const About = () => {
     return (
-        <section className="min-h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.png)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
+        <section id="about" className="min-h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.png)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
             <div className="absolute left-0 top-0 flex items-center">
                 <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 xl:hidden block"></div>
             </div>

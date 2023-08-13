@@ -13,6 +13,21 @@ const heading = {
     },
 };
 
+const OpenBottom = {
+    hidden: {
+        opacity: 0,
+        transform: 'translateY(500px)'
+    },
+    visible: {
+        opacity: 1,
+        transform: 'translateY(0px)',
+        transition: {
+            ease: 'easeOut',
+            duration: 2.5,
+        },
+    },
+};
+
 const OpenLeft = {
     hidden: {
         opacity: 0,
@@ -28,47 +43,51 @@ const OpenLeft = {
     },
 };
 
-const OpenRight = {
-    hidden: {
-        opacity: 0,
-        transform: 'translate(500px)'
-    },
-    visible: {
-        opacity: 1,
-        transform: 'translate(0px)',
-        transition: {
-            ease: 'easeOut',
-            duration: 2.5,
-        },
-    },
-};
+// const OpenRight = {
+//     hidden: {
+//         opacity: 0,
+//         transform: 'translate(500px)'
+//     },
+//     visible: {
+//         opacity: 1,
+//         transform: 'translate(0px)',
+//         transition: {
+//             ease: 'easeOut',
+//             duration: 2.5,
+//         },
+//     },
+// };
 
 const locationsData = [
     {
         img: '/image/locations-mini-1.png',
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
-        variant: OpenLeft
+        variant: OpenBottom,
+        link: '/location/1'
     },
     {
         img: '/image/locations-mini-2.png',
         title: 'КОТТЕДЖ',
-        variant: OpenRight
+        variant: OpenBottom,
+        link: '/location/2'
     },
     {
         img: '/image/locations-mini-3.png',
         title: 'ШАЛЕ',
-        variant: OpenLeft
+        variant: OpenBottom,
+        link: '/location/3'
     },
     {
         img: '/image/locations-mini-4.png',
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
-        variant: OpenRight
+        variant: OpenBottom,
+        link: '/location/4'
     },
 ];
 
 const Locations = () => {
     return (
-        <section className="relative min-h-screen w-full bg-[#201E1F]">
+        <section id="locations" className="relative min-h-screen w-full bg-[#201E1F]">
             <Title text={'Локации'} />
             <Logo />
             <m.div

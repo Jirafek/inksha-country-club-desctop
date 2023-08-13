@@ -12,11 +12,11 @@ const Footer = () => {
                         if (!el.title) return;
 
                         return (
-                            <Link className="text-white md:text-[32px] text-[23px]" to={el.link}>
+                            <a className="text-white md:text-[32px] text-[23px]" href={el.link}>
                                 {
                                     el.title
                                 }
-                            </Link>
+                            </a>
                         );
                     })
                 }
