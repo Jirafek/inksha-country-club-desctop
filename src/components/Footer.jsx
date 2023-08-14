@@ -20,6 +20,9 @@ const Footer = () => {
                         );
                     })
                 }
+                <Link className="text-white md:text-[32px] text-[23px]" to={'/korporativy'}>
+                    Корпоративы
+                </Link>
             </div>
             <div className="flex md:flex-row flex-col justify-center items-center md:gap-20 gap-4">
                 <Link className="text-white text-[18px] font-medium underline" to="/rules">

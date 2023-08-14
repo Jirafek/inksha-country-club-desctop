@@ -147,6 +147,11 @@ html {
   opacity: 1;
 }
 
+.slick-slider-flex {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 .fade-exit-active {
   opacity: 0;
   transition: opacity 1s ease-out;
