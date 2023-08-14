@@ -107,9 +107,10 @@ const Korporativy = () => {
     const onSubmit = (dataFromForm) => {
         for (var key in dataFromForm) {
             if (dataFromForm[key] === true) {
-                dataFromForm[key] = 'Да';
+                const title = korpData.find(item => item.name === key.toString())
+                dataFromForm[key] = title.title;
             } else if (dataFromForm[key] === false) {
-                dataFromForm[key] = 'Нет';
+                dataFromForm[key] = '';
             }
         }
 
