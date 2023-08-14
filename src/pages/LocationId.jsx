@@ -130,7 +130,7 @@ const LocationId = () => {
     const [currentLocation, setCurrentLocation] = useState(LocationsData[0]);
 
     if (id !== "1" && id !== "2" && id !== "3" && id !== "4") {
-        return <Navigate to="/404" />;
+        return <Navigate to="/" />;
     }
 
     useEffect(() => {
@@ -244,7 +244,7 @@ const LocationId = () => {
                                 {currentLocation.time}
                             </h5>
                         </div>
-                        <a className="xl:text-[26px] text-[18px] font-extrabold text-white py-3 px-8 bg-[#75624A] rounded-[15px]" to="https://bronirui-online.ru/iksha-country-club">
+                        <a className="xl:text-[26px] text-[18px] font-extrabold text-white py-3 px-8 bg-[#75624A] rounded-[15px]" href="https://bronirui-online.ru/iksha-country-club">
                             Забронировать
                         </a>
                     </div>

@@ -12,7 +12,7 @@ const Footer = () => {
                         if (!el.title) return;
 
                         return (
-                            <a className="text-white md:text-[32px] text-[23px]" href={el.link}>
+                            <a key={uuid4()} className="text-white md:text-[32px] text-[23px]" href={el.link}>
                                 {
                                     el.title
                                 }
