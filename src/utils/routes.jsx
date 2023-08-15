@@ -24,23 +24,27 @@ const routes = [
         link: '#map',
     },
     {
+        title: 'Корпоративы',
+        link: '/korporativy'
+    },
+    {
         title: 'FAQ',
         link: '/faq',
     },
     {
         title: '',
         link: '',
-        icon: '/image/vk.png'
+        icon: '/image/vk.webp'
     },
     {
         title: '',
         link: '',
-        icon: '/image/inst.png'
+        icon: '/image/inst.webp'
     },
     {
         title: '',
         link: '',
-        icon: '/image/watsApp.png'
+        icon: '/image/watsApp.webp'
     },
 ];
 

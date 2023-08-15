@@ -106,7 +106,6 @@ const Bron = () => {
                 </m.div>
                 <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="" />
             </m.div>
-            <Footer />
         </section>
     );
 }

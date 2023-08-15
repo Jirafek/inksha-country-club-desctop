@@ -9,6 +9,7 @@ import Events from '../components/Home/Events';
 import Gallery from '../components/Home/Gallery';
 import Review from '../components/Home/Review';
 import Bron from '../components/Home/Bron';
+import Footer from "../components/Footer";
 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
             <Gallery />
             <Review />
             <Bron />
+            <Footer />
         </div>
     )
 }
