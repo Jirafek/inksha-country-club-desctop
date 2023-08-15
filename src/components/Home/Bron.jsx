@@ -7,27 +7,27 @@ import { m } from "framer-motion";
 
 const bronData = [
     {
-        img: '/image/wa_bl.png',
+        img: '/image/wa_bl.webp',
         text: '+7 985 909 12 02',
         link: 'https://wa.me/79859091202',
     },
     {
-        img: '/image/tg_bl.png',
+        img: '/image/tg_bl.webp',
         text: '@ikshacountryclub',
         link: 'https://t.me/ikshacountryclub',
     },
     {
-        img: '/image/inst_bl.png',
+        img: '/image/inst_bl.webp',
         text: '@ikshacountryclub',
         link: 'https://instagram.com/ikshacountryclub',
     },
     {
-        img: '/image/vk_bl.png',
+        img: '/image/vk_bl.webp',
         text: '@ikshacountryclub',
         link: 'https://vk.com/ikshacountryclub',
     },
     {
-        img: '/image/mail_bl.png',
+        img: '/image/mail_bl.webp',
         text: 'contact@ikshacountryclub.com',
         link: 'mailto:contact@ikshacountryclub.com',
     },
@@ -104,7 +104,7 @@ const Bron = () => {
                         ))
                     }
                 </m.div>
-                <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.png" alt="" />
+                <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="" />
             </m.div>
             <Footer />
         </section>

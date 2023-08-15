@@ -46,15 +46,15 @@ const OpenLeft = {
 
 const EatData = [
     {
-        img: '/image/fire.png',
+        img: '/image/fire.webp',
         text: 'Плов на костре'
     },
     {
-        img: '/image/fire.png',
+        img: '/image/fire.webp',
         text: 'Финская уха на костре'
     },
     {
-        img: '/image/chef.png',
+        img: '/image/chef.webp',
         text: 'Шашлык от шефа'
     },
 ];
@@ -72,7 +72,7 @@ const Eat = () => {
                         delay: 1,
                     },
                 }}
-                className="absolute top-1/2 -translate-y-1/2 left-0 lg:w-auto md:w-[400px] w-[270px]" src="/image/pizza.png" alt="pizza" />
+                className="absolute top-1/2 -translate-y-1/2 left-0 lg:w-auto md:w-[400px] w-[270px]" src="/image/pizza.webp" alt="pizza" />
             <div className="lg:flex lg:justify-between">
                 <m.div
                     initial='hidden'
@@ -102,7 +102,7 @@ const Eat = () => {
                         Также мы готовы организовать <br /> для вас <Link className="underline" to="/keytering">кейтеринг</Link>!
                     </h4>
                 </m.div>
-                <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.png" alt="" />
+                <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="" />
             </div>
         </section>
     );

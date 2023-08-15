@@ -60,25 +60,25 @@ const OpenLeft = {
 
 const locationsData = [
     {
-        img: '/image/locations-mini-1.png',
+        img: '/image/locations-mini-1.webp',
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
         variant: OpenBottom,
         link: '/location/1'
     },
     {
-        img: '/image/locations-mini-2.png',
+        img: '/image/locations-mini-2.webp',
         title: 'КОТТЕДЖ',
         variant: OpenBottom,
         link: '/location/2'
     },
     {
-        img: '/image/locations-mini-3.png',
+        img: '/image/locations-mini-3.webp',
         title: 'ШАЛЕ',
         variant: OpenBottom,
         link: '/location/3'
     },
     {
-        img: '/image/locations-mini-4.png',
+        img: '/image/locations-mini-4.webp',
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
         variant: OpenBottom,
         link: '/location/4'

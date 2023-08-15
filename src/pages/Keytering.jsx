@@ -6,13 +6,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const imageData = [
-    "/image/keyt1.jpg",
-    "/image/keyt2.jpg",
-    "/image/keyt3.jpg",
-    "/image/keyt4.jpg",
-    "/image/keyt5.jpg",
-    "/image/keyt6.jpg",
-    "/image/keyt7.jpg",
+    "/image/keyt1.webp",
+    "/image/keyt2.webp",
+    "/image/keyt3.webp",
+    "/image/keyt4.webp",
+    "/image/keyt5.webp",
+    "/image/keyt6.webp",
+    "/image/keyt7.webp",
 ];
 
 const Keytering = () => {

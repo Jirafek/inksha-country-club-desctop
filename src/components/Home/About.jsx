@@ -44,26 +44,26 @@ const OpenRight = {
 
 const aboutData = [
     {
-        img: '/image/bed.png',
+        img: '/image/bed.webp',
         text: 'Комфортабельные, уединеннные домики,оборудованные всем необходимым',
     },
     {
-        img: '/image/tree.png',
+        img: '/image/tree.webp',
         text: 'Большие локации площадью 50 кв.м. с уютной верандой и зоной отдыха',
     },
     {
-        img: '/image/towel.png',
+        img: '/image/towel.webp',
         text: 'Русская баня с панорамным видом, где вы можете расслабиться после долгих прогулок',
     },
     // {
-    //     img: '/image/bicycle.png',
+    //     img: '/image/bicycle.webp',
     //     text: 'Велосипеды и спорт-оборудование позволит Вам активно провести время на свежем воздухе',
     // },
 ];
 
 const About = () => {
     return (
-        <section id="about" className="min-h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.png)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
+        <section id="about" className="min-h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.webp)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
             <div className="absolute left-0 top-0 flex items-center">
                 <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 xl:hidden block"></div>
             </div>
@@ -82,7 +82,7 @@ const About = () => {
                         <p className="lg:text-[30px] text-[25px] text-white font-extrabold">У нас есть все, что нужно <br /> для полноценного отдыха:</p>
                     </m.div>
                     <m.div variants={OpenRight} className="rounded-l-[60px] xl:block hidden border-[#9E835F] border-r-[0px] border-b-[3px] 3xl:h-auto h-[420px] border-l-[4px] 3xl:pt-[2.6rem] pt-7 3xl:pb-0 pb-7 3xl:pl-10 pl-7">
-                        <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.png" alt="" />
+                        <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="" />
                     </m.div>
                 </m.div>
                 <AboutCard arrayData={aboutData} />

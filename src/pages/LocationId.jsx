@@ -8,7 +8,7 @@ import classNames from 'classnames';
 const LocationsData = [
     {
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
-        img: '/image/loc-1.png',
+        img: '/image/loc-1.webp',
         texts: [
             'Крытая зона BBQ с раковиной и столом',
             'Крытая зона BBQ с раковиной и столом',
@@ -29,11 +29,11 @@ const LocationsData = [
             night: 'Ночёвка + 5 тыс'
         },
         time: '14:00 - 21:00',
-        bigImg: '/image/loc-1-big.jpg',
+        bigImg: '/image/loc-1-big.webp',
     },
     {
         title: 'ШАЛЕ',
-        img: '/image/loc-2.png',
+        img: '/image/loc-2.webp',
         texts: [
             'Остекленная веранда со столом на 15 гостей, камином, бильярдом, тв- и аудио-системой, кухней и зоной отдыха с диваном и креслами',
             'Зона BBQ снаружи веранды (мангал, шампуры, решетки, угли 4 кг, розжиг включены)',
@@ -54,11 +54,11 @@ const LocationsData = [
             night: 'Коттедж + 15 тыс'
         },
         time: '12:00 - 21:00',
-        bigImg: '/image/loc-2-big.jpg',
+        bigImg: '/image/loc-2-big.webp',
     },
     {
         title: 'КОТТЕДЖ',
-        img: '/image/loc-3.png',
+        img: '/image/loc-3.webp',
         texts: [
             'Двухэтажный коттедж, отапливаемая площадь 150м2, кирпич, с отделкой, мебелью и оборудованием, wifi, спутниковым ТВ',
             'Крытая веранда для мероприятий на открытом воздухе 40м2 и зоной BBQ',
@@ -79,11 +79,11 @@ const LocationsData = [
             night: ''
         },
         time: '15:00 - 12:00',
-        bigImg: '/image/loc-3-big.jpg',
+        bigImg: '/image/loc-3-big.webp',
     },
     {
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
-        img: '/image/loc-4.png',
+        img: '/image/loc-4.webp',
         texts: [
             '2 спальни с двуспальной кроватью',
             'Кухня-гостиная с обеденным столом, раскладным диваном и видом на сад',
@@ -104,7 +104,7 @@ const LocationsData = [
             night: ''
         },
         time: '15:00 - 12:00',
-        bigImg: '/image/loc-4-big.jpg',
+        bigImg: '/image/loc-4-big.webp',
         plash: [
             {
                 title: '1 домик (выходные +10 тыс.)',
@@ -140,7 +140,7 @@ const LocationId = () => {
     return (
         <section className="relative min-h-screen w-full bg-[#201E1F] overflow-hidden">
             <img className="absolute h-screen 2xl:hidden lg:block hidden" src={currentLocation.bigImg} alt="" />
-            <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.png" alt="" />
+            <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.webp" alt="" />
             <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 2xl:hidden lg:block hidden"></div>
             <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.img} alt="" />
             <Title bg="#221C1C" text={'Локации'} />

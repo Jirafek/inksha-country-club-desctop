@@ -30,25 +30,25 @@ const OpenLeft = {
 
 const happyData = [
     {
-        img: '/image/happy_1.png',
+        img: '/image/happy_1.webp',
         title: 'ПОСИДЕЛКИ У КОСТРА',
         text: 'Отличный способ провести время после трудового дня в компании друзей и родных',
         type: 'text'
     },
     {
-        img: '/image/happy_2.png',
+        img: '/image/happy_2.webp',
         title: 'РЫБАЛКА',
         text: 'Если вы любите рыбалку, Икша Кантри Клаб - прекрасное место для Вас. Водохранилище и форелевый пруд вас приятно удивят',
         type: 'text'
     },
     {
-        img: '/image/happy_3.png',
+        img: '/image/happy_3.webp',
         title: 'ВИДЫ АКТИВНОГО ОТДЫХА',
         text: ['велосипед, квадроцикл', 'Сап-доски, лодка, катер, гидроцикл', 'волейбол, футбол, бадминтон'],
         type: 'array'
     },
     {
-        img: '/image/happy_4.png',
+        img: '/image/happy_4.webp',
         title: 'БАНЯ И СПА',
         text: 'Единение с природой, сочетание русских традиций и современного подхода к уходу за собой',
         type: 'text'

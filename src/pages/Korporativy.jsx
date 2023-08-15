@@ -60,12 +60,12 @@ const korpData = [
 ];
 
 const images = [
-    '/image/korp1.jpg',
-    '/image/korp2.jpg',
-    '/image/korp3.jpg',
-    '/image/korp4.jpg',
-    '/image/korp5.jpg',
-    '/image/korp6.jpg',
+    '/image/korp1.webp',
+    '/image/korp2.webp',
+    '/image/korp3.webp',
+    '/image/korp4.webp',
+    '/image/korp5.webp',
+    '/image/korp6.webp',
 ];
 
 const Korporativy = () => {
