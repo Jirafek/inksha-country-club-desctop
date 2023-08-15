@@ -22,16 +22,31 @@ const Header = () => {
             className="w-full relative h-14 z-10">
             <nav className="py-[10px] px-10 flex items-center justify-between xl:bg-[#1e1c1dcc]">
                 {
-                    routes.map((el, i) => (
-                        <a key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" href={el.link}>
-                            {
-                                el.title ?
-                                    el.title
-                                    :
-                                    <img className="3xl:w-[65px] 2xl:w-[55px] w-[45px]" src={el.icon} alt="" />
-                            }
-                        </a>
-                    ))
+                    routes.map((el, i) => {
+                        if (el.link.includes('/')) {
+                            return (
+                                <Link key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" to={el.link}>
+                                    {
+                                        el.title ?
+                                            el.title
+                                            :
+                                            <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
+                                    }
+                                </Link>
+                            );
+                        } else {
+                            return (
+                                <a key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" href={el.link}>
+                                    {
+                                        el.title ?
+                                            el.title
+                                            :
+                                            <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
+                                    }
+                                </a>
+                            );
+                        }
+                    })
                 }
             </nav>
             <button onClick={handleBurger} className="xl:hidden absolute top-10 left-10">

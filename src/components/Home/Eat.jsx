@@ -73,7 +73,7 @@ const Eat = () => {
                     },
                 }}
                 className="absolute top-1/2 -translate-y-1/2 left-0 lg:w-auto md:w-[400px] w-[270px]" src="/image/pizza.webp" alt="pizza" />
-            <div className="lg:flex lg:justify-between">
+            <div className="lg:flex 2xl:justify-between justify-center">
                 <m.div
                     initial='hidden'
                     whileInView='visible'

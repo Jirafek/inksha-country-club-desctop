@@ -10,14 +10,23 @@ const Footer = () => {
                 {
                     routes.map((el, i) => {
                         if (!el.title) return;
-
-                        return (
-                            <a key={uuid4()} className="text-white md:text-[32px] text-[23px]" href={el.link}>
-                                {
-                                    el.title
-                                }
-                            </a>
-                        );
+                        if (el.link.includes('/')) {
+                            return (
+                                <Link key={uuid4()} className="text-white md:text-[32px] text-[23px]" to={el.link}>
+                                    {
+                                        el.title
+                                    }
+                                </Link>
+                            );
+                        } else {
+                            return (
+                                <a key={uuid4()} className="text-white md:text-[32px] text-[23px]" href={el.link}>
+                                    {
+                                        el.title
+                                    }
+                                </a>
+                            );
+                        }
                     })
                 }
                 <Link className="text-white md:text-[32px] text-[23px]" to={'/korporativy'}>
