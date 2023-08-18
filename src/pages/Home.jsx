@@ -9,13 +9,15 @@ import Events from '../components/Home/Events';
 import Gallery from '../components/Home/Gallery';
 import Review from '../components/Home/Review';
 import Bron from '../components/Home/Bron';
-import Footer from "../components/Footer";
+import Footer from '../components/Footer';
+import Map from 'components/Home/Map/Map';
 
 
 const Home = () => {
     return (
         <div>
             <Main />
+            <Map />
             <About />
             <Happy />
             <Eat />
