@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { v4 as uuid4 } from 'uuid';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
@@ -70,6 +70,20 @@ const images = [
 
 const Korporativy = () => {
 
+    const [peopleState, setPeopleState] = useState(10);
+
+    const handleInputChange = (e) => {
+        let value = e.target.value;
+
+        try {
+            const val = Number(value)
+            if (val > 50 || val < 0) return;
+            setPeopleState(val);
+        } catch (err) {
+            return
+        }
+    }
+
     const sliderRef = useRef(null);
 
     const onNextClick = () => {
@@ -108,11 +122,13 @@ const Korporativy = () => {
         for (var key in dataFromForm) {
             if (dataFromForm[key] === true) {
                 const title = korpData.find(item => item.name === key.toString())
-                dataFromForm[key] = title.title;
+                dataFromForm[key] = title.title + ', ';
             } else if (dataFromForm[key] === false) {
                 dataFromForm[key] = '';
             }
         }
+
+        dataFromForm.people = peopleState;
 
         const email = {
             email: "-"
@@ -137,25 +153,43 @@ const Korporativy = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Slider ref={sliderRef} {...settingsBig}>
                         <div className="flex xl:flex-row flex-col slick-slider-flex justify-center items-center gap-11">
-                            <div className="3xl:w-[800px] sm:w-[550px] w-[380px] border-[2px] border-[#AB8E67] bg-[rgba(117,_98,_74,_0.50)] rounded-[10px] px-11 py-8 flex flex-col items-center relative">
-                                <h4 className="text-center text-white 3xl:text-[32px] sm:text-[22px] text-[18px] font-semibold mb-14">Мы предлагаем нашим корпоративным гостям следующие услуги:</h4>
-                                <div className="grid grid-cols-2 sm:gap-x-12 gap-x-8 sm:gap-y-8 gap-y-4">
-                                    {
-                                        korpData.map((el, i) => (
-                                            <label key={uuid4()} className="flex items-center gap-2">
-                                                <div className="3xl:w-[30px] 3xl:h-[30px] sm:w-[20px] sm:h-[20px] w-[15px] h-[15px] relative">
-                                                    <input className="3xl:w-[30px] 3xl:h-[30px] sm:w-[20px] sm:h-[20px] w-[15px] h-[15px] bg-[#AB8E67] rounded-lg border border-[#4D382B]" type="checkbox" name="korp" {...register(el.name)} />
-                                                </div>
-                                                <p className="text-white 3xl:text-[28px] sm:text-[18px] font-medium">
-                                                    {el.title}
-                                                </p>
-                                            </label>
-                                        ))
-                                    }
+                            <div className="flex flex-col xl:items-start items-center gap-[30px]">
+                                <div className="flex flex-col gap-2">
+                                    <div className="flex gap-1 items-center pl-8 text-white sm:w-[400px] w-[380px] h-[80px] bg-[#604E3A] border-[3px] rounded-xl border-[#AB8E67]">
+                                        <p className="text-[26px] font-semibold">
+                                            Количество человек:
+                                        </p>
+                                        <input onChange={handleInputChange} className="w-[50px] h-[50px] text-[32px] bg-transparent outline-none border-none" value={peopleState} type="number" />
+                                    </div>
+                                    <div className="text-white sm:w-[400px] w-[380px] h-[80px] bg-[#604E3A] border-[3px] rounded-xl border-[#AB8E67]">
+                                        <label className="flex gap-1 items-center h-full pr-4 justify-between pl-8">
+                                            <p className="text-[26px] font-semibold">
+                                                Нужен ли вам ночлег?
+                                            </p>
+                                            <input className="3xl:w-[30px] 3xl:h-[30px] sm:w-[20px] sm:h-[20px] w-[15px] h-[15px] bg-[#AB8E67] rounded-lg border border-[#4D382B]" {...register('night')} type="checkbox" name="" id="" />
+                                        </label>
+                                    </div>
                                 </div>
-                                <button onClick={onNextClick} type="button" className=" text-white mt-2 3xl:text-[32px] text-[22px] font-semibold sm:py-3 py-2 sm:px-20 px-12 bg-[#AB8E67] border-[5px] border-[#4D382B] rounded-[20px]">
-                                    стоимость
-                                </button>
+                                <div className="3xl:w-[800px] sm:w-[550px] w-[380px] border-[2px] border-[#AB8E67] bg-[rgba(117,_98,_74,_0.50)] rounded-[10px] px-11 py-8 flex flex-col items-center relative">
+                                    <h4 className="text-center text-white 3xl:text-[32px] sm:text-[22px] text-[18px] font-semibold mb-14">Мы предлагаем нашим корпоративным гостям следующие услуги:</h4>
+                                    <div className="grid grid-cols-2 sm:gap-x-12 gap-x-8 sm:gap-y-8 gap-y-4">
+                                        {
+                                            korpData.map((el, i) => (
+                                                <label key={uuid4()} className="flex items-center gap-2">
+                                                    <div className="3xl:w-[30px] 3xl:h-[30px] sm:w-[20px] sm:h-[20px] w-[15px] h-[15px] relative">
+                                                        <input className="3xl:w-[30px] 3xl:h-[30px] sm:w-[20px] sm:h-[20px] w-[15px] h-[15px] bg-[#AB8E67] rounded-lg border border-[#4D382B]" type="checkbox" name="korp" {...register(el.name)} />
+                                                    </div>
+                                                    <p className="text-white 3xl:text-[28px] sm:text-[18px] font-medium">
+                                                        {el.title}
+                                                    </p>
+                                                </label>
+                                            ))
+                                        }
+                                    </div>
+                                    <button onClick={onNextClick} type="button" className=" text-white mt-2 3xl:text-[32px] text-[22px] font-semibold sm:py-3 py-2 sm:px-20 px-12 bg-[#AB8E67] border-[5px] border-[#4D382B] rounded-[20px]">
+                                        стоимость
+                                    </button>
+                                </div>
                             </div>
                             <div className="flex flex-col gap-8 xl:pb-0 pb-10">
                                 <Slider className="3xl:w-[700px] 3xl:h-[460px] sm:w-[500px] sm:h-[325px] w-[360px] h-[240px] rounded-[15px] p-1 border-b-0 border-[2px] border-[#AB8E67]" {...settings}>

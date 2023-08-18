@@ -92,7 +92,7 @@ const Bron = () => {
                             duration: 1,
                         },
                     }}
-                    className="bg-[#221C1C] xl:ml-0 ml-[15px] border z-10 xl:self-end xl:mb-0 mb-[21rem] xl:mt-0 mt-[25px] border-[#AB8E67] rounded-[15px] pl-8 py-5 sm:w-[600px] w-[380px] flex flex-col 2xl:gap-4 gap-2 mr-6">
+                    className="bg-[#221C1C] xl:ml-0 ml-[10px] xl:mb-0 mb-5 border z-10 xl:self-end xl:mt-0 mt-[25px] border-[#AB8E67] rounded-[15px] pl-8 py-5 sm:w-[600px] w-[375px] flex flex-col 2xl:gap-4 gap-2 mr-6">
                     {
                         bronData.map((el, i) => (
                             <a key={uuid4()} href={el.link} target="_blank" className="flex 2xl:gap-4 gap-2 items-center">

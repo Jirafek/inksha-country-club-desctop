@@ -65,6 +65,11 @@ const eventsData = [
         title: 'ПОСЛЕСВАДЕБНАЯ ВЕЧЕРИНКА',
         text: 'Ощущение начала вашей семейной истории тоже должно быть идеальным, и мы об этом знаем, как никто. Мы поможем организовать продолжение вашей свадебной церемонии',
     },
+    {
+        img: '/image/events2.webp',
+        title: 'КОРПОРАТИВЫ & ТИМБИЛДИНГ',
+        text: 'Выбраться из офиса за город? Отличная мысль, но как это все организовать? Ответ прост - приезжайте к нам, у нас уже всё готово, прекрасная природа и полный комфорт ждут!'
+    }
 ];
 
 const Events = () => {
@@ -99,9 +104,9 @@ const Events = () => {
         <section id="events" className="relative min-h-screen w-full bg-[#201E1F]">
             <Title text={'Мероприятия'} />
             <Logo />
-            <button style={{ background: 'linear-gradient(90deg, #EDE6DD 0%, rgba(171, 142, 103, 0.87) 100%), #75624A' }} className="text-[rgba(34,_28,_28,_0.70)] absolute left-1/2 -translate-x-1/2 top-[7.5rem] lg:py-5 py-3 px-10 lg:text-[30px] text-[23px] font-semibold border-[3px] border-[#604E3A] rounded-[10px]">
+            <a href="https://bronirui-online.ru/iksha-country-club" style={{ background: 'linear-gradient(90deg, #EDE6DD 0%, rgba(171, 142, 103, 0.87) 100%), #75624A' }} className="text-[rgba(34,_28,_28,_0.70)] z-10 absolute left-1/2 -translate-x-1/2 top-[7.5rem] lg:py-5 py-3 px-10 lg:text-[30px] text-[23px] font-semibold border-[3px] border-[#604E3A] rounded-[10px]">
                 ОРГАНИЗОВАТЬ СОБЫТИЕ
-            </button>
+            </a>
             <Slider {...sliderSettings} className="flex xl:justify-between justify-center sm:pl-14 pt-[250px]">
                 {
                     eventsData.map((el, i) => (
@@ -114,9 +119,9 @@ const Events = () => {
                                 {el.text}
                             </p>
                             <div className="flex justify-center">
-                                <button className="text-[rgba(34,_28,_28,_0.70)] text-[25px] font-semibold py-4 px-8 border border-[#604E3A] bg-[#75624A] rounded-lg">
+                                <a href="https://bronirui-online.ru/iksha-country-club/uslugi" className="text-[rgba(34,_28,_28,_0.70)] text-[25px] font-semibold py-4 px-8 border border-[#604E3A] bg-[#75624A] rounded-lg">
                                     УЗНАТЬ БОЛЬШЕ
-                                </button>
+                                </a>
                             </div>
                         </div>
                     ))
