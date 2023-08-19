@@ -23,11 +23,11 @@ const Map = props => {
                 setModalContent(() => {
                     const currentElem = positions.find(elem => elem.id == button.dataset.position);
                     console.log(currentElem)
-                    if(currentElem)
+                    if (currentElem)
                         return <>
                             <img src={currentElem.images[0]} />
                             <h3>{currentElem.title}</h3>
-                            <p>{ currentElem.text }</p>
+                            <p>{currentElem.text}</p>
                         </>
                     // return <>Hello</>
                 });
@@ -35,7 +35,7 @@ const Map = props => {
         });
     }, []);
 
-    return <div className='map'>
+    return <div className='map w-screen overflow-hidden'>
         <div className="map-wrapper">
             <figure className="map-figure">
                 <img src="/image/map.png" alt="" className="map_image" />
