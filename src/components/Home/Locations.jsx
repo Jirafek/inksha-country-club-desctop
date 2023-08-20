@@ -95,7 +95,7 @@ const Locations = () => {
                 whileInView='visible'
                 viewport={{ once: true }}
                 variants={heading}
-                className="md:pl-[90px] sm:pl-[40px] pl-3 2xl:pt-[170px] sm:pt-[110px] pt-[90px] pb-6">
+                className="2xl:pl-[90px] md:pl-[50px] sm:pl-[40px] pl-3 2xl:pt-[170px] sm:pt-[110px] pt-[90px] pb-6">
                 <m.h2 variants={OpenLeft} className="2xl:text-[68px] xl:text-[58px] lg:text-[40px] sm:text-[28px] text-[22px] text-white font-extrabold sm:pl-0 pl-7">У НАС ЕСТЬ НЕСКОЛЬКО ЛОКАЦИЙ <br /> <span className="text-[#A69376]">СПЕЦИАЛЬНО ДЛЯ ВАС</span></m.h2>
                 <LocationsCard arrayData={locationsData} />
             </m.div>

@@ -17,7 +17,6 @@ const Map = props => {
         // buttons.forEach(buttonElem => {
         //     buttonElem.addEventListener('click', __event__ => {
         //         const button = __event__.currentTarget;
-
         //         setModalIsActive(!modalIsActive);
         //         setModalContent(() => {
         //             const currentElem = positions.find(elem => elem.id == button.dataset.position);
@@ -34,7 +33,7 @@ const Map = props => {
         // });
     }, []);
 
-    return <div className='map'>
+    return <div className='map w-screen overflow-hidden'>
         <div className="map-wrapper">
             <figure className="map-figure">
                 <img src="/image/map.png" alt="" className="map_image" />

@@ -143,7 +143,7 @@ const LocationId = () => {
             <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.webp" alt="" />
             <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 2xl:hidden lg:block hidden"></div>
             <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.img} alt="" />
-            <Title bg="#221C1C" text={'Локации'} />
+            <Title bg="#221C1C" text={'Локации'} isNeedBack={true} />
             <Logo />
             <div className="lg:block pt-[160px] flex md:flex-row flex-col justify-between lg:pr-0 sm:pr-5">
                 <div className="lg:pl-[190px] pl-[40px] z-10 relative">
