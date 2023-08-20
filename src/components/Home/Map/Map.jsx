@@ -1,38 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import './map.css'
 import { base, increase } from './logic';
-import Modal from 'components/Modal/Modal';
+// import Modal from 'components/Modal/Modal';
 import positions from './positions.json'
 
 const Map = props => {
 
     const [modalIsActive, setModalIsActive] = useState(false);
-    const [ModalContent, setModalContent] = useState(() => <></>);
 
     useEffect(() => {
         base(document);
         increase(document);
 
-        const buttons = document.querySelectorAll('.map_button');
+        // const buttons = document.querySelectorAll('.map_button');
 
-        buttons.forEach(buttonElem => {
-            buttonElem.addEventListener('click', __event__ => {
-                const button = __event__.currentTarget;
-
-                setModalIsActive(!modalIsActive);
-                setModalContent(() => {
-                    const currentElem = positions.find(elem => elem.id == button.dataset.position);
-                    console.log(currentElem)
-                    if (currentElem)
-                        return <>
-                            <img src={currentElem.images[0]} />
-                            <h3>{currentElem.title}</h3>
-                            <p>{currentElem.text}</p>
-                        </>
-                    // return <>Hello</>
-                });
-            });
-        });
+        // buttons.forEach(buttonElem => {
+        //     buttonElem.addEventListener('click', __event__ => {
+        //         const button = __event__.currentTarget;
+        //         setModalIsActive(!modalIsActive);
+        //         setModalContent(() => {
+        //             const currentElem = positions.find(elem => elem.id == button.dataset.position);
+        //             console.log(currentElem)
+        //             if(currentElem)
+        //                 return <>
+        //                     <img src={currentElem.images[0]} />
+        //                     <h3>{currentElem.title}</h3>
+        //                     <p>{ currentElem.text }</p>
+        //                 </>
+        //             // return <>Hello</>
+        //         });
+        //     });
+        // });
     }, []);
 
     return <div className='map w-screen overflow-hidden'>
@@ -331,7 +329,7 @@ const Map = props => {
                 <div className="map-tooltip_preview"></div>
             </div>
         </div>
-        <Modal amiActive={modalIsActive} setAmiActive={setModalIsActive} Content={ModalContent} />
+        {/* <Modal amiActive={modalIsActive} setAmiActive={setModalIsActive} Content={ModalContent} /> */}
     </div>;
 };
 

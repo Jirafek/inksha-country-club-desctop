@@ -2,9 +2,9 @@
     --color-position-lines: #fff000;
     --color-position-lines__hover: #000fff;
     --color-geo-first: #ff0;
-    --color-geo-second: #f0f;
-    --color-geo-third: #0f0;
-    --color-geo-forth: #0ff;
+    --color-geo-second: #f5f5dc;
+    --color-geo-third: #3333ff;
+    --color-geo-forth: #ffff8d;
 }
 
 .map,
@@ -15,7 +15,7 @@
 }
 
 .map {
-    cursor: url("https://im.wampi.ru/2023/05/11/cursor.png") 0 0, auto;
+    cursor: url("/image/cursor.png") 0 0, auto;
 }
 
 .map-figure {
@@ -239,7 +239,7 @@
 }
 
 .map_button:hover {
-    cursor: url("https://ic.wampi.ru/2023/05/11/cursor_pointer.png") 0 0, auto;
+    cursor: url("/image/cursor.png") 0 0, auto;
 }
 
 .map_button:hover path:not(:nth-child(1)) {

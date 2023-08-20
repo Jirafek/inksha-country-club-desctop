@@ -54,8 +54,10 @@ export const
             let width = e.currentTarget.clientWidth;
             let height = e.currentTarget.clientHeight;
 
-            let posX = e.x * 100 / width
-            let posY = e.y * 100 / height
+            let posX = e.pageX * 100 / width
+            let posY = (e.pageY - document.querySelector('.map').offsetTop) * 100 / height
+
+            console.log(e.pageX, e.pageY - document.querySelector('.map')..getBoundingClientRect().top)
 
             preview.style.background = `url(/image/map.png) no-repeat`;
             preview.style.backgroundPosition = `calc(${posX / 1.02}% - ${posX < 50 ? -200 : 200}px) calc(${posY / 1.02}% - ${posY < 50 ? -150 : 150}px)`;
