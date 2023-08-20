@@ -36,7 +36,7 @@ const LocationsCard = ({ arrayData }) => {
                                         <p className="text-white 3xl:text-[32px] md:text-[26px] font-semibold">До 30 чел</p>
                                         <p className="text-white 3xl:text-[32px] md:text-[26px] font-semibold">от 15 000 руб</p>
                                     </div>
-                                    <div className="group-hover:translate-x-6 duration-500 md:w-auto w-[65px]">
+                                    <div className="group-hover:translate-x-4 duration-500 md:w-auto w-[65px]">
                                         <LocationArrow />
                                     </div>
                                 </div>
