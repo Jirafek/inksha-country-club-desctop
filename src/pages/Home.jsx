@@ -17,9 +17,7 @@ const Home = () => {
     return (
         <div>
             <Main />
-            <div className="sm:block hidden overflow-hidden">
-                <Map />
-            </div>
+            <Map />
             <About />
             <Happy />
             <Eat />
