@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './map.css'
 import { base, increase } from './logic';
-import positions from './positions.json'
 
 const Map = () => {
 
@@ -10,7 +9,7 @@ const Map = () => {
         increase(document);
     }, []);
 
-    return <div className='map w-screen overflow-hidden'>
+    return <div className='map'>
         <div className="map-wrapper">
             <figure className="map-figure">
                 <img src="/image/map.png" alt="" className="map_image" />

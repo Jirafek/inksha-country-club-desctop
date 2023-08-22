@@ -4,7 +4,7 @@ export const
     base = document => {
         // Consts
         const
-            positionRelativeMouse = { x: 10, y: 10 }
+            positionRelativeMouse = { x: 5, y: 5 }
 
         // Elements
         const
