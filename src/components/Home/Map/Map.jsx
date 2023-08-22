@@ -10,7 +10,7 @@ const Map = () => {
         increase(document);
     }, []);
 
-    return <div className='map'>
+    return <div className='map w-screen overflow-hidden'>
         <div className="map-wrapper">
             <figure className="map-figure">
                 <img src="/image/map.png" alt="" className="map_image" />

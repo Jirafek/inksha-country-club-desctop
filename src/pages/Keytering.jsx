@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { CustomNextArrow, CustomPrevArrow } from '../components/CustomArrows';
+
 const imageData = [
     "/image/keyt1.webp",
     "/image/keyt2.webp",
@@ -19,7 +21,6 @@ const Keytering = () => {
 
     const settings = {
         dots: false,
-        arrows: false,
         draggable: false,
         swipe: false,
         autoplay: true,
@@ -28,6 +29,8 @@ const Keytering = () => {
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
+        nextArrow: <CustomNextArrow url="/image/arrow_gallery.webp" />,
+        prevArrow: <CustomPrevArrow url="/image/arrow_gallery.webp" />,
     };
 
     return (
@@ -41,7 +44,7 @@ const Keytering = () => {
                 <Slider {...settings}>
                     {imageData.map((image, i) => (
                         <div className="lg:w-[700px_!important] sm:w-[590px_!important] w-[380px_!important]" key={uuid4()}>
-                            <img className="image" src={image} alt="" />
+                            <img className="image h-full" src={image} alt="" />
                         </div>
                     ))}
                 </Slider>
