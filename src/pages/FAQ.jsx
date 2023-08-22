@@ -99,7 +99,7 @@ const FAQ = () => {
 
     return (
         <section className="relative min-h-screen bg-[#201E1F]">
-            <Title text={'FAQ'} />
+            <Title text={'FAQ'} isNeedBack />
             <m.div
                 initial='hidden'
                 whileInView='visible'

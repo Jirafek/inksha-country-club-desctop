@@ -2,11 +2,53 @@ import React, { useRef, useState } from "react";
 import { v4 as uuid4 } from 'uuid';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import LocationArrow from '../components/icons/LocationArrow';
 
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import { m } from "framer-motion";
+
+const heading = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+
+const OpenBottom = {
+    hidden: {
+        opacity: 0,
+        transform: 'translateY(500px)'
+    },
+    visible: {
+        opacity: 1,
+        transform: 'translateY(0px)',
+        transition: {
+            ease: 'easeOut',
+            duration: 2.5,
+        },
+    },
+};
+
+const OpenLeft = {
+    hidden: {
+        opacity: 0,
+        transform: 'translate(-500px)'
+    },
+    visible: {
+        opacity: 1,
+        transform: 'translate(0px)',
+        transition: {
+            ease: 'easeOut',
+            duration: 2.5,
+        },
+    },
+};
 
 const korpData = [
     {
@@ -69,6 +111,11 @@ const images = [
 ];
 
 const Korporativy = () => {
+
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1)
+    };
 
     const [peopleState, setPeopleState] = useState(10);
     const [isImageOpen, setIsImageOpen] = useState(false);
@@ -153,12 +200,20 @@ const Korporativy = () => {
     }
     return (
         <section className="relative min-h-screen w-full bg-[#201E1F]">
-            <div className="pt-3">
-                <div className="flex justify-center">
+            <button onClick={goBack} className="w-[40px] sm:block hidden absolute top-3 left-7 rotate-180 z-10 hover:-translate-x-2 duration-300">
+                <LocationArrow />
+            </button>
+            <m.div
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true }}
+                variants={heading}
+                className="pt-3">
+                <m.div variants={OpenLeft} className="flex justify-center">
                     <h2 className="xl:text-[68px] md:text-[42px] sm:text-[32px] text-[20px] gradient_title font-extrabold sm:mb-12 mb-7">
                         КОРПОРАТИВЫ & ТИМБИЛДИНГ
                     </h2>
-                </div>
+                </m.div>
                 {isImageOpen && (
                     <div
                         className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-70 z-40 flex items-center justify-center"
@@ -171,7 +226,7 @@ const Korporativy = () => {
                         />
                     </div>
                 )}
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <m.form variants={OpenBottom} onSubmit={handleSubmit(onSubmit)}>
                     <Slider ref={sliderRef} {...settingsBig}>
                         <div className="flex xl:flex-row flex-col slick-slider-flex justify-center items-center gap-11">
                             <div className="flex flex-col xl:items-start items-center gap-[30px]">
@@ -244,8 +299,8 @@ const Korporativy = () => {
                             </div>
                         </div>
                     </Slider>
-                </form>
-            </div>
+                </m.form>
+            </m.div>
         </section>
     );
 }

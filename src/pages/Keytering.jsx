@@ -1,5 +1,7 @@
 import React from "react";
 import { v4 as uuid4 } from 'uuid';
+import LocationArrow from '../components/icons/LocationArrow';
+import { useNavigate } from "react-router-dom";
 
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
@@ -19,6 +21,11 @@ const imageData = [
 
 const Keytering = () => {
 
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1)
+    };
+
     const settings = {
         dots: false,
         draggable: false,
@@ -35,11 +42,19 @@ const Keytering = () => {
 
     return (
         <section className="min-h-screen w-full relative bg-[#201E1F]">
+            <button onClick={goBack} className="w-[40px] sm:block hidden absolute top-3 left-7 rotate-180 z-10 hover:-translate-x-2 duration-300">
+                <LocationArrow />
+            </button>
             <div className="pt-3">
                 <div className="flex justify-center">
                     <h2 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
                         КЕЙТЕРИНГ
                     </h2>
+                </div>
+                <div className="flex justify-center mb-2">
+                    <a href="/pdf/menu.pdf" target="_blank" className="py-3 px-8 flex justify-center items-center rounded-[10px] bg-[#AB8E67] text-white text-[20px] font-medium">
+                        Смотреть меню
+                    </a>
                 </div>
                 <Slider {...settings}>
                     {imageData.map((image, i) => (

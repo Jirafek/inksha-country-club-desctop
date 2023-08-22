@@ -44,9 +44,9 @@ const Footer = () => {
                     "Икша Кантри Клаб" <br />
                     Все права защищены Copyright © 2023
                 </p>
-                <Link className="text-white 2xl:text-[18px] text-[15px] font-medium underline" to="/privacy">
-                    Политика данных
-                </Link>
+                <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/about.pdf">
+                    Презентациия о нас
+                </a>
 
                 <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/oferta.pdf" target="_blank">
                     Договор оферты

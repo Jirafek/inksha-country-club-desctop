@@ -25,7 +25,7 @@ function App() {
       <Route path='/location/:id' element={<LocationId />} />
       <Route path='/korporativy' element={<Korporativy />} />
       <Route path='/faq' element={<FAQ />} />
-      <Route path='/privacy' element={<Privacy title={'Политика данных'} />} />
+      {/* <Route path='/privacy' element={<Privacy title={'Политика данных'} />} /> */}
       <Route path='/rules' element={<Privacy title={'Правила проживания'} />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
