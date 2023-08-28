@@ -9,6 +9,7 @@ const LocationsData = [
     {
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
         img: '/image/loc-1.webp',
+        video: '/video/lesnaya.mp4',
         texts: [
             'Крытая зона BBQ с раковиной и столом',
             'Крытая зона BBQ с раковиной и столом',
@@ -34,6 +35,7 @@ const LocationsData = [
     {
         title: 'КОТТЕДЖ',
         img: '/image/loc-3.webp',
+        video: '/video/kottegge.mp4',
         texts: [
             'Двухэтажный коттедж, отапливаемая площадь 150м2, кирпич, с отделкой, мебелью и оборудованием, wifi, спутниковым ТВ',
             'Крытая веранда для мероприятий на открытом воздухе 40м2 и зоной BBQ',
@@ -59,6 +61,7 @@ const LocationsData = [
     {
         title: 'ШАЛЕ',
         img: '/image/loc-2.webp',
+        video: '/video/shale.mp4',
         texts: [
             'Остекленная веранда со столом на 15 гостей, камином, бильярдом, тв- и аудио-системой, кухней и зоной отдыха с диваном и креслами',
             'Зона BBQ снаружи веранды (мангал, шампуры, решетки, угли 4 кг, розжиг включены)',
@@ -84,6 +87,7 @@ const LocationsData = [
     {
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
         img: '/image/loc-4.webp',
+        video: '/video/olimp.mp4',
         texts: [
             '2 спальни с двуспальной кроватью',
             'Кухня-гостиная с обеденным столом, раскладным диваном и видом на сад',
@@ -139,9 +143,13 @@ const LocationId = () => {
 
     return (
         <section className="relative min-h-screen w-full bg-[#201E1F] overflow-hidden">
-            <img className="absolute h-screen 2xl:hidden lg:block hidden" src={currentLocation.bigImg} alt="" />
+            <video className="w-screen h-screen absolute top-0 left-0" autoPlay loop muted>
+                <source src={currentLocation.video} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            {/* <img className="absolute h-screen 2xl:hidden lg:block hidden" src={currentLocation.bigImg} alt="" /> */}
             <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.webp" alt="" />
-            <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 2xl:hidden lg:block hidden"></div>
+            <div className="w-screen h-screen bg-black opacity-80 duration-300 absolute top-0 left-0"></div>
             <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.img} alt="" />
             <Title bg="#221C1C" text={'Локации'} isNeedBack={true} />
             <Logo />

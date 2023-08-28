@@ -148,7 +148,7 @@ const Korporativy = () => {
 
     const settings = {
         dots: false,
-        arrows: false,
+        arrows: true,
         draggable: false,
         swipe: false,
         autoplay: true,

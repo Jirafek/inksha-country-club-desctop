@@ -111,23 +111,19 @@ const Main = () => {
                 }}
                 className="md:px-[90px] px-[40px] flex flex-col lg:mt-[150px] mt-[50px] relative">
                 <div className="flex flex-col 2xl:mb-[115px] mb-[55px]">
-                    <h1 className="uppercase text-white 2xl:text-[98px] md:text-[70px] text-[56px] font-extrabold 2xl:leading-[100px] leading-[60px]">Икша</h1>
-                    <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2>
+                    <h1 className="uppercase text-white 2xl:text-[98px] md:text-[70px] text-[56px] font-extrabold 2xl:leading-[100px] leading-[60px]">
+                        Икша <br />
+                        <span className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</span>
+                    </h1>
+                    {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
                 </div>
                 <p className="2xl:w-[600px] md:w-[400px] 2xl:text-[48px] md:text-[38px] text-[30px] xl:mb-[120px] mb-6 text-white font-semibold">
                     Ваш идеальный отдых в подмосковье!
                 </p>
-                {/* <img className="mt-[70px] widget1:mb-[120px] lg:block hidden mb-[20px] w-[590px]" src="/image/palka_pending.webp" alt="" /> */}
-                <div id="znms-widget-1"></div>
-                {/* <button className="rounded-[15px] border-[2px] border-[#4D382B] bg-[#AB8E67] py-[18px] flex justify-center items-center w-[420px]">
-                    <p className="text-[32px] text-white font-semibold">Забронировать</p>
-                </button> */}
+                <div className="z-0">
+                    <div id="znms-widget-1"></div>
+                </div>
             </m.div>
-            {/* <div className="bg-[linear-gradient(to_bottom,_rgba(171,_142,_103,_0.7),_rgba(77,_56,_43,_0.7))] absolute w-full h-[80px] bottom-0 left-0 px-10 xl:flex hidden items-center justify-between">
-                <p className="text-white text-[26px] font-bold">Спецпредложение</p>
-                <p className="text-[#D3AE7C] text-[26px] font-bold">Дарим именнинику САП-доску в день рождения*</p>
-                <p className="text-white text-[26px] font-bold">Спецпредложение</p>
-            </div> */}
         </section>
     )
 }

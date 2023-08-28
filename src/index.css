@@ -41,6 +41,10 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .slow-move > .swiper-wrapper {
   align-items: center;
   transition-timing-function: linear;
@@ -124,10 +128,6 @@ html {
   background-clip: text;
   -webkit-background-clip: text; /* Для поддержки веб-браузеров, основанных на WebKit */
   color: transparent;
-}
-
-.slick-next {
-  margin-right: 70px;
 }
 
 .slick-slide {

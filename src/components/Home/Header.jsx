@@ -20,34 +20,40 @@ const Header = () => {
                 },
             }}
             className="w-full relative h-14 z-10">
-            <nav className="py-[10px] px-10 flex items-center justify-between xl:bg-[#1e1c1dcc]">
-                {
-                    routes.map((el, i) => {
-                        if (el.link.includes('/')) {
-                            return (
-                                <Link key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" to={el.link}>
-                                    {
-                                        el.title ?
-                                            el.title
-                                            :
-                                            <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
-                                    }
-                                </Link>
-                            );
-                        } else {
-                            return (
-                                <a key={uuidv4()} className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" href={el.link}>
-                                    {
-                                        el.title ?
-                                            el.title
-                                            :
-                                            <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
-                                    }
-                                </a>
-                            );
-                        }
-                    })
-                }
+            <nav className="py-[10px] px-10 xl:bg-[#1e1c1dcc]">
+                <ul className="flex items-center justify-between">
+                    {
+                        routes.map((el, i) => {
+                            if (el.link.includes('/')) {
+                                return (
+                                    <li key={uuidv4()}>
+                                        <Link className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" to={el.link}>
+                                            {
+                                                el.title ?
+                                                    el.title
+                                                    :
+                                                    <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
+                                            }
+                                        </Link>
+                                    </li>
+                                );
+                            } else {
+                                return (
+                                    <li key={uuidv4()}>
+                                        <a className="3xl:text-[26px] hidden xl:block 2xl:text-[22px] text-[18px] text-white monterey font-semibold" href={el.link}>
+                                            {
+                                                el.title ?
+                                                    el.title
+                                                    :
+                                                    <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
+                                            }
+                                        </a>
+                                    </li>
+                                );
+                            }
+                        })
+                    }
+                </ul>
             </nav>
             <button onClick={handleBurger} className="xl:hidden absolute top-10 left-10">
                 <svg xmlns="http://www.w3.org/2000/svg" width="42" height="34" viewBox="0 0 42 34" fill="none">
@@ -70,7 +76,7 @@ const Header = () => {
                     </defs>
                 </svg>
             </button>
-            <div style={{ display: `${burgerState ? 'flex' : 'none'}` }} className="absolute top-20 left-20 flex-col z-10 duration-300 py-6 rounded-[10px] bg-[#221C1C] border-[2px] border-[#AB8E67] text-[#AB8E67] gap-3 px-8">
+            <div style={{ display: `${burgerState ? 'flex' : 'none'}` }} className="absolute top-20 left-20 flex-col z-20 duration-300 py-6 rounded-[10px] bg-[#221C1C] border-[2px] border-[#AB8E67] text-[#AB8E67] gap-3 px-8">
                 {
                     routes.map((el, i) => {
                         if (el.title)

@@ -82,8 +82,11 @@ const About = () => {
                         <p className="lg:text-[30px] text-[25px] text-white font-extrabold">У нас есть все, что нужно <br /> для полноценного отдыха:</p>
                         <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 hover:bg-[#AB8E67] bg-transparent" href="/pdf/about.pdf" target="_blanc">Презентациия о нас</a>
                     </m.div>
-                    <m.div variants={OpenRight} className="rounded-l-[60px] xl:block hidden border-[#9E835F] border-r-[0px] border-b-[3px] 3xl:h-auto h-[420px] border-l-[4px] 3xl:pt-[2.6rem] pt-7 3xl:pb-0 pb-7 3xl:pl-10 pl-7">
-                        <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="" />
+                    <m.div variants={OpenRight} className="rounded-l-[60px] xl:block hidden border-[#9E835F] border-r-[0px] border-b-[3px] 3xl:h-auto h-[420px] border-l-[4px] 3xl:pb-0 pb-7 3xl:pl-10 pl-7">
+                        <div className="3xl:w-[800px] w-[600px] 3xl:h-[540px] h-[400px] flex justify-end items-center">
+                            <iframe className="3xl:w-[800px] w-[6100px] 3xl:h-[500px] h-[400px] rounded-l-[60px] " src="https://www.youtube.com/embed/Eat2wgPNuIo?si=7BLNGDGFUERZuxQi" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        </div>
+                        {/* <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="" /> */}
                     </m.div>
                 </m.div>
                 <AboutCard arrayData={aboutData} />

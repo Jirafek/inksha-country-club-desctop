@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <footer className="w-full xl:h-[275px] sm:h-[410px] h-[500px] bg-[#201e1f] px-4 border-t-[1px] xl:border-t-transparent pt-5 flex flex-col justify-between border-t-[#AB8E67]">
-            <div className="flex justify-around flex-wrap gap-6">
+            <ul className="flex justify-around flex-wrap gap-6">
                 {
                     routes.map((el, i) => {
                         if (!el.title) return;
@@ -32,7 +32,7 @@ const Footer = () => {
                 <Link className="text-white md:text-[32px] text-[23px]" to={'/korporativy'}>
                     Корпоративы
                 </Link>
-            </div>
+            </ul>
             <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-20 gap-4 pb-2">
                 <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/confi.pdf" target="_blank">
                     Политика конфиденциальности
