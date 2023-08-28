@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import Title from '../components/Title';
 import Logo from '../components/Logo';
 import { v4 as uuid4 } from 'uuid';
 import classNames from 'classnames';
+import Video1 from '../components/Video1';
+import Video2 from '../components/Video2';
 
 const LocationsData = [
     {
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
         img: '/image/loc-1.webp',
-        video: '/video/lesnaya.mp4',
+        video: <Video1 />,
         texts: [
             'Крытая зона BBQ с раковиной и столом',
-            'Крытая зона BBQ с раковиной и столом',
-            'Крытая зона BBQ с раковиной и столом',
-            'Крытая зона BBQ с раковиной и столом',
-            'Крытая зона BBQ с раковиной и столом'
+            'Остекленная веранда со столом на 20+ гостей',
+            'Имеется оборудование для презентаций',
+            'Собственный пирс и баня с купелью на берегу',
+            'Горячая купель, повар (плов, уха, шашлык), кальянщик, банщик'
         ],
         area: '15 соток',
         people: 'до 30 чел',
@@ -61,7 +63,7 @@ const LocationsData = [
     {
         title: 'ШАЛЕ',
         img: '/image/loc-2.webp',
-        video: '/video/shale.mp4',
+        video: <Video2 />,
         texts: [
             'Остекленная веранда со столом на 15 гостей',
             'Зона BBQ снаружи (мангал, шампуры, решетки, угли 4 кг, розжиг включены)',
@@ -132,6 +134,15 @@ const LocationsData = [
 const LocationId = () => {
     const { id } = useParams();
     const [currentLocation, setCurrentLocation] = useState(LocationsData[0]);
+    const [currentVideo, setCurrentVideo] = useState(LocationsData[0]);
+    const videoRef = useRef(null);
+
+    const videous = [
+        '/video/lesnaya.mp4',
+        '/video/kottegge.mp4',
+        '/video/shale.mp4',
+        '/video/olimp.mp4'
+    ];
 
     if (id !== "1" && id !== "2" && id !== "3" && id !== "4") {
         return <Navigate to="/" />;
@@ -139,14 +150,20 @@ const LocationId = () => {
 
     useEffect(() => {
         setCurrentLocation(LocationsData[+id - 1]);
+        console.log(videous[+id - 1])
+        setCurrentVideo(videous[+id - 1])
+        videoRef.current.src = videous[+id - 1];
+        videoRef.current.load();
     }, [])
 
     return (
         <section className="relative min-h-screen w-full bg-[#201E1F] overflow-hidden">
-            <video className="w-screen h-screen absolute top-0 left-0" autoPlay loop muted>
-                <source src={currentLocation.video} type="video/mp4" />
+            <video ref={videoRef} className="w-screen h-screen absolute top-0 left-0" autoPlay loop muted>
+                <source src={'/video/lesnaya.mp4'} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
+
+            {currentLocation.video}
             {/* <img className="absolute h-screen 2xl:hidden lg:block hidden" src={currentLocation.bigImg} alt="" /> */}
             {/* <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.webp" alt="" /> */}
             <div className="w-screen h-screen bg-black opacity-80 duration-300 absolute top-0 left-0"></div>
