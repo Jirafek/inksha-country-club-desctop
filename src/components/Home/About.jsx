@@ -80,8 +80,11 @@ const About = () => {
                         <h2 className="3xl:text-[68px] 2xl:text-[60px] lg:text-[50px] sm:text-[40px] text-[30px] font-bold text-[#9E835F]"><span className="text-white 3xl:text-[78px] 2xl:text-[70px] lg:text-[60px] sm:text-[50px] text-[40px] font-extrabold">ИКША</span> КАНТРИ КЛАБ</h2>
                         <p className="3xl:w-[810px] 2xl:w-[650px] lg:w-[500px] w-[380px] text-white 3xl:text-[32px] 2xl:text-[26px] lg:text-[20px] text-[18px] font-medium mb-5">Икша Кантри Клаб на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в 25 км от м. Алтуфьево в лесной зоне на берегу водохранилища</p>
                         <p className="lg:text-[30px] text-[25px] text-white font-extrabold">У нас есть все, что нужно <br /> для полноценного отдыха:</p>
-                        <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 hover:bg-[#AB8E67] bg-transparent" href="/pdf/about.pdf" target="_blanc">Презентациия о нас</a>
-                        <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 bg-[#AB8E67]" href="https://www.youtube.com/watch?v=Eat2wgPNuIo" target="_blanc">Видео о нас</a>
+                        <div className="flex md:flex-row flex-col gap-2">
+
+                            <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 hover:bg-[#AB8E67] bg-transparent" href="/pdf/about.pdf" target="_blanc">Презентациия о нас</a>
+                            <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 bg-[#AB8E67]" href="https://www.youtube.com/watch?v=Eat2wgPNuIo" target="_blanc">Видео о нас</a>
+                        </div>
                     </m.div>
                     <m.div variants={OpenRight} className="rounded-l-[60px] pt-[2.6rem] xl:block hidden border-[#9E835F] border-r-[0px] border-b-[3px] 3xl:h-auto h-[420px] border-l-[4px] 3xl:pb-0 pb-7 3xl:pl-10 pl-7">
                         {/* <div className="3xl:w-[800px] w-[600px] 3xl:h-[540px] h-[400px] flex justify-end items-center">
