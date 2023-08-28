@@ -81,12 +81,13 @@ const About = () => {
                         <p className="3xl:w-[810px] 2xl:w-[650px] lg:w-[500px] w-[380px] text-white 3xl:text-[32px] 2xl:text-[26px] lg:text-[20px] text-[18px] font-medium mb-5">Икша Кантри Клаб на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных. Резиденция расположена в 25 км от м. Алтуфьево в лесной зоне на берегу водохранилища</p>
                         <p className="lg:text-[30px] text-[25px] text-white font-extrabold">У нас есть все, что нужно <br /> для полноценного отдыха:</p>
                         <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 hover:bg-[#AB8E67] bg-transparent" href="/pdf/about.pdf" target="_blanc">Презентациия о нас</a>
+                        <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 bg-[#AB8E67]" href="https://www.youtube.com/watch?v=Eat2wgPNuIo" target="_blanc">Видео о нас</a>
                     </m.div>
-                    <m.div variants={OpenRight} className="rounded-l-[60px] xl:block hidden border-[#9E835F] border-r-[0px] border-b-[3px] 3xl:h-auto h-[420px] border-l-[4px] 3xl:pb-0 pb-7 3xl:pl-10 pl-7">
-                        <div className="3xl:w-[800px] w-[600px] 3xl:h-[540px] h-[400px] flex justify-end items-center">
+                    <m.div variants={OpenRight} className="rounded-l-[60px] pt-[2.6rem] xl:block hidden border-[#9E835F] border-r-[0px] border-b-[3px] 3xl:h-auto h-[420px] border-l-[4px] 3xl:pb-0 pb-7 3xl:pl-10 pl-7">
+                        {/* <div className="3xl:w-[800px] w-[600px] 3xl:h-[540px] h-[400px] flex justify-end items-center">
                             <iframe className="3xl:w-[800px] w-[6100px] 3xl:h-[500px] h-[400px] rounded-l-[60px] " src="https://www.youtube.com/embed/Eat2wgPNuIo?si=7BLNGDGFUERZuxQi" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                        </div>
-                        {/* <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="" /> */}
+                        </div> */}
+                        <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="" />
                     </m.div>
                 </m.div>
                 <AboutCard arrayData={aboutData} />
