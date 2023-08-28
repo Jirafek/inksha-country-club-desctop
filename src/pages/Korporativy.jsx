@@ -146,6 +146,10 @@ const Korporativy = () => {
         sliderRef.current.slickNext();
     };
 
+    const handleDownload = (url) => {
+        window.open(url, '_blank');
+    }
+
     const settings = {
         dots: false,
         arrows: true,
@@ -268,9 +272,14 @@ const Korporativy = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col items-center gap-8 xl:pb-0 pb-10">
-                                <button type="button" onClick={handleImageClick}>
-                                    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="" />
-                                </button>
+                                <div className="flex justify-between w-full gap-1">
+                                    <button type="button" onClick={handleImageClick}>
+                                        <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="" />
+                                    </button>
+                                    <button type="button" onClick={() => handleDownload('/pdf/keyt.pdf')}>
+                                        <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/menu_list.jpg" alt="" />
+                                    </button>
+                                </div>
                                 <Slider className="3xl:w-[700px] 3xl:h-[460px] sm:w-[500px] sm:h-[325px] w-[360px] h-[240px] rounded-[15px] p-1 border-b-0 border-[2px] border-[#AB8E67]" {...settings}>
                                     {
                                         images.map((el, i) => (
