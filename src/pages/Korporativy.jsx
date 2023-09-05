@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { v4 as uuid4 } from 'uuid';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import LocationArrow from '../components/icons/LocationArrow';
 
 import Slider from "react-slick";
@@ -177,6 +177,7 @@ const Korporativy = () => {
     };
 
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [navigation, setNavigation] = useState(false);
 
     const onSubmit = (dataFromForm) => {
         for (var key in dataFromForm) {
@@ -197,13 +198,15 @@ const Korporativy = () => {
 
         emailjs.send("service_a1dan7b", "template_rmhn4mc", data, "V_IkuqWqNwJlUw72K")
             .then((result) => {
-                onNextClick();
+                // onNextClick();
+                setNavigation(true);
             }, (error) => {
                 alert('Ошибка при отправке формы')
             }); // sending to email
     }
     return (
         <section className="relative min-h-screen w-full bg-[#201E1F]">
+            {navigation && <Navigate to="/thanks" />}
             <button onClick={goBack} className="w-[40px] sm:block hidden absolute top-3 left-7 rotate-180 z-10 hover:-translate-x-2 duration-300">
                 <LocationArrow />
             </button>
@@ -297,14 +300,6 @@ const Korporativy = () => {
                                 <input placeholder="Имя" {...register('name', { required: true })} type="text" className="lg:h-[88px] mb-[30px] w-full text-white lg:text-[36px] sm:text-[28px] text-[20px] lg:py-0 py-2 lg:rounded-[20px] rounded-xl bg-[#604E3A] sm:pl-[40px] pl-[20px]" />
                                 <input placeholder="Телефон" {...register('phone', { required: true })} type="text" className="lg:h-[88px] lg:mb-16 mb-8 w-full text-white lg:text-[36px] sm:text-[28px] text-[20px] lg:py-0 py-2 lg:rounded-[20px] rounded-xl bg-[#604E3A] sm:pl-[40px] pl-[20px]" />
                                 <button type="submit" className="lg:py-[25px] py-[15px] px-[30px] lg:text-[32px] sm:text-[22px] text-[18px] text-white font-medium border-[4px] border-[#AB8E67] lg:rounded-[30px] rounded-[20px] bg-[rgb(171,_142,_103)] mb-[100px]">Отправить заявку</button>
-                            </div>
-                        </div>
-                        <div className="h-full flex justify-center items-center">
-                            <div className="lg:w-[770px] lg:h-[760px] sm:w-[500px] w-[380px] sm:h-[500px] h-[420px] bg-[#75624A] border-[#AB8E67] border-[2px] rounded-[40px] lg:px-[90px] px-[50px] py-9 flex flex-col items-center justify-center">
-                                <p className="lg:text-[32px] sm:text-[22px] text-[18px] text-white font-semibold text-center mb-24">Спасибо за то, что выбрали нас! <br />Наш менеджер скоро свяжется с вами!</p>
-                                <Link className="lg:text-[32px] sm:text-[22px] text-[18px] text-white font-medium py-[15px] sm:px-[60px] px-[15px] bg-[rgb(171,_142,_103)] border-[4px] border-[#AB8E67] rlg:rounded-[30px] rounded-[20px]" to="/">
-                                    Вернуться на главную
-                                </Link>
                             </div>
                         </div>
                     </Slider>

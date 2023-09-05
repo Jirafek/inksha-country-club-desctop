@@ -40,7 +40,7 @@ const Main = () => {
                 index: 0,
                 widget: {
                     position: {
-                        bottom: '0px',
+                        bottom: '200px',
                     },
                     mobile: {
                         absolute: false, // Абсолютное позиционирование в мобильной версии при виде отображения "У шапки сайта"
@@ -53,9 +53,9 @@ const Main = () => {
                 // Настройки позиции плавающей кнопки
                 button: {
                     position: {
-                        bottom: '50px',
-                        left: '50px',
-                        right: '50px',
+                        bottom: '20px',
+                        left: '100px',
+                        right: '20px',
                     },
                 },
             });
@@ -76,7 +76,7 @@ const Main = () => {
                     background-color: #4D382B !important
             }
             .znms-widget__horizontal-form-submit {
-                margin-top: 0 !important;
+                // margin-top: 0 !important;
             }
             .znms-widget__widget-btn.znms-widget__v-color4 {
                 background-color: #75624a !important;
@@ -117,7 +117,7 @@ const Main = () => {
                     </h1>
                     {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
                 </div>
-                <p className="2xl:w-[600px] md:w-[400px] 2xl:text-[48px] md:text-[38px] text-[30px] xl:mb-[120px] mb-6 text-white font-semibold">
+                <p className="2xl:w-[600px] md:w-[400px] 2xl:text-[48px] md:text-[38px] text-[30px] xl:mb-[30px] mb-6 text-white font-semibold">
                     Ваш идеальный отдых в подмосковье!
                 </p>
                 <div className="z-0">
