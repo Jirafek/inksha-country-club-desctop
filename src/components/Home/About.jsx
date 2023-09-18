@@ -94,7 +94,7 @@ const About = () => {
                         <div className="flex md:flex-row flex-col gap-2">
 
                             <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 hover:bg-[#AB8E67] bg-transparent" href="/pdf/about.pdf" target="_blanc">Презентациия о нас</a>
-                            <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 bg-[#AB8E67]" href="https://www.youtube.com/watch?v=Eat2wgPNuIo" target="_blanc">Видео о нас</a>
+                            <a className="w-[300px] flex justify-center mt-2 text-white text-[20xp] font-medium py-3 border border-[#AB8E67] rounded-lg duration-300 bg-[#AB8E67]" href="https://www.youtube.com/watch?v=Eat2wgPNuIo">Видео о нас</a>
                         </div>
                     </m.div>
                     <m.div variants={OpenRight} className="rounded-l-[60px] pt-[2.6rem] xl:block hidden border-[#9E835F] border-r-[0px] border-b-[3px] 3xl:h-auto h-[420px] border-l-[4px] 3xl:pb-0 pb-7 3xl:pl-10 pl-7">

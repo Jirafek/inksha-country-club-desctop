@@ -105,7 +105,7 @@ const Bron = () => {
                     className="bg-[#221C1C] xl:ml-0 ml-[10px] xl:mb-0 mb-5 border z-10 xl:self-end xl:mt-0 mt-[25px] border-[#AB8E67] rounded-[15px] pl-8 py-5 sm:w-[600px] w-[375px] flex flex-col 2xl:gap-4 gap-2 mr-6">
                     {
                         bronData.map((el) => (
-                            <a key={uuid4()} href={el.link} target="_blank" className="flex 2xl:gap-4 gap-2 items-center">
+                            <a key={uuid4()} href={el.link} className="flex 2xl:gap-4 gap-2 items-center">
                                 {/*<picture>*/}
                                 {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
                                 {/*    <img className="2xl:w-auto w-[45px]" src={el.imgWebp} alt={el.imgAltText} />*/}
