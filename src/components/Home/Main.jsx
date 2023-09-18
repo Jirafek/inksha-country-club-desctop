@@ -93,13 +93,28 @@ const Main = () => {
         document.body.appendChild(script);
     }, []);
     return (
-        <section style={{ backgroundImage: 'url(/image/bg1_right.webp)', backgroundPosition: 'right', backgroundRepeat: 'no-repeat' }} className="h-screen relative w-full overflow-hidden">
+        <section style={{ backgroundImage: 'url(/image/bg1_right.webp)', backgroundPosition: 'right', backgroundRepeat: 'no-repeat' }} className="h-[95vh] relative w-full">
             <Header />
             <div className="absolute left-0 top-0 flex items-center">
-                <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="" />
+                {/*<picture>*/}
+                {/*    <source srcSet="/image/main_arrow_big.avif 1x" type="image/avif" />*/}
+                {/*    <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
+                {/*</picture>*/}
+                <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />
+
                 <div className="w-screen h-screen bg-black opacity-70 duration-300 absolute top-0 left-0 lg:hidden block"></div>
-                <img className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="" />
-                <img className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="" />
+
+                {/*<picture>*/}
+                {/*    <source srcSet="/image/main_arrow_md.avif 1x" type="image/avif" />*/}
+                {/*    <img className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="Икша Кантри Клаб" />*/}
+                {/*</picture>*/}
+                <img className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="Икша Кантри Клаб" />
+
+                {/*<picture>*/}
+                {/*    <source srcSet="/image/main_arrow_sm.avif 1x" type="image/avif" />*/}
+                {/*    <img className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="Икша Кантри Клаб" />*/}
+                {/*</picture>*/}
+                <img className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="Икша Кантри Клаб" />
             </div>
             <m.div
                 initial={{ opacity: 0 }}

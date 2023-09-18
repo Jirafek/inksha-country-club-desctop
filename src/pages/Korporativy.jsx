@@ -102,12 +102,30 @@ const korpData = [
 ];
 
 const images = [
-    '/image/korp1.webp',
-    '/image/korp2.webp',
-    '/image/korp3.webp',
-    '/image/korp4.webp',
-    '/image/korp5.webp',
-    '/image/korp6.webp',
+    {
+        imgAvif: '/image/korp1.avif',
+        imgWebp: '/image/korp1.webp',
+    },
+    {
+        imgAvif: '/image/korp2.avif',
+        imgWebp: '/image/korp2.webp',
+    },
+    {
+        imgAvif: '/image/korp3.avif',
+        imgWebp: '/image/korp3.webp',
+    },
+    {
+        imgAvif: '/image/korp4.avif',
+        imgWebp: '/image/korp4.webp',
+    },
+    {
+        imgAvif: '/image/korp5.avif',
+        imgWebp: '/image/korp5.webp',
+    },
+    {
+        imgAvif: '/image/korp6.avif',
+        imgWebp: '/image/korp6.webp',
+    }
 ];
 
 const Korporativy = () => {
@@ -226,9 +244,18 @@ const Korporativy = () => {
                         className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-70 z-40 flex items-center justify-center"
                         onClick={handleBackdropClick}
                     >
+                        {/*<picture>*/}
+                        {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
+                        {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
+                        {/*    <img*/}
+                        {/*        src="/image/doca.png"*/}
+                        {/*        alt="Икша Кантри Клаб"*/}
+                        {/*        className="max-h-[90vh] rounded-3xl"*/}
+                        {/*    />*/}
+                        {/*</picture>*/}
                         <img
                             src="/image/doca.png"
-                            alt="Картинка"
+                            alt="Икша Кантри Клаб"
                             className="max-h-[90vh] rounded-3xl"
                         />
                     </div>
@@ -277,17 +304,31 @@ const Korporativy = () => {
                             <div className="flex flex-col items-center gap-8 xl:pb-0 pb-10">
                                 <div className="flex justify-between w-full gap-1">
                                     <button type="button" onClick={handleImageClick}>
-                                        <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="" />
+                                        {/*<picture>*/}
+                                        {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
+                                        {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
+                                        {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="Икша Кантри Клаб" />*/}
+                                        {/*</picture>*/}
+                                        <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="Икша Кантри Клаб" />
                                     </button>
                                     <button type="button" onClick={() => handleDownload('/pdf/keyt.pdf')}>
-                                        <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/menu_list.jpg" alt="" />
+                                        {/*<picture>*/}
+                                        {/*    <source srcSet="/image/menu_list.avif 1x" type="image/avif" />*/}
+                                        {/*    <source srcSet="/image/menu_list.webp 1x" type="image/webp" />*/}
+                                        {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/menu_list.jpg" alt="Меню в Икша Кантри Клаб" />*/}
+                                        {/*</picture>*/}
+                                        <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/menu_list.jpg" alt="Меню в Икша Кантри Клаб" />
                                     </button>
                                 </div>
                                 <Slider className="3xl:w-[700px] 3xl:h-[460px] sm:w-[500px] sm:h-[325px] w-[360px] h-[240px] rounded-[15px] p-1 border-b-0 border-[2px] border-[#AB8E67]" {...settings}>
                                     {
-                                        images.map((el, i) => (
+                                        images.map(({ imgAvif, imgWebp }, i) => (
                                             <div key={uuid4()}>
-                                                <img className="rounded-[15px]" src={el} alt="" />
+                                                {/*<picture>*/}
+                                                {/*    <source srcSet={`${imgAvif} 1x`} type="image/avif" />*/}
+                                                {/*    <img className="rounded-[15px]" src={imgWebp} alt="Икша Кантри Клаб" />*/}
+                                                {/*</picture>*/}
+                                                <img className="rounded-[15px]" src={imgWebp} alt="Икша Кантри Клаб" />
                                             </div>
                                         ))
                                     }

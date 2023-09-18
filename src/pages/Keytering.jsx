@@ -10,13 +10,34 @@ import 'slick-carousel/slick/slick-theme.css';
 import { CustomNextArrow, CustomPrevArrow } from '../components/CustomArrows';
 
 const imageData = [
-    "/image/keyt1.webp",
-    "/image/keyt2.webp",
-    "/image/keyt3.webp",
-    "/image/keyt4.webp",
-    "/image/keyt5.webp",
-    "/image/keyt6.webp",
-    "/image/keyt7.webp",
+    {
+        imgAvif: "/image/keyt1.avif",
+        imgWebp: "/image/keyt1.webp"
+    },
+    {
+        imgAvif: "/image/keyt2.avif",
+        imgWebp: "/image/keyt2.webp"
+    },
+    {
+        imgAvif: "/image/keyt3.avif",
+        imgWebp: "/image/keyt3.webp"
+    },
+    {
+        imgAvif: "/image/keyt4.avif",
+        imgWebp: "/image/keyt4.webp"
+    },
+    {
+        imgAvif: "/image/keyt5.avif",
+        imgWebp: "/image/keyt5.webp"
+    },
+    {
+        imgAvif: "/image/keyt6.avif",
+        imgWebp: "/image/keyt6.webp"
+    },
+    {
+        imgAvif: "/image/keyt7.avif",
+        imgWebp: "/image/keyt7.webp"
+    }
 ];
 
 const Keytering = () => {
@@ -57,9 +78,13 @@ const Keytering = () => {
                     </a>
                 </div>
                 <Slider {...settings}>
-                    {imageData.map((image, i) => (
+                    {imageData.map(({ imgAvif, imgWebp }, i) => (
                         <div className="lg:w-[700px_!important] sm:w-[590px_!important] w-[380px_!important]" key={uuid4()}>
-                            <img className="image h-full" src={image} alt="" />
+                            {/*<picture>*/}
+                            {/*    <source srcSet={`${imgAvif} 1x`} type="image/avif" />*/}
+                            {/*    <img className="image h-full" src={imgWebp} alt="Икша Кантри Клаб" />*/}
+                            {/*</picture>*/}
+                            <img className="image h-full" src={imgWebp} alt="Икша Кантри Клаб" />
                         </div>
                     ))}
                 </Slider>

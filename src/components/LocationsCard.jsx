@@ -26,7 +26,11 @@ const LocationsCard = ({ arrayData }) => {
                 arrayData.map((el, i) => (
                     <Link key={uuid4()} to={el.link}>
                         <m.div variants={el.variant} className="3xl:w-[830px] md:w-[620px] w-[380px] relative group cursor-pointer">
-                            <img className="absolute 3xl:h-auto md:h-[260px] h-[170px] left-0 bottom-0" src={el.img} alt="" />
+                            {/*<picture>*/}
+                            {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
+                            {/*    <img className="absolute 3xl:h-auto md:h-[260px] h-[170px] left-0 bottom-0" src={el.imgWebp} alt={el.imgAltText} />*/}
+                            {/*</picture>*/}
+                            <img className="absolute 3xl:h-auto md:h-[260px] h-[170px] left-0 bottom-0" src={el.imgWebp} alt={el.imgAltText} />
                             <div className="3xl:h-[300px] md:h-[235px] h-[155px] w-full bg-[#221C1C] flex flex-col justify-between border border-[#AB8E67] rounded-[30px] 3xl:pl-[360px] md:pl-[270px] pl-[165px] md:py-6 py-5">
                                 <h4 className="text-[#AB8E67] 3xl:text-[38px] md:text-[32px] text-[1.25rem] font-bold">
                                     {el.title}

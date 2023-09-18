@@ -11,62 +11,86 @@ import { CustomNextArrow, CustomPrevArrow } from '../CustomArrows';
 
 const eventsData = [
     {
-        img: '/image/events1.webp',
+        imgAvif: '/image/events1.avif',
+        imgWebp: '/image/events1.webp',
+        imgAltText: 'Игры на свежем воздухе',
         title: 'СПОРТИВНЫЕ ИГРЫ',
-        text: 'В здорово теле - здоровый дух, а в здоровой атмосфере - здоровый спор, свежий воздух, русская баня, шашлык или барбекю - идеальный выбор для любителей активного отдыха',
+        text: 'В здоровом теле - здоровый дух, а в здоровой атмосфере - здоровый спор, свежий воздух, русская баня, шашлык или барбекю - идеальный выбор для любителей активного отдыха',
     },
     {
-        img: '/image/events2.webp',
+        imgAvif: '/image/events2.avif',
+        imgWebp: '/image/events2.webp',
+        imgAltText: 'События на природе',
         title: 'БАРБЕКЮ',
         text: 'Барбекю как в кино? Именно так это и выглядит у нас, все необходимое собрано в одном месте в идеальных пропорциях и приправлено отличным сервисом',
     },
     {
-        img: '/image/events3.webp',
+        imgAvif: '/image/events3.avif',
+        imgWebp: '/image/events3.webp',
+        imgAltText: 'Праздник на природе',
         title: 'ПИКНИК',
         text: 'Еда на природе всегда вкуснее, а в компании друзей и семьи - еще вкуснее, устройте пикник вашей мечты у нас, незабываемые впечатления вам гарантированы',
     },
     {
-        img: '/image/events4.webp',
+        imgAvif: '/image/events4.avif',
+        imgWebp: '/image/events4.webp',
+        imgAltText: 'Шашлык на природе',
         title: 'ШАШЛЫКИ',
         text: 'Повеселиться и вкусно поесть на свежем воздухе - идеальное сочетание, зовите родных, друзей или знакомых и приезжайте к нам на шашлыки',
     },
     {
-        img: '/image/events5.webp',
+        imgAvif: '/image/events5.avif',
+        imgWebp: '/image/events5.webp',
+        imgAltText: 'День рождение на природе',
         title: 'ДЕНЬ РОЖДЕНИЯ',
         text: 'Самый главный праздник стоит того, чтобы запомниться надолго, а значит, его нужно правильно отметить. Мы предлагаем все необходимое для этого специально для вас!',
     },
     {
-        img: '/image/events6.webp',
+        imgAvif: '/image/events6.avif',
+        imgWebp: '/image/events6.webp',
+        imgAltText: 'Баня на берегу Икшинского водохранилища',
         title: 'БАНЯ И СПА',
         text: 'Единение с природой, сочетание русских традиций и современного подхода к уходу за собой. Мы умеем сочетать несочетаемое и создавать незабываемое',
     },
     {
-        img: '/image/events7.webp',
+        imgAvif: '/image/events7.avif',
+        imgWebp: '/image/events7.webp',
+        imgAltText: 'Мероприятия на природе',
         title: 'КАРАОКЕ-ВЕЧЕРИНКА',
         text: 'В приятной душевной атмосфере и хорошей компании душа поет и просит музыки? В таком случае, танцуют все! И поют тоже, караоке к вашим услугам',
     },
     {
-        img: '/image/events8.webp',
+        imgAvif: '/image/events8.avif',
+        imgWebp: '/image/events8.webp',
+        imgAltText: 'Отметить событие',
         title: 'ДЕВИЧНИК',
         text: 'Женский коллектив хочет посплетничать и посекретничать без лишних мальчиков? Или наоборот с ними? Приезжайте и отдыхайте, мы никому не расскажем',
     },
     {
-        img: '/image/events9.webp',
+        imgAvif: '/image/events9.avif',
+        imgWebp: '/image/events9.webp',
+        imgAltText: 'Отметить событие',
         title: 'МАЛЬЧИШНИК',
         text: 'Мужская компания ищет местечко для хорошего мужского отдыха? Все правильно, именно для этого мы вас и приглашаем',
     },
     {
-        img: '/image/events10.webp',
+        imgAvif: '/image/events10.avif',
+        imgWebp: '/image/events10.webp',
+        imgAltText: 'Отметить событие',
         title: 'СВАДЬБА',
         text: 'Свадьба - одно из самых важных событий в жизни человека, особенный день, когда все должно быть идеально, доверьте организацию нам, мы вас не разочаруем',
     },
     {
-        img: '/image/events11.webp',
+        imgAvif: '/image/events11.avif',
+        imgWebp: '/image/events11.webp',
+        imgAltText: 'Отметить событие',
         title: 'ПОСЛЕСВАДЕБНАЯ ВЕЧЕРИНКА',
         text: 'Ощущение начала вашей семейной истории тоже должно быть идеальным, и мы об этом знаем, как никто. Мы поможем организовать продолжение вашей свадебной церемонии',
     },
     {
-        img: '/image/events2.webp',
+        imgAvif: '/image/events2.avif',
+        imgWebp: '/image/events2.webp',
+        imgAltText: 'Корпоратив в подмосковье',
         title: 'КОРПОРАТИВЫ & ТИМБИЛДИНГ',
         text: 'Выбраться из офиса за город? Отличная мысль, но как это все организовать? Ответ прост - приезжайте к нам, у нас уже всё готово, прекрасная природа и полный комфорт ждут!'
     }
@@ -111,7 +135,11 @@ const Events = () => {
                 {
                     eventsData.map((el, i) => (
                         <div className="sm:w-[400px_!important] w-[380px_!important] flex flex-col items-center h-[700px_!important] border border-[#AB8E67] bg-[#221C1C] rounded-[30px] pb-4" key={uuid4()}>
-                            <img className="]" src={el.img} alt="" />
+                            {/*<picture>*/}
+                            {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
+                            {/*    <img className="]" src={el.imgWebp} alt={el.imgAltText} />*/}
+                            {/*</picture>*/}
+                            <img className="]" src={el.imgWebp} alt={el.imgAltText} />
                             <h3 className="text-[30px] text-[#AB8E67] font-bold text-center">
                                 {el.title}
                             </h3>

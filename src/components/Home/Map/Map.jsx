@@ -12,7 +12,11 @@ const Map = () => {
     return <div className='map' id='map'>
         <div className="map-wrapper">
             <figure className="map-figure">
-                <img src="/image/map.png" alt="" className="map_image" />
+                {/*<picture>*/}
+                {/*    <source srcSet="/image/map.avif 1x" type="image/avif" />*/}
+                {/*    <img src="/image/map.webp" alt="Икша Кантри Клаб" className="map_image" />*/}
+                {/*</picture>*/}
+                <img src="/image/map.webp" alt="Икша Кантри Клаб" className="map_image" />
             </figure>
             <div className="map-controls">
                 <svg className="map-controls-list" viewBox="0 0 4281.77 1911.5044">

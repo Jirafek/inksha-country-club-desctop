@@ -102,7 +102,12 @@ const Eat = () => {
                         Также мы готовы организовать <br /> для вас <Link className="underline" to="/keytering">кейтеринг</Link>!
                     </h4>
                 </m.div>
-                <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="" />
+
+                {/*<picture>*/}
+                {/*    <source srcSet="/image/eat_big.avif 1x" type="image/avif" />*/}
+                {/*    <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="Приготовление блюд на природе" />*/}
+                {/*</picture>*/}
+                <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="Приготовление блюд на природе" />
             </div>
         </section>
     );

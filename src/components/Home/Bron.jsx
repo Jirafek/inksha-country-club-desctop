@@ -7,27 +7,37 @@ import { m } from "framer-motion";
 
 const bronData = [
     {
-        img: '/image/wa_bl.webp',
+        imgAvif: '/image/wa_bl.avif',
+        imgWebp: '/image/wa_bl.webp',
+        imgAltText: 'Позвонить',
         text: '+7 985 909 12 02',
         link: 'https://wa.me/79859091202',
     },
     {
-        img: '/image/tg_bl.webp',
+        imgAvif: '/image/tg_bl.avif',
+        imgWebp: '/image/tg_bl.webp',
+        imgAltText: 'Телеграм',
         text: '@ikshacountryclub',
         link: 'https://t.me/ikshacountryclub',
     },
     {
-        img: '/image/inst_bl.webp',
+        imgAvif: '/image/inst_bl.avif',
+        imgWebp: '/image/inst_bl.webp',
+        imgAltText: 'Фото',
         text: '@ikshacountryclub',
         link: 'https://instagram.com/ikshacountryclub',
     },
     {
-        img: '/image/vk_bl.webp',
+        imgAvif: '/image/vk_bl.avif',
+        imgWebp: '/image/vk_bl.webp',
+        imgAltText: 'ВК',
         text: '@ikshacountryclub',
         link: 'https://vk.com/ikshacountryclub',
     },
     {
-        img: '/image/mail_bl.webp',
+        imgAvif: '/image/mail_bl.avif',
+        imgWebp: '/image/mail_bl.webp',
+        imgAltText: 'Написать письмо',
         text: 'contact@ikshacountryclub.com',
         link: 'mailto:contact@ikshacountryclub.com',
     },
@@ -94,9 +104,13 @@ const Bron = () => {
                     }}
                     className="bg-[#221C1C] xl:ml-0 ml-[10px] xl:mb-0 mb-5 border z-10 xl:self-end xl:mt-0 mt-[25px] border-[#AB8E67] rounded-[15px] pl-8 py-5 sm:w-[600px] w-[375px] flex flex-col 2xl:gap-4 gap-2 mr-6">
                     {
-                        bronData.map((el, i) => (
+                        bronData.map((el) => (
                             <a key={uuid4()} href={el.link} target="_blank" className="flex 2xl:gap-4 gap-2 items-center">
-                                <img className="2xl:w-auto w-[45px]" src={el.img} alt="" />
+                                {/*<picture>*/}
+                                {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
+                                {/*    <img className="2xl:w-auto w-[45px]" src={el.imgWebp} alt={el.imgAltText} />*/}
+                                {/*</picture>*/}
+                                <img className="2xl:w-auto w-[45px]" src={el.imgWebp} alt={el.imgAltText} />
                                 <p className="2xltext-[28px] text-[20px] text-[#AB8E67] font-medium">
                                     {el.text}
                                 </p>
@@ -104,7 +118,12 @@ const Bron = () => {
                         ))
                     }
                 </m.div>
-                <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="" />
+
+                {/*<picture>*/}
+                {/*    <source srcSet="/image/bron_bg.avif 1x" type="image/avif" />*/}
+                {/*    <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="Забронировать" />*/}
+                {/*</picture>*/}
+                <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="Забронировать" />
             </m.div>
         </section>
     );

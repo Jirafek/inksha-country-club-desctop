@@ -34,17 +34,20 @@ const routes = [
     {
         title: '',
         link: '',
-        icon: '/image/vk.webp'
+        icon: '/image/vk.webp',
+        iconAvif: '/image/vk.avif',
     },
     {
         title: '',
         link: '',
-        icon: '/image/inst.webp'
+        icon: '/image/inst.webp',
+        iconAvif: '/image/inst.avif',
     },
     {
         title: '',
         link: '',
-        icon: '/image/watsApp.webp'
+        icon: '/image/watsApp.webp',
+        iconAvif: '/image/watsApp.avif',
     },
 ];
 
