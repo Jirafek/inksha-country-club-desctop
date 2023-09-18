@@ -287,7 +287,7 @@ const LocationId = () => {
                                 {currentLocation.time}
                             </h5>
                         </div>
-                        <a className="xl:text-[26px] text-[18px] font-extrabold text-white py-3 px-8 bg-[#75624A] rounded-[15px]" href="https://bronirui-online.ru/iksha-country-club">
+                        <a className="xl:text-[26px] text-[18px] font-extrabold text-white py-3 px-8 bg-[#75624A] rounded-[15px]" href="https://bronirui-online.ru/iksha-country-club" rel="noreferrer">
                             Забронировать
                         </a>
                     </div>

@@ -128,7 +128,7 @@ const Events = () => {
         <section id="events" className="relative min-h-screen w-full bg-[#201E1F]">
             <Title text={'Мероприятия'} />
             <Logo />
-            <a href="https://bronirui-online.ru/iksha-country-club" style={{ background: 'linear-gradient(90deg, #EDE6DD 0%, rgba(171, 142, 103, 0.87) 100%), #75624A' }} className="text-[rgba(34,_28,_28,_0.70)] z-10 absolute left-1/2 -translate-x-1/2 top-[7.5rem] lg:py-5 py-3 px-10 lg:text-[30px] text-[23px] font-semibold border-[3px] border-[#604E3A] rounded-[10px]">
+            <a href="https://bronirui-online.ru/iksha-country-club" style={{ background: 'linear-gradient(90deg, #EDE6DD 0%, rgba(171, 142, 103, 0.87) 100%), #75624A' }} className="text-[rgba(34,_28,_28,_0.70)] z-10 absolute left-1/2 -translate-x-1/2 top-[7.5rem] lg:py-5 py-3 px-10 lg:text-[30px] text-[23px] font-semibold border-[3px] border-[#604E3A] rounded-[10px]" rel="noreferrer">
                 ОРГАНИЗОВАТЬ СОБЫТИЕ
             </a>
             <Slider {...sliderSettings} className="flex xl:justify-between justify-center sm:pl-14 pt-[250px]">
@@ -147,7 +147,7 @@ const Events = () => {
                                 {el.text}
                             </p>
                             <div className="flex justify-center">
-                                <a href="https://bronirui-online.ru/iksha-country-club/uslugi" className="text-[rgba(34,_28,_28,_0.70)] text-[25px] font-semibold py-4 px-8 border border-[#604E3A] bg-[#75624A] rounded-lg">
+                                <a href="https://bronirui-online.ru/iksha-country-club/uslugi" className="text-[rgba(34,_28,_28,_0.70)] text-[25px] font-semibold py-4 px-8 border border-[#604E3A] bg-[#75624A] rounded-lg" rel="noreferrer">
                                     УЗНАТЬ БОЛЬШЕ
                                 </a>
                             </div>
