@@ -32,7 +32,11 @@ const Header = () => {
                                                 el.title ?
                                                     el.title
                                                     :
-                                                    <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
+                                                    // <picture>
+                                                    //     <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />
+                                                    //     <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
+                                                    // </picture>
+                                                <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
                                             }
                                         </Link>
                                     </li>
@@ -45,7 +49,11 @@ const Header = () => {
                                                 el.title ?
                                                     el.title
                                                     :
-                                                    <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="" />
+                                                    // <picture>
+                                                    //     <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />
+                                                    //     <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
+                                                    // </picture>
+                                                <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
                                             }
                                         </a>
                                     </li>
@@ -86,7 +94,11 @@ const Header = () => {
                                         el.title ?
                                             el.title
                                             :
-                                            <img className="w-[45px]" src={el.icon} alt="" />
+                                            // <picture>
+                                            //     <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />
+                                            //     <img className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />
+                                            // </picture>
+                                        <img className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />
                                     }
                                 </a>
                             )
@@ -98,7 +110,11 @@ const Header = () => {
                             if (!el.title)
                                 return (
                                     <Link key={uuidv4()} className="text-[22px] text-white monterey font-semibold" to={el.link}>
-                                        <img className="w-[45px]" src={el.icon} alt="" />
+                                        {/*<picture>*/}
+                                        {/*    <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />*/}
+                                        {/*    <img className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />*/}
+                                        {/*</picture>*/}
+                                        <img className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />
                                     </Link>
                                 )
                         })

@@ -29,7 +29,12 @@ const HappyCard = ({ arrayData }) => {
                         }}
                         key={uuid4()}
                         className="rounded-[30px] border-[2px] border-[#AB8E67] 3xl:h-[670px_!important] h-[540px_!important] 3xl:w-[390px_!important] w-[270px_!important] flex flex-col">
-                        <img className="3xl:mb-5 mb-3" src={el.img} alt="" />
+
+                        {/*<picture>*/}
+                        {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
+                        {/*    <img className="3xl:mb-5 mb-3" src={el.imgWebp} alt={el.imgAltText} />*/}
+                        {/*</picture>*/}
+                        <img className="3xl:mb-5 mb-3" src={el.imgWebp} alt={el.imgAltText} />
                         <div className="3xl:pl-11 pl-3 2xl:pr-5 pr-2">
                             <h3 className="text-[#AB8E67] 3xl:text-[28px] text-[23px] font-semibold 3xl:mb-4 mb-2">
                                 {el.title}

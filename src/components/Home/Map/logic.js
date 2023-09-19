@@ -59,7 +59,7 @@ export const
 
             // console.log(e.pageX, e.pageY - document.querySelector('.map').getBoundingClientRect().top)
 
-            preview.style.background = `url(/image/map.png) no-repeat`;
+            preview.style.background = `url(/image/map.webp) no-repeat`;
             preview.style.backgroundPosition = `calc(${posX / 1.02}% - ${posX < 50 ? -200 : 200}px) calc(${posY / 1.02}% - ${posY < 50 ? -150 : 150}px)`;
             preview.style.display = 'inline-block';
         })

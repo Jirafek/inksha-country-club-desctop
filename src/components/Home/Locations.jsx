@@ -60,25 +60,33 @@ const OpenLeft = {
 
 const locationsData = [
     {
-        img: '/image/locations-mini-1.webp',
+        imgAvif: '/image/locations-mini-1.avif',
+        imgWebp: '/image/locations-mini-1.webp',
+        imgAltText: 'Домик на природе',
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
         variant: OpenBottom,
         link: '/location/1'
     },
     {
-        img: '/image/locations-mini-2.webp',
+        imgAvif: '/image/locations-mini-2.avif',
+        imgWebp: '/image/locations-mini-2.webp',
+        imgAltText: 'Коттедж в подмосковье',
         title: 'КОТТЕДЖ',
         variant: OpenBottom,
         link: '/location/2'
     },
     {
-        img: '/image/locations-mini-3.webp',
+        imgAvif: '/image/locations-mini-3.avif',
+        imgWebp: '/image/locations-mini-3.webp',
+        imgAltText: 'Домики на берегу Икшинского водохранилища',
         title: 'ШАЛЕ',
         variant: OpenBottom,
         link: '/location/3'
     },
     {
-        img: '/image/locations-mini-4.webp',
+        imgAvif: '/image/locations-mini-4.avif',
+        imgWebp: '/image/locations-mini-4.webp',
+        imgAltText: 'Снять домик в подмосковье',
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
         variant: OpenBottom,
         link: '/location/4'

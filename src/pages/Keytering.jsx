@@ -8,15 +8,37 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { CustomNextArrow, CustomPrevArrow } from '../components/CustomArrows';
+import {Helmet} from "react-helmet";
 
 const imageData = [
-    "/image/keyt1.webp",
-    "/image/keyt2.webp",
-    "/image/keyt3.webp",
-    "/image/keyt4.webp",
-    "/image/keyt5.webp",
-    "/image/keyt6.webp",
-    "/image/keyt7.webp",
+    {
+        imgAvif: "/image/keyt1.avif",
+        imgWebp: "/image/keyt1.webp"
+    },
+    {
+        imgAvif: "/image/keyt2.avif",
+        imgWebp: "/image/keyt2.webp"
+    },
+    {
+        imgAvif: "/image/keyt3.avif",
+        imgWebp: "/image/keyt3.webp"
+    },
+    {
+        imgAvif: "/image/keyt4.avif",
+        imgWebp: "/image/keyt4.webp"
+    },
+    {
+        imgAvif: "/image/keyt5.avif",
+        imgWebp: "/image/keyt5.webp"
+    },
+    {
+        imgAvif: "/image/keyt6.avif",
+        imgWebp: "/image/keyt6.webp"
+    },
+    {
+        imgAvif: "/image/keyt7.avif",
+        imgWebp: "/image/keyt7.webp"
+    }
 ];
 
 const Keytering = () => {
@@ -41,30 +63,54 @@ const Keytering = () => {
     };
 
     return (
-        <section className="min-h-screen w-full relative bg-[#201E1F]">
-            <button onClick={goBack} className="w-[40px] sm:block hidden absolute top-3 left-7 rotate-180 z-10 hover:-translate-x-2 duration-300">
-                <LocationArrow />
-            </button>
-            <div className="pt-3">
-                <div className="flex justify-center">
-                    <h2 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
-                        КЕЙТЕРИНГ
-                    </h2>
+        <>
+            <Helmet>
+                <title>Отдых в Подмосковье с Икша Кантри Клаб - шашлыки и блюда на костре и мангале у воды. </title>
+                <meta
+                    name="description"
+                    content="Отдых в Подмосковье с Икша Кантри Клаб - Очень вкусные Блюда на мангале, настоящая рыбацкая уха, Рыбалка, Баня и СПА, водные виды спорта. Приезжайте отдохнуть на берегу Икшинского водохранилища
+            и убедитесь сами.  Уютные домики, Шашлыки, красивые закаты. Выбирайте свой незабываемый отдых недалеко от Москвы"
+                />
+                <meta
+                    name="title"
+                    content="Отдых в Подмосковье с Икша Кантри Клаб - шашлыки и блюда на костре и мангале на берегу Икшинского водохранилища."
+                />
+                <meta
+                    name="keywords"
+                    content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик,
+                мангал, уха, плов, недалеко, москва, рядом, московская область, беседки"
+                />
+            </Helmet>
+            <section className="min-h-screen w-full relative bg-[#201E1F]">
+                <button onClick={goBack} className="w-[40px] sm:block hidden absolute top-3 left-7 rotate-180 z-10 hover:-translate-x-2 duration-300">
+                    <LocationArrow />
+                </button>
+                <div className="pt-3">
+                    <div className="flex justify-center">
+                        <h2 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
+                            КЕЙТЕРИНГ
+                        </h2>
+                    </div>
+                    <div className="flex justify-center mb-2">
+                        <a href="/pdf/menu.pdf" target="_blank" className="py-3 px-8 flex justify-center items-center rounded-[10px] bg-[#AB8E67] text-white text-[20px] font-medium">
+                            Смотреть меню
+                        </a>
+                    </div>
+                    <Slider {...settings}>
+                        {imageData.map(({ imgAvif, imgWebp }, i) => (
+                            <div className="lg:w-[700px_!important] sm:w-[590px_!important] w-[380px_!important]" key={uuid4()}>
+                                {/*<picture>*/}
+                                {/*    <source srcSet={`${imgAvif} 1x`} type="image/avif" />*/}
+                                {/*    <img className="image h-full" src={imgWebp} alt="Икша Кантри Клаб" />*/}
+                                {/*</picture>*/}
+                                <img className="image h-full" src={imgWebp} alt="Икша Кантри Клаб" />
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
-                <div className="flex justify-center mb-2">
-                    <a href="/pdf/menu.pdf" target="_blank" className="py-3 px-8 flex justify-center items-center rounded-[10px] bg-[#AB8E67] text-white text-[20px] font-medium">
-                        Смотреть меню
-                    </a>
-                </div>
-                <Slider {...settings}>
-                    {imageData.map((image, i) => (
-                        <div className="lg:w-[700px_!important] sm:w-[590px_!important] w-[380px_!important]" key={uuid4()}>
-                            <img className="image h-full" src={image} alt="" />
-                        </div>
-                    ))}
-                </Slider>
-            </div>
-        </section>
+            </section>
+        </>
     );
 };
 

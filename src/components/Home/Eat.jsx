@@ -93,7 +93,7 @@ const Eat = () => {
                                     </div>
                                 ))
                             }
-                            <a target="_blanc" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="bg-[#AB8E67] z-10 w-2/3 py-3 px-10 mt-4 border-[2px] lg:text-[28px] sm:text-[22px] text-[15px] text-white font-medium rounded-[40px] border-[#4D382B] shadow-[4px_4px_10px_0px_rgba(0,_0,_0,_0.30)]">
+                            <a rel="noreferrer" href="https://bronirui-online.ru/iksha-country-club/uslugi" className="bg-[#AB8E67] z-10 w-2/3 py-3 px-10 mt-4 border-[2px] lg:text-[28px] sm:text-[22px] text-[15px] text-white font-medium rounded-[40px] border-[#4D382B] shadow-[4px_4px_10px_0px_rgba(0,_0,_0,_0.30)]">
                                 Заказать питание
                             </a>
                         </div>
@@ -102,7 +102,12 @@ const Eat = () => {
                         Также мы готовы организовать <br /> для вас <Link className="underline" to="/keytering">кейтеринг</Link>!
                     </h4>
                 </m.div>
-                <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="" />
+
+                {/*<picture>*/}
+                {/*    <source srcSet="/image/eat_big.avif 1x" type="image/avif" />*/}
+                {/*    <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="Приготовление блюд на природе" />*/}
+                {/*</picture>*/}
+                <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="Приготовление блюд на природе" />
             </div>
         </section>
     );
