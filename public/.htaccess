@@ -1,7 +1,14 @@
 Options -MultiViews
 RewriteEngine On
+# http to https
 RewriteCond %{ENV:HTTPS} !on
 RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# www to not www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} //
+# remove multislash //////////
+RewriteRule .* /$0 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
 Header always set Content-Security-Policy "upgrade-insecure-requests;"
