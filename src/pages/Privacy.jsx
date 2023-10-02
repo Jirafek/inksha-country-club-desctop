@@ -27,7 +27,7 @@ const Privacy = ({ title, type }) => {
                 />
             </Helmet>
             <section className="relative bg-[#201E1F]">
-                <Title text={title} />
+                <Title text={title} isMain />
                 <div className="sm:pt-[150px] pt-[90px] flex justify-center sm:px-[130px] px-[15px]">
                     <div className="w-full p-[45px] border-[4px] border-[#AB8E67] rounded-[10px] text-center xl:text-[32px] sm:text-[26px] text-[18px] font-medium text-white mb-[40px]">
                         {
