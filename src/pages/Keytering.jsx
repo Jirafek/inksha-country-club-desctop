@@ -13,31 +13,38 @@ import {Helmet} from "react-helmet";
 const imageData = [
     {
         imgAvif: "/image/keyt1.avif",
-        imgWebp: "/image/keyt1.webp"
+        imgWebp: "/image/keyt1.webp",
+        imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб - стейк красной рыбы на гриле'
     },
     {
         imgAvif: "/image/keyt2.avif",
-        imgWebp: "/image/keyt2.webp"
+        imgWebp: "/image/keyt2.webp",
+        imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб - речная рыба на гриле'
     },
     {
         imgAvif: "/image/keyt3.avif",
-        imgWebp: "/image/keyt3.webp"
+        imgWebp: "/image/keyt3.webp",
+        imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб - мясная нарезка'
     },
     {
         imgAvif: "/image/keyt4.avif",
-        imgWebp: "/image/keyt4.webp"
+        imgWebp: "/image/keyt4.webp",
+        imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб - бургер, картошка фри с фиременным соусом'
     },
     {
         imgAvif: "/image/keyt5.avif",
-        imgWebp: "/image/keyt5.webp"
+        imgWebp: "/image/keyt5.webp",
+        imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб - пицца'
     },
     {
         imgAvif: "/image/keyt6.avif",
-        imgWebp: "/image/keyt6.webp"
+        imgWebp: "/image/keyt6.webp",
+        imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб'
     },
     {
         imgAvif: "/image/keyt7.avif",
-        imgWebp: "/image/keyt7.webp"
+        imgWebp: "/image/keyt7.webp",
+        imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб - свежевыжатые соки'
     }
 ];
 
@@ -88,9 +95,9 @@ const Keytering = () => {
                 </button>
                 <div className="pt-3">
                     <div className="flex justify-center">
-                        <h2 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
+                        <h1 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
                             КЕЙТЕРИНГ
-                        </h2>
+                        </h1>
                     </div>
                     <div className="flex justify-center mb-2">
                         <a href="/pdf/menu.pdf" target="_blank" className="py-3 px-8 flex justify-center items-center rounded-[10px] bg-[#AB8E67] text-white text-[20px] font-medium">
@@ -98,13 +105,13 @@ const Keytering = () => {
                         </a>
                     </div>
                     <Slider {...settings}>
-                        {imageData.map(({ imgAvif, imgWebp }, i) => (
+                        {imageData.map(({ imgAvif, imgWebp, imgAltText }, i) => (
                             <div className="lg:w-[700px_!important] sm:w-[590px_!important] w-[380px_!important]" key={uuid4()}>
                                 {/*<picture>*/}
                                 {/*    <source srcSet={`${imgAvif} 1x`} type="image/avif" />*/}
                                 {/*    <img className="image h-full" src={imgWebp} alt="Икша Кантри Клаб" />*/}
                                 {/*</picture>*/}
-                                <img className="image h-full" src={imgWebp} alt="Икша Кантри Клаб" />
+                                <img className="image h-full" src={imgWebp} alt={imgAltText} />
                             </div>
                         ))}
                     </Slider>
