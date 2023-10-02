@@ -88,9 +88,9 @@ const Keytering = () => {
                 </button>
                 <div className="pt-3">
                     <div className="flex justify-center">
-                        <h2 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
+                        <h1 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
                             КЕЙТЕРИНГ
-                        </h2>
+                        </h1>
                     </div>
                     <div className="flex justify-center mb-2">
                         <a href="/pdf/menu.pdf" target="_blank" className="py-3 px-8 flex justify-center items-center rounded-[10px] bg-[#AB8E67] text-white text-[20px] font-medium">

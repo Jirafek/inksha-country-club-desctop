@@ -125,7 +125,7 @@ const FAQ = () => {
                     viewport={{ once: true }}
                     variants={heading}
                     className="lg:pl-[90px] pl-[40px] lg:pt-[150px] pt-[90px] lg:pr-0 pr-5">
-                    <m.h2 variants={OpenLeft} className="text-white lg:text-[58px] text-[30px] font-semibold">Популярные вопросы и <span className="text-[#AB8E67]">ответы</span></m.h2>
+                    <m.h1 variants={OpenLeft} className="text-white lg:text-[58px] text-[30px] font-semibold">Популярные вопросы и <span className="text-[#AB8E67]">ответы</span></m.h1>
                     <m.div variants={OpenBottom} className="lg:pt-[80px] pt-[40px] pb-[30px] flex gap-4 flex-wrap">
                         {
                             questionData.map((el, i) => (

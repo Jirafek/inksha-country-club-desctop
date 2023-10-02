@@ -210,9 +210,9 @@ const LocationId = () => {
                 <Logo />
                 <div className="lg:block pt-[160px] flex md:flex-row flex-col justify-between lg:pr-0 sm:pr-5">
                     <div className="lg:pl-[190px] pl-[40px] z-10 relative">
-                        <h2 className="2xl:text-[68px] lg:text-[58px] md:text-[40px] text-[28px] text-white font-extrabold">
+                        <h1 className="2xl:text-[68px] lg:text-[58px] md:text-[40px] text-[28px] text-white font-extrabold">
                             {currentLocation.title}
-                        </h2>
+                        </h1>
                         <div className="flex-col 2xl:pl-[420px] gap-[40px] mb-[60px] md:flex hidden">
                             {
                                 currentLocation.texts.map((text, i) => {

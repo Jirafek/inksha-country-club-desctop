@@ -255,9 +255,9 @@ const Korporativy = () => {
                     variants={heading}
                     className="pt-3">
                     <m.div variants={OpenLeft} className="flex justify-center">
-                        <h2 className="xl:text-[68px] md:text-[42px] sm:text-[32px] text-[20px] gradient_title font-extrabold sm:mb-12 mb-7">
+                        <h1 className="xl:text-[68px] md:text-[42px] sm:text-[32px] text-[20px] gradient_title font-extrabold sm:mb-12 mb-7">
                             КОРПОРАТИВЫ & ТИМБИЛДИНГ
-                        </h2>
+                        </h1>
                     </m.div>
                     {isImageOpen && (
                         <div
