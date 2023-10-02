@@ -13,6 +13,7 @@ const LocationsData = [
         title: 'ЛЕСНАЯ РЕЗИДЕНЦИЯ',
         imgAvif: '/image/loc-1.avif',
         imgWebp: '/image/loc-1.webp',
+        imgAltText: 'Изображение локации - лесная резиденция',
         video: <Video1 />,
         texts: [
             'Крытая зона BBQ с раковиной и столом',
@@ -41,6 +42,7 @@ const LocationsData = [
         title: 'КОТТЕДЖ',
         imgAvif: '/image/loc-3.avif',
         imgWebp: '/image/loc-3.webp',
+        imgAltText: 'Изображение локации - коттедж',
         video: '/video/kottegge.mp4',
         texts: [
             'Двухэтажный коттедж, отапливаемая площадь 150м2, мебелью и оборудованием, wifi',
@@ -69,6 +71,7 @@ const LocationsData = [
         title: 'ШАЛЕ',
         imgAvif:'/image/loc-2.avif',
         imgWebp: '/image/loc-2.webp',
+        imgAltText: 'Изображение локации - шале',
         video: <Video2 />,
         texts: [
             'Остекленная веранда со столом на 15 гостей',
@@ -97,6 +100,7 @@ const LocationsData = [
         title: 'ОЛИМПИЙСКАЯ ДЕРЕВНЯ',
         imgAvif: '/image/loc-4.avit',
         imgWebp: '/image/loc-4.webp',
+        imgAltText: 'Изображение локации - олимпийская деревня',
         video: '/video/olimp.mp4',
         texts: [
             '2 спальни с двуспальной кроватью',
@@ -193,19 +197,19 @@ const LocationId = () => {
                 {currentLocation.video}
                 {/*<picture>*/}
                 {/*    <source srcSet={`${currentLocation.bigImgAvif} 1x`} type="image/avif" />*/}
-                {/*    <img className="absolute h-screen 2xl:hidden lg:block hidden" src={currentLocation.bigImgWebp} alt="Икша Кантри Клаб" />*/}
+                {/*    <img className="absolute h-screen 2xl:hidden lg:block hidden" src={currentLocation.bigImgWebp} alt={currentLocation.imgAltText} />*/}
                 {/*</picture>*/}
                 {/*<picture>*/}
                 {/*    <source srcSet="/image/logo_big.avif 1x" type="image/avif" />*/}
-                {/*    <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.webp" alt="Икша Кантри Клаб" />*/}
+                {/*    <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.webp" alt={currentLocation.imgAltText} />*/}
                 {/*</picture>*/}
                 <div className="w-screen h-screen bg-black opacity-80 duration-300 absolute top-0 left-0"></div>
 
                 {/*<picture>*/}
                 {/*    <source srcSet={`${currentLocation.imgAvif} 1x`} type="image/avif" />*/}
-                {/*    <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.imgWebp} alt="Икша Кантри Клаб" />*/}
+                {/*    <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.imgWebp} alt={currentLocation.imgAltText} />*/}
                 {/*</picture>*/}
-                <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.imgWebp} alt="Икша Кантри Клаб" />
+                <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.imgWebp} alt={currentLocation.imgAltText} />
                 <Title bg="#221C1C" text={'Локации'} isNeedBack={true} />
                 <Logo />
                 <div className="lg:block pt-[160px] flex md:flex-row flex-col justify-between lg:pr-0 sm:pr-5">
