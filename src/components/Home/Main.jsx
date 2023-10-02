@@ -93,7 +93,7 @@ const Main = () => {
         document.body.appendChild(script);
     }, []);
     return (
-        <section style={{ backgroundImage: 'url(/image/bg1_right.webp)', backgroundPosition: 'right', backgroundRepeat: 'no-repeat' }} className="h-[95vh] relative w-full">
+        <section style={{ backgroundImage: 'url(/image/bg1_right.webp)', backgroundPosition: 'right', backgroundRepeat: 'no-repeat' }} className="relative w-full pb-4">
             <Header />
             <div className="absolute left-0 top-0 flex items-center">
                 {/*<picture>*/}
