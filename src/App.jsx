@@ -17,6 +17,7 @@ const Korporativy = lazy(() => import('pages/Korporativy'));
 const FAQ = lazy(() => import('pages/FAQ'));
 const Privacy = lazy(() => import('pages/Privacy'));
 const Thanks = lazy(() => import('pages/Thanks'));
+const Helloween = lazy(() => import('pages/Helloween'));
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Route path='/korporativy' element={<Korporativy />} />
       <Route path='/faq' element={<FAQ />} />
       <Route path='/thanks' element={<Thanks />} />
+        <Route path='/halloween' element={<Helloween />} />
       {/* <Route path='/privacy' element={<Privacy title={'Политика данных'} />} /> */}
       <Route path='/rules' element={<Privacy title={'Правила проживания'} />} />
       <Route path='*' element={<NotFound />} />

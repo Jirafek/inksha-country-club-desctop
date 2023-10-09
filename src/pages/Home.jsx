@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Helmet} from "react-helmet";
+import {updateData, URLData} from '../utils/URLData';
 
 import Main from '../components/Home/Main';
 import About from '../components/Home/About';
@@ -14,6 +15,12 @@ import Footer from '../components/Footer';
 import Map from 'components/Home/Map/Map';
 
 const Home = () => {
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        updateData(URLData.utm_source ? URLData.utm_source : (urlParams.get('utm_source') || 'Сайт'),  URLData.utm_campaign ? URLData.utm_campaign : (urlParams.get('utm_campaign') || ''), URLData.utm_content ? URLData.utm_content : (urlParams.get('utm_content') || ''),);
+    }, [])
+
     return (
         <>
             <Helmet>
