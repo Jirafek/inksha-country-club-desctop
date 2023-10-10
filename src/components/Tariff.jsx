@@ -50,6 +50,7 @@ const Tariff = () => {
                setName("");
                setPhone("");
                setNavigation(true);
+               navigate("/thanks");
             }, 1000);
          } else {
             alert("Произошла ошибка при отправке данных");
