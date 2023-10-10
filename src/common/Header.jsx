@@ -81,7 +81,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                               return (
                                  <motion.li
                                     onClick={toggleMenu}
-                                    className="cursor-pointer text-[25px]"
+                                    className="cursor-pointer druk text-[25px]"
                                     variants={navVars}
                                     key={i}
                                  >
