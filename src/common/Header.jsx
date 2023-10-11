@@ -52,7 +52,7 @@ const navVars = {
 const links = [
    { title: "Программа", link: "Programa" },
    { title: "Тарифы", link: "Tariff" },
-   { title: "Связаться со мной", link: "tel:+7 985 909‑12‑02" },
+   { title: "Связаться со мной", link: "Form" },
 ];
 // eslint-disable-next-line react/prop-types
 const Header = ({ toggleMenu, isMenuOpen }) => {
