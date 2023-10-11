@@ -60,6 +60,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                   >
                      <div className="absolute right-5 top-5">
                         <img
+                           className="h-7 w-7 cursor-pointer object-cover"
                            onClick={handlePopupClose}
                            src={close}
                            alt="close"
@@ -73,7 +74,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                      </p>
                      <button
                         onClick={handlePopupClose}
-                        className={`mt-4 flex h-[40px] items-center justify-center rounded-[10px] border bg-[#7C6F61]  text-white`}
+                        className={`mt-4 flex h-[40px] w-full items-center justify-center rounded-[10px] border bg-[#7C6F61]  text-white`}
                      >
                         Закрыть
                      </button>
@@ -81,7 +82,12 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                ) : (
                   <div className="fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[50%]  -translate-x-1/2 -translate-y-1/2 transform  flex-col items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl">
                      <div className="absolute right-5 top-5">
-                        <img onClick={togglePopup} src={close} alt="close" />
+                        <img
+                           className="h-7 w-7 cursor-pointer object-cover"
+                           onClick={togglePopup}
+                           src={close}
+                           alt="close"
+                        />
                      </div>
                      <p className="text-[16px] font-bold text-[#6C6053]">
                         Заполните форму, чтобы мы связались с вами

@@ -101,7 +101,7 @@ const Bron = () => {
                   </p>
                   <div
                      onClick={togglePopup}
-                     className="text-[24px] font-extrabold underline sm:text-[28px] 2xl:text-[38px]"
+                     className="cursor-pointer text-[24px] font-extrabold underline sm:text-[28px] 2xl:text-[38px]"
                   >
                      Заполните форму
                   </div>
