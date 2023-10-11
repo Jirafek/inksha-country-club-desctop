@@ -1,132 +1,173 @@
-import React from "react";
-import Title from '../Title';
-import { v4 as uuid4 } from 'uuid';
+import React, { useState } from "react";
+import Title from "../Title";
+import { v4 as uuid4 } from "uuid";
 import { Link } from "react-router-dom";
-import Footer from '../Footer';
+import Footer from "../Footer";
 import { m } from "framer-motion";
-
+import MainPopup from "./../../common/MainPopup";
 const bronData = [
-    {
-        imgAvif: '/image/wa_bl.avif',
-        imgWebp: '/image/wa_bl.webp',
-        imgAltText: 'Позвонить',
-        text: '+7 985 909 12 02',
-        link: 'https://wa.me/79859091202',
-    },
-    {
-        imgAvif: '/image/tg_bl.avif',
-        imgWebp: '/image/tg_bl.webp',
-        imgAltText: 'Телеграм',
-        text: '@ikshacountryclub',
-        link: 'https://t.me/ikshacountryclub',
-    },
-    {
-        imgAvif: '/image/inst_bl.avif',
-        imgWebp: '/image/inst_bl.webp',
-        imgAltText: 'Фото',
-        text: '@ikshacountryclub',
-        link: 'https://instagram.com/ikshacountryclub',
-    },
-    {
-        imgAvif: '/image/vk_bl.avif',
-        imgWebp: '/image/vk_bl.webp',
-        imgAltText: 'ВК',
-        text: '@ikshacountryclub',
-        link: 'https://vk.com/ikshacountryclub',
-    },
-    {
-        imgAvif: '/image/mail_bl.avif',
-        imgWebp: '/image/mail_bl.webp',
-        imgAltText: 'Написать письмо',
-        text: 'contact@ikshacountryclub.com',
-        link: 'mailto:contact@ikshacountryclub.com',
-    },
+   {
+      imgAvif: "/image/wa_bl.avif",
+      imgWebp: "/image/wa_bl.webp",
+      imgAltText: "Позвонить",
+      text: "+7 985 909 12 02",
+      link: "https://wa.me/79859091202",
+   },
+   {
+      imgAvif: "/image/tg_bl.avif",
+      imgWebp: "/image/tg_bl.webp",
+      imgAltText: "Телеграм",
+      text: "@ikshacountryclub",
+      link: "https://t.me/ikshacountryclub",
+   },
+   {
+      imgAvif: "/image/inst_bl.avif",
+      imgWebp: "/image/inst_bl.webp",
+      imgAltText: "Фото",
+      text: "@ikshacountryclub",
+      link: "https://instagram.com/ikshacountryclub",
+   },
+   {
+      imgAvif: "/image/vk_bl.avif",
+      imgWebp: "/image/vk_bl.webp",
+      imgAltText: "ВК",
+      text: "@ikshacountryclub",
+      link: "https://vk.com/ikshacountryclub",
+   },
+   {
+      imgAvif: "/image/mail_bl.avif",
+      imgWebp: "/image/mail_bl.webp",
+      imgAltText: "Написать письмо",
+      text: "contact@ikshacountryclub.com",
+      link: "mailto:contact@ikshacountryclub.com",
+   },
 ];
 
 const heading = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.15,
-        },
-    },
+   hidden: {},
+   visible: {
+      transition: {
+         staggerChildren: 0.15,
+      },
+   },
 };
 
 const OpenLeft = {
-    hidden: {
-        opacity: 0,
-        transform: 'translate(-500px)'
-    },
-    visible: {
-        opacity: 1,
-        transform: 'translate(0px)',
-        transition: {
-            ease: 'easeOut',
-            duration: 2.5,
-        },
-    },
+   hidden: {
+      opacity: 0,
+      transform: "translate(-500px)",
+   },
+   visible: {
+      opacity: 1,
+      transform: "translate(0px)",
+      transition: {
+         ease: "easeOut",
+         duration: 2.5,
+      },
+   },
 };
 
 const Bron = () => {
-    return (
-        <section className="min-h-screen w-full relative bg-[#201E1F]">
-            <Title text={'Бронирование'} />
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const togglePopup = () => {
+      setIsPopupOpen((prev) => !prev);
+   };
+   return (
+      <section className="relative min-h-screen w-full bg-[#201E1F]">
+         <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
+         <Title text={"Бронирование"} />
+         <m.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={heading}
+            className="flex flex-col justify-between xl:flex-row"
+         >
             <m.div
-                initial='hidden'
-                whileInView='visible'
-                viewport={{ once: true }}
-                variants={heading}
-                className="flex justify-between xl:flex-row flex-col">
-                <m.div variants={OpenLeft} className="xl:pl-[70px] pl-[40px] sm:pt-[140px] pt-[90px] flex flex-col z-10">
-                    <h2 className="text-[#AB8E67] 2xl:text-[68px] sm:text-[42px] text-[35px] font-extrabold">БРОНИРОВАНИЕ</h2>
-                    <p className="2xl:w-[700px] sm:w-[450px] w-[350px] text-white 2xl:text-[32px] sm:text-[18px] font-medium mb-5">Хотите комфортно отдохнуть и получить незабываемые впечатления? Забронируйте свой отдых <span className="text-[#AB8E67]">за 3 простых шага:</span></p>
-                    <div className="flex sm:gap-11 gap-4 text-[#AB8E67] items-center">
-                        <p className="2xl:text-[78px] sm:text-[55px] text-[42px] text-[#75624A] font-extrabold">01</p>
-                        <a href="#" className="2xl:text-[38px] sm:text-[28px] text-[24px] font-extrabold underline">Заполните форму</a>
-                    </div>
-                    <div className="flex sm:gap-11 gap-4 text-[#AB8E67] items-center my-9">
-                        <p className="2xl:text-[78px] sm:text-[55px] text-[42px] text-[#75624A] font-extrabold">02</p>
-                        <p className="2xl:text-[38px] sm:text-[28px] text-[24px] font-extrabold">Проверьте почту</p>
-                    </div>
-                    <div className="flex sm:gap-11 gap-4 text-[#AB8E67] items-center">
-                        <p className="2xl:text-[78px] sm:text-[55px] text-[42px] text-[#75624A] font-extrabold">03</p>
-                        <p className="2xl:text-[38px] sm:text-[28px] text-[24px] font-extrabold">Приезжайте и отдыхайте!</p>
-                    </div>
-                </m.div>
-                <m.div
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: 1,
-                        transition: {
-                            delay: 2,
-                            duration: 1,
-                        },
-                    }}
-                    className="bg-[#221C1C] xl:ml-0 ml-[10px] xl:mb-0 mb-5 border z-10 xl:self-end xl:mt-0 mt-[25px] border-[#AB8E67] rounded-[15px] pl-8 py-5 sm:w-[600px] w-[375px] flex flex-col 2xl:gap-4 gap-2 mr-6">
-                    {
-                        bronData.map((el) => (
-                            <a key={uuid4()} href={el.link} className="flex 2xl:gap-4 gap-2 items-center">
-                                {/*<picture>*/}
-                                {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                                {/*    <img className="2xl:w-auto w-[45px]" src={el.imgWebp} alt={el.imgAltText} />*/}
-                                {/*</picture>*/}
-                                <img className="2xl:w-auto w-[45px]" src={el.imgWebp} alt={el.imgAltText} />
-                                <p className="2xltext-[28px] text-[20px] text-[#AB8E67] font-medium">
-                                    {el.text}
-                                </p>
-                            </a>
-                        ))
-                    }
-                </m.div>
-
-                {/*<picture>*/}
-                {/*    <source srcSet="/image/bron_bg.avif 1x" type="image/avif" />*/}
-                {/*    <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="Забронировать" />*/}
-                {/*</picture>*/}
-                <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="Забронировать" />
+               variants={OpenLeft}
+               className="z-10 flex flex-col pl-[40px] pt-[90px] sm:pt-[140px] xl:pl-[70px]"
+            >
+               <h2 className="text-[35px] font-extrabold text-[#AB8E67] sm:text-[42px] 2xl:text-[68px]">
+                  БРОНИРОВАНИЕ
+               </h2>
+               <p className="mb-5 w-[350px] font-medium text-white sm:w-[450px] sm:text-[18px] 2xl:w-[700px] 2xl:text-[32px]">
+                  Хотите комфортно отдохнуть и получить незабываемые
+                  впечатления? Забронируйте свой отдых{" "}
+                  <span className="text-[#AB8E67]">за 3 простых шага:</span>
+               </p>
+               <div className="flex items-center gap-4 text-[#AB8E67] sm:gap-11">
+                  <p className="text-[42px] font-extrabold text-[#75624A] sm:text-[55px] 2xl:text-[78px]">
+                     01
+                  </p>
+                  <div
+                     onClick={togglePopup}
+                     className="text-[24px] font-extrabold underline sm:text-[28px] 2xl:text-[38px]"
+                  >
+                     Заполните форму
+                  </div>
+               </div>
+               <div className="my-9 flex items-center gap-4 text-[#AB8E67] sm:gap-11">
+                  <p className="text-[42px] font-extrabold text-[#75624A] sm:text-[55px] 2xl:text-[78px]">
+                     02
+                  </p>
+                  <p className="text-[24px] font-extrabold sm:text-[28px] 2xl:text-[38px]">
+                     Проверьте почту
+                  </p>
+               </div>
+               <div className="flex items-center gap-4 text-[#AB8E67] sm:gap-11">
+                  <p className="text-[42px] font-extrabold text-[#75624A] sm:text-[55px] 2xl:text-[78px]">
+                     03
+                  </p>
+                  <p className="text-[24px] font-extrabold sm:text-[28px] 2xl:text-[38px]">
+                     Приезжайте и отдыхайте!
+                  </p>
+               </div>
             </m.div>
-        </section>
-    );
-}
+            <m.div
+               initial={{ opacity: 0 }}
+               animate={{
+                  opacity: 1,
+                  transition: {
+                     delay: 2,
+                     duration: 1,
+                  },
+               }}
+               className="z-10 mb-5 ml-[10px] mr-6 mt-[25px] flex w-[375px] flex-col gap-2 rounded-[15px] border border-[#AB8E67] bg-[#221C1C] py-5 pl-8 sm:w-[600px] xl:mb-0 xl:ml-0 xl:mt-0 xl:self-end 2xl:gap-4"
+            >
+               {bronData.map((el) => (
+                  <a
+                     key={uuid4()}
+                     href={el.link}
+                     className="flex items-center gap-2 2xl:gap-4"
+                  >
+                     {/*<picture>*/}
+                     {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
+                     {/*    <img className="2xl:w-auto w-[45px]" src={el.imgWebp} alt={el.imgAltText} />*/}
+                     {/*</picture>*/}
+                     <img
+                        className="w-[45px] 2xl:w-auto"
+                        src={el.imgWebp}
+                        alt={el.imgAltText}
+                     />
+                     <p className="2xltext-[28px] text-[20px] font-medium text-[#AB8E67]">
+                        {el.text}
+                     </p>
+                  </a>
+               ))}
+            </m.div>
+
+            {/*<picture>*/}
+            {/*    <source srcSet="/image/bron_bg.avif 1x" type="image/avif" />*/}
+            {/*    <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="Забронировать" />*/}
+            {/*</picture>*/}
+            <img
+               className="absolute right-0 top-0 hidden h-screen xl:block"
+               src="/image/bron_bg.webp"
+               alt="Забронировать"
+            />
+         </m.div>
+      </section>
+   );
+};
 
 export default Bron;
