@@ -56,7 +56,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
             <div>
                {isPopupCompleted ? (
                   <div
-                     className={`fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[50%]  -translate-x-1/2 -translate-y-1/2 transform  flex-col items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl`}
+                     className={`fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[50%]`}
                   >
                      <div className="absolute right-5 top-5">
                         <img
@@ -80,7 +80,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                      </button>
                   </div>
                ) : (
-                  <div className="fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[50%]  -translate-x-1/2 -translate-y-1/2 transform  flex-col items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl">
+                  <div className="fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[50%]">
                      <div className="absolute right-5 top-5">
                         <img
                            className="h-7 w-7 cursor-pointer object-cover"
