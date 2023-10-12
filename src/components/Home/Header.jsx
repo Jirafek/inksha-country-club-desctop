@@ -24,7 +24,7 @@ const Header = () => {
          <nav className="px-10 py-[10px] xl:bg-[#1e1c1dcc]">
             <ul className="flex items-center justify-between">
                {routes.map((el, i) => {
-                  if (el.link.includes("/")) {
+                  if (el.link.startsWith("/")) {
                      return (
                         <li key={uuidv4()}>
                            <Link

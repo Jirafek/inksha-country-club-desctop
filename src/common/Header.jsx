@@ -4,6 +4,7 @@ import close from "./../assets/close.png";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { opacity } from "../constants/motion";
+import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
 const menuVars = {
@@ -81,7 +82,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                               return (
                                  <motion.li
                                     onClick={toggleMenu}
-                                    className="cursor-pointer druk text-[25px]"
+                                    className="druk cursor-pointer text-[25px]"
                                     variants={navVars}
                                     key={i}
                                  >
@@ -102,7 +103,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                )}
                <Reveal duration={2} variants={opacity()}>
                   <div className="druk flex justify-between py-5">
-                     <div>Икша Кантри Kлаб</div>
+                     <Link to="/">Икша Кантри Kлаб</Link>
                      <ul className="hidden gap-10 md:flex">
                         {links.map((link, i) => {
                            return (

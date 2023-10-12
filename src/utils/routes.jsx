@@ -39,7 +39,7 @@ const routes = [
    },
    {
       title: "",
-      link: "https://www.instagram.com/ikshacountryclub/",
+      link: "https://www.instagram.com/ikshacountryclub",
       icon: "/image/inst.webp",
       iconAvif: "/image/inst.avif",
    },

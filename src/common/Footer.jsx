@@ -15,25 +15,25 @@ const slideVariants = {
 };
 const Footer = () => {
    return (
-      <div className="bg-darkViolet droid">
+      <div className="droid bg-darkViolet">
          <div className="wrapper mt-20 text-grey ">
-            <div className="flex gap-5 py-5 justify-between">
-               <div className="flex w-full items-center justify-between md:justify-start gap-5">
+            <div className="flex justify-between gap-5 py-5">
+               <div className="flex w-full items-center justify-between gap-5 md:justify-start">
                   <div>Икша Кантри Kлаб 2023 </div>
-                  <div className="flex fixed bottom-5 right-5 flex-col gap-5 md:flex-row z-10">
+                  <div className="fixed bottom-5 right-5 z-10 flex flex-col gap-5 md:left-5 md:flex-row">
                      <a
                         target="_blank"
                         rel="noreferrer"
                         href="https://www.instagram.com/ikshacountryclub/"
                      >
-                        <img className="w-9 h-9 z-10" src={inst} alt="" />
+                        <img className="z-10 h-9 w-9" src={inst} alt="" />
                      </a>
                      <a
                         href="https://wa.me/79859091202"
                         target="_blank"
                         rel="noreferrer"
                      >
-                        <img className="w-9 h-9 z-10" src={what} alt="" />
+                        <img className="z-10 h-9 w-9" src={what} alt="" />
                      </a>
                      <motion.a
                         variants={slideVariants}
@@ -48,11 +48,11 @@ const Footer = () => {
                         animate="animate"
                         href="tel:+7 (499) 505-50-31"
                      >
-                        <img className="w-9 h-9 z-10" src={phone} alt="" />
+                        <img className="z-10 h-9 w-9" src={phone} alt="" />
                      </motion.a>
                   </div>
                </div>
-               <div className="md:flex  hidden justify-center gap-10">
+               <div className="hidden  justify-center gap-10 md:flex">
                   <a href="#Programa">Программа</a>
                   <a href="#Tariff">Тарифы</a>
                   <a href="tel:+7 (499) 505-50-31">Связаться со мной</a>
