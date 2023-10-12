@@ -87,7 +87,7 @@ export const Programa = () => {
 
                      <div className="relative rounded-[20px] bg-pumpkin p-3 md:p-[50px]">
                         <h2 className=" text-bold druk text-[25px] md:text-[40px] ">
-                           Пятница, 28 октября
+                           Суббота, 28 октября
                         </h2>
                         <h2 className=" text-bold druk text-[25px] md:text-[40px] ">
                            10:30 - 12:30
