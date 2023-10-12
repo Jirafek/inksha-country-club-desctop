@@ -41,6 +41,8 @@ html {
   overflow-x: hidden;
 }
 
+
+
 body {
   font-family: sans-serif;
 }
@@ -311,4 +313,62 @@ body {
 
 ul {
   list-style: none;
+}
+
+
+.animated_connection_btn {
+  animation-delay: 7s;
+  animation: 2s ease-in-out;
+  animation-name: openButton;
+  animation-fill-mode: forwards;
+}
+
+.visually__hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0 none;
+  clip-path: inset(100%);
+}
+
+@keyframes openButton {
+  0% {
+    width: 3rem;
+  }
+
+  100% {
+    width: 14rem;
+  }
+}
+
+@keyframes openText {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animated_text_appearing {
+  animation-delay: 7s;
+  animation: 2s ease-in-out;
+  animation-name: openText;
+  animation-fill-mode: forwards;
+}
+
+
+.znms-widget__main-wrapper[data-v-029b0f26],
+[data-v-08d329fc] .znms-widget__module-form-block--middle {
+  border-radius: 22px !important;
+  box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.58);
+
 }
