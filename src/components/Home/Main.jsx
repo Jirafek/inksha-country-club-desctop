@@ -31,6 +31,10 @@ const headingLines = {
 };
 
 const Main = () => {
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const togglePopup = () => {
+      setIsPopupOpen((prev) => !prev);
+   };
    useEffect(() => {
       const script = document.createElement("script");
       script.src = "//widget.bronirui-online.ru/js/app.js";
@@ -94,96 +98,101 @@ const Main = () => {
       script.onload = initializeWidget;
       document.body.appendChild(script);
    }, []);
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
-   const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev);
-   };
+
    return (
-      <section
-         style={{
-            backgroundImage: "url(/image/bg1_right.webp)",
-            backgroundPosition: "right",
-            backgroundRepeat: "no-repeat",
-         }}
-         className="relative w-full"
-      >
-         <Header />
-         <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
-         <div className="absolute left-0 top-0 flex items-center">
-            {/*<picture>*/}
-            {/*    <source srcSet="/image/main_arrow_big.avif 1x" type="image/avif" />*/}
-            {/*    <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
-            {/*</picture>*/}
-            <img
-               className="hidden h-screen lg:block"
-               src="/image/main_arrow_big.webp"
-               alt="Икша Кантри Клаб"
-            />
+      <div>
+         <AnimationButton
+            h={72}
+            w={72}
+            className="fixed bottom-[20px] right-[240px] z-[10000] flex  min-w-[300px]  justify-end "
+            onClick={togglePopup}
+         >
+            Свяжитесь со мной
+         </AnimationButton>
 
-            <div className="absolute left-0 top-0 block h-screen w-screen bg-black opacity-70 duration-300 lg:hidden"></div>
-
-            {/*<picture>*/}
-            {/*    <source srcSet="/image/main_arrow_md.avif 1x" type="image/avif" />*/}
-            {/*    <img className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="Икша Кантри Клаб" />*/}
-            {/*</picture>*/}
-            <img
-               className="-ml-[300px] hidden max-h-[750px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[790px] 2xl:animate-[arrowAnimation_5s_infinite]"
-               src="/image/main_arrow_md.webp"
-               alt="Икша Кантри Клаб"
-            />
-
-            {/*<picture>*/}
-            {/*    <source srcSet="/image/main_arrow_sm.avif 1x" type="image/avif" />*/}
-            {/*    <img className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="Икша Кантри Клаб" />*/}
-            {/*</picture>*/}
-            <img
-               className="-ml-[300px] hidden max-h-[620px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[650px] 2xl:animate-[arrowAnimation_5s_infinite]"
-               src="/image/main_arrow_sm.webp"
-               alt="Икша Кантри Клаб"
-            />
-         </div>
-         <m.div
-            initial={{ opacity: 0 }}
-            animate={{
-               opacity: 1,
-               transition: {
-                  delay: 2,
-               },
+         <section
+            style={{
+               backgroundImage: "url(/image/bg1_right.webp)",
+               backgroundPosition: "right",
+               backgroundRepeat: "no-repeat",
             }}
-            className="relative my-[50px] flex flex-col px-[40px] md:px-[90px] lg:mt-[150px]"
+            className="relative w-full"
          >
-            <div className="mb-[55px] flex flex-col 2xl:mb-[115px]">
-               <h1 className="text-[56px] font-extrabold uppercase leading-[60px] text-white md:text-[70px] 2xl:text-[98px] 2xl:leading-[100px]">
-                  Икша <br />
-                  <span className="gradient_title text-[45px] font-extrabold leading-[60px] md:text-[60px] 2xl:text-[78px] 2xl:leading-[100px]">
-                     КАНТРИ КЛАБ
-                  </span>
-               </h1>
-               {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
+            <Header />
+
+            <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
+            <div className="absolute left-0 top-0 flex items-center">
+               {/*<picture>*/}
+               {/*    <source srcSet="/image/main_arrow_big.avif 1x" type="image/avif" />*/}
+               {/*    <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
+               {/*</picture>*/}
+               <img
+                  className="hidden h-screen lg:block"
+                  src="/image/main_arrow_big.webp"
+                  alt="Икша Кантри Клаб"
+               />
+
+               <div className="absolute left-0 top-0 block h-screen w-screen bg-black opacity-70 duration-300 lg:hidden"></div>
+
+               {/*<picture>*/}
+               {/*    <source srcSet="/image/main_arrow_md.avif 1x" type="image/avif" />*/}
+               {/*    <img className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="Икша Кантри Клаб" />*/}
+               {/*</picture>*/}
+               <img
+                  className="-ml-[300px] hidden max-h-[750px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[790px] 2xl:animate-[arrowAnimation_5s_infinite]"
+                  src="/image/main_arrow_md.webp"
+                  alt="Икша Кантри Клаб"
+               />
+
+               {/*<picture>*/}
+               {/*    <source srcSet="/image/main_arrow_sm.avif 1x" type="image/avif" />*/}
+               {/*    <img className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="Икша Кантри Клаб" />*/}
+               {/*</picture>*/}
+               <img
+                  className="-ml-[300px] hidden max-h-[620px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[650px] 2xl:animate-[arrowAnimation_5s_infinite]"
+                  src="/image/main_arrow_sm.webp"
+                  alt="Икша Кантри Клаб"
+               />
             </div>
-            <p className="mb-6 text-[30px] font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
-               Ваш идеальный отдых в подмосковье!
-            </p>
-            <div className="z-0">
-               <div id="znms-widget-1"></div>
-            </div>
-         </m.div>
-         <div className="my-[50px] flex w-full justify-end px-[40px] md:px-[90px] ">
-            <AnimationButton onClick={togglePopup}>
-               Свяжитесь со мной
-            </AnimationButton>
-         </div>
-         <Link
-            to="/halloween"
-            className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
-         >
-            <div>+7 (499) 505-50-31 </div>
-            <div className="text-[#D3AE7C]">
-               Хеллуин в Икша Кантри Клабе - Места ограничены
-            </div>
-            <div>Спецпредложение </div>
-         </Link>
-      </section>
+            <m.div
+               initial={{ opacity: 0 }}
+               animate={{
+                  opacity: 1,
+                  transition: {
+                     delay: 2,
+                  },
+               }}
+               className="relative my-[50px] flex flex-col px-[40px] md:px-[90px] lg:mt-[150px]"
+            >
+               <div className="mb-[55px] flex flex-col 2xl:mb-[115px]">
+                  <h1 className="text-[56px] font-extrabold uppercase leading-[60px] text-white md:text-[70px] 2xl:text-[98px] 2xl:leading-[100px]">
+                     Икша <br />
+                     <span className="gradient_title text-[45px] font-extrabold leading-[60px] md:text-[60px] 2xl:text-[78px] 2xl:leading-[100px]">
+                        КАНТРИ КЛАБ
+                     </span>
+                  </h1>
+                  {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
+               </div>
+               <p className="mb-6 text-[30px] font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
+                  Ваш идеальный отдых в Подмосковье!
+               </p>
+               <div className="z-0">
+                  <div id="znms-widget-1"></div>
+               </div>
+            </m.div>
+
+            <Link
+               to="/halloween"
+               className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
+            >
+               <div>+7 (499) 505-50-31 </div>
+               <div className="text-[#D3AE7C]">
+                  Хеллуин в Икша Кантри Клабе - Места ограничены
+               </div>
+               <div>Спецпредложение </div>
+            </Link>
+         </section>
+      </div>
    );
 };
 

@@ -372,3 +372,10 @@ ul {
   box-shadow: 10px 10px 11px 0px rgba(0, 0, 0, 0.58);
 
 }
+
+
+.znms-widget__widget-btn {
+  /* width: 48px;
+  height: 48px !important; */
+  /* bottom: 80px !important; */
+}
