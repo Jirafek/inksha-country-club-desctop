@@ -317,7 +317,7 @@ ul {
 
 
 .animated_connection_btn {
-  animation-delay: 7s;
+  animation-delay: 20s;
   animation: 2s ease-in-out;
   animation-name: openButton;
   animation-fill-mode: forwards;
@@ -359,7 +359,7 @@ ul {
 }
 
 .animated_text_appearing {
-  animation-delay: 7s;
+  animation-delay: 20s;
   animation: 2s ease-in-out;
   animation-name: openText;
   animation-fill-mode: forwards;

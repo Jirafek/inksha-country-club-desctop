@@ -3,7 +3,7 @@ import Header from "./Header";
 import { m } from "framer-motion";
 import AnimationButton from "./../../common/AnimationButton";
 import MainPopup from "./../../common/MainPopup";
-
+import { Link } from "react-router-dom";
 const heading = {
    hidden: {},
    visible: {
@@ -167,19 +167,22 @@ const Main = () => {
             <div className="z-0">
                <div id="znms-widget-1"></div>
             </div>
-            <div className="mt-[50px] flex w-full justify-end">
-               <AnimationButton onClick={togglePopup}>
-                  Свяжитесь со мной
-               </AnimationButton>
-            </div>
          </m.div>
-         <div className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[24px] font-[700] text-white backdrop-opacity-90">
-            <div>Спецпредложение </div>
+         <div className="my-[50px] flex w-full justify-end px-[40px] md:px-[90px] ">
+            <AnimationButton onClick={togglePopup}>
+               Свяжитесь со мной
+            </AnimationButton>
+         </div>
+         <Link
+            to="/halloween"
+            className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
+         >
+            <div>+7 (499) 505-50-31 </div>
             <div className="text-[#D3AE7C]">
-               Дарим имениннику САП-доску в день рождения*
+               Хеллуин в Икша Кантри Клабе - Места ограничены
             </div>
             <div>Спецпредложение </div>
-         </div>
+         </Link>
       </section>
    );
 };
