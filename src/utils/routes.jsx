@@ -33,7 +33,7 @@ const routes = [
    },
    {
       title: "",
-      link: "Vk.com/ikshacountryclub",
+      link: "https://vk.com/ikshacountryclub",
       icon: "/image/vk.webp",
       iconAvif: "/image/vk.avif",
    },
