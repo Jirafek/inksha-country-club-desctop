@@ -38,6 +38,8 @@ module.exports = {
       },
    },
    plugins: [
+      
+
       function ({ addVariant }) {
          addVariant(
             "supports-backdrop-blur",

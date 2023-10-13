@@ -25,7 +25,7 @@ const routes = [
    },
    {
       title: "Корпоративы",
-      link: "/korporativy",
+      link: "/?korpOpen=1",
    },
    {
       title: "FAQ",

@@ -3,7 +3,7 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 import AnimationButton from "./common/AnimationButton";
 import MainPopup from "./common/MainPopup";
 import { BooleanParam, useQueryParam } from "use-query-params";
-
+import Korporativy from "./pages/Korporativy";
 const NotFound = () => {
    return (
       <section className="relative h-screen bg-[#201E1F]">
@@ -23,7 +23,7 @@ const NotFound = () => {
 const Home = lazy(() => import("pages/Home"));
 const Keytering = lazy(() => import("pages/Keytering"));
 const LocationId = lazy(() => import("pages/LocationId"));
-const Korporativy = lazy(() => import("pages/Korporativy"));
+// const Korporativy = lazy(() => import("pages/Korporativy"));
 const FAQ = lazy(() => import("pages/FAQ"));
 const Privacy = lazy(() => import("pages/Privacy"));
 const Thanks = lazy(() => import("pages/Thanks"));
@@ -35,8 +35,10 @@ function App() {
       setIsPopupOpen((prev) => !prev);
    };
    const [isKorpOpen, setIsKorpOpen] = useQueryParam("korpOpen", BooleanParam);
+   useEffect(() => {
+      setIsKorpOpen(false);
+   }, []);
    console.log(isKorpOpen);
-
    return (
       <div>
          <div className="fixed bottom-[20px] right-[240px] z-[10000]">
@@ -45,12 +47,15 @@ function App() {
                w={72}
                className=" flex  justify-end"
                onClick={togglePopup}
+               // onClick={() => {
+               //    setIsKorpOpen(!isKorpOpen);
+               // }}
             >
                Свяжитесь со мной
             </AnimationButton>
          </div>
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
-
+         <Korporativy isKorpOpen={isKorpOpen} />
          <Routes className="relative">
             <Route
                path="/"
@@ -60,10 +65,10 @@ function App() {
             />
             <Route path="/keytering" element={<Keytering />} />
             <Route path="/location/:id" element={<LocationId />} />
-            <Route
+            {/* <Route
                path="/korporativy"
-               element={<Korporativy isKorpOpen={isKorpOpen} />}
-            />
+               element={}
+            /> */}
             <Route path="/faq" element={<FAQ />} />
             <Route path="/thanks" element={<Thanks />} />
             <Route path="/halloween" element={<Helloween />} />

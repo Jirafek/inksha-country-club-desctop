@@ -232,213 +232,225 @@ const Korporativy = ({ isKorpOpen }) => {
    };
    return (
       <>
-         <Helmet>
-            <title>
-               Корпоративы в Подмосковье на берегу Икшинского водохранилища -
-               Икша Кантри Клаб
-            </title>
-            <meta
-               name="description"
-               content="Корпоративы в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте
+         {isKorpOpen && (
+            <div className="korpo_wrapp  fixed bottom-0 left-1/2 z-[100] h-[90vh] w-[99%] -translate-x-1/2 transform overflow-y-scroll rounded-[20px] border shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] ">
+               <Helmet>
+                  <title>
+                     Корпоративы в Подмосковье на берегу Икшинского
+                     водохранилища - Икша Кантри Клаб
+                  </title>
+                  <meta
+                     name="description"
+                     content="Корпоративы в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте
             отдохнуть со своей командой и укрепить командый дух на берегу Икшинского водохранилища.
-     Уютные домики, Шашлыки, красивые закаты. Постройте свою лучшую команду на природе, недалеко от Москвы"
-            />
-            <meta
-               name="title"
-               content="Корпоративы в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
-            />
-            <meta
-               name="keywords"
-               content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
-корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
-            />
-         </Helmet>
-         <section className="relative min-h-screen w-full bg-[#201E1F]">
-            {navigation && <Navigate to="/thanks" />}
-            <button
-               onClick={goBack}
-               className="absolute left-7 top-3 z-10 hidden w-[40px] rotate-180 duration-300 hover:-translate-x-2 sm:block"
-            >
-               <LocationArrow />
-            </button>
-            <m.div
-               initial="hidden"
-               whileInView="visible"
-               viewport={{ once: true }}
-               variants={heading}
-               className="pt-3"
-            >
-               <m.div variants={OpenLeft} className="flex justify-center">
-                  <h1 className="gradient_title mb-7 text-[20px] font-extrabold sm:mb-12 sm:text-[32px] md:text-[42px] xl:text-[68px]">
-                     КОРПОРАТИВЫ & ТИМБИЛДИНГ
-                  </h1>
-               </m.div>
-               {isImageOpen && (
-                  <div
-                     className="fixed left-0 top-0 z-40 flex h-screen w-screen items-center justify-center bg-black bg-opacity-70"
-                     onClick={handleBackdropClick}
+             Уютные домики, Шашлыки, красивые закаты. Постройте свою лучшую команду на природе, недалеко от Москвы"
+                  />
+                  <meta
+                     name="title"
+                     content="Корпоративы в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+                  />
+                  <meta
+                     name="keywords"
+                     content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+                корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+                  />
+               </Helmet>
+               <section className="relative min-h-screen w-full bg-[#201E1F]">
+                  {navigation && <Navigate to="/thanks" />}
+                  <button
+                     onClick={goBack}
+                     className="absolute left-7 top-3 z-10 hidden w-[40px] rotate-180 duration-300 hover:-translate-x-2 sm:block"
                   >
-                     {/*<picture>*/}
-                     {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
-                     {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
-                     {/*    <img*/}
-                     {/*        src="/image/doca.png"*/}
-                     {/*        alt="Икша Кантри Клаб"*/}
-                     {/*        className="max-h-[90vh] rounded-3xl"*/}
-                     {/*    />*/}
-                     {/*</picture>*/}
-                     <img
-                        src="/image/doca.png"
-                        alt="Икша Кантри Клаб"
-                        className="max-h-[90vh] rounded-3xl"
-                     />
-                  </div>
-               )}
-               <m.form variants={OpenBottom} onSubmit={handleSubmit(onSubmit)}>
-                  <Slider ref={sliderRef} {...settingsBig}>
-                     <div className="slick-slider-flex flex flex-col items-center justify-center gap-11 xl:flex-row">
-                        <div className="flex flex-col items-center gap-[30px] xl:items-start">
-                           <div className="flex flex-col gap-2">
-                              <div className="flex h-[80px] w-[380px] items-center gap-1 rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] pl-8 text-white sm:w-[400px]">
-                                 <p className="text-[26px] font-semibold">
-                                    Количество человек:
-                                 </p>
-                                 <input
-                                    onChange={handleInputChange}
-                                    className="h-[50px] w-[50px] border-none bg-transparent text-[32px] outline-none"
-                                    value={peopleState}
-                                    type="number"
-                                 />
-                              </div>
-                              <div className="h-[80px] w-[380px] rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] text-white sm:w-[400px]">
-                                 <label className="flex h-full items-center justify-between gap-1 pl-8 pr-4">
-                                    <p className="text-[26px] font-semibold">
-                                       Нужен ли вам ночлег?
-                                    </p>
-                                    <input
-                                       className="h-[15px] w-[15px] rounded-lg border border-[#4D382B] bg-[#AB8E67] sm:h-[20px] sm:w-[20px] 3xl:h-[30px] 3xl:w-[30px]"
-                                       {...register("night")}
-                                       type="checkbox"
-                                       name=""
-                                       id=""
-                                    />
-                                 </label>
-                              </div>
-                           </div>
-                           <div className="relative flex w-[380px] flex-col items-center rounded-[10px] border-[2px] border-[#AB8E67] bg-[rgba(117,_98,_74,_0.50)] px-11 py-8 sm:w-[550px] 3xl:w-[800px]">
-                              <h4 className="mb-14 text-center text-[18px] font-semibold text-white sm:text-[22px] 3xl:text-[32px]">
-                                 Мы предлагаем нашим корпоративным гостям
-                                 следующие услуги:
-                              </h4>
-                              <div className="grid grid-cols-2 gap-x-8 gap-y-4 sm:gap-x-12 sm:gap-y-8">
-                                 {korpData.map((el, i) => (
-                                    <label
-                                       key={uuid4()}
-                                       className="flex items-center gap-2"
-                                    >
-                                       <div className="relative h-[15px] w-[15px] sm:h-[20px] sm:w-[20px] 3xl:h-[30px] 3xl:w-[30px]">
+                     <LocationArrow />
+                  </button>
+                  <m.div
+                     initial="hidden"
+                     whileInView="visible"
+                     viewport={{ once: true }}
+                     variants={heading}
+                     className="pt-3"
+                  >
+                     <m.div variants={OpenLeft} className="flex justify-center">
+                        <h1 className="gradient_title mb-7 text-[20px] font-extrabold sm:mb-12 sm:text-[32px] md:text-[42px] xl:text-[68px]">
+                           КОРПОРАТИВЫ & ТИМБИЛДИНГ
+                        </h1>
+                     </m.div>
+                     {isImageOpen && (
+                        <div
+                           className="fixed left-0 top-0 z-40 flex h-screen w-screen items-center justify-center bg-black bg-opacity-70"
+                           onClick={handleBackdropClick}
+                        >
+                           {/*<picture>*/}
+                           {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
+                           {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
+                           {/*    <img*/}
+                           {/*        src="/image/doca.png"*/}
+                           {/*        alt="Икша Кантри Клаб"*/}
+                           {/*        className="max-h-[90vh] rounded-3xl"*/}
+                           {/*    />*/}
+                           {/*</picture>*/}
+                           <img
+                              src="/image/doca.png"
+                              alt="Икша Кантри Клаб"
+                              className="max-h-[90vh] rounded-3xl"
+                           />
+                        </div>
+                     )}
+                     <m.form
+                        variants={OpenBottom}
+                        onSubmit={handleSubmit(onSubmit)}
+                     >
+                        <Slider ref={sliderRef} {...settingsBig}>
+                           <div className="slick-slider-flex flex flex-col items-center justify-center gap-11 xl:flex-row">
+                              <div className="flex flex-col items-center gap-[30px] xl:items-start">
+                                 <div className="flex flex-col gap-2">
+                                    <div className="flex h-[80px] w-[380px] items-center gap-1 rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] pl-8 text-white sm:w-[400px]">
+                                       <p className="text-[26px] font-semibold">
+                                          Количество человек:
+                                       </p>
+                                       <input
+                                          onChange={handleInputChange}
+                                          className="h-[50px] w-[50px] border-none bg-transparent text-[32px] outline-none"
+                                          value={peopleState}
+                                          type="number"
+                                       />
+                                    </div>
+                                    <div className="h-[80px] w-[380px] rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] text-white sm:w-[400px]">
+                                       <label className="flex h-full items-center justify-between gap-1 pl-8 pr-4">
+                                          <p className="text-[26px] font-semibold">
+                                             Нужен ли вам ночлег?
+                                          </p>
                                           <input
                                              className="h-[15px] w-[15px] rounded-lg border border-[#4D382B] bg-[#AB8E67] sm:h-[20px] sm:w-[20px] 3xl:h-[30px] 3xl:w-[30px]"
+                                             {...register("night")}
                                              type="checkbox"
-                                             name="korp"
-                                             {...register(el.name)}
+                                             name=""
+                                             id=""
+                                          />
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div className="relative flex w-[380px] flex-col items-center rounded-[10px] border-[2px] border-[#AB8E67] bg-[rgba(117,_98,_74,_0.50)] px-11 py-8 sm:w-[550px] 3xl:w-[800px]">
+                                    <h4 className="mb-14 text-center text-[18px] font-semibold text-white sm:text-[22px] 3xl:text-[32px]">
+                                       Мы предлагаем нашим корпоративным гостям
+                                       следующие услуги:
+                                    </h4>
+                                    <div className="grid grid-cols-2 gap-x-8 gap-y-4 sm:gap-x-12 sm:gap-y-8">
+                                       {korpData.map((el, i) => (
+                                          <label
+                                             key={uuid4()}
+                                             className="flex items-center gap-2"
+                                          >
+                                             <div className="relative h-[15px] w-[15px] sm:h-[20px] sm:w-[20px] 3xl:h-[30px] 3xl:w-[30px]">
+                                                <input
+                                                   className="h-[15px] w-[15px] rounded-lg border border-[#4D382B] bg-[#AB8E67] sm:h-[20px] sm:w-[20px] 3xl:h-[30px] 3xl:w-[30px]"
+                                                   type="checkbox"
+                                                   name="korp"
+                                                   {...register(el.name)}
+                                                />
+                                             </div>
+                                             <p className="font-medium text-white sm:text-[18px] 3xl:text-[28px]">
+                                                {el.title}
+                                             </p>
+                                          </label>
+                                       ))}
+                                    </div>
+                                    <button
+                                       onClick={onNextClick}
+                                       type="button"
+                                       className=" mt-2 rounded-[20px] border-[5px] border-[#4D382B] bg-[#AB8E67] px-12 py-2 text-[22px] font-semibold text-white sm:px-20 sm:py-3 3xl:text-[32px]"
+                                    >
+                                       стоимость
+                                    </button>
+                                 </div>
+                              </div>
+                              <div className="flex flex-col items-center gap-8 pb-10 xl:pb-0">
+                                 <div className="flex w-full justify-between gap-1">
+                                    <button
+                                       type="button"
+                                       onClick={handleImageClick}
+                                    >
+                                       {/*<picture>*/}
+                                       {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
+                                       {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
+                                       {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="Икша Кантри Клаб" />*/}
+                                       {/*</picture>*/}
+                                       <img
+                                          className="w-[200px] rounded-[15px] 3xl:w-[300px]"
+                                          src="/image/doca.png"
+                                          alt="Икша Кантри Клаб"
+                                       />
+                                    </button>
+                                    <button
+                                       type="button"
+                                       onClick={() =>
+                                          handleDownload("/pdf/keyt.pdf")
+                                       }
+                                    >
+                                       {/*<picture>*/}
+                                       {/*    <source srcSet="/image/menu_list.avif 1x" type="image/avif" />*/}
+                                       {/*    <source srcSet="/image/menu_list.webp 1x" type="image/webp" />*/}
+                                       {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/menu_list.jpg" alt="Меню в Икша Кантри Клаб" />*/}
+                                       {/*</picture>*/}
+                                       <img
+                                          className="w-[200px] rounded-[15px] 3xl:w-[300px]"
+                                          src="/image/menu_list.jpg"
+                                          alt="Меню в Икша Кантри Клаб"
+                                       />
+                                    </button>
+                                 </div>
+                                 <Slider
+                                    className="h-[240px] w-[360px] rounded-[15px] border-[2px] border-b-0 border-[#AB8E67] p-1 sm:h-[325px] sm:w-[500px] 3xl:h-[460px] 3xl:w-[700px]"
+                                    {...settings}
+                                 >
+                                    {images.map(({ imgAvif, imgWebp }, i) => (
+                                       <div key={uuid4()}>
+                                          {/*<picture>*/}
+                                          {/*    <source srcSet={`${imgAvif} 1x`} type="image/avif" />*/}
+                                          {/*    <img className="rounded-[15px]" src={imgWebp} alt="Икша Кантри Клаб" />*/}
+                                          {/*</picture>*/}
+                                          <img
+                                             className="rounded-[15px]"
+                                             src={imgWebp}
+                                             alt="Икша Кантри Клаб"
                                           />
                                        </div>
-                                       <p className="font-medium text-white sm:text-[18px] 3xl:text-[28px]">
-                                          {el.title}
-                                       </p>
-                                    </label>
-                                 ))}
+                                    ))}
+                                 </Slider>
                               </div>
-                              <button
-                                 onClick={onNextClick}
-                                 type="button"
-                                 className=" mt-2 rounded-[20px] border-[5px] border-[#4D382B] bg-[#AB8E67] px-12 py-2 text-[22px] font-semibold text-white sm:px-20 sm:py-3 3xl:text-[32px]"
-                              >
-                                 стоимость
-                              </button>
                            </div>
-                        </div>
-                        <div className="flex flex-col items-center gap-8 pb-10 xl:pb-0">
-                           <div className="flex w-full justify-between gap-1">
-                              <button type="button" onClick={handleImageClick}>
-                                 {/*<picture>*/}
-                                 {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
-                                 {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
-                                 {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="Икша Кантри Клаб" />*/}
-                                 {/*</picture>*/}
-                                 <img
-                                    className="w-[200px] rounded-[15px] 3xl:w-[300px]"
-                                    src="/image/doca.png"
-                                    alt="Икша Кантри Клаб"
+                           <div className="flex h-full items-center justify-center">
+                              <div className="flex h-[420px] w-[380px] flex-col items-center rounded-[40px] border-[2px] border-[#AB8E67] bg-[#75624A] px-[50px] py-9 sm:h-[500px] sm:w-[500px] lg:h-[760px] lg:w-[770px] lg:px-[90px]">
+                                 <p className="mb-8 text-center text-[18px] font-semibold text-white sm:text-[22px] lg:mb-16 lg:text-[32px]">
+                                    Оставьте ваши данные, и наш менеджер
+                                    свяжется с вами для уточнения деталей
+                                 </p>
+                                 <input
+                                    placeholder="Имя"
+                                    {...register("name", { required: true })}
+                                    type="text"
+                                    className="mb-[30px] w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]"
                                  />
-                              </button>
-                              <button
-                                 type="button"
-                                 onClick={() => handleDownload("/pdf/keyt.pdf")}
-                              >
-                                 {/*<picture>*/}
-                                 {/*    <source srcSet="/image/menu_list.avif 1x" type="image/avif" />*/}
-                                 {/*    <source srcSet="/image/menu_list.webp 1x" type="image/webp" />*/}
-                                 {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/menu_list.jpg" alt="Меню в Икша Кантри Клаб" />*/}
-                                 {/*</picture>*/}
-                                 <img
-                                    className="w-[200px] rounded-[15px] 3xl:w-[300px]"
-                                    src="/image/menu_list.jpg"
-                                    alt="Меню в Икша Кантри Клаб"
+                                 <input
+                                    placeholder="Телефон"
+                                    {...register("phone", { required: true })}
+                                    type="text"
+                                    className="mb-8 w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:mb-16 lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]"
                                  />
-                              </button>
+                                 <button
+                                    type="submit"
+                                    className="mb-[100px] rounded-[20px] border-[4px] border-[#AB8E67] bg-[rgb(171,_142,_103)] px-[30px] py-[15px] text-[18px] font-medium text-white sm:text-[22px] lg:rounded-[30px] lg:py-[25px] lg:text-[32px]"
+                                 >
+                                    Отправить заявку
+                                 </button>
+                              </div>
                            </div>
-                           <Slider
-                              className="h-[240px] w-[360px] rounded-[15px] border-[2px] border-b-0 border-[#AB8E67] p-1 sm:h-[325px] sm:w-[500px] 3xl:h-[460px] 3xl:w-[700px]"
-                              {...settings}
-                           >
-                              {images.map(({ imgAvif, imgWebp }, i) => (
-                                 <div key={uuid4()}>
-                                    {/*<picture>*/}
-                                    {/*    <source srcSet={`${imgAvif} 1x`} type="image/avif" />*/}
-                                    {/*    <img className="rounded-[15px]" src={imgWebp} alt="Икша Кантри Клаб" />*/}
-                                    {/*</picture>*/}
-                                    <img
-                                       className="rounded-[15px]"
-                                       src={imgWebp}
-                                       alt="Икша Кантри Клаб"
-                                    />
-                                 </div>
-                              ))}
-                           </Slider>
-                        </div>
-                     </div>
-                     <div className="flex h-full items-center justify-center">
-                        <div className="flex h-[420px] w-[380px] flex-col items-center rounded-[40px] border-[2px] border-[#AB8E67] bg-[#75624A] px-[50px] py-9 sm:h-[500px] sm:w-[500px] lg:h-[760px] lg:w-[770px] lg:px-[90px]">
-                           <p className="mb-8 text-center text-[18px] font-semibold text-white sm:text-[22px] lg:mb-16 lg:text-[32px]">
-                              Оставьте ваши данные, и наш менеджер свяжется с
-                              вами для уточнения деталей
-                           </p>
-                           <input
-                              placeholder="Имя"
-                              {...register("name", { required: true })}
-                              type="text"
-                              className="mb-[30px] w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]"
-                           />
-                           <input
-                              placeholder="Телефон"
-                              {...register("phone", { required: true })}
-                              type="text"
-                              className="mb-8 w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:mb-16 lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]"
-                           />
-                           <button
-                              type="submit"
-                              className="mb-[100px] rounded-[20px] border-[4px] border-[#AB8E67] bg-[rgb(171,_142,_103)] px-[30px] py-[15px] text-[18px] font-medium text-white sm:text-[22px] lg:rounded-[30px] lg:py-[25px] lg:text-[32px]"
-                           >
-                              Отправить заявку
-                           </button>
-                        </div>
-                     </div>
-                  </Slider>
-               </m.form>
-            </m.div>
-         </section>
+                        </Slider>
+                     </m.form>
+                  </m.div>
+               </section>
+            </div>
+         )}
       </>
    );
 };

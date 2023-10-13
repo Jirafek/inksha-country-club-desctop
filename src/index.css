@@ -392,3 +392,13 @@ ul {
   height: 48px !important; */
   /* bottom: 80px !important; */
 }
+
+.korpo_wrapp {
+  -webkit-scrollbar-width: thin !important;
+  /* scrollbar-width: none !important; */
+}
+
+.korpo_wrapp::-webkit-scrollbar {
+  width: 0px;
+  /* scrollbar-width: none !important; */
+}

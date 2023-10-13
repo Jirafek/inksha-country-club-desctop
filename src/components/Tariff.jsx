@@ -11,11 +11,14 @@ import { URLData } from "../utils/URLData";
 import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
-
+import InputMask from "react-input-mask";
+import PropTypes from "prop-types";
 const Tariff = () => {
    const [name, setName] = useState("");
    const [phone, setPhone] = useState("");
    const [navigation, setNavigation] = useState(false);
+
+   const [phoneError, setPhoneError] = useState("");
 
    const handleSubmit = async () => {
       const data = {
@@ -59,6 +62,10 @@ const Tariff = () => {
          console.error(error);
          alert("Произошла ошибка при отправке данных");
       }
+   };
+   const validatePhoneNumber = (phoneNumber) => {
+      const phonePattern = /^\+?([0-9]{1,4})?[0-9]{10}$/; // Пример регулярного выражения
+      return phonePattern.test(phoneNumber);
    };
 
    return (
@@ -139,13 +146,26 @@ const Tariff = () => {
                         onChange={(e) => setName(e.target.value)}
                         value={name}
                      />
-                     <input
-                        type="text"
-                        placeholder="Телефон"
-                        className="h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none"
-                        onChange={(e) => setPhone(e.target.value)}
+                     <InputMask
+                        mask="+7 (999) 999-99-99"
+                        maskChar=" "
                         value={phone}
-                     />
+                        onChange={(e) => {
+                           setPhone(e.target.value);
+                        }}
+                     >
+                        {(inputProps) => (
+                           <input
+                              type="text"
+                              placeholder="Телефон"
+                              className={`h-[50px] w-full rounded-[20px] bg-grey p-2 text-black outline-none ${
+                                 phoneError ? "border-red-500" : ""
+                              }`}
+                              {...inputProps}
+                           />
+                        )}
+                     </InputMask>
+
                      <Button
                         onClick={handleSubmit}
                         className="btn-pum mx-auto h-[40px] w-1/2 bg-pumpkin text-white"
