@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import close from "./../assets/close.png";
 import FormInput from "./FormInput";
+import TellInput from "./TellInput";
 import { URLData } from "../utils/URLData";
 import { useNavigate } from "react-router-dom";
 const MainPopup = ({ isPopupOpen, togglePopup }) => {
    const [isPopupCompleted, setIsPopupCompleted] = useState(false);
    const [isError, setIsError] = useState(true); // State for tracking errors
-   const [formData, setFormData] = useState({
-      name: "",
-      phone: "",
-   });
+   const [name, setName] = useState("");
+   const [isValid, setIsValid] = useState(true);
+   const [phone, setPhone] = useState("");
    const navigate = useNavigate();
 
    const handleSubmitBot = async () => {
       const data = {
-         name: formData.name,
-         phone: formData.phone,
+         name: name,
+         phone: phone,
          email: "-",
       };
 
@@ -53,50 +53,52 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
       }
    };
 
+   useEffect(() => {
+      // Проверка на ошибки при изменении полей формы
+      const newIsError = !name || !phone || !isValid;
+      setIsError(newIsError);
+   }, [name, phone]);
+
+   const handlePhoneChange = (e) => {
+      const inputValue = e.target.value;
+      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
+      setPhone(numericValue);
+      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
+   };
+   const handleNameChange = (e) => {
+      const { value } = e.target;
+      setName(value);
+   };
+
+   const handlePopupClose = () => {
+      setIsPopupCompleted(false);
+      togglePopup();
+   };
+
    const handleSubmit = (e) => {
       e.preventDefault();
       if (isError) {
          return;
       }
-      // Update the allFormData object with the latest data
-
+      const data = {
+         name,
+         phone,
+         email: "-",
+      };
       handleSubmitBot();
+      // ... ваша существующая логика ...
+      setPhone(""); // Очищаем состояние телефона
+      setName(""); // Очищаем состояние телефона
       setIsPopupCompleted(!isPopupCompleted);
-
-      // Clear the form data by resetting it to its initial empty state
-      setFormData({
-         name: "",
-         phone: "",
-      });
    };
-
-   useEffect(() => {
-      // Check for errors when any of the form fields change
-      const newIsError = !formData.name || !formData.phone;
-      setIsError(newIsError);
-   }, [formData]);
-
-   const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData((prevData) => ({
-         ...prevData,
-         [name]: value,
-      }));
-   };
-
-   const handlePopupClose = () => {
-      // Reset the popup state and close the popup
-      setIsPopupCompleted(false);
-      togglePopup();
-   };
-
    return (
       <div className="montery">
          {isPopupOpen && (
             <div>
                {isPopupCompleted ? (
                   <div
-                     className={`fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[50%]`}
+                     className={`fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[60%]`}
                   >
                      <div className="absolute right-5 top-5">
                         <img
@@ -120,7 +122,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                      </button>
                   </div>
                ) : (
-                  <div className="fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[50%]">
+                  <div className="fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[60%]">
                      <div className="absolute right-5 top-5">
                         <img
                            className="h-7 w-7 cursor-pointer object-cover"
@@ -129,7 +131,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                            alt="close"
                         />
                      </div>
-                     <p className="text-[16px] font-bold text-[#6C6053]">
+                     <p className="text-[25px] font-bold text-[#6C6053]">
                         Заполните форму, чтобы мы связались с вами
                      </p>
                      <form
@@ -155,17 +157,15 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                         <FormInput
                            placeholder="Имя"
                            name="name"
-                           value={formData.name}
-                           onChange={handleInputChange}
+                           value={name}
+                           onChange={handleNameChange}
                            type="text"
                         />
 
-                        <FormInput
-                           placeholder="Телефон"
-                           type="tel"
-                           name="phone"
-                           value={formData.phone}
-                           onChange={handleInputChange}
+                        <TellInput
+                           value={phone}
+                           isValid={isValid}
+                           onChange={handlePhoneChange}
                         />
                         <button
                            type="submit"

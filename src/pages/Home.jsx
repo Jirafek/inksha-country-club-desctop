@@ -14,7 +14,7 @@ import Bron from "../components/Home/Bron";
 import Footer from "../components/Footer";
 import Map from "components/Home/Map/Map";
 
-const Home = () => {
+const Home = ({ isPopupOpen, togglePopup }) => {
    useEffect(() => {
       const urlParams = new URLSearchParams(window.location.search);
       updateData(

@@ -31,10 +31,6 @@ const headingLines = {
 };
 
 const Main = () => {
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
-   const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev);
-   };
    useEffect(() => {
       const script = document.createElement("script");
       script.src = "//widget.bronirui-online.ru/js/app.js";
@@ -101,26 +97,17 @@ const Main = () => {
 
    return (
       <div>
-         <AnimationButton
-            h={72}
-            w={72}
-            className="fixed bottom-[20px] right-[240px] z-[10000] flex  min-w-[300px]  justify-end "
-            onClick={togglePopup}
-         >
-            Свяжитесь со мной
-         </AnimationButton>
-
          <section
             style={{
                backgroundImage: "url(/image/bg1_right.webp)",
                backgroundPosition: "right",
+               backgroundSize: "cover",
                backgroundRepeat: "no-repeat",
             }}
             className="relative w-full"
          >
             <Header />
 
-            <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
             <div className="absolute left-0 top-0 flex items-center">
                {/*<picture>*/}
                {/*    <source srcSet="/image/main_arrow_big.avif 1x" type="image/avif" />*/}
@@ -162,7 +149,7 @@ const Main = () => {
                      delay: 2,
                   },
                }}
-               className="relative my-[50px] flex flex-col px-[40px] md:px-[90px] lg:mt-[150px]"
+               className="relative mb-[200px] mt-[50px] flex flex-col px-[40px] md:px-[90px] lg:mt-[150px]"
             >
                <div className="mb-[55px] flex flex-col 2xl:mb-[115px]">
                   <h1 className="text-[56px] font-extrabold uppercase leading-[60px] text-white md:text-[70px] 2xl:text-[98px] 2xl:leading-[100px]">
