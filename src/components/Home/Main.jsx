@@ -149,7 +149,7 @@ const Main = () => {
                      delay: 2,
                   },
                }}
-               className="relative mb-[200px] mt-[50px] flex flex-col px-[40px] md:px-[90px] lg:mt-[150px]"
+               className="relative mb-[15%] mt-[120px]  flex flex-col px-[40px] md:px-[90px] "
             >
                <div className="mb-[55px] flex flex-col 2xl:mb-[115px]">
                   <h1 className="text-[56px] font-extrabold uppercase leading-[60px] text-white md:text-[70px] 2xl:text-[98px] 2xl:leading-[100px]">

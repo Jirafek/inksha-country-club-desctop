@@ -36,14 +36,16 @@ function App() {
 
    return (
       <div>
-         <AnimationButton
-            h={72}
-            w={72}
-            className="fixed bottom-[20px] right-[240px] z-[10000] flex min-w-[300px] justify-end"
-            onClick={togglePopup}
-         >
-            Свяжитесь со мной
-         </AnimationButton>
+         <div className="fixed bottom-[20px] right-[240px] z-[10000]">
+            <AnimationButton
+               h={72}
+               w={72}
+               className=" flex  justify-end"
+               onClick={togglePopup}
+            >
+               Свяжитесь со мной
+            </AnimationButton>
+         </div>
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Routes className="relative">
             <Route

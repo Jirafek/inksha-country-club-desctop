@@ -8,10 +8,10 @@ const AnimatedButton = ({
    h = 12,
 }) => {
    return (
-      <div style={style} onClick={onClick} className={`  `}>
+      <div style={style} onClick={onClick} className={``}>
          <button
             style={{ height: h }}
-            className={`animated_connection_btn ${
+            className={`animated_connection_btn_big ${
                className || ""
             } z-10 flex  w-[3rem] items-center  justify-center rounded-[48px] bg-[#AB8E67]  pl-3 text-white duration-300  hover:bg-[#b49d7f]`}
          >
@@ -19,7 +19,7 @@ const AnimatedButton = ({
                style={{ height: h }}
                className={` relative flex w-full items-center`}
             >
-               <p className="animated_text_appearing montery w-[80%] font-[500] opacity-0">
+               <p className="animated_text_appearing montery w-[80%] font-[500] font-[600] opacity-0">
                   {children}
                </p>
                <div className="absolute -right-[2px] top-0 ">

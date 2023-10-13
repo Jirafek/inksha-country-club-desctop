@@ -316,12 +316,7 @@ ul {
 }
 
 
-.animated_connection_btn {
-  animation-delay: 20s;
-  animation: 2s ease-in-out;
-  animation-name: openButton;
-  animation-fill-mode: forwards;
-}
+
 
 .visually__hidden {
   position: absolute;
@@ -344,6 +339,17 @@ ul {
   }
 }
 
+@keyframes openButtonBig {
+  0% {
+    width: 3rem;
+  }
+
+  100% {
+    width: 280px;
+  }
+}
+
+
 @keyframes openText {
   0% {
     opacity: 0;
@@ -365,6 +371,13 @@ ul {
   animation-fill-mode: forwards;
 }
 
+
+.animated_connection_btn_big {
+  animation-delay: 20s;
+  animation: 2s ease-in-out;
+  animation-name: openButtonBig;
+  animation-fill-mode: forwards;
+}
 
 .znms-widget__main-wrapper[data-v-029b0f26],
 [data-v-08d329fc] .znms-widget__module-form-block--middle {
