@@ -2,6 +2,7 @@ import { lazy, useEffect, useState } from "react";
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 import AnimationButton from "./common/AnimationButton";
 import MainPopup from "./common/MainPopup";
+import { BooleanParam, useQueryParam } from "use-query-params";
 
 const NotFound = () => {
    return (
@@ -33,6 +34,8 @@ function App() {
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev);
    };
+   const [isKorpOpen, setIsKorpOpen] = useQueryParam("korpOpen", BooleanParam);
+   console.log(isKorpOpen);
 
    return (
       <div>
@@ -47,6 +50,7 @@ function App() {
             </AnimationButton>
          </div>
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
+
          <Routes className="relative">
             <Route
                path="/"
@@ -56,7 +60,10 @@ function App() {
             />
             <Route path="/keytering" element={<Keytering />} />
             <Route path="/location/:id" element={<LocationId />} />
-            <Route path="/korporativy" element={<Korporativy />} />
+            <Route
+               path="/korporativy"
+               element={<Korporativy isKorpOpen={isKorpOpen} />}
+            />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/thanks" element={<Thanks />} />
             <Route path="/halloween" element={<Helloween />} />
