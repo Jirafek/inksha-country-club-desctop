@@ -1,9 +1,10 @@
 import React, { useRef, useState } from "react";
 import { v4 as uuid4 } from "uuid";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import LocationArrow from "../components/icons/LocationArrow";
+import InputMask from "react-input-mask";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -197,6 +198,7 @@ const Korporativy = ({ isKorpOpen }) => {
    const {
       register,
       handleSubmit,
+      control,
       formState: { errors },
    } = useForm();
    const [navigation, setNavigation] = useState(false);
@@ -431,12 +433,36 @@ const Korporativy = ({ isKorpOpen }) => {
                                     type="text"
                                     className="mb-[30px] w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]"
                                  />
-                                 <input
+                                 {/* <input
                                     placeholder="Телефон"
                                     {...register("phone", { required: true })}
                                     type="text"
                                     className="mb-8 w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:mb-16 lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]"
+                                 /> */}
+                                 <Controller
+                                    name="phone"
+                                    control={control}
+                                    defaultValue=""
+                                    render={({ field }) => (
+                                       <InputMask
+                                          mask="+7 (999) 999-99-99"
+                                          value={field.value}
+                                          onChange={(e) =>
+                                             field.onChange(e.target.value)
+                                          }
+                                       >
+                                          {(inputProps) => (
+                                             <input
+                                                type="text"
+                                                placeholder="Телефон"
+                                                className={`mb-8 w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:mb-16 lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]`}
+                                                {...inputProps}
+                                             />
+                                          )}
+                                       </InputMask>
+                                    )}
                                  />
+
                                  <button
                                     type="submit"
                                     className="mb-[100px] rounded-[20px] border-[4px] border-[#AB8E67] bg-[rgb(171,_142,_103)] px-[30px] py-[15px] text-[18px] font-medium text-white sm:text-[22px] lg:rounded-[30px] lg:py-[25px] lg:text-[32px]"
