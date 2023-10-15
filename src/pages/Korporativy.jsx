@@ -9,7 +9,7 @@ import InputMask from "react-input-mask";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import close from "./../assets/close.png";
 import { m } from "framer-motion";
 import { Helmet } from "react-helmet";
 
@@ -261,9 +261,10 @@ const Korporativy = ({ isKorpOpen }) => {
                   {navigation && <Navigate to="/thanks" />}
                   <button
                      onClick={goBack}
-                     className="absolute left-7 top-3 z-10 hidden w-[40px] rotate-180 duration-300 hover:-translate-x-2 sm:block"
+                     className="absolute right-7 top-7 z-10 hidden w-[40px] rotate-180 duration-300  sm:block"
                   >
-                     <LocationArrow />
+                     {/* <LocationArrow /> */}
+                     <img className="h-9 w-9 object-cover" src={close} alt="" />
                   </button>
                   <m.div
                      initial="hidden"
