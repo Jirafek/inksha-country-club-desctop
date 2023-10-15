@@ -130,7 +130,7 @@ const images = [
    },
 ];
 
-const Korporativy = ({ isKorpOpen }) => {
+const Korporativy = ({ isKorpOpen, toggleKorp }) => {
    const navigate = useNavigate();
    const goBack = () => {
       navigate(-1);
@@ -260,7 +260,7 @@ const Korporativy = ({ isKorpOpen }) => {
                <section className="relative min-h-screen w-full bg-[#201E1F]">
                   {navigation && <Navigate to="/thanks" />}
                   <button
-                     onClick={goBack}
+                     onClick={toggleKorp}
                      className="absolute right-7 top-7 z-10 hidden w-[40px] rotate-180 duration-300  sm:block"
                   >
                      {/* <LocationArrow /> */}

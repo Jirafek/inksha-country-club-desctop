@@ -35,6 +35,9 @@ function App() {
       setIsPopupOpen((prev) => !prev);
    };
    const [isKorpOpen, setIsKorpOpen] = useQueryParam("korpOpen", BooleanParam);
+   const toggleKorp = () => {
+      setIsKorpOpen((prev) => !prev);
+   };
    useEffect(() => {
       setIsKorpOpen(false);
    }, []);
@@ -55,7 +58,7 @@ function App() {
             </AnimationButton>
          </div>
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
-         <Korporativy isKorpOpen={isKorpOpen} />
+         <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
          <Routes className="relative">
             <Route
                path="/"
