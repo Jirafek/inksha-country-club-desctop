@@ -140,9 +140,20 @@ body {
   color: transparent;
 }
 
+.slick-list {
+  width: 100%;
+}
+
 .slick-slide {
   display: flex !important;
   justify-content: center !important;
+  /* width: 100% !important; */
+  flex-direction: row !impor tant;
+}
+
+.slick-track {
+  /* width: 100% !important; */
+  flex-wrap: nowrap !important;
 }
 
 .fade-enter {
