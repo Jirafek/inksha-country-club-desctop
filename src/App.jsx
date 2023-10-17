@@ -39,7 +39,7 @@ function App() {
       setIsKorpOpen((prev) => !prev);
    };
    useEffect(() => {
-      setIsKorpOpen(false);
+      // setIsKorpOpen(false);
    }, []);
    console.log(isKorpOpen);
    return (
