@@ -3,7 +3,15 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 import AnimationButton from "./common/AnimationButton";
 import MainPopup from "./common/MainPopup";
 import { BooleanParam, useQueryParam } from "use-query-params";
-import Korporativy from "./pages/Korporativy";
+// import Korporativy from "./pages/Korporativy";
+// import Keytering from "./pages/Keytering";
+// import Home from "./pages/Home";
+// import Privacy from "./pages/Privacy";
+// import LocationId from "./pages/LocationId";
+// import FAQ from "./pages/FAQ";
+// import Thanks from "./pages/Thanks";
+// import Helloween from "./pages/Helloween";
+
 const NotFound = () => {
    return (
       <section className="relative h-screen bg-[#201E1F]">
@@ -23,7 +31,7 @@ const NotFound = () => {
 const Home = lazy(() => import("pages/Home"));
 const Keytering = lazy(() => import("pages/Keytering"));
 const LocationId = lazy(() => import("pages/LocationId"));
-// const Korporativy = lazy(() => import("pages/Korporativy"));
+const Korporativy = lazy(() => import("pages/Korporativy"));
 const FAQ = lazy(() => import("pages/FAQ"));
 const Privacy = lazy(() => import("pages/Privacy"));
 const Thanks = lazy(() => import("pages/Thanks"));
