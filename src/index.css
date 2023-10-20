@@ -42,6 +42,9 @@ html {
 }
 
 
+h1 {
+  font-weight: 600;
+}
 
 body {
   font-family: sans-serif;
@@ -95,6 +98,7 @@ body {
 .monterey {
   font-family: 'Montserrat-R';
 }
+
 
 .montaga {
   font-family: 'Montaga';
@@ -288,7 +292,9 @@ body {
 
 .wrapper {
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+
   padding: 0 20px;
 
 
@@ -412,4 +418,10 @@ ul {
 .korpo_wrapp::-webkit-scrollbar {
   width: 0px;
   /* scrollbar-width: none !important; */
+}
+
+
+.photo_swiper .swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
 }

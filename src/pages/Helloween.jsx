@@ -6,23 +6,27 @@ import Footer from "../common/Footer";
 import React, { useState } from "react";
 
 function Helloween() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const toggleMenu = () => {
-        setIsMenuOpen((prev) => !prev);
-    };
-    return (
-        <div className="text-white ">
-            <Header toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-            <div className={`${isMenuOpen ? "blur-sm" : ""}`}>
-                <Hero />
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const toggleMenu = () => {
+      setIsMenuOpen((prev) => !prev);
+   };
+   return (
+      <div className="text-white ">
+         <Header
+            className="druk bg-darkViolet"
+            toggleMenu={toggleMenu}
+            isMenuOpen={isMenuOpen}
+         />
+         <div className={`${isMenuOpen ? "blur-sm" : ""}`}>
+            <Hero />
 
-                <Programa />
+            <Programa />
 
-                <Tariff />
-                <Footer />
-            </div>
-        </div>
-    );
+            <Tariff />
+            <Footer />
+         </div>
+      </div>
+   );
 }
 
 export default Helloween;

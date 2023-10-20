@@ -56,9 +56,9 @@ const links = [
    { title: "Связаться со мной", link: "Form" },
 ];
 // eslint-disable-next-line react/prop-types
-const Header = ({ toggleMenu, isMenuOpen }) => {
+const Header = ({ toggleMenu, isMenuOpen, className }) => {
    return (
-      <div className="bg-darkViolet">
+      <div className={` ${className} `}>
          <AnimatePresence>
             <div className="wrapper  ">
                {isMenuOpen && (
@@ -82,7 +82,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                               return (
                                  <motion.li
                                     onClick={toggleMenu}
-                                    className="druk cursor-pointer text-[25px]"
+                                    className=" cursor-pointer text-[25px]"
                                     variants={navVars}
                                     key={i}
                                  >
@@ -102,7 +102,7 @@ const Header = ({ toggleMenu, isMenuOpen }) => {
                   </div>
                )}
                <Reveal duration={2} variants={opacity()}>
-                  <div className="druk flex justify-between py-5">
+                  <div className=" flex justify-between py-5">
                      <Link to="/">Икша Кантри Kлаб</Link>
                      <ul className="hidden gap-10 md:flex">
                         {links.map((link, i) => {

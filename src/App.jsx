@@ -36,6 +36,7 @@ const FAQ = lazy(() => import("pages/FAQ"));
 const Privacy = lazy(() => import("pages/Privacy"));
 const Thanks = lazy(() => import("pages/Thanks"));
 const Helloween = lazy(() => import("pages/Helloween"));
+const KorpLanding = lazy(() => import("pages/korpLanding/KorpLanding"));
 
 function App() {
    const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -83,10 +84,12 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/thanks" element={<Thanks />} />
             <Route path="/halloween" element={<Helloween />} />
+            <Route path="/korp" element={<KorpLanding />} />
             <Route
                path="/rules"
                element={<Privacy title={"Правила проживания"} />}
             />
+
             <Route path="*" element={<NotFound />} />
          </Routes>
       </div>
