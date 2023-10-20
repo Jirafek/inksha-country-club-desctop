@@ -11,7 +11,7 @@ const Hero = () => {
                <h1 className="text-xl font-bold text-brown">
                   КОРПОРАТИВЫ & ТИМБИЛДИНГ
                </h1>
-               <div className="text-lg text-white">
+               <div className="my-[40px] text-md text-white">
                   Выбраться из офиса за город? Отличная мысль, но как это все
                   организовать? Ответ прост - приезжайте к нам, у нас уже всё
                   готово, прекрасная природа и полный комфорт ждут!

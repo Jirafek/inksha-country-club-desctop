@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./../../common/Header";
 import Hero from "./components/Hero";
 import Photo from "./components/Photo";
+import Add from "./components/Add";
 
 import Whyus from "./components/Whyus";
 const KorpLanding = () => {
@@ -11,6 +12,7 @@ const KorpLanding = () => {
          <Hero />
          <Whyus />
          <Photo />
+         <Add />
       </div>
    );
 };

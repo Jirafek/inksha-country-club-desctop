@@ -32,15 +32,15 @@ const Whyus = () => {
                <h1 className="mb-[1em] text-lg text-black">
                   Почему Нас Выбирают
                </h1>
-               <div className="flex items-start justify-between gap-10">
+               <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
                   {whyusmap.map((item, i) => {
                      return (
                         <div
-                           className="items flex flex-col items-center justify-center gap-5"
+                           className="items col-span-1 flex flex-col items-center justify-center gap-5 place-self-start"
                            key={i}
                         >
                            <img
-                              className="h-[180px]  w-[168px]"
+                              className="whyus_img h-[180px] w-[168px]"
                               src={item.img}
                            />
                            <div>{item.text}</div>

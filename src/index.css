@@ -425,3 +425,8 @@ ul {
 .swiper-button-next {
   display: none !important;
 }
+
+
+.whyus_img {
+  /* box-outline: 0px 0px 0px 4px rgba(0, 0, 0, 0.75); */
+}
