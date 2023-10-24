@@ -4,11 +4,11 @@ module.exports = {
    theme: {
       fontSize: {
          ultra: "clamp(48px, 10vw, 128px)",
-         tarif: "clamp(6px, 4vw, 24px)",
-         xl: "clamp(40px, 10vw, 80px)",
-         lg: "clamp(3px, 3vw, 48px)",
+         tarif: "clamp(6px, 10vw, 24px)",
+         xl: "clamp(40px, 10vw, 70px)",
+         lg: "clamp(3px, 10vw, 48px)",
          md: "clamp(10px, 4vw, 28px)",
-         sm: "clamp(10px, 8vw, 18px)",
+         sm: "clamp(10px, 10vw, 18px)",
          small: "clamp(6px, 4vw, 18px)",
       },
       extend: {

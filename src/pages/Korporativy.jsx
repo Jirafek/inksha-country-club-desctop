@@ -366,6 +366,13 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                        стоимость
                                     </button>
                                  </div>
+
+                                 <Link
+                                    to="/korp"
+                                    className="z-10 cursor-pointer pb-5 leading-4 tracking-widest text-white underline"
+                                 >
+                                    подробнее
+                                 </Link>
                               </div>
                               <div className="flex flex-col items-center gap-8 pb-10 xl:pb-0">
                                  <div className="flex w-full justify-between gap-1">
@@ -421,7 +428,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                     ))}
                                  </Slider>
                               </div>
-                           </div>
+                           </div>{" "}
                            <div className="flex h-full items-center justify-center">
                               <div className="flex h-[420px] w-[380px] flex-col items-center rounded-[40px] border-[2px] border-[#AB8E67] bg-[#75624A] px-[50px] py-9 sm:h-[500px] sm:w-[500px] lg:h-[760px] lg:w-[770px] lg:px-[90px]">
                                  <p className="mb-8 text-center text-[18px] font-semibold text-white sm:text-[22px] lg:mb-16 lg:text-[32px]">

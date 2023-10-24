@@ -1,18 +1,22 @@
 import React from "react";
 import Header from "./../../common/Header";
-import Hero from "./components/Hero";
-import Photo from "./components/Photo";
-import Add from "./components/Add";
+import Hero from "./components/KorpHero";
+import KorpLocations from "./components/KorpLocations";
+import Photo from "./components/KorpPhoto";
+import Add from "./components/KorpAdd";
+import Form from "./components/KorpForm";
 
-import Whyus from "./components/Whyus";
+import Whyus from "./components/KorpWhyus";
 const KorpLanding = () => {
    return (
-      <div className="monterey">
-         <Header className="monterey bg-korpHeader text-grey" />
+      <div className="montserrat">
+         <Header className="montserrat bg-korpHeader text-grey" />
          <Hero />
          <Whyus />
          <Photo />
+         <KorpLocations />
          <Add />
+         <Form />
       </div>
    );
 };

@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
 @layer base {
   html {
     font-family: 'Montserrat', system-ui, sans-serif;
@@ -99,6 +102,10 @@ body {
   font-family: 'Montserrat-R';
 }
 
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .montaga {
   font-family: 'Montaga';
@@ -429,4 +436,10 @@ ul {
 
 .whyus_img {
   /* box-outline: 0px 0px 0px 4px rgba(0, 0, 0, 0.75); */
+}
+
+
+.korp_hero_img-blur {
+  box-shadow: 0px 0px 135px 23px rgba(255, 255, 255, 1);
+
 }

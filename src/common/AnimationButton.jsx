@@ -19,7 +19,7 @@ const AnimatedButton = ({
                style={{ height: h }}
                className={` relative flex w-full items-center`}
             >
-               <p className="animated_text_appearing montery w-[80%] font-[500] font-[600] opacity-0">
+               <p className="animated_text_appearing montery w-[80%]  font-[600] opacity-0">
                   {children}
                </p>
                <div className="absolute -right-[2px] top-0 ">

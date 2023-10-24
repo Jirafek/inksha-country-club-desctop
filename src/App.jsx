@@ -57,7 +57,7 @@ function App() {
             <AnimationButton
                h={72}
                w={72}
-               className=" flex  justify-end"
+               className=" flex  justify-end shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                onClick={togglePopup}
                // onClick={() => {
                //    setIsKorpOpen(!isKorpOpen);

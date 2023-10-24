@@ -6,6 +6,7 @@ import add4 from "image/korpLanding/add/004.png";
 import add5 from "image/korpLanding/add/005.png";
 import add6 from "image/korpLanding/add/006.png";
 import Button from "common/Button";
+import trans3 from "image/korpLanding/trans3.png";
 import arrow from "icons/arrow.png";
 const tabs = [
    { label: "Растопка бани/купели", img: add1 },
@@ -26,18 +27,20 @@ const Add = () => {
       setActiveTab(index);
    };
    return (
-      <div className="bg-korpPrimary">
+      <div className="relative bg-korpPrimary pb-[10vh]">
          <div className="wrapper">
-            <div>
-               <h1 className="text-xl text-white">Дополнительные услуги</h1>
-               <div className="flex items-center gap-10">
+            <div className="mb-[10vh]">
+               <h1 className="mb-[5vh] text-center text-xl text-white">
+                  Дополнительные услуги
+               </h1>
+               <div className="flex  gap-10">
                   <div className="tabs flex max-w-[400px] flex-col gap-5  text-grey">
                      {tabs.map((tab, index) => (
                         <div
                            key={index}
                            className={`${
                               index === activeTab ? "text-white" : ""
-                           } cursor-pointer`}
+                           } cursor-pointer text-md`}
                            onClick={() => handleTabClick(index)}
                         >
                            {tab.label}
@@ -53,11 +56,15 @@ const Add = () => {
                Также по вашему желанию мы можем предоставить услугу
                <br /> оформление юр.договора (+10% к общей сумме)
             </h2>
-            <Button className="h-max-[65px] min-w-[600px] gap-5 bg-brown text-white">
+            <Button className="h-max-[65px] z-[100] min-w-[600px] gap-5 bg-brown text-white">
                Узнать стоимость
                <img src={arrow} alt="" />
             </Button>
          </div>
+         <img
+            src={trans3}
+            className="absolute -bottom-[20vh] max-h-[360px] w-full xl:-bottom-[30vh] xl:max-h-[400px]"
+         />
       </div>
    );
 };

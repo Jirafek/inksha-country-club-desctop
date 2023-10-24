@@ -10,8 +10,8 @@ const bronData = [
       imgAvif: "/image/wa_bl.avif",
       imgWebp: "/image/wa_bl.webp",
       imgAltText: "Позвонить",
-      text: "+7 985 909 12 02",
-      link: "https://wa.me/79859091202",
+      text: "+7 (499) 505-50-31",
+      link: "tel:+74995055031",
    },
    {
       imgAvif: "/image/tg_bl.avif",

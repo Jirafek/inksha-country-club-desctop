@@ -26,7 +26,7 @@ const whyusmap = [
 
 const Whyus = () => {
    return (
-      <div className="relative  bg-brown  pb-[7%]  ">
+      <div className="relative bg-brown pb-[6%]  pt-[40vh]  ">
          <div className="wrapper">
             <div className="text-center">
                <h1 className="mb-[1em] text-lg text-black">
@@ -50,11 +50,7 @@ const Whyus = () => {
                </div>
             </div>
          </div>
-         <img
-            className="absolute -bottom-[10%] w-full object-cover"
-            src={trans2}
-            alt=""
-         />
+         <img className="absolute w-full object-cover" src={trans2} alt="" />
       </div>
    );
 };
