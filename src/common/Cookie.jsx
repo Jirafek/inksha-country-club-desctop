@@ -24,7 +24,7 @@ const Cookie = () => {
          <p className="text-small text-black max-w-[600px]">
             Мы используем файлы cookie. Продолжая использовать наш сайт, вы
             автоматически соглашаетесь с использованием данных технологий.
-            Политика конфиденциальности.{" "}
+             <a href='/pdf/confi.pdf' className='text-blue-300 underline cursor-pointer'>Политика конфиденциальности</a> .{" "}
          </p>
          <div className="flex items-center flex-col md:flex-row justify-between gap-5">
             <button
