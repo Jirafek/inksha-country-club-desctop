@@ -1,11 +1,10 @@
-import React from "react";
-import hero from "image/korpLanding/korp_hero.png";
+import hero from "images/korpLanding/korp_hero.webp";
 import arrow from "icons/arrow.png";
 import Button from "common/Button";
-import trans1 from "image/korpLanding/trans1.png";
+import trans1 from "images/korpLanding/trans1.png";
 const Hero = () => {
    return (
-      <div className="relative bg-korpPrimary pb-[15%] pt-[5%] lg:pb-[26%]">
+      <div className="relative bg-korpPrimary pb-[30%] pt-[5%] lg:pb-[40%]">
          <div className="wrapper ">
             <div className="text-center">
                <h1 className="text-xl font-bold text-brown">
@@ -22,10 +21,12 @@ const Hero = () => {
                      src={hero}
                      alt=""
                   />
-                  <Button className="absolute  -bottom-5 left-1/2 h-[65px] min-w-[601px] -translate-x-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
-                     Организовать мероприятие
-                     <img src={arrow} alt="" />
-                  </Button>
+                 <a href="#form">
+                     <Button className="absolute montserrat -bottom-7 md:-bottom-5 left-1/2 max-h-[20px] md:h-[65px] min-w-[310px] sm:w-[600px] -translate-x-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+                        Организовать мероприятие
+                        <img src={arrow} alt="" />
+                     </Button>
+                  </a>
                </div>
             </div>
          </div>

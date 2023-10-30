@@ -84,7 +84,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/thanks" element={<Thanks />} />
             <Route path="/halloween" element={<Helloween />} />
-            <Route path="/korp" element={<KorpLanding />} />
+            <Route path="/korp-landing" element={<KorpLanding />} />
             <Route
                path="/rules"
                element={<Privacy title={"Правила проживания"} />}

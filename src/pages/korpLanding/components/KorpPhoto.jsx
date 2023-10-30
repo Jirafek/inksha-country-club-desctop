@@ -1,19 +1,18 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import next from "icons/next_photo.png";
 import prev from "icons/prev_photo.png";
 
-import photo1 from "image/korpLanding/photo/001.png";
-import photo2 from "image/korpLanding/photo/002.png";
-import photo3 from "image/korpLanding/photo/003.png";
-import photo4 from "image/korpLanding/photo/004.png";
-import photo5 from "image/korpLanding/photo/005.png";
-import photo6 from "image/korpLanding/photo/006.png";
-import photo7 from "image/korpLanding/photo/007.png";
-import photo8 from "image/korpLanding/photo/008.png";
+import photo1 from "images/korpLanding/photo/001.webp";
+import photo2 from "images/korpLanding/photo/002.webp";
+import photo3 from "images/korpLanding/photo/003.webp";
+import photo4 from "images/korpLanding/photo/004.webp";
+import photo5 from "images/korpLanding/photo/005.webp";
+import photo6 from "images/korpLanding/photo/006.webp";
+import photo7 from "images/korpLanding/photo/007.webp";
 
 const photos = [
    { img: photo1 },
@@ -23,7 +22,6 @@ const photos = [
    { img: photo5 },
    { img: photo6 },
    { img: photo7 },
-   { img: photo8 },
 ];
 // Import Swiper styles
 import "swiper/css";
@@ -31,15 +29,15 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-const ytSrc = "https://www.youtube.com/watch?v=Eat2wgPNuIo";
-const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
+// const ytSrc = "https://www.youtube.com/watch?v=Eat2wgPNuIo";
+// const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
 const Photo = () => {
    const swiperRef = useRef();
    return (
-      <div className="bg-korpPrimary py-[4%]">
+      <div id="photo" className="bg-korpPrimary py-[10vh]">
          <div className="wrapper">
             <div className="text-center">
-               <h1 className="mb-20 text-lg text-white">
+               <h1 className=" mb-[30px] text-lg text-white">
                   Фотографии наших мероприятий
                </h1>
                <div className="relative">
@@ -50,18 +48,18 @@ const Photo = () => {
                      slidesPerView={1}
                      navigation
                      loop={true}
-                     className="photo_swiper relative h-[70vh] w-full"
+                     className="photo_swiper relative "
                      onBeforeInit={(swiper) => {
                         swiperRef.current = swiper;
                      }}
                      // onSwiper={(swiper) => console.log(swiper)}
                      // onSlideChange={() => console.log("slide change")}
                   >
-                     <SwiperSlide className="">
-                        <div>
-                           <a target="_blank" href={ytSrc}>
+                     {/* <SwiperSlide className="">
+                        <div className="">
+                           <a rel="noreferrer" target="_blank" href={ytSrc}>
                               <img
-                                 className="h-full w-full"
+                                 className="object-cover"
                                  src={`https://i.ytimg.com/vi_webp/${ytId}/mqdefault.webp`}
                                  alt="Обложка ролика с ютуб канала Икша Кантри Клаб"
                               />
@@ -82,17 +80,21 @@ const Photo = () => {
                               </svg>
                            </button>
                         </div>
-                     </SwiperSlide>
+                     </SwiperSlide> */}
                      {photos.map((photo, i) => {
                         return (
-                           <SwiperSlide key={i}>
-                              <img src={photo.img} alt="" />
+                           <SwiperSlide className="h-full w-full" key={i}>
+                              <img
+                                 className="w-full h-full object-cover"
+                                 src={photo.img}
+                                 alt=""
+                              />
                            </SwiperSlide>
                         );
                      })}
                   </Swiper>
                   <button
-                     className="absolute -right-10 top-1/2 z-20 h-[100px] w-[100px] -translate-y-1/2 transform rounded-full bg-grey"
+                     className="absolute right-0 md:-right-10 top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
                      onClick={() => {
                         swiperRef.current?.slideNext();
                      }}
@@ -100,7 +102,7 @@ const Photo = () => {
                      <img src={next} alt="" />
                   </button>
                   <button
-                     className="absolute -left-10 top-1/2 z-20 h-[100px] w-[100px] -translate-y-1/2 transform rounded-full bg-grey"
+                     className="absolute left-0 md:-left-10 top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
                      onClick={() => {
                         swiperRef.current?.slidePrev();
                      }}

@@ -368,7 +368,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                  </div>
 
                                  <Link
-                                    to="/korp"
+                                    to="/korp-landing"
                                     className="z-10 cursor-pointer pb-5 leading-4 tracking-widest text-white underline"
                                  >
                                     подробнее

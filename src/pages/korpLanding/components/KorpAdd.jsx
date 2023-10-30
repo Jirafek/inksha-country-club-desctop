@@ -1,18 +1,24 @@
-import React, { useState } from "react";
-import add1 from "image/korpLanding/add/001.png";
-import add2 from "image/korpLanding/add/002.png";
-import add3 from "image/korpLanding/add/003.png";
-import add4 from "image/korpLanding/add/004.png";
-import add5 from "image/korpLanding/add/005.png";
-import add6 from "image/korpLanding/add/006.png";
+import { useState } from "react";
+import add1 from "images/korpLanding/add/001.webp";
+import add2 from "images/korpLanding/add/002.webp";
+import add3 from "images/korpLanding/add/003.webp";
+import add4 from "images/korpLanding/add/004.webp";
+import add5 from "images/korpLanding/add/005.webp";
+import add6 from "images/korpLanding/add/006.webp";
+
 import Button from "common/Button";
-import trans3 from "image/korpLanding/trans3.png";
+import korpnext from "icons/next_photo.png";
+
+import trans2 from "images/korpLanding/trans2.png";
+
 import arrow from "icons/arrow.png";
+import Lightbox from "common/Lightbox";
+
 const tabs = [
    { label: "Растопка бани/купели", img: add1 },
    { label: "Аренда территории", img: add2 },
    {
-      label: "Активный отдых (квадроциклы, рыбалка с лодки, велосипедная и лыжная  экскурсии и др)",
+      label: "Активный отдых (квадроциклы, рыбалка с лодки и др)",
       img: add3,
    },
    { label: "Караоке", img: add4 },
@@ -21,34 +27,68 @@ const tabs = [
 ];
 
 const Add = () => {
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
    const [activeTab, setActiveTab] = useState(0);
 
    const handleTabClick = (index) => {
       setActiveTab(index);
    };
+
+   const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+   };
+
+   const switchSlide = () => {
+      if (activeTab === 5) setActiveTab(-1);
+      setActiveTab((prev) => prev + 1);
+   };
    return (
-      <div className="relative bg-korpPrimary pb-[10vh]">
-         <div className="wrapper">
+      <div id="add" className="relative bg-korpPrimary pb-[13vh] w-full">
+         {isMenuOpen && <Lightbox toggleMenu={toggleMenu} items={tabs} />}
+
+         <img
+            src={trans2}
+            alt=""
+            className="absolute w-full -top-[2.5vh] sm:-top-[3.5vh] md:-top-[5vh] lg:-top-[7vh] xl:-top-[8vh] 2xl:-top-[10vh]   "
+         />
+         {/* </div> */}
+         <div className="wrapper relative pt-[10%]">
             <div className="mb-[10vh]">
-               <h1 className="mb-[5vh] text-center text-xl text-white">
+               <h1 className="mb-[5vh] text-center text-lg text-white">
                   Дополнительные услуги
                </h1>
-               <div className="flex  gap-10">
-                  <div className="tabs flex max-w-[400px] flex-col gap-5  text-grey">
-                     {tabs.map((tab, index) => (
-                        <div
-                           key={index}
-                           className={`${
-                              index === activeTab ? "text-white" : ""
-                           } cursor-pointer text-md`}
-                           onClick={() => handleTabClick(index)}
+
+               <div className="relative">
+                  <div className="flex flex-col-reverse md:flex-row  gap-10">
+                     <div className="tabs flex w-full md:max-w-[400px] flex-col gap-5  text-slate-600">
+                        {tabs.map((tab, index) => (
+                           <div
+                              key={index}
+                              className={`${
+                                 index === activeTab
+                                    ? "text-white border border-white rounded-[30px] p-2 border-opacity-50"
+                                    : ""
+                              } cursor-pointer text-md font-semibold text-center  md:text-start`}
+                              onClick={() => handleTabClick(index)}
+                           >
+                              {tab.label}
+                           </div>
+                        ))}
+                     </div>
+                     <div className="tab-content relative">
+                        <img
+                           onClick={toggleMenu}
+                           className="cursor-pointer object-contain"
+                           src={tabs[activeTab].img}
+                           alt=""
+                        />
+                        <button
+                           onClick={switchSlide}
+                           className="absolute right-0 md:-right-10 w-[60px] md:w-auto transform top-1/2 -translate-y-1/2 text-white "
                         >
-                           {tab.label}
-                        </div>
-                     ))}
-                  </div>
-                  <div className="tab-content">
-                     <img src={tabs[activeTab].img} alt="" />
+                           <img src={korpnext} alt="" />
+                        </button>
+                     </div>
                   </div>
                </div>
             </div>
@@ -56,14 +96,14 @@ const Add = () => {
                Также по вашему желанию мы можем предоставить услугу
                <br /> оформление юр.договора (+10% к общей сумме)
             </h2>
-            <Button className="h-max-[65px] z-[100] min-w-[600px] gap-5 bg-brown text-white">
+            <Button className="h-[40px] md:h-[60px] montserrat z-[100] min-w-[200px] sm:w-[600px] gap-5 bg-brown text-white">
                Узнать стоимость
                <img src={arrow} alt="" />
             </Button>
          </div>
          <img
-            src={trans3}
-            className="absolute -bottom-[20vh] max-h-[360px] w-full xl:-bottom-[30vh] xl:max-h-[400px]"
+            src={trans2}
+            className="absolute -bottom-[2%] md:-bottom-[4%] lg:-bottom-[6%] xl:-bottom-[7%] object-contain w-full "
          />
       </div>
    );

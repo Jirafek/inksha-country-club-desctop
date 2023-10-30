@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 
 const FormInput = ({ onChange, className, value, name, type, placeholder }) => {
    return (

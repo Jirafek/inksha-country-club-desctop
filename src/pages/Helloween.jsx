@@ -6,6 +6,11 @@ import Footer from "../common/Footer";
 import React, { useState } from "react";
 
 function Helloween() {
+   const links = [
+   { title: "Программа", link: "Programa" },
+   { title: "Тарифы", link: "Tariff" },
+   { title: "Связаться со мной", link: "Form" },
+];
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    const toggleMenu = () => {
       setIsMenuOpen((prev) => !prev);
@@ -13,6 +18,8 @@ function Helloween() {
    return (
       <div className="text-white ">
          <Header
+         MenuClassName='druk bg-darkViolet'
+            links={links}
             className="druk bg-darkViolet"
             toggleMenu={toggleMenu}
             isMenuOpen={isMenuOpen}
@@ -23,7 +30,7 @@ function Helloween() {
             <Programa />
 
             <Tariff />
-            <Footer />
+            <Footer className='bg-darkViolet'/>
          </div>
       </div>
    );

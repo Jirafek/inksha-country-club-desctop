@@ -29,10 +29,10 @@ const Footer = () => {
                         }
                     })
                 }
-                <Link className="text-white md:text-[32px] text-[23px]" to={'/korporativy'}>
+                {/* <Link className="text-white md:text-[32px] text-[23px]" to={'/korporativy'}>
                     Корпоративы
-                </Link>
-            </ul>
+                </Link> */}
+            </ul>t
             <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-20 gap-4 pb-2">
                 <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/confi.pdf" target="_blank">
                     Политика конфиденциальности

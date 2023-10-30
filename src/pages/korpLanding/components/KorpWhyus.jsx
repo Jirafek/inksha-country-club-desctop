@@ -1,9 +1,8 @@
-import React from "react";
-import trans2 from "image/korpLanding/trans2.png";
-import why1 from "image/korpLanding/whyus/1.png";
-import why2 from "image/korpLanding/whyus/2.png";
-import why3 from "image/korpLanding/whyus/3.png";
-import why4 from "image/korpLanding/whyus/4.png";
+import trans2 from "images/korpLanding/trans2.png";
+import why1 from "images/korpLanding/whyus/1.png";
+import why2 from "images/korpLanding/whyus/2.png";
+import why3 from "images/korpLanding/whyus/3.png";
+import why4 from "images/korpLanding/whyus/4.png";
 
 const whyusmap = [
    {
@@ -26,10 +25,13 @@ const whyusmap = [
 
 const Whyus = () => {
    return (
-      <div className="relative bg-brown pb-[6%]  pt-[40vh]  ">
+      <div
+         id="whyus"
+         className="relative bg-brown pb-[6%] pt-[20vh] md:pt-[25vh] lg:pt-[20vh] s  "
+      >
          <div className="wrapper">
             <div className="text-center">
-               <h1 className="mb-[1em] text-lg text-black">
+               <h1 className="mb-[1em] text-lg text-white">
                   Почему Нас Выбирают
                </h1>
                <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
@@ -40,10 +42,10 @@ const Whyus = () => {
                            key={i}
                         >
                            <img
-                              className="whyus_img h-[180px] w-[168px]"
+                              className="whyus_img aspect-square h-[120px] w-[120px]  md:h-[180px] md:w-[168px]"
                               src={item.img}
                            />
-                           <div>{item.text}</div>
+                           <div className="text-sm">{item.text}</div>
                         </div>
                      );
                   })}

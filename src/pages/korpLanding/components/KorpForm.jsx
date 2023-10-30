@@ -1,31 +1,34 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+
 import Button from "common/Button";
+import { URLData } from "utils/URLData";
 import arrow from "icons/arrow.png";
 import InputMask from "react-input-mask";
-import { URLData } from "./../../../utils/URLData";
+import { useNavigate } from "react-router-dom";
 const Form = () => {
+   const navigate = useNavigate();
    const [name, setName] = useState("");
    const [phone, setPhone] = useState("");
    const [email, setEmail] = useState("");
+   const [isValid, setIsValid] = useState(true);
+   const [phoneError] = useState("");
+   const [isError, setIsError] = useState(true); // State for tracking errors
 
-   const [phoneError, setPhoneError] = useState("");
-
-   const handleSubmit = async () => {
+   const handleSubmitBot = async () => {
       const data = {
          name: name,
          phone: phone,
          email: email,
-         groupID: 981875757,
       };
 
       const sendingData = {
          ...data,
-         source: "https://mobile.ikshacountryclub.com",
-         formType: "Корпоратив лендинг",
+         source: "https://ikshacountryclub.com/",
+         formType: "Форма имя + телефон десктоп ",
          link: window.location.href,
          ...URLData,
       };
-
+      console.log(data);
       try {
          const response = await fetch(
             "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
@@ -41,9 +44,6 @@ const Form = () => {
 
          if (response.ok) {
             setTimeout(() => {
-               setName("");
-               setPhone("");
-               setNavigation(true);
                navigate("/thanks");
             }, 1000);
          } else {
@@ -54,16 +54,46 @@ const Form = () => {
          alert("Произошла ошибка при отправке данных");
       }
    };
-   const validatePhoneNumber = (phoneNumber) => {
-      const phonePattern = /^\+?([0-9]{1,4})?[0-9]{10}$/; // Пример регулярного выражения
-      return phonePattern.test(phoneNumber);
+
+   useEffect(() => {
+      // Проверка на ошибки при изменении полей формы
+      const newIsError = !name || !phone || !isValid;
+      setIsError(newIsError);
+   }, [name, phone]);
+
+   const handlePhoneChange = (e) => {
+      const inputValue = e.target.value;
+      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
+      setPhone(numericValue);
+      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
+   };
+   const handleNameChange = (e) => {
+      const { value } = e.target;
+      setName(value);
    };
 
+   const handleEmailChange = (e) => {
+      const { value } = e.target;
+      setEmail(value);
+   };
+   const handleSubmit = (e) => {
+      e.preventDefault();
+      if (isError) {
+         alert('неправильно заполнена форма')
+         return 
+      }
+
+      handleSubmitBot();
+      // ... ваша существующая логика ...
+      setPhone(""); // Очищаем состояние телефона
+      setName(""); // Очищаем состояние телефона
+   };
    return (
-      <div className="bg-brown pt-[14%]">
+      <div id="form" className="bg-brown py-[4%]">
          <div className="">
             <form
-               className="montserrat mx-auto max-w-[840px] rounded-[40px] bg-black px-[50px] py-[70px]"
+               className="montserrat flex justify-center flex-col items-center mx-auto w-[90%] md:max-w-[840px] rounded-[40px] bg-korpPrimary px-[20px] py-[30px] md:px-[50px] md:py-[70px]"
                name="Form"
                action=""
             >
@@ -74,23 +104,21 @@ const Form = () => {
                <input
                   type="text"
                   placeholder="Имя"
-                  className="mb-5 h-[80px] w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[20px] text-black outline-none md:text-[27px]"
-                  onChange={(e) => setName(e.target.value)}
+                  className="mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px]"
+                  onChange={handleNameChange}
                   value={name}
                />
                <InputMask
                   mask="+7 (999) 999-99-99"
                   maskChar=" "
                   value={phone}
-                  onChange={(e) => {
-                     setPhone(e.target.value);
-                  }}
+                  onChange={handlePhoneChange}
                >
                   {(inputProps) => (
                      <input
                         type="text"
                         placeholder="Телефон"
-                        className={`mb-5 h-[80px] w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[20px] text-black outline-none md:text-[27px] ${
+                        className={`mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px] ${
                            phoneError ? "border-red-500" : ""
                         }`}
                         {...inputProps}
@@ -101,14 +129,14 @@ const Form = () => {
                <input
                   type="text"
                   placeholder="Email"
-                  className="mb-5 h-[80px] w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[20px] text-black outline-none md:text-[27px]"
-                  onChange={(e) => setEmail(e.target.value)}
+                  className="mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px]"
+                  onChange={handleEmailChange}
                   value={email}
                />
 
                <Button
                   onClick={handleSubmit}
-                  className="mx-auto  h-[40px] w-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+                  className="mx-auto h-[40px]  md:h-[60px] montserrat gap-10 md:w-[600px] w-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                >
                   Отправить
                   <img src={arrow} className="h-5 w-9" alt="" />
