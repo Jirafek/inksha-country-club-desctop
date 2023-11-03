@@ -51,16 +51,16 @@ function AppWithDelay() {
 
    // Выводим сообщение в консоль, если ширина экрана меньше 421 пикселя
    if (windowWidth < 768) {
-      const currentUrl = window.location.href;
-      const paramsOnly = currentUrl.split("?")[1];
+      // const currentUrl = window.location.href;
+      // const paramsOnly = currentUrl.split("?")[1];
 
-      let dops = "";
+      // let dops = "";
 
-      if (currentUrl.includes("halloween")) {
-         dops = "/halloween";
-      }
+      // if (currentUrl.includes("halloween")) {
+      //    dops = "/halloween";
+      // }
 
-      window.location.href = `https://mobile.ikshacountryclub.com${dops}/?${paramsOnly}`;
+      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.pathname;
    }
    const [isLoading, setIsLoading] = useState(true);
 

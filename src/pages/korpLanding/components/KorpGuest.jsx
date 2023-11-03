@@ -28,7 +28,7 @@ const guests = [
    },
    {
       img: guest2,
-      name: "Полина  М",
+      name: "Мария  К",
       date: "25 июня",
       text: "Идеальная площадка для летних мероприятий с безумно красивым видом и оформлением. Уютные чистые домики, приветливый персонал. Есть все, что необходимо для вечеринки. Спасибо за отличный праздник!",
    },
@@ -88,7 +88,7 @@ const KorpGuest = () => {
                   );
                })}
             </Swiper>
-            <div className="flex max-w-[700px] ml-auto z-10 justify-between">
+            <div className="flex max-w-[700px] my-5 ml-auto z-10 justify-between">
                <button
                   className="z-[200]"
                   onClick={() => swiperRef.current?.slidePrev()}

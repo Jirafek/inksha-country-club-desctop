@@ -49,7 +49,7 @@ const Add = () => {
          <img
             src={trans2}
             alt=""
-            className="absolute w-full -top-[2.5vh] sm:-top-[3.5vh] md:-top-[5vh] lg:-top-[7vh] xl:-top-[8vh] 2xl:-top-[10vh]   "
+            className="absolute w-full -top-[2.5vh] sm:-top-[3.5vh] md:-top-[5vh] 900p:-top-[5.6vh] lg:-top-[6.3vh] xl:-top-[8vh] 2xl:-top-[10vh]   "
          />
          {/* </div> */}
          <div className="wrapper relative pt-[10%]">
@@ -103,7 +103,7 @@ const Add = () => {
          </div>
          <img
             src={trans2}
-            className="absolute -bottom-[2%] md:-bottom-[4%] lg:-bottom-[6%] xl:-bottom-[7%] object-contain w-full "
+            className="absolute -bottom-[2%] md:-bottom-[4%] lg:-bottom-[7vh] xl:-bottom-[9vh] object-contain w-full "
          />
       </div>
    );
