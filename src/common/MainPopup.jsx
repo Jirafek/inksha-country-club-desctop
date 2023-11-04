@@ -25,6 +25,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
          formType: "Форма имя + телефон десктоп ",
          link: window.location.href,
          ...URLData,
+         groupID: 981875757,
       };
       console.log(data);
       try {

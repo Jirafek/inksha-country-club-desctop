@@ -3,6 +3,8 @@ import { Routes, Route, Link, Outlet } from "react-router-dom";
 import AnimationButton from "./common/AnimationButton";
 import MainPopup from "./common/MainPopup";
 import { BooleanParam, useQueryParam } from "use-query-params";
+import Cookies from "js-cookie";
+import {updateData, URLData} from "utils/URLData";
 // import Korporativy from "./pages/Korporativy";
 // import Keytering from "./pages/Keytering";
 // import Home from "./pages/Home";
@@ -39,6 +41,45 @@ const Helloween = lazy(() => import("pages/Helloween"));
 const KorpLanding = lazy(() => import("pages/korpLanding/KorpLanding"));
 
 function App() {
+   useEffect(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const cookieData = {
+         utm_source: Cookies.get('utm_source'),
+         utm_campaign: Cookies.get('utm_campaign'),
+         utm_content: Cookies.get('utm_content'),
+      };
+
+      const settedData = [
+         cookieData.utm_source !== undefined ? cookieData.utm_source : URLData.utm_source
+             ? URLData.utm_source
+             : urlParams.get("utm_source") || "Сайт",
+
+         cookieData.utm_campaign !== undefined ? cookieData.utm_campaign : URLData.utm_campaign
+             ? URLData.utm_campaign
+             : urlParams.get("utm_campaign") || "",
+
+         cookieData.utm_content !== undefined ? cookieData.utm_content : URLData.utm_content
+             ? URLData.utm_content
+             : urlParams.get("utm_content") || ""
+      ];
+
+      updateData(
+          ...settedData
+      );
+
+      if (cookieData.utm_source === undefined && urlParams.get("utm_source") !== null) {
+         Cookies.set('utm_source', urlParams.get("utm_source"), { expires: Infinity });
+      }
+      if (cookieData.utm_campaign === undefined && urlParams.get("utm_campaign") !== null) {
+         Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { expires: Infinity });
+      }
+      if (cookieData.utm_content === undefined && urlParams.get("utm_content") !== null) {
+         Cookies.set('utm_content', urlParams.get("utm_content"), { expires: Infinity });
+      }
+
+   }, []);
+
    const [isPopupOpen, setIsPopupOpen] = useState(false);
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev);
