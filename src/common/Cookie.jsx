@@ -1,8 +1,8 @@
 import cookie from "icons/cookies.png";
 import { useState } from "react";
 
-const Cookie = () => {
-   const [isCookieOpen, setIsCookieOpen] = useState(true);
+const Cookie = ({isCookieOpen,setIsCookieOpen}) => {
+   
    const closeCookie = () => {
       setIsCookieOpen(false);
    };
@@ -12,7 +12,7 @@ const Cookie = () => {
    };
    const handleReject = () => {
       closeCookie();
-      //
+      //       
    };
    return (
       <div

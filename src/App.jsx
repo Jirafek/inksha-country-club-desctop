@@ -5,6 +5,7 @@ import MainPopup from "./common/MainPopup";
 import { BooleanParam, useQueryParam } from "use-query-params";
 import Cookies from "js-cookie";
 import {updateData, URLData} from "utils/URLData";
+import Cookie from './common/Cookie';
 // import Korporativy from "./pages/Korporativy";
 // import Keytering from "./pages/Keytering";
 // import Home from "./pages/Home";
@@ -81,6 +82,7 @@ function App() {
    }, []);
 
    const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [isCookieOpen, setIsCookieOpen] = useState(true);
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev);
    };
@@ -94,6 +96,7 @@ function App() {
    console.log(isKorpOpen);
    return (
       <div>
+         <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen}/>
          <div className="fixed bottom-[20px] right-[240px] z-[10000]">
             <AnimationButton
                h={72}
