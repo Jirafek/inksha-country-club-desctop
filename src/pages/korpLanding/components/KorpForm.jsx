@@ -66,9 +66,7 @@ const Form = () => {
    };
 
    useEffect(() => {
-      console.log(email);
-      console.log(name);
-      console.log(phone);
+
       // Проверка на ошибки при изменении полей формы
       const newIsError = !name || !phone || !email || !isValid;
       setIsError(newIsError);
@@ -128,9 +126,8 @@ const Form = () => {
                      <input
                         type="text"
                         placeholder="Телефон"
-                        className={`mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px] ${
-                           phoneError ? "border-red-500" : ""
-                        }`}
+                        className={`mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px] ${phoneError ? "border-red-500" : ""
+                           }`}
                         {...inputProps}
                      />
                   )}

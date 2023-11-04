@@ -513,3 +513,10 @@ ul {
 .trans4 {
   width: 300vw !important;
 }
+
+
+.korp-guest .lightbox-img {
+  object-fit: contain !important;
+
+  height: 90vh !important;
+}

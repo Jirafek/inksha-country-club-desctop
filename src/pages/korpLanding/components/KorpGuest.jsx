@@ -1,6 +1,6 @@
 // import Swiper core and required modules
 import { Navigation, Autoplay } from "swiper/modules";
-
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/scrollbar";
-
+import blagFull from 'images/gram_korp.webp'
 import guest1 from "images/korpLanding/guest/001.webp";
 import guest2 from "images/korpLanding/guest/002.webp";
 import guest3 from "images/korpLanding/guest/003.webp";
@@ -19,6 +19,7 @@ import korpprev from "icons/korpprev.png";
 import korpnext from "icons/korpnext.png";
 import { useRef } from "react";
 import trans2 from "images/korpLanding/trans2.png";
+import Lightbox from 'common/Lightbox';
 const guests = [
    {
       img: guest4,
@@ -45,11 +46,19 @@ const guests = [
       text: "Снимали весь комплекс 24.07.2022 года на 20 человек, все очень понравилось! Ребята молодцы!",
    },
 ];
-
+const menus = [
+   { img: blagFull }
+];
 const KorpGuest = () => {
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+   const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+   };
    const swiperRef = useRef();
    return (
-      <div className="bg-brown relative pt-[5vh] pb-[15vh] md:pb-[25vh]">
+      <div className="bg-brown korp-guest relative pt-[5vh] pb-[15vh] md:pb-[25vh]">
+         {isMenuOpen && <Lightbox toggleMenu={toggleMenu} items={menus} isButtonVisible={false} />}
          <div className="wrapper ">
             <Swiper
                // install Swiper modules
@@ -111,8 +120,9 @@ const KorpGuest = () => {
                </button>
             </div>
             <img
-               className="absolute w-[40%] md:w-[30%] left-0 bottom-0 md:bottom-10"
+               className="absolute cursor-pointer w-[40%] md:w-[30%] left-0 bottom-0 md:bottom-10"
                src={blag}
+               onClick={toggleMenu}
                alt="blagodarnosc"
             />
          </div>
