@@ -43,6 +43,20 @@ const KorpLanding = lazy(() => import("pages/korpLanding/KorpLanding"));
 
 function App() {
    useEffect(() => {
+      setUrlParams();
+   }, []);
+
+   const setUrlParams = (isCoockieOnRight = undefined) => {
+      const isCookieOn = Cookies.get('cookies_on');
+
+      if (isCoockieOnRight === undefined && isCookieOn === undefined) {
+            return;
+      }
+
+      if (!isCoockieOnRight) {
+         return;
+      }
+
       const urlParams = new URLSearchParams(window.location.search);
 
       const cookieData = {
@@ -78,11 +92,11 @@ function App() {
       if (cookieData.utm_content === undefined && urlParams.get("utm_content") !== null) {
          Cookies.set('utm_content', urlParams.get("utm_content"), { expires: Infinity });
       }
-
-   }, []);
+   }
 
    const [isPopupOpen, setIsPopupOpen] = useState(false);
-   const [isCookieOpen, setIsCookieOpen] = useState(true);
+   const isCookieOn = Cookies.get('cookies_on');
+   const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true');
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev);
    };
@@ -96,7 +110,7 @@ function App() {
    console.log(isKorpOpen);
    return (
       <div>
-         <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen}/>
+         <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams}/>
          <div className="fixed bottom-[20px] right-[240px] z-[10000]">
             <AnimationButton
                h={72}
