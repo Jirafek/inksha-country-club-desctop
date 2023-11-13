@@ -3,6 +3,7 @@ export default {
    content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
    theme: {
       fontSize: {
+         "3xl": "clamp(60px, 20vw, 128px)",
          ultra: "clamp(48px, 10vw, 128px)",
          tarif: "clamp(6px, 5vw, 24px)",
          xl: "clamp(30px, 5vw, 70px)",
@@ -25,6 +26,12 @@ export default {
             yellow: "#FFEC44",
             korpHeader: "#25200C",
             korpPrimary: "#201E1F",
+            NYblack: "#002106",
+            NYgreen: "#009848",
+            NYcream: "#E7C296",
+            NYbrown: "#BC8E4A",
+            NYred: "#EF004B",
+            NYheader: "#041106",
          },
          container: {
             center: true,

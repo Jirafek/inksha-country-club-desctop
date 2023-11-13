@@ -4,8 +4,9 @@ import AnimationButton from "./common/AnimationButton";
 import MainPopup from "./common/MainPopup";
 import { BooleanParam, useQueryParam } from "use-query-params";
 import Cookies from "js-cookie";
-import {updateData, URLData} from "utils/URLData";
+import { updateData, URLData } from "utils/URLData";
 import Cookie from './common/Cookie';
+import NYLanding from 'pages/newYear/NYLanding';
 // import Korporativy from "./pages/Korporativy";
 // import Keytering from "./pages/Keytering";
 // import Home from "./pages/Home";
@@ -40,6 +41,7 @@ const Privacy = lazy(() => import("pages/Privacy"));
 const Thanks = lazy(() => import("pages/Thanks"));
 const Helloween = lazy(() => import("pages/Helloween"));
 const KorpLanding = lazy(() => import("pages/korpLanding/KorpLanding"));
+// const NYLanding = lazy(() => import("pages/newYear/NYLanding"));
 
 function App() {
    useEffect(() => {
@@ -53,20 +55,20 @@ function App() {
 
       const settedData = [
          cookieData.utm_source !== undefined ? cookieData.utm_source : URLData.utm_source
-             ? URLData.utm_source
-             : urlParams.get("utm_source") || "Сайт",
+            ? URLData.utm_source
+            : urlParams.get("utm_source") || "Сайт",
 
          cookieData.utm_campaign !== undefined ? cookieData.utm_campaign : URLData.utm_campaign
-             ? URLData.utm_campaign
-             : urlParams.get("utm_campaign") || "",
+            ? URLData.utm_campaign
+            : urlParams.get("utm_campaign") || "",
 
          cookieData.utm_content !== undefined ? cookieData.utm_content : URLData.utm_content
-             ? URLData.utm_content
-             : urlParams.get("utm_content") || ""
+            ? URLData.utm_content
+            : urlParams.get("utm_content") || ""
       ];
 
       updateData(
-          ...settedData
+         ...settedData
       );
 
       if (cookieData.utm_source === undefined && urlParams.get("utm_source") !== null) {
@@ -96,16 +98,16 @@ function App() {
    console.log(isKorpOpen);
    return (
       <div>
-         <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen}/>
+         <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} />
          <div className="fixed bottom-[20px] right-[240px] z-[10000]">
             <AnimationButton
                h={72}
                w={72}
                className=" flex  justify-end shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                onClick={togglePopup}
-               // onClick={() => {
-               //    setIsKorpOpen(!isKorpOpen);
-               // }}
+            // onClick={() => {
+            //    setIsKorpOpen(!isKorpOpen);
+            // }}
             >
                Свяжитесь со мной
             </AnimationButton>
@@ -129,6 +131,7 @@ function App() {
             <Route path="/thanks" element={<Thanks />} />
             <Route path="/halloween" element={<Helloween />} />
             <Route path="/korp-landing" element={<KorpLanding />} />
+            <Route path="/New-Year" element={<NYLanding />} />
             <Route
                path="/rules"
                element={<Privacy title={"Правила проживания"} />}

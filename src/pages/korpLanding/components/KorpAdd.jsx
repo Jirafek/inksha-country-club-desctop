@@ -49,7 +49,7 @@ const Add = () => {
          <img
             src={trans2}
             alt=""
-            className="absolute w-full -top-[2.5vh] sm:-top-[3.5vh] md:-top-[5vh] 900p:-top-[5.6vh] lg:-top-[6.3vh] xl:-top-[8vh] 2xl:-top-[10vh]   "
+            className="absolute w-full -top-[2.5vh] sm:-top-[3.5vh] md:-top-[5vh] 900p:-top-[55px] lg:-top-[65px] xl:-top-[80px] 2xl:-top-[95px]   "
          />
          {/* </div> */}
          <div className="wrapper relative pt-[10%]">
@@ -64,11 +64,10 @@ const Add = () => {
                         {tabs.map((tab, index) => (
                            <div
                               key={index}
-                              className={`${
-                                 index === activeTab
-                                    ? "text-white border border-white rounded-[30px] p-2 border-opacity-50"
-                                    : ""
-                              } cursor-pointer text-md font-semibold text-center  md:text-start`}
+                              className={`${index === activeTab
+                                 ? "text-white border border-white rounded-[30px] p-2 border-opacity-50"
+                                 : ""
+                                 } cursor-pointer text-md font-semibold text-center  md:text-start`}
                               onClick={() => handleTabClick(index)}
                            >
                               {tab.label}
@@ -103,7 +102,7 @@ const Add = () => {
          </div>
          <img
             src={trans2}
-            className="absolute -bottom-[2%] md:-bottom-[4%] lg:-bottom-[7vh] xl:-bottom-[9vh] object-contain w-full "
+            className="absolute -bottom-[2%] md:-bottom-[4%] 900p:-bottom-[55px] lg:-bottom-[65px] xl:-bottom-[80px] 2xl:-bottom-[95px] object-contain w-full "
          />
       </div>
    );

@@ -23,6 +23,7 @@ export default defineConfig({
          data: path.resolve(__dirname, "./src/data/"),
          components: path.resolve(__dirname, "./src/components/"),
          common: path.resolve(__dirname, "./src/common/"),
+         constants: path.resolve(__dirname, "./src/constants/"),
          assets: path.resolve(__dirname, "./src/assets/"),
          utils: path.resolve(__dirname, "./src/utils/"),
          pages: path.resolve(__dirname, "./src/pages/"),
