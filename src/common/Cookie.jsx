@@ -1,17 +1,21 @@
 import cookie from "icons/cookies.png";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
-const Cookie = ({isCookieOpen,setIsCookieOpen}) => {
+const Cookie = ({isCookieOpen,setIsCookieOpen, callBack = (isOn) => {}}) => {
    
    const closeCookie = () => {
       setIsCookieOpen(false);
    };
    const handleAccept = () => {
+      Cookies.set('cookies_on', true, { expires: Infinity });
+      callBack(true);
       closeCookie();
       //
    };
    const handleReject = () => {
       closeCookie();
+      callBack(false);
       //       
    };
    return (
