@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import { m } from "framer-motion";
-import AnimationButton from "./../../common/AnimationButton";
-import MainPopup from "./../../common/MainPopup";
 import { Link } from "react-router-dom";
+import {useURLData} from "utils/URLData";
 const heading = {
    hidden: {},
    visible: {
@@ -31,6 +30,7 @@ const headingLines = {
 };
 
 const Main = () => {
+   const {utm_source} = useURLData();
    useEffect(() => {
       const script = document.createElement("script");
       script.src = "//widget.bronirui-online.ru/js/app.js";
@@ -172,7 +172,15 @@ const Main = () => {
                to="/halloween"
                className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
             >
-               <div>+7 (499) 505-50-31</div>
+               {
+                  utm_source === 'yandex' ?
+                      <div>+7(499) 505-50-67</div>
+                      : utm_source === 'vkontakte' ?
+                          <div>+7(499) 505-50-87</div>
+                          :
+                          <div>+7(499) 505-50-31</div>
+
+               }
                <div className="text-[#D3AE7C]">
                   Хеллуин в Икша Кантри Клабе - Места ограничены
                </div>
