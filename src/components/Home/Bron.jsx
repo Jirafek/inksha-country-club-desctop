@@ -1,47 +1,12 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Title from "../Title";
 import { v4 as uuid4 } from "uuid";
 import { Link } from "react-router-dom";
 import Footer from "../Footer";
 import { m } from "framer-motion";
 import MainPopup from "./../../common/MainPopup";
-const bronData = [
-   {
-      imgAvif: "/image/wa_bl.avif",
-      imgWebp: "/image/wa_bl.webp",
-      imgAltText: "Позвонить",
-      text: "+7 (499) 505-50-31",
-      link: "tel:+74995055031",
-   },
-   {
-      imgAvif: "/image/tg_bl.avif",
-      imgWebp: "/image/tg_bl.webp",
-      imgAltText: "Телеграм",
-      text: "@ikshacountryclub",
-      link: "https://t.me/ikshacountryclub",
-   },
-   {
-      imgAvif: "/image/inst_bl.avif",
-      imgWebp: "/image/inst_bl.webp",
-      imgAltText: "Фото",
-      text: "@ikshacountryclub",
-      link: "https://instagram.com/ikshacountryclub",
-   },
-   {
-      imgAvif: "/image/vk_bl.avif",
-      imgWebp: "/image/vk_bl.webp",
-      imgAltText: "ВК",
-      text: "@ikshacountryclub",
-      link: "https://vk.com/ikshacountryclub",
-   },
-   {
-      imgAvif: "/image/mail_bl.avif",
-      imgWebp: "/image/mail_bl.webp",
-      imgAltText: "Написать письмо",
-      text: "contact@ikshacountryclub.com",
-      link: "mailto:contact@ikshacountryclub.com",
-   },
-];
+import {useURLData} from "utils/URLData";
+
 
 const heading = {
    hidden: {},
@@ -68,10 +33,52 @@ const OpenLeft = {
 };
 
 const Bron = () => {
+   const {utm_source} = useURLData();
+
+
+   const bronData = [
+      {
+         imgAvif: "/image/wa_bl.avif",
+         imgWebp: "/image/wa_bl.webp",
+         imgAltText: "Позвонить",
+         text: utm_source === 'yandex' ? "+7(499) 505-50-67" : utm_source === 'vkontakte' ? "+7(499) 505-50-87" : "+7 (499) 505-50-31",
+         link: utm_source === 'yandex' ? "tel:+74995055067" : utm_source === 'vkontakte' ? "tel:+74995055087" : "tel:+74995055031",
+      },
+      {
+         imgAvif: "/image/tg_bl.avif",
+         imgWebp: "/image/tg_bl.webp",
+         imgAltText: "Телеграм",
+         text: "@ikshacountryclub",
+         link: "https://t.me/ikshacountryclub",
+      },
+      {
+         imgAvif: "/image/inst_bl.avif",
+         imgWebp: "/image/inst_bl.webp",
+         imgAltText: "Фото",
+         text: "@ikshacountryclub",
+         link: "https://instagram.com/ikshacountryclub",
+      },
+      {
+         imgAvif: "/image/vk_bl.avif",
+         imgWebp: "/image/vk_bl.webp",
+         imgAltText: "ВК",
+         text: "@ikshacountryclub",
+         link: "https://vk.com/ikshacountryclub",
+      },
+      {
+         imgAvif: "/image/mail_bl.avif",
+         imgWebp: "/image/mail_bl.webp",
+         imgAltText: "Написать письмо",
+         text: "contact@ikshacountryclub.com",
+         link: "mailto:contact@ikshacountryclub.com",
+      },
+   ];
+
    const [isPopupOpen, setIsPopupOpen] = useState(false);
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev);
    };
+
    return (
       <section className="relative min-h-screen w-full bg-[#201E1F]">
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
@@ -140,10 +147,6 @@ const Bron = () => {
                      href={el.link}
                      className="flex items-center gap-2 2xl:gap-4"
                   >
-                     {/*<picture>*/}
-                     {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                     {/*    <img className="2xl:w-auto w-[45px]" src={el.imgWebp} alt={el.imgAltText} />*/}
-                     {/*</picture>*/}
                      <img
                         className="w-[45px] 2xl:w-auto"
                         src={el.imgWebp}
@@ -155,11 +158,6 @@ const Bron = () => {
                   </a>
                ))}
             </m.div>
-
-            {/*<picture>*/}
-            {/*    <source srcSet="/image/bron_bg.avif 1x" type="image/avif" />*/}
-            {/*    <img className="h-screen xl:block hidden absolute top-0 right-0" src="/image/bron_bg.webp" alt="Забронировать" />*/}
-            {/*</picture>*/}
             <img
                className="absolute right-0 top-0 hidden h-screen xl:block"
                src="/image/bron_bg.webp"

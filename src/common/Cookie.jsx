@@ -1,5 +1,4 @@
 import cookie from "icons/cookies.png";
-import { useState } from "react";
 import Cookies from "js-cookie";
 
 const Cookie = ({isCookieOpen,setIsCookieOpen, callBack = (isOn) => {}}) => {

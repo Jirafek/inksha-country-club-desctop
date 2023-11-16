@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { updateData, URLData } from "../utils/URLData";
 
 import Main from "../components/Home/Main";
 import About from "../components/Home/About";

@@ -4,7 +4,7 @@ import AnimationButton from "./common/AnimationButton";
 import MainPopup from "./common/MainPopup";
 import { BooleanParam, useQueryParam } from "use-query-params";
 import Cookies from "js-cookie";
-import { updateData, URLData } from "utils/URLData";
+import { updateURLData, useURLData } from "utils/URLData";
 import Cookie from './common/Cookie';
 import NYLanding from 'pages/newYear/NYLanding';
 // import Korporativy from "./pages/Korporativy";
@@ -44,6 +44,8 @@ const KorpLanding = lazy(() => import("pages/korpLanding/KorpLanding"));
 // const NYLanding = lazy(() => import("pages/newYear/NYLanding"));
 
 function App() {
+   const { updateData, utm_campaign, utm_content, utm_source } = useURLData();
+
    useEffect(() => {
       setUrlParams();
    }, []);
@@ -55,7 +57,7 @@ function App() {
          return;
       }
 
-      if (!isCoockieOnRight) {
+      if (isCoockieOnRight === 'false') {
          return;
       }
 
@@ -68,21 +70,27 @@ function App() {
       };
 
       const settedData = [
-         cookieData.utm_source !== undefined ? cookieData.utm_source : URLData.utm_source
-            ? URLData.utm_source
-            : urlParams.get("utm_source") || "Сайт",
+         cookieData.utm_source !== undefined ? cookieData.utm_source : utm_source
+             ? utm_source
+             : urlParams.get("utm_source") || "Сайт",
 
-         cookieData.utm_campaign !== undefined ? cookieData.utm_campaign : URLData.utm_campaign
-            ? URLData.utm_campaign
-            : urlParams.get("utm_campaign") || "",
+         cookieData.utm_campaign !== undefined ? cookieData.utm_campaign : utm_campaign
+             ? utm_campaign
+             : urlParams.get("utm_campaign") || "",
 
-         cookieData.utm_content !== undefined ? cookieData.utm_content : URLData.utm_content
-            ? URLData.utm_content
-            : urlParams.get("utm_content") || ""
+         cookieData.utm_content !== undefined ? cookieData.utm_content : utm_content
+             ? utm_content
+             : urlParams.get("utm_content") || ""
       ];
+
+      console.log(settedData);
 
       updateData(
          ...settedData
+      );
+
+      updateURLData(
+          ...settedData
       );
 
       if (cookieData.utm_source === undefined && urlParams.get("utm_source") !== null) {
@@ -106,10 +114,6 @@ function App() {
    const toggleKorp = () => {
       setIsKorpOpen((prev) => !prev);
    };
-   useEffect(() => {
-      // setIsKorpOpen(false);
-   }, []);
-   console.log(isKorpOpen);
    return (
       <div>
          <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />

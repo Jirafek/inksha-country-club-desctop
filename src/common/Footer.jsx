@@ -3,6 +3,7 @@ import inst from "./../assets/inst.png";
 import what from "./../assets/what.png";
 import phone from "./../assets/phone.png";
 import { motion } from "framer-motion";
+import {useURLData} from "utils/URLData";
 
 const slideVariants = {
    initial: {
@@ -15,6 +16,7 @@ const slideVariants = {
    },
 };
 const Footer = ({ className }) => {
+   const {utm_source} = useURLData();
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
@@ -47,21 +49,27 @@ const Footer = ({ className }) => {
                         }}
                         initial="initial"
                         animate="animate"
-                        href="tel:+7 (499) 505-50-31"
+                        href={utm_source === 'yandex' ? 'tel:+74995055067' : utm_source === 'vkontakte' ? 'tel:+74995055087' : 'tel:+74995055031'}
                      >
                         <img className="z-10 h-9 w-9" src={phone} alt="" />
                      </motion.a>
                   </div>
                </div>
+               {
+                  utm_source === 'yandex' ?
+                      <a href={'tel:+74995055067'} className="min-w-[160px] text-white">
+                         +7(499) 505-50-67
+                      </a>
+                      : utm_source === 'vkontakte' ?
+                          <a href={'tel:+74995055087'} className="min-w-[160px] text-white">
+                             +7(499) 505-50-87
+                          </a>
+                          :
+                          <a href={"tel:+74995055031"} className="min-w-[160px] text-white">
+                             +7(499) 505-50-31
+                          </a>
 
-               {/* <div className="hidden  justify-center gap-10 md:flex">
-                  <a href="#Programa">Программа</a>
-                  <a href="#Tariff">Тарифы</a>
-                  <a href="tel:+7 (499) 505-50-31">Связаться со мной</a>
-               </div> */}
-               <a href="tel:+7 (499) 505-50-31" className="min-w-[160px]">
-                  +7 (499) 505-50-31
-               </a>
+               }
             </div>
          </div>
       </div>
