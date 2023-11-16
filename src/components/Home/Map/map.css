@@ -1,10 +1,10 @@
 :root {
-    --color-position-lines: #fff000;
-    --color-position-lines__hover: #000fff;
-    --color-geo-first: #ff0;
-    --color-geo-second: #f5f5dc;
+    --color-position-lines: rgb(28, 216, 44);
+    --color-position-lines__hover: #ff0000;
+    --color-geo-first: #ff0000;
+    --color-geo-second: rgb(255, 145, 0);
     --color-geo-third: #3333ff;
-    --color-geo-forth: #ffff8d;
+    --color-geo-forth: #ff0000;
 }
 
 .map,
@@ -43,38 +43,31 @@
     }
 }
 
-/* .map_geo:hover {
-    stroke-opacity: 1;
-}
-.map_geo:hover text {
-    opacity: 1;
-} */
 .map_geo text {
-    text-shadow: 5px 5px 15px black;
+    text-shadow: 0px 0px 2px black;
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
-    font-weight: 600;
+    font-weight: 700;
     stroke: none;
-    opacity: .5;
-    /* transition: all .3s ease-in;*/
+    opacity: .7;
     animation: blink 2s linear forwards infinite;
 }
 
 @keyframes blink {
     from {
-        opacity: .5;
-        text-shadow: 5px 5px 15px black;
+        opacity: .7;
+        text-shadow: 4px 4px 15px rgb(28, 216, 44);
     }
 
     50% {
         opacity: 1;
-        text-shadow: 10px 10px 15px black;
+        text-shadow: 4px 4px 15px rgb(28, 216, 44);
     }
 
     to {
-        opacity: .5;
-        text-shadow: 5px 5px 15px black;
+        opacity: .7;
+        text-shadow: 4px 4px 15px rgb(28, 216, 44);
     }
 }
 
