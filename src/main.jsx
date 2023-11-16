@@ -60,7 +60,7 @@ function AppWithDelay() {
       //    dops = "/halloween";
       // }
 
-      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.pathname;
+      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.search;
    }
    const [isLoading, setIsLoading] = useState(true);
 
