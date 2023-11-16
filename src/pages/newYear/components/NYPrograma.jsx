@@ -46,7 +46,7 @@ export const Programa = () => {
                      <div className="flex col-span-1 md:col-span-2 flex-col relative  w-full md:w-[90%] justify-center items-center">
 
                         <img
-                           className="md:w-[200px] absolute w-[60px] 370p:w-[75px] 370p:h-[75px] md:h-[200px] md:-left-[150px] md:top-1/2 transform md:-translate-y-1/2    -top-10 right-1/2 translate-x-1/2    z-10"
+                           className="md:w-[200px] absolute w-[60px] 370p:w-[75px] 370p:h-[75px] md:h-[200px] md:-left-[250px] md:top-1/2 transform md:-translate-y-1/2    -top-10 right-1/2 translate-x-1/2    z-10"
                            src={prog2}
                            alt=""
                         />
