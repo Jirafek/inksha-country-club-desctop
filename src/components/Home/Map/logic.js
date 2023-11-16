@@ -1,5 +1,7 @@
-import positions from './positions.json'
+import positions from './positions.js'
+import { isItWinterNow } from 'utils/functions.js';
 
+const bg = `/image/map${isItWinterNow() ? '_winter' : ''}.webp`;
 export const
     base = document => {
         // Consts
@@ -59,7 +61,7 @@ export const
 
             // console.log(e.pageX, e.pageY - document.querySelector('.map').getBoundingClientRect().top)
 
-            preview.style.background = `url(/image/map.webp) no-repeat`;
+            preview.style.background = `url(${bg}) no-repeat`;
             preview.style.backgroundPosition = `calc(${posX / 1.02}% - ${posX < 50 ? -200 : 200}px) calc(${posY / 1.02}% - ${posY < 50 ? -150 : 150}px)`;
             preview.style.display = 'inline-block';
         })
