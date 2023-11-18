@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import { m } from "framer-motion";
-import { Link } from "react-router-dom";
-import {useURLData} from "utils/URLData";
+import { m } from "framer-motion"
+import ny_logo from 'icons/ny-logo.webp'
+import { useEffect } from "react"
+import { Link } from "react-router-dom"
+import { useURLData } from "utils/URLData"
+import Header from "./Header"
 const heading = {
    hidden: {},
    visible: {
@@ -10,7 +11,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const headingLines = {
    hidden: {
@@ -27,14 +28,14 @@ const headingLines = {
          duration: 0.8,
       },
    },
-};
+}
 
 const Main = () => {
-   const {utm_source} = useURLData();
+   const { utm_source } = useURLData()
    useEffect(() => {
-      const script = document.createElement("script");
-      script.src = "//widget.bronirui-online.ru/js/app.js";
-      script.async = true;
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
 
       const initializeWidget = () => {
          window.znmsWidget.init("#znms-widget-1", {
@@ -60,7 +61,7 @@ const Main = () => {
                   right: "20px",
                },
             },
-         });
+         })
 
          // Примените ваши стили после инициализации виджета
          const customStyles = `
@@ -86,17 +87,45 @@ const Main = () => {
             .nms-widget__module-form-block__items--booking-service-link {
                 display: none !important;
             }
-          `;
-         const styleElement = document.createElement("style");
-         styleElement.innerHTML = customStyles;
-         document.head.appendChild(styleElement);
-      };
-      script.onload = initializeWidget;
-      document.body.appendChild(script);
-   }, []);
+          `
+         const styleElement = document.createElement("style")
+         styleElement.innerHTML = customStyles
+         document.head.appendChild(styleElement)
+      }
+      script.onload = initializeWidget
+      document.body.appendChild(script)
+   }, [])
+
+   const pumpkin_vars = {
+      initial: {
+         // y: "5px", // Начальная позиция за пределами экрана справа
+         scale: 0.85,
+      },
+      animate: {
+         // y: "-10px", // Конечная позиция за пределами экрана слева
+         scale: 1,
+      },
+   }
 
    return (
-      <div>
+      <div className='relative'>
+         <Link to="/New-Year" className="absolute right-10 top-20 z-[1000]">
+            <m.img
+               transition={{
+                  repeat: Infinity,
+                  duration: 1,
+
+                  repeatType: "reverse",
+                  repeatDelay: 0.6,
+               }}
+               initial="initial"
+               animate="animate"
+               variants={pumpkin_vars}
+               src={ny_logo}
+               className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
+               alt=""
+            />
+         </Link>
          <section
             style={{
                backgroundImage: "url(/image/bg1_right.webp)",
@@ -174,11 +203,11 @@ const Main = () => {
             >
                {
                   utm_source === 'yandex' ?
-                      <div>+7(499) 505-50-67</div>
-                      : utm_source === 'vkontakte' ?
-                          <div>+7(499) 505-50-87</div>
-                          :
-                          <div>+7(499) 505-50-31</div>
+                     <div>+7(499) 505-50-67</div>
+                     : utm_source === 'vkontakte' ?
+                        <div>+7(499) 505-50-87</div>
+                        :
+                        <div>+7(499) 505-50-31</div>
 
                }
                <div className="text-[#D3AE7C]">
@@ -188,7 +217,7 @@ const Main = () => {
             </Link>
          </section>
       </div>
-   );
-};
+   )
+}
 
-export default Main;
+export default Main
