@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import './map.css'
 import { base, increase } from './logic';
-import { isItWinterNow } from 'utils/functions';
+import { isItWinterNow } from 'utils/helpers';
 
 const Map = () => {
-
-    const bg = `/image/map${isItWinterNow() ? '_winter' : ''}.webp`;
 
     useEffect(() => {
         base(document);
@@ -15,7 +13,7 @@ const Map = () => {
     return <div className='map' id='map'>
         <div className="map-wrapper">
             <figure className="map-figure">
-                <img src={bg} alt="Икша Кантри Клаб" className="map_image" />
+                <img src={`/image/map${isItWinterNow()}.webp`} alt="Икша Кантри Клаб" className="map_image" />
             </figure>
             <div className="map-controls">
                 <svg className="map-controls-list" viewBox="0 0 4281.77 1911.5044">
