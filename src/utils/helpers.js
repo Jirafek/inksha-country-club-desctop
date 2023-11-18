@@ -8,7 +8,7 @@ export const
             currentMonth === 11 ||
             currentMonth === 0 ||
             currentMonth === 1
-        ) return true;
+        ) return '_winter';
 
-        return false;
-    }
+        return '';
+    };

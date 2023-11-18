@@ -3,6 +3,7 @@ import Header from "./Header";
 import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import {useURLData} from "utils/URLData";
+import { isItWinterNow } from "utils/helpers";
 const heading = {
    hidden: {},
    visible: {
@@ -99,7 +100,7 @@ const Main = () => {
       <div>
          <section
             style={{
-               backgroundImage: "url(/image/bg1_right.webp)",
+               backgroundImage: `url(/image/welcome_bg${isItWinterNow()}.webp)`,
                backgroundPosition: "right",
                backgroundSize: "cover",
                backgroundRepeat: "no-repeat",
