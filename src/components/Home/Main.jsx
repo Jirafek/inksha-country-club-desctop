@@ -1,8 +1,8 @@
 import { m } from "framer-motion"
-import ny_logo from 'icons/ny-logo.webp'
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
+import { isItWinterNow } from "utils/helpers"
 import Header from "./Header"
 const heading = {
    hidden: {},
@@ -128,7 +128,7 @@ const Main = () => {
          </Link>
          <section
             style={{
-               backgroundImage: "url(/image/bg1_right.webp)",
+               backgroundImage: `url(/image/welcome_bg${isItWinterNow()}.webp)`,
                backgroundPosition: "right",
                backgroundSize: "cover",
                backgroundRepeat: "no-repeat",

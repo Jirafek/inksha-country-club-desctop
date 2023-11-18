@@ -1,5 +1,5 @@
 import positions from './positions.js'
-import { isItWinterNow } from 'utils/functions.js';
+import { isItWinterNow } from 'utils/helpers.js';
 
 const bg = `/image/map${isItWinterNow() ? '_winter' : ''}.webp`;
 export const
