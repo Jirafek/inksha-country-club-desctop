@@ -4,6 +4,7 @@ import Title from '../Title';
 import { v4 as uuid4 } from 'uuid';
 import { Link } from "react-router-dom";
 import Logo from '../Logo';
+import { isItWinterNow } from "utils/helpers";
 
 const heading = {
     hidden: {},
@@ -107,7 +108,7 @@ const Eat = () => {
                 {/*    <source srcSet="/image/eat_big.avif 1x" type="image/avif" />*/}
                 {/*    <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="Приготовление блюд на природе" />*/}
                 {/*</picture>*/}
-                <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="Приготовление блюд на природе" />
+                <img className="absolute right-[50px] 2xl:block hidden" src={`/image/eat_big.webp`} alt="Приготовление блюд на природе" />
             </div>
         </section>
     );

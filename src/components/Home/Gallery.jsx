@@ -9,249 +9,15 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { CustomNextArrow, CustomPrevArrow } from '../CustomArrows';
+import { isItWinterNow } from "utils/helpers";
 
 const galleryData = [
-    {
-        title: 'Лесная резиденция',
-        images: [
-            {
-                imgAvif: '/image/gallery-1-1.avif',
-                imgWebp: '/image/gallery-1-1.webp',
-                imgAltText: 'Котеджи в подмосковье',
-            },
-            {
-                imgAvif: '/image/gallery-1-2.avif',
-                imgWebp: '/image/gallery-1-2.webp',
-                imgAltText: 'Домик на природе',
-            },
-            {
-                imgAvif: '/image/gallery-1-3.avif',
-                imgWebp: '/image/gallery-1-3.webp',
-                imgAltText: 'Снять домик в подмосковье',
-            },
-            {
-                imgAvif: '/image/gallery-1-4.avif',
-                imgWebp: '/image/gallery-1-4.webp',
-                imgAltText: 'Лесная резиденция',
-            },
-            {
-                imgAvif: '/image/gallery-1-5.avif',
-                imgWebp: '/image/gallery-1-5.webp',
-                imgAltText: 'Коттедж в подмосковье',
-            },
-            {
-                imgAvif: '/image/gallery-1-6.avif',
-                imgWebp: '/image/gallery-1-6.webp',
-                imgAltText: 'Баня с купелью на природе',
-            },
-            {
-                imgAvif: '/image/gallery-1-7.avif',
-                imgWebp: '/image/gallery-1-7.webp',
-                imgAltText: 'Домик в подмосковье',
-            },
-            {
-                imgAvif: '/image/gallery-1-8.avif',
-                imgWebp: '/image/gallery-1-8.webp',
-                imgAltText: 'Русская баня в подмосковье',
-            },
-            {
-                imgAvif: '/image/gallery-1-9.avif',
-                imgWebp: '/image/gallery-1-9.webp',
-                imgAltText: 'Отдых на берегу',
-            },
-            {
-                imgAvif: '/image/gallery-1-10.avif',
-                imgWebp: '/image/gallery-1-10.webp',
-                imgAltText: 'Домик в лесу',
-            },
-            {
-                imgAvif: '/image/gallery-1-11.avif',
-                imgWebp: '/image/gallery-1-11.webp',
-                imgAltText: 'Снять домик ',
-            },
-            {
-                imgAvif: '/image/gallery-1-12.avif',
-                imgWebp: '/image/gallery-1-12.webp',
-                imgAltText: 'Коттедж',
-            },
-            {
-                imgAvif: '/image/gallery-1-13.avif',
-                imgWebp: '/image/gallery-1-13.webp',
-                imgAltText: 'Отдых на природе',
-            },
-            {
-                imgAvif: '/image/gallery-1-14.avif',
-                imgWebp: '/image/gallery-1-14.webp',
-                imgAltText: 'Котеджи на природе',
-            },
-            {
-                imgAvif: '/image/gallery-1-15.avif',
-                imgWebp: '/image/gallery-1-15.webp',
-                imgAltText: 'Одых с ночевкой на природе',
-            },
-            {
-                imgAvif: '/image/gallery-1-16.avif',
-                imgWebp: '/image/gallery-1-16.webp',
-                imgAltText: 'Домики на природе',
-            },
-            {
-                imgAvif: '/image/gallery-1-17.avif',
-                imgWebp: '/image/gallery-1-17.webp',
-                imgAltText: 'Отдых в подмосковье',
-            },
-            {
-                imgAvif: '/image/gallery-1-18.avif',
-                imgWebp: '/image/gallery-1-18.webp',
-                imgAltText: 'Отдых на природе',
-            },
-            {
-                imgAvif: '/image/gallery-1-19.avif',
-                imgWebp: '/image/gallery-1-19.webp',
-                imgAltText: 'Снять домики в подмосковье',
-            }
-        ]
-    },
-    {
-        title: 'Шале',
-        images: [
-            {
-                imgAvif: '/image/gallery-7-2.avif',
-                imgWebp: '/image/gallery-7-2.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-3.avif',
-                imgWebp: '/image/gallery-7-3.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-4.avif',
-                imgWebp: '/image/gallery-7-4.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-5.avif',
-                imgWebp: '/image/gallery-7-5.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-6.avif',
-                imgWebp: '/image/gallery-7-6.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-7.avif',
-                imgWebp: '/image/gallery-7-7.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-8.avif',
-                imgWebp: '/image/gallery-7-8.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-9.avif',
-                imgWebp: '/image/gallery-7-9.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-7-10.avif',
-                imgWebp: '/image/gallery-7-10.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            }
-        ]
-    },
-    {
-        title: 'Коттедж',
-        images: [
-            {
-                imgAvif: '/image/gallery-3-2.avif',
-                imgWebp: '/image/gallery-3-2.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-3.avif',
-                imgWebp: '/image/gallery-3-3.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-4.avif',
-                imgWebp: '/image/gallery-3-4.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-5.avif',
-                imgWebp: '/image/gallery-3-5.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-6.avif',
-                imgWebp: '/image/gallery-3-6.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-7.avif',
-                imgWebp: '/image/gallery-3-7.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-8.avif',
-                imgWebp: '/image/gallery-3-8.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-9.avif',
-                imgWebp: '/image/gallery-3-9.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-10.avif',
-                imgWebp: '/image/gallery-3-10.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-11.avif',
-                imgWebp: '/image/gallery-3-11.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-12.avif',
-                imgWebp: '/image/gallery-3-12.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-13.avif',
-                imgWebp: '/image/gallery-3-13.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-14.avif',
-                imgWebp: '/image/gallery-3-14.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-15.avif',
-                imgWebp: '/image/gallery-3-15.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-16.avif',
-                imgWebp: '/image/gallery-3-16.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            },
-            {
-                imgAvif: '/image/gallery-3-17.avif',
-                imgWebp: '/image/gallery-3-17.webp',
-                imgAltText: 'Икша Кантри Клаб',
-            }
-        ]
-    },
     {
         title: 'Олимпийская деревня',
         images: [
             {
-                imgAvif: '/image/gallery-4-1.avif',
-                imgWebp: '/image/gallery-4-1.webp',
+                imgAvif: `/image/gallery-4-1${isItWinterNow()}.avif`,
+                imgWebp: `/image/gallery-4-1${isItWinterNow()}.webp`,
                 imgAltText: 'Икша Кантри Клаб',
             },
             {
@@ -341,6 +107,242 @@ const galleryData = [
             }
         ]
     },
+    {
+        title: 'Лесная резиденция',
+        images: [
+            {
+                imgAvif: `/image/gallery-1-1${isItWinterNow()}.avif`,
+                imgWebp: `/image/gallery-1-1${isItWinterNow()}.webp`,
+                imgAltText: 'Котеджи в подмосковье',
+            },
+            {
+                imgAvif: '/image/gallery-1-2.avif',
+                imgWebp: '/image/gallery-1-2.webp',
+                imgAltText: 'Домик на природе',
+            },
+            {
+                imgAvif: '/image/gallery-1-3.avif',
+                imgWebp: '/image/gallery-1-3.webp',
+                imgAltText: 'Снять домик в подмосковье',
+            },
+            {
+                imgAvif: `/image/gallery-1-4.avif`,
+                imgWebp: `/image/gallery-1-4.webp`,
+                imgAltText: 'Лесная резиденция',
+            },
+            {
+                imgAvif: '/image/gallery-1-5.avif',
+                imgWebp: '/image/gallery-1-5.webp',
+                imgAltText: 'Коттедж в подмосковье',
+            },
+            {
+                imgAvif: '/image/gallery-1-6.avif',
+                imgWebp: '/image/gallery-1-6.webp',
+                imgAltText: 'Баня с купелью на природе',
+            },
+            {
+                imgAvif: '/image/gallery-1-7.avif',
+                imgWebp: '/image/gallery-1-7.webp',
+                imgAltText: 'Домик в подмосковье',
+            },
+            {
+                imgAvif: '/image/gallery-1-8.avif',
+                imgWebp: '/image/gallery-1-8.webp',
+                imgAltText: 'Русская баня в подмосковье',
+            },
+            {
+                imgAvif: '/image/gallery-1-9.avif',
+                imgWebp: '/image/gallery-1-9.webp',
+                imgAltText: 'Отдых на берегу',
+            },
+            {
+                imgAvif: '/image/gallery-1-10.avif',
+                imgWebp: '/image/gallery-1-10.webp',
+                imgAltText: 'Домик в лесу',
+            },
+            {
+                imgAvif: '/image/gallery-1-11.avif',
+                imgWebp: '/image/gallery-1-11.webp',
+                imgAltText: 'Снять домик ',
+            },
+            {
+                imgAvif: '/image/gallery-1-12.avif',
+                imgWebp: '/image/gallery-1-12.webp',
+                imgAltText: 'Коттедж',
+            },
+            {
+                imgAvif: '/image/gallery-1-13.avif',
+                imgWebp: '/image/gallery-1-13.webp',
+                imgAltText: 'Отдых на природе',
+            },
+            {
+                imgAvif: '/image/gallery-1-14.avif',
+                imgWebp: '/image/gallery-1-14.webp',
+                imgAltText: 'Котеджи на природе',
+            },
+            {
+                imgAvif: '/image/gallery-1-15.avif',
+                imgWebp: '/image/gallery-1-15.webp',
+                imgAltText: 'Одых с ночевкой на природе',
+            },
+            {
+                imgAvif: '/image/gallery-1-16.avif',
+                imgWebp: '/image/gallery-1-16.webp',
+                imgAltText: 'Домики на природе',
+            },
+            {
+                imgAvif: '/image/gallery-1-17.avif',
+                imgWebp: '/image/gallery-1-17.webp',
+                imgAltText: 'Отдых в подмосковье',
+            },
+            {
+                imgAvif: '/image/gallery-1-18.avif',
+                imgWebp: '/image/gallery-1-18.webp',
+                imgAltText: 'Отдых на природе',
+            },
+            {
+                imgAvif: '/image/gallery-1-19.avif',
+                imgWebp: '/image/gallery-1-19.webp',
+                imgAltText: 'Снять домики в подмосковье',
+            }
+        ]
+    },
+    {
+        title: 'Шале',
+        images: [
+            {
+                imgAvif: `/image/gallery-7-2${isItWinterNow()}.avif`,
+                imgWebp: `/image/gallery-7-2${isItWinterNow()}.webp`,
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-3.avif',
+                imgWebp: '/image/gallery-7-3.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-4.avif',
+                imgWebp: '/image/gallery-7-4.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-5.avif',
+                imgWebp: '/image/gallery-7-5.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-6.avif',
+                imgWebp: '/image/gallery-7-6.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-7.avif',
+                imgWebp: '/image/gallery-7-7.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-8.avif',
+                imgWebp: '/image/gallery-7-8.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-9.avif',
+                imgWebp: '/image/gallery-7-9.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-7-10.avif',
+                imgWebp: '/image/gallery-7-10.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            }
+        ]
+    },
+    {
+        title: 'Коттедж',
+        images: [
+            {
+                imgAvif: `/image/gallery-3-2${isItWinterNow()}.avif`,
+                imgWebp: `/image/gallery-3-2${isItWinterNow()}.webp`,
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-3.avif',
+                imgWebp: '/image/gallery-3-3.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-4.avif',
+                imgWebp: '/image/gallery-3-4.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-5.avif',
+                imgWebp: '/image/gallery-3-5.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-6.avif',
+                imgWebp: '/image/gallery-3-6.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-7.avif',
+                imgWebp: '/image/gallery-3-7.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-8.avif',
+                imgWebp: '/image/gallery-3-8.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-9.avif',
+                imgWebp: '/image/gallery-3-9.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-10.avif',
+                imgWebp: '/image/gallery-3-10.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-11.avif',
+                imgWebp: '/image/gallery-3-11.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-12.avif',
+                imgWebp: '/image/gallery-3-12.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-13.avif',
+                imgWebp: '/image/gallery-3-13.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-14.avif',
+                imgWebp: '/image/gallery-3-14.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-15.avif',
+                imgWebp: '/image/gallery-3-15.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-16.avif',
+                imgWebp: '/image/gallery-3-16.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            },
+            {
+                imgAvif: '/image/gallery-3-17.avif',
+                imgWebp: '/image/gallery-3-17.webp',
+                imgAltText: 'Икша Кантри Клаб',
+            }
+        ]
+    },
+
     {
         title: 'Наши гости',
         images: [
@@ -644,7 +646,7 @@ const galleryData = [
 ];
 
 const Gallery = () => {
-    const [menuItem, setMenuItem] = useState('Лесная резиденция');
+    const [menuItem, setMenuItem] = useState('Олимпийская деревня');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selectedImages, setSelectedImages] = useState([]);
 
