@@ -121,7 +121,7 @@ const Main = () => {
                initial="initial"
                animate="animate"
                variants={pumpkin_vars}
-               src={ny_logo}
+               src={'/image/NY/tariff/4.webp'}
                className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
                alt=""
             />
