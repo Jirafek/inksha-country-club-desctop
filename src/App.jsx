@@ -69,10 +69,13 @@ function App() {
          utm_content: Cookies.get('utm_content'),
       };
 
+
+      const UTMSource = urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source");
+
       const settedData = [
          cookieData.utm_source !== undefined ? cookieData.utm_source : utm_source
              ? utm_source
-             : urlParams.get("utm_source") || "Сайт",
+             : UTMSource || "Сайт",
 
          cookieData.utm_campaign !== undefined ? cookieData.utm_campaign : utm_campaign
              ? utm_campaign
@@ -93,10 +96,8 @@ function App() {
           ...settedData
       );
 
-      const UTMSource = urlParams.get("utm_source");
-
       if (cookieData.utm_source === undefined && UTMSource !== null) {
-         Cookies.set('utm_source', UTMSource.toLowerCase().includes('vk') ? 'vkontakte' : UTMSource, { expires: Infinity })
+         Cookies.set('utm_source', UTMSource, { expires: Infinity })
       }
       if (cookieData.utm_campaign === undefined && urlParams.get("utm_campaign") !== null) {
          Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { expires: Infinity });
