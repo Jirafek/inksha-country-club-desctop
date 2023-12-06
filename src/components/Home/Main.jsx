@@ -1,4 +1,5 @@
 import { m } from "framer-motion"
+import nyLogo from 'icons/ny-logo.webp'
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
@@ -121,7 +122,7 @@ const Main = () => {
                initial="initial"
                animate="animate"
                variants={pumpkin_vars}
-               src={'/image/NY/tariff/4.webp'}
+               src={nyLogo}
                className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
                alt=""
             />
