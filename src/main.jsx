@@ -1,14 +1,14 @@
-import { domAnimation, LazyMotion } from "framer-motion";
-import React, { Suspense, useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-import "./fonts.css";
-import "./index.css";
-import "./fonts/Lato-Regular.ttf";
-import "./fonts/MontserratAlternates-Regular.ttf";
-import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6";
-import { QueryParamProvider } from "use-query-params";
+import { domAnimation, LazyMotion } from "framer-motion"
+import { Suspense, useEffect, useState } from "react"
+import ReactDOM from "react-dom/client"
+import { BrowserRouter } from "react-router-dom"
+import { QueryParamProvider } from "use-query-params"
+import { ReactRouter6Adapter } from "use-query-params/adapters/react-router-6"
+import App from "./App"
+import "./fonts.css"
+import "./fonts/Lato-Regular.ttf"
+import "./fonts/MontserratAlternates-Regular.ttf"
+import "./index.css"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <BrowserRouter>
@@ -30,24 +30,24 @@ ReactDOM.createRoot(document.getElementById("root")).render(
          </LazyMotion>
       </QueryParamProvider>
    </BrowserRouter>
-);
+)
 
 function AppWithDelay() {
-   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-   };
+      setWindowWidth(window.innerWidth)
+   }
 
    useEffect(() => {
       // Установка лиснера при монтировании
-      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", handleResize)
 
       // Удаление лиснера при размонтировании
       return () => {
-         window.removeEventListener("resize", handleResize);
-      };
-   }, []);
+         window.removeEventListener("resize", handleResize)
+      }
+   }, [])
 
    // Выводим сообщение в консоль, если ширина экрана меньше 421 пикселя
    if (windowWidth < 768) {
@@ -60,15 +60,15 @@ function AppWithDelay() {
       //    dops = "/halloween";
       // }
 
-      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.search;
+      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.pathname
    }
-   const [isLoading, setIsLoading] = useState(true);
+   const [isLoading, setIsLoading] = useState(true)
 
    useEffect(() => {
       setTimeout(() => {
-         setIsLoading(false);
-      }, 3000);
-   }, []);
+         setIsLoading(false)
+      }, 3000)
+   }, [])
 
    return isLoading ? (
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
@@ -82,5 +82,5 @@ function AppWithDelay() {
       </div>
    ) : (
       <App />
-   );
+   )
 }

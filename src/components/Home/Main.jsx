@@ -144,7 +144,7 @@ const Main = () => {
                {/*    <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
                {/*</picture>*/}
                <img
-                  className="hidden h-screen lg:block"
+                  className="hidden  h-full lg:block"
                   src="/image/main_arrow_big.webp"
                   alt="Икша Кантри Клаб"
                />
