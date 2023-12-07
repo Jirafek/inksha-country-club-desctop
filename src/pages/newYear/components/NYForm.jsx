@@ -1,25 +1,27 @@
 import gift from 'images/NY/gift.webp'
-import NYGreenButton from './NYGreenButton';
-import { useEffect, useState } from 'react';
-import { URLData } from 'utils/URLData';
-import { useNavigate } from 'react-router-dom';
-import InputMask from 'react-input-mask';
-const NYForm = () => {
+import { useEffect, useState } from 'react'
+import InputMask from 'react-input-mask'
+import { useNavigate } from 'react-router-dom'
+import { useURLData } from 'utils/URLData'
+import NYGreenButton from './NYGreenButton'
+const NYForm = ({ additionalData = null,
+   additionalDataType = null, }) => {
 
-   const navigate = useNavigate();
-   const [name, setName] = useState("");
-   const [phone, setPhone] = useState("");
-   const [isValid, setIsValid] = useState(true);
-   const [phoneError] = useState("");
-   const [isError, setIsError] = useState(true); // State for tracking errors
-
+   const navigate = useNavigate()
+   const [name, setName] = useState("")
+   const [phone, setPhone] = useState("")
+   const [isValid, setIsValid] = useState(true)
+   const [phoneError] = useState("")
+   const [isError, setIsError] = useState(true) // State for tracking errors
+   const { utm_campaign, utm_content, utm_source } = useURLData()
    const handleSubmitBot = async () => {
+
       const data = {
          name: name,
          phone: phone,
          email: '-',
-         groupID: 981875757,
-      };
+         groupID: import.meta.env.VITE_GROUP_ID,
+      }
       // if (!email.match(emailRegex)) {
       //    alert("Введите корректный почтовый адресс");
       //    return;
@@ -28,10 +30,18 @@ const NYForm = () => {
       const sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "Новый год лендинг",
+         formType:
+            additionalDataType === null
+               ? "Новый год лендинг"
+               : additionalDataType,
          link: window.location.href,
-         ...URLData,
-      };
+         utm_source: utm_source,
+         utm_campaign: utm_campaign,
+         utm_content: utm_content,
+      }
+      if (additionalData !== null) {
+         sendingData = { ...sendingData, ...additionalData }
+      }
 
       try {
          const response = await fetch(
@@ -44,59 +54,59 @@ const NYForm = () => {
                },
                body: new URLSearchParams(sendingData).toString(),
             }
-         );
+         )
 
          if (response.ok) {
             setTimeout(() => {
-               navigate("/thanks");
-            }, 1000);
+               navigate("/thanks")
+            }, 1000)
             // ... ваша существующая логика ...
-            setPhone(""); // Очищаем состояние телефона
-            setName(""); // Очищаем состояние телефона
+            setPhone("") // Очищаем состояние телефона
+            setName("") // Очищаем состояние телефона
 
          } else {
-            alert("Произошла ошибка при отправке данных");
+            alert("Произошла ошибка при отправке данных")
          }
       } catch (error) {
-         console.error(error);
-         alert("Произошла ошибка при отправке данных");
+         console.error(error)
+         alert("Произошла ошибка при отправке данных")
       }
-   };
+   }
 
    useEffect(() => {
 
       // Проверка на ошибки при изменении полей формы
-      const newIsError = !name || !phone || !isValid;
-      setIsError(newIsError);
+      const newIsError = !name || !phone || !isValid
+      setIsError(newIsError)
 
 
-   }, [isValid, name, phone]);
+   }, [isValid, name, phone])
 
    const handlePhoneChange = (e) => {
-      const inputValue = e.target.value;
-      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
-      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
-      setPhone(numericValue);
-      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
-   };
+      const inputValue = e.target.value
+      const numericValue = inputValue.replace(/[^\d]/g, "") // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11 // Проверяем, что длина равна 11
+      setPhone(numericValue)
+      setIsValid(isValidPhone) // Устанавливаем валидность номера телефона
+   }
    const handleNameChange = (e) => {
-      const { value } = e.target;
-      setName(value);
-   };
+      const { value } = e.target
+      setName(value)
+   }
 
    // const handleEmailChange = (e) => {
    //    const { value } = e.target;
    //    setEmail(value);
    // };
    const handleSubmit = (e) => {
-      e.preventDefault();
+      e.preventDefault()
       if (isError) {
-         alert("Ошибка с номером");
-         return;
+         alert("Ошибка с номером")
+         return
       }
 
-      handleSubmitBot();
-   };
+      handleSubmitBot()
+   }
    return (
       <div id='Form' className=' ny-form-bg py-[10vh] md:py-[230px]'>
 

@@ -1,20 +1,80 @@
-import pumpkin from "../assets/pumpkin.png";
-import bat from "../assets/bat.png";
-import cotel from "../assets/cotel.png";
-import arrow from "../assets/arrow.png";
-import down_arrow from "../assets/down_arrow.png";
-import Button from "./../common/Button";
+import arrow from "../assets/arrow.png"
+import bat from "../assets/bat.png"
+import cotel from "../assets/cotel.png"
+import down_arrow from "../assets/down_arrow.png"
+import pumpkin from "../assets/pumpkin.png"
+import Button from "./../common/Button"
 
-import { Link as ScrollLink } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll"
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import ProgramaSwiper from "./ProgramaSwiper";
-import Reveal from "../common/Reveal";
-import { scale, slideFromRight } from "../constants/motion";
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
+import Reveal from "../common/Reveal"
+import { scale, slideFromRight } from "../constants/motion"
+import ProgramaSwiper from "./ProgramaSwiper"
+
+const programaContent = {
+   1: {
+      events: [
+         {
+            time: "15:00-16:00: ",
+            title: "Заезд гостей",
+         },
+         {
+            time: "16:00-20:00: ",
+            title: "Подготовка к празднику",
+         },
+      ],
+   },
+   2: {
+      events: [
+         {
+            time: "18:30 - 20:00:",
+            title: "Праздничный ужин на локациях и вручение новогодних подарков",
+         },
+         {
+            time: "00:00: ",
+            title: "Новогодний фейерверк",
+         },
+      ],
+   },
+   3: {
+      events: [
+         {
+            time: "12:00 - 14:00: ",
+            title: "Новогоднее BBQ на локациях",
+         },
+         {
+            time: "16:00 - 18:00: ",
+            title: "Спортивные игры и соревнования. Лыжная экскурсия",
+         },
+         {
+            time: "18:30 - 20:00: ",
+            title: "Ужин",
+         },
+      ],
+   },
+   4: {
+      events: [
+         {
+            time: "09:00 - 11:00: ",
+            title: "Завтрак на локациях",
+         },
+         {
+            time: "12:00 - 18:00:30: ",
+            title: "Парения в Бане на воде",
+         },
+         {
+            time: "18:30 - 20:00: ",
+            title: "Ужин на локациях",
+         },
+      ],
+   },
+}
+
 
 export const Programa = () => {
    return (
@@ -143,5 +203,5 @@ export const Programa = () => {
             </Reveal>
          </div>
       </div>
-   );
-};
+   )
+}

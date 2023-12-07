@@ -1,40 +1,48 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react"
 
-import Button from "common/Button";
-import { URLData } from "utils/URLData";
-import arrow from "icons/arrow.png";
-import InputMask from "react-input-mask";
-import { useNavigate } from "react-router-dom";
-const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-const Form = () => {
-   const navigate = useNavigate();
-   const [name, setName] = useState("");
-   const [phone, setPhone] = useState("");
-   const [email, setEmail] = useState("");
-   const [isValid, setIsValid] = useState(true);
-   const [phoneError] = useState("");
-   const [isError, setIsError] = useState(true); // State for tracking errors
-
+import Button from "common/Button"
+import arrow from "icons/arrow.png"
+import InputMask from "react-input-mask"
+import { useNavigate } from "react-router-dom"
+import { useURLData } from "utils/URLData"
+const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+const Form = ({ additionalData = null,
+   additionalDataType = null }) => {
+   const navigate = useNavigate()
+   const [name, setName] = useState("")
+   const [phone, setPhone] = useState("")
+   const [email, setEmail] = useState("")
+   const [isValid, setIsValid] = useState(true)
+   const [phoneError] = useState("")
+   const [isError, setIsError] = useState(true) // State for tracking errors
+   const { utm_campaign, utm_content, utm_source } = useURLData()
    const handleSubmitBot = async () => {
       const data = {
          name: name,
          phone: phone,
          email: email,
-         groupID: 981875757,
-      };
+         groupID: import.meta.env.VITE_GROUP_ID,
+      }
       if (!email.match(emailRegex)) {
-         alert("Введите корректный почтовый адресс");
-         return;
+         alert("Введите корректный почтовый адрес")
+         return
       }
 
       const sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "корпоратив лендинг",
+         formType:
+            additionalDataType === null
+               ? "Корп лендинг"
+               : additionalDataType,
          link: window.location.href,
-         ...URLData,
-      };
-      console.log(data);
+         utm_source: utm_source,
+         utm_campaign: utm_campaign,
+         utm_content: utm_content,
+      }
+      if (additionalData !== null) {
+         sendingData = { ...sendingData, ...additionalData }
+      }
       try {
          const response = await fetch(
             "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
@@ -46,57 +54,57 @@ const Form = () => {
                },
                body: new URLSearchParams(sendingData).toString(),
             }
-         );
+         )
 
          if (response.ok) {
             setTimeout(() => {
-               navigate("/thanks");
-            }, 1000);
+               navigate("/thanks")
+            }, 1000)
             // ... ваша существующая логика ...
-            setPhone(""); // Очищаем состояние телефона
-            setName(""); // Очищаем состояние телефона
-            setEmail(""); // Очищаем состояние телефона
+            setPhone("") // Очищаем состояние телефона
+            setName("") // Очищаем состояние телефона
+            setEmail("") // Очищаем состояние телефона
          } else {
-            alert("Произошла ошибка при отправке данных");
+            alert("Произошла ошибка при отправке данных")
          }
       } catch (error) {
-         console.error(error);
-         alert("Произошла ошибка при отправке данных");
+         console.error(error)
+         alert("Произошла ошибка при отправке данных")
       }
-   };
+   }
 
    useEffect(() => {
 
       // Проверка на ошибки при изменении полей формы
-      const newIsError = !name || !phone || !email || !isValid;
-      setIsError(newIsError);
-   }, [name, phone, email]);
+      const newIsError = !name || !phone || !email || !isValid
+      setIsError(newIsError)
+   }, [name, phone, email])
 
    const handlePhoneChange = (e) => {
-      const inputValue = e.target.value;
-      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
-      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
-      setPhone(numericValue);
-      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
-   };
+      const inputValue = e.target.value
+      const numericValue = inputValue.replace(/[^\d]/g, "") // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11 // Проверяем, что длина равна 11
+      setPhone(numericValue)
+      setIsValid(isValidPhone) // Устанавливаем валидность номера телефона
+   }
    const handleNameChange = (e) => {
-      const { value } = e.target;
-      setName(value);
-   };
+      const { value } = e.target
+      setName(value)
+   }
 
    const handleEmailChange = (e) => {
-      const { value } = e.target;
-      setEmail(value);
-   };
+      const { value } = e.target
+      setEmail(value)
+   }
    const handleSubmit = (e) => {
-      e.preventDefault();
+      e.preventDefault()
       if (isError) {
-         alert("Ошибка с номером");
-         return;
+         alert("Ошибка с номером")
+         return
       }
 
-      handleSubmitBot();
-   };
+      handleSubmitBot()
+   }
    return (
       <div id="form" className="bg-brown py-[4%]">
          <div className="">
@@ -151,7 +159,7 @@ const Form = () => {
             </form>
          </div>
       </div>
-   );
-};
+   )
+}
 
-export default Form;
+export default Form

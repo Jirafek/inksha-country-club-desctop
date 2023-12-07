@@ -1,33 +1,44 @@
-import React, { useState, useEffect } from "react";
-import close from "./../assets/close.png";
-import FormInput from "./FormInput";
-import TellInput from "./TellInput";
-import { URLData } from "../utils/URLData";
-import { useNavigate } from "react-router-dom";
-const MainPopup = ({ isPopupOpen, togglePopup }) => {
-   const [isPopupCompleted, setIsPopupCompleted] = useState(false);
-   const [isError, setIsError] = useState(true); // State for tracking errors
-   const [name, setName] = useState("");
-   const [isValid, setIsValid] = useState(true);
-   const [phone, setPhone] = useState("");
-   const navigate = useNavigate();
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useURLData } from 'utils/URLData'
+import close from "./../assets/close.png"
+import FormInput from "./FormInput"
+import TellInput from "./TellInput"
+const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null,
+   additionalDataType = null, }) => {
+   const { utm_campaign, utm_content, utm_source } = useURLData()
+   const [isPopupCompleted, setIsPopupCompleted] = useState(false)
+   const [isError, setIsError] = useState(true) // State for tracking errors
+   const [name, setName] = useState("")
+   const [isValid, setIsValid] = useState(true)
+   const [phone, setPhone] = useState("")
+   const navigate = useNavigate()
 
    const handleSubmitBot = async () => {
       const data = {
          name: name,
          phone: phone,
          email: "-",
-      };
+         groupID: import.meta.env.VITE_GROUP_ID,
+      }
 
-      const sendingData = {
+      let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "Форма имя + телефон десктоп ",
+         formType:
+            additionalDataType === null
+               ? "Форма имя + телефон"
+               : additionalDataType,
          link: window.location.href,
-         ...URLData,
-         groupID: 981875757,
-      };
-      console.log(data);
+         utm_source: utm_source,
+         utm_campaign: utm_campaign,
+         utm_content: utm_content,
+      }
+
+      if (additionalData !== null) {
+         sendingData = { ...sendingData, ...additionalData }
+      }
+
       try {
          const response = await fetch(
             "https://infinite-hamlet-38304-2023ba50b8de.herokuapp.com/submit-form",
@@ -39,60 +50,60 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                },
                body: new URLSearchParams(sendingData).toString(),
             }
-         );
+         )
 
          if (response.ok) {
             setTimeout(() => {
-               navigate("/thanks");
-            }, 1000);
+               navigate("/thanks")
+            }, 1000)
          } else {
-            alert("Произошла ошибка при отправке данных");
+            alert("Произошла ошибка при отправке данных")
          }
       } catch (error) {
-         console.error(error);
-         alert("Произошла ошибка при отправке данных");
+         console.error(error)
+         alert("Произошла ошибка при отправке данных")
       }
-   };
+   }
 
    useEffect(() => {
       // Проверка на ошибки при изменении полей формы
-      const newIsError = !name || !phone || !isValid;
-      setIsError(newIsError);
-   }, [name, phone]);
+      const newIsError = !name || !phone || !isValid
+      setIsError(newIsError)
+   }, [name, phone])
 
    const handlePhoneChange = (e) => {
-      const inputValue = e.target.value;
-      const numericValue = inputValue.replace(/[^\d]/g, ""); // Убираем все символы, кроме цифр
-      const isValidPhone = numericValue.length === 11; // Проверяем, что длина равна 11
-      setPhone(numericValue);
-      setIsValid(isValidPhone); // Устанавливаем валидность номера телефона
-   };
+      const inputValue = e.target.value
+      const numericValue = inputValue.replace(/[^\d]/g, "") // Убираем все символы, кроме цифр
+      const isValidPhone = numericValue.length === 11 // Проверяем, что длина равна 11
+      setPhone(numericValue)
+      setIsValid(isValidPhone) // Устанавливаем валидность номера телефона
+   }
    const handleNameChange = (e) => {
-      const { value } = e.target;
-      setName(value);
-   };
+      const { value } = e.target
+      setName(value)
+   }
 
    const handlePopupClose = () => {
-      setIsPopupCompleted(false);
-      togglePopup();
-   };
+      setIsPopupCompleted(false)
+      togglePopup()
+   }
 
    const handleSubmit = (e) => {
-      e.preventDefault();
+      e.preventDefault()
       if (isError) {
-         return;
+         return
       }
       const data = {
          name,
          phone,
          email: "-",
-      };
-      handleSubmitBot();
+      }
+      handleSubmitBot()
       // ... ваша существующая логика ...
-      setPhone(""); // Очищаем состояние телефона
-      setName(""); // Очищаем состояние телефона
-      setIsPopupCompleted(!isPopupCompleted);
-   };
+      setPhone("") // Очищаем состояние телефона
+      setName("") // Очищаем состояние телефона
+      setIsPopupCompleted(!isPopupCompleted)
+   }
    return (
       <div className="montery">
          {isPopupOpen && (
@@ -171,11 +182,10 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
                         <button
                            type="submit"
                            disabled={isError}
-                           className={`h-[40px] rounded-[10px] ${
-                              isError
-                                 ? "border-none bg-[#D0C9C9]"
-                                 : "white border-[2px] border-green-400"
-                           } w-full`}
+                           className={`h-[40px] rounded-[10px] ${isError
+                              ? "border-none bg-[#D0C9C9]"
+                              : "white border-[2px] border-green-400"
+                              } w-full`}
                         >
                            Отправить
                         </button>
@@ -185,7 +195,7 @@ const MainPopup = ({ isPopupOpen, togglePopup }) => {
             </div>
          )}
       </div>
-   );
-};
+   )
+}
 
-export default MainPopup;
+export default MainPopup
