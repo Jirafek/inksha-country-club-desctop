@@ -16,7 +16,6 @@ import HelpPopup from './common/popups/helpPopup/HelpPopup'
 // import FAQ from "./pages/FAQ";
 // import Thanks from "./pages/Thanks";
 // import Helloween from "./pages/Helloween";
-
 const NotFound = () => {
    return (
       <section className="relative h-screen bg-[#201E1F]">
@@ -55,9 +54,11 @@ function App() {
       let timeoutId = setTimeout(() => {
          setIsHelpPopupOpen(true)
          clearTimeout(timeoutId)
-      }, 10000)
+      }, 30000)
       setUrlParams()
    }, [])
+
+
 
    const setUrlParams = (isCoockieOnRight = undefined) => {
       const isCookieOn = Cookies.get('cookies_on')
@@ -128,6 +129,7 @@ function App() {
    }
    return (
       <div className='relative'>
+
          <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
          {isHelpPopupOpen && <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
 
