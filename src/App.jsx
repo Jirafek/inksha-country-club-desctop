@@ -48,11 +48,14 @@ function App() {
    const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
 
-   setTimeout(() => {
-      setIsHelpPopupOpen(true)
-   }, 30000)
+
+
 
    useEffect(() => {
+      let timeoutId = setTimeout(() => {
+         setIsHelpPopupOpen(true)
+         clearTimeout(timeoutId)
+      }, 10000)
       setUrlParams()
    }, [])
 
