@@ -27,7 +27,7 @@ const NYForm = ({ additionalData = null,
       //    return;
       // }
 
-      const sendingData = {
+      let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
          formType:
