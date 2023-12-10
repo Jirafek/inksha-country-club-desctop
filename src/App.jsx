@@ -16,7 +16,15 @@ import HelpPopup from './common/popups/helpPopup/HelpPopup'
 // import FAQ from "./pages/FAQ";
 // import Thanks from "./pages/Thanks";
 // import Helloween from "./pages/Helloween";
+
+
 const NotFound = () => {
+   useEffect(() => {
+      let time = setTimeout(() => {
+         window.location.href = 'https://ikshacountryclub.com'
+      }, 2000)
+      clearTimeout(time)
+   }, [])
    return (
       <section className="relative h-screen bg-[#201E1F]">
          <div className="flex h-full w-screen flex-col items-center justify-center">
@@ -46,15 +54,48 @@ const KorpLanding = lazy(() => import("pages/korpLanding/KorpLanding"))
 function App() {
    const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
+   const [timer, setTimer] = useState(false)
 
+
+   useEffect(() => {
+      console.log('updated')
+      setTimer(
+         setTimeout(() => {
+            setIsHelpPopupOpen(true)
+            clearTimeout(timer)
+         }, 40000))
+   }, [])
+
+   const handleButtonClick = () => {
+      clearTimeout(timer)
+      setIsHelpPopupOpen(!isHelpPopupOpen)
+
+   }
+
+   useEffect(() => {
+      // Check if the URL contains a fragment identifier
+      let time = setTimeout(() => {
+         clearTimeout(time)
+         if (window.location.hash) {
+            const welcome = document.getElementById('welcome')
+            // Extract the fragment identifier (e.g., "locations")
+            // const fragmentId = window.location.hash.substring(1)
+            const fragmentId = window.location.hash.substring(1).split('/')[0]
+            // Find the element with the corresponding ID
+            const targetElement = document.getElementById(fragmentId)
+            // If the element is found, scroll to it
+            if (targetElement) {
+               targetElement.scrollIntoView({ behavior: 'smooth' })
+            } else {
+               welcome.scrollIntoView({ behavior: 'smooth' })
+            }
+         }
+      }, 2000)
+   }, [window.location.hash])
 
 
 
    useEffect(() => {
-      let timeoutId = setTimeout(() => {
-         setIsHelpPopupOpen(true)
-         clearTimeout(timeoutId)
-      }, 30000)
       setUrlParams()
    }, [])
 

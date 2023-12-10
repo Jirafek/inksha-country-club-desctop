@@ -52,12 +52,13 @@ function AppWithDelay() {
    // Выводим сообщение в консоль, если ширина экрана меньше 421 пикселя
    if (windowWidth < 768) {
 
-      const url = new URL(window.location.href);
-      const queryParams = url.searchParams;
+      const url = new URL(window.location.href)
+      const queryParams = url.searchParams
 
-      const queryString = queryParams.toString();
+      const queryString = queryParams.toString()
 
-      window.location.href = `https://mobile.ikshacountryclub.com/?` + queryString;
+      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+      // window.location.href = `http://localhost:5173` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
    }
    const [isLoading, setIsLoading] = useState(true)
 
