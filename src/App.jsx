@@ -20,10 +20,11 @@ import HelpPopup from './common/popups/helpPopup/HelpPopup'
 
 const NotFound = () => {
    useEffect(() => {
+
       let time = setTimeout(() => {
          window.location.href = 'https://ikshacountryclub.com'
+         clearTimeout(time)
       }, 2000)
-      clearTimeout(time)
    }, [])
    return (
       <section className="relative h-screen bg-[#201E1F]">
