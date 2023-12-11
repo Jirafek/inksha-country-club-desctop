@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
 import { isItWinterNow } from "utils/helpers"
 import Header from "./Header"
+
+import bgWinAvif from 'images/welcome_bg_winter.webp'
 const heading = {
    hidden: {},
    visible: {
@@ -129,7 +131,8 @@ const Main = () => {
          </Link>
          <section
             style={{
-               backgroundImage: `url(/image/welcome_bg${isItWinterNow()}.webp)`,
+               // backgroundImage: `url(/image/welcome_bg${isItWinterNow()}.webp)`,
+               backgroundImage: `url(${isItWinterNow() ? bgWinAvif : '/image/welcome_bg.webp'})`,
                backgroundPosition: "right",
                backgroundSize: "cover",
                backgroundRepeat: "no-repeat",
