@@ -1,11 +1,9 @@
-import React, {useEffect, useState} from "react";
-import Title from "../Title";
-import { v4 as uuid4 } from "uuid";
-import { Link } from "react-router-dom";
-import Footer from "../Footer";
-import { m } from "framer-motion";
-import MainPopup from "./../../common/MainPopup";
-import {useURLData} from "utils/URLData";
+import { m } from "framer-motion"
+import { useState } from "react"
+import { useURLData } from "utils/URLData"
+import { v4 as uuid4 } from "uuid"
+import Title from "../Title"
+import MainPopup from "./../../common/MainPopup"
 
 
 const heading = {
@@ -15,7 +13,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const OpenLeft = {
    hidden: {
@@ -30,10 +28,10 @@ const OpenLeft = {
          duration: 2.5,
       },
    },
-};
+}
 
 const Bron = () => {
-   const {utm_source} = useURLData();
+   const { utm_source } = useURLData()
 
 
    const bronData = [
@@ -72,15 +70,15 @@ const Bron = () => {
          text: "contact@ikshacountryclub.com",
          link: "mailto:contact@ikshacountryclub.com",
       },
-   ];
+   ]
 
-   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const [isPopupOpen, setIsPopupOpen] = useState(false)
    const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev);
-   };
+      setIsPopupOpen((prev) => !prev)
+   }
 
    return (
-      <section className="relative min-h-screen w-full bg-[#201E1F]">
+      <section id='contacts' className="relative min-h-screen w-full bg-[#201E1F]">
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Title text={"Бронирование"} />
          <m.div
@@ -165,7 +163,7 @@ const Bron = () => {
             />
          </m.div>
       </section>
-   );
-};
+   )
+}
 
-export default Bron;
+export default Bron

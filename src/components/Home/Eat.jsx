@@ -1,9 +1,8 @@
-import React from "react";
-import { m } from "framer-motion";
-import Title from '../Title';
-import { v4 as uuid4 } from 'uuid';
-import { Link } from "react-router-dom";
-import Logo from '../Logo';
+import { m } from "framer-motion"
+import { Link } from "react-router-dom"
+import { v4 as uuid4 } from 'uuid'
+import Logo from '../Logo'
+import Title from '../Title'
 
 const heading = {
     hidden: {},
@@ -12,7 +11,7 @@ const heading = {
             staggerChildren: 0.15,
         },
     },
-};
+}
 
 const OpenBottom = {
     hidden: {
@@ -27,7 +26,7 @@ const OpenBottom = {
             duration: 2.5,
         },
     },
-};
+}
 
 const OpenLeft = {
     hidden: {
@@ -42,7 +41,7 @@ const OpenLeft = {
             duration: 2.5,
         },
     },
-};
+}
 
 const EatData = [
     {
@@ -57,11 +56,11 @@ const EatData = [
         img: '/image/chef.webp',
         text: 'Шашлык от шефа'
     },
-];
+]
 
 const Eat = () => {
     return (
-        <section className="min-h-screen w-full relative bg-[#201E1F]">
+        <section id='eat' className="min-h-screen w-full relative bg-[#201E1F]">
             <Title text={'Питание'} />
             <Logo z={10} />
             <m.img
@@ -110,7 +109,7 @@ const Eat = () => {
                 <img className="absolute right-[50px] 2xl:block hidden" src="/image/eat_big.webp" alt="Приготовление блюд на природе" />
             </div>
         </section>
-    );
+    )
 }
 
-export default Eat;
+export default Eat

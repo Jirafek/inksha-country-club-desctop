@@ -1,7 +1,6 @@
-import React from "react";
-import routes from '../utils/routes';
-import { v4 as uuid4 } from 'uuid';
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import { v4 as uuid4 } from 'uuid'
+import routes from '../utils/routes'
 
 const Footer = () => {
     return (
@@ -9,7 +8,7 @@ const Footer = () => {
             <ul className="flex justify-around flex-wrap gap-6">
                 {
                     routes.map((el, i) => {
-                        if (!el.title) return;
+                        if (!el.title) return
                         if (el.link.includes('/')) {
                             return (
                                 <Link key={uuid4()} className="text-white md:text-[32px] text-[23px]" to={el.link}>
@@ -17,7 +16,7 @@ const Footer = () => {
                                         el.title
                                     }
                                 </Link>
-                            );
+                            )
                         } else {
                             return (
                                 <a key={uuid4()} className="text-white md:text-[32px] text-[23px]" href={el.link}>
@@ -25,7 +24,7 @@ const Footer = () => {
                                         el.title
                                     }
                                 </a>
-                            );
+                            )
                         }
                     })
                 }
@@ -44,7 +43,7 @@ const Footer = () => {
                     "Икша Кантри Клаб" <br />
                     Все права защищены Copyright © 2023
                 </p>
-                <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/about.pdf">
+                <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" target='_blank' href="/pdf/about.pdf">
                     Презентациия о нас
                 </a>
 
@@ -53,7 +52,7 @@ const Footer = () => {
                 </a>
             </div>
         </footer>
-    );
+    )
 }
 
-export default Footer;
+export default Footer

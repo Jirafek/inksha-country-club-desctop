@@ -1,4 +1,4 @@
-import { isItWinterNow } from "./helpers";
+import { isItWinterNow } from "./helpers"
 
 const routes = [
    {
@@ -47,10 +47,10 @@ const routes = [
    },
    {
       title: "",
-      link: "https://wa.me/79859091202",
+      link: `https://wa.me/79859091202?text=${encodeURIComponent('Здравствуйте, меня интересует аренда домика')}`,
       icon: `/image/whatsapp${isItWinterNow()}.webp`,
       iconAvif: `/image/whatsapp${isItWinterNow()}.avif`,
    },
-];
+]
 
-export default routes;
+export default routes

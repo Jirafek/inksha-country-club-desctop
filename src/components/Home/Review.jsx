@@ -1,8 +1,7 @@
-import React from "react";
-import Title from '../Title';
-import { v4 as uuid4 } from 'uuid';
+import { v4 as uuid4 } from 'uuid'
+import Title from '../Title'
 
-import { m } from "framer-motion";
+import { m } from "framer-motion"
 
 const heading = {
     hidden: {},
@@ -11,7 +10,7 @@ const heading = {
             staggerChildren: 0.15,
         },
     },
-};
+}
 
 const OpenLeft = {
     hidden: {
@@ -26,7 +25,7 @@ const OpenLeft = {
             duration: 2.5,
         },
     },
-};
+}
 
 const reviewData = [
     {
@@ -43,11 +42,11 @@ const reviewData = [
         title: 'Наталья, 34 года',
         text: 'Снимали беседку с домиками на берегу, потрясающая природа, более чем комфортные условия для отдыха, отличная баня с красивым панорамным окном и видом на лес и водохранилище, всё чистенько и продумано, в шаговой доступности песчаный пляж, лодки, сапы в прокат',
     },
-];
+]
 
 const Review = () => {
     return (
-        <section className="relative min-h-screen w-full bg-[#201E1F]">
+        <section id='req' className="relative min-h-screen w-full bg-[#201E1F]">
             <Title text={'Отзывы'} />
             <m.div
                 initial='hidden'
@@ -120,7 +119,7 @@ const Review = () => {
                 </m.div>
             </m.div>
         </section>
-    );
+    )
 }
 
-export default Review;
+export default Review

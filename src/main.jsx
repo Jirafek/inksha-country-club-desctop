@@ -56,8 +56,15 @@ function AppWithDelay() {
       const queryParams = url.searchParams
 
       const queryString = queryParams.toString()
+      console.log('pathname: ' + window.location.pathname)
+      console.log(window.location.pathname.includes('/location'))
+      if (window.location.pathname.includes('/location')) {
+         window.location.href = "https://mobile.ikshacountryclub.com/locations-about" + '/?' + queryString
+      } else {
 
-      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+         window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+      }
+
       // window.location.href = `http://localhost:5173` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
    }
    const [isLoading, setIsLoading] = useState(true)
