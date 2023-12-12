@@ -33,6 +33,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 )
 
 function AppWithDelay() {
+   console.log(window.location)
+   console.log(window.location.search)
+   console.log(window.location.search.includes('?korpOpen=1'))
+
+
+
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
    const handleResize = () => {
@@ -49,6 +55,7 @@ function AppWithDelay() {
       }
    }, [])
 
+
    // Выводим сообщение в консоль, если ширина экрана меньше 421 пикселя
    if (windowWidth < 768) {
 
@@ -58,12 +65,24 @@ function AppWithDelay() {
       const queryString = queryParams.toString()
       console.log('pathname: ' + window.location.pathname)
       console.log(window.location.pathname.includes('/location'))
-      if (window.location.pathname.includes('/location')) {
-         window.location.href = "https://mobile.ikshacountryclub.com/locations-about" + '/?' + queryString
-      } else {
+      console.log(window.location.search)
 
-         window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+
+      switch (true) {
+         case window.location.pathname.includes('/location'):
+            window.location.href = "https://mobile.ikshacountryclub.com/locations-about" + '/?' + queryString
+            break
+
+         case window.location.search.includes('?korpOpen=1'):
+
+            window.location.href = "https://mobile.ikshacountryclub.com/korp" + '/?' + queryString
+            break
+
+         default:
+            window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+            break
       }
+
 
       // window.location.href = `http://localhost:5173` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
    }

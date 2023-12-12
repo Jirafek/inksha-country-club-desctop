@@ -1,10 +1,10 @@
+import messageIcon from 'icons/messageIcon.webp'
 import Cookies from "js-cookie"
 import NYLanding from 'pages/newYear/NYLanding'
 import { lazy, useEffect, useState } from "react"
 import { Link, Route, Routes } from "react-router-dom"
 import { BooleanParam, useQueryParam } from "use-query-params"
 import { updateURLData, useURLData } from "utils/URLData"
-import AnimationButton from "./common/AnimationButton"
 import Cookie from './common/Cookie'
 import MainPopup from "./common/MainPopup"
 import HelpPopup from './common/popups/helpPopup/HelpPopup'
@@ -56,22 +56,19 @@ function App() {
    const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
    const [timer, setTimer] = useState(false)
+   const [isHelpButtonActive, setIsHelpButtonActive] = useState(false)
 
 
    useEffect(() => {
-      console.log('updated')
+
       setTimer(
          setTimeout(() => {
             setIsHelpPopupOpen(true)
             clearTimeout(timer)
-         }, 40000))
+         }, 10000))
    }, [])
 
-   const handleButtonClick = () => {
-      clearTimeout(timer)
-      setIsHelpPopupOpen(!isHelpPopupOpen)
 
-   }
 
    useEffect(() => {
       // Check if the URL contains a fragment identifier
@@ -169,14 +166,20 @@ function App() {
    const toggleKorp = () => {
       setIsKorpOpen((prev) => !prev)
    }
+
+   const handleHelpButtonClick = () => {
+      clearTimeout(timer)
+      setIsHelpPopupOpen(!isHelpPopupOpen)
+
+   }
+
    return (
       <div className='relative'>
 
          <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
-         {isHelpPopupOpen && <HelpPopup isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
-
-         <div className="fixed bottom-[20px] right-[240px] z-[10000]">
-            <AnimationButton
+         {isHelpPopupOpen && <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
+         {isHelpButtonActive && <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[100px] z-[10000]">
+            {/* <AnimationButton
                h={72}
                w={72}
                className=" flex  justify-end shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
@@ -186,8 +189,10 @@ function App() {
             // }}
             >
                Свяжитесь со мной
-            </AnimationButton>
-         </div>
+            </AnimationButton> */}
+            <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
+         </div>}
+
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
          <Routes className="relative">

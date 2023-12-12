@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import HelpPhoneForm from './components/HelpPhoneForm'
 import style from './helpPopup.module.scss'
-const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
+const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsHelpButtonActive }) => {
    const [isValid, setIsValid] = useState(false)
    const [path, setPath] = useState(1)
 
@@ -20,6 +20,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
 
    const handlePopupClose = () => {
       setIsHelpPopupOpen(false)
+      setIsHelpButtonActive(true)
    }
 
    useEffect(() => {
@@ -43,7 +44,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
                alt="Икша Кантри Клаб"
             />
          </div> */}
-         <div className='border w-[70vw] mx-auto  h-[400px] text-black  relative montery border-black bg-white rounded-[20px] p-5'>
+         <div className='border w-[70vw] mx-auto  h-[400px] text-white  relative montery border-black bg-[#75624A] rounded-[20px] p-5'>
             <div className="absolute right-3 z-[60] p-2 top-3">
                <img
                   onClick={handlePopupClose}
@@ -59,8 +60,8 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '' }) => {
                   <input name='input' className='border h-[100px] mb-4 border-black text-sm my-2 rounded-[10px] w-full p-2' onChange={changeQuestInput} value={questInput} type="text" />
                </form>
                <div className='flex flex-col gap-3'>
-                  <button disabled={!isValid} onClick={submitFirstForm} className={` w-full max-w-[560px] mx-auto h-[50px] rounded-[10px] text-white bg-brown ${style.btn}`}>Отправить</button>
-                  <button onClick={submitFirstForm} className={` w-full h-[50px] max-w-[560px] mx-auto rounded-[10px] text-sm flex items-center justify-center bg-white border border-brown text-brown`}>Перезвоним в течение минуты</button>
+                  <button disabled={!isValid} onClick={submitFirstForm} className={` w-full max-w-[560px] mx-auto h-[50px] rounded-[10px] font-bold text-white hover:bg-transparent duration-300 hover:border-2 hover:border-[#4D382B]  bg-[#4D382B] ${style.btn}`}>Отправить</button>
+                  <button onClick={submitFirstForm} className={` w-full h-[50px] max-w-[560px] mx-auto rounded-[10px] text-sm flex font-bold items-center hover:opacity-75 duration-300 justify-center bg-white border border-brown text-brown`}>Перезвоним в течение минуты</button>
                </div>
             </div>}
             {path === 2 && <div>

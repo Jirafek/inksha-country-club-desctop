@@ -141,7 +141,7 @@ const Main = () => {
          >
             <Header />
 
-            <div className="absolute left-0 top-0 flex items-center">
+            <div className="absolute max-w-[800px] h-full left-0 top-0 flex items-center">
                {/*<picture>*/}
                {/*    <source srcSet="/image/main_arrow_big.avif 1x" type="image/avif" />*/}
                {/*    <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}

@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import inst from "./../assets/inst.png";
-import what from "./../assets/what.png";
-import phone from "./../assets/phone.png";
-import { motion } from "framer-motion";
-import {useURLData} from "utils/URLData";
+// import inst from "./../assets/inst.png";
+import { motion } from "framer-motion"
+import { useURLData } from "utils/URLData"
+import phone from "./../assets/phone.png"
+import what from "./../assets/what.png"
 
 const slideVariants = {
    initial: {
@@ -14,9 +14,9 @@ const slideVariants = {
       x: "-2%", // Конечная позиция за пределами экрана слева
       scale: 1,
    },
-};
+}
 const Footer = ({ className }) => {
-   const {utm_source} = useURLData();
+   const { utm_source } = useURLData()
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
@@ -24,13 +24,13 @@ const Footer = ({ className }) => {
                <div className="flex w-full items-center justify-between gap-5 md:justify-start">
                   <div>Икша Кантри Kлаб 2023 </div>
                   <div className="fixed bottom-5 md:bottom-[70px]  right-5 z-10 flex flex-col gap-5 md:left-5 md:flex-row">
-                     <a
+                     {/* <a
                         target="_blank"
                         rel="noreferrer"
                         href="https://www.instagram.com/ikshacountryclub/"
                      >
                         <img className="z-10 h-9 w-9" src={inst} alt="" />
-                     </a>
+                     </a> */}
                      <a
                         href="https://wa.me/79859091202"
                         target="_blank"
@@ -57,23 +57,23 @@ const Footer = ({ className }) => {
                </div>
                {
                   utm_source === 'yandex' ?
-                      <a href={'tel:+74995055067'} className="min-w-[160px] text-white">
-                         +7(499) 505-50-67
-                      </a>
-                      : utm_source === 'vkontakte' ?
-                          <a href={'tel:+74995055087'} className="min-w-[160px] text-white">
-                             +7(499) 505-50-87
-                          </a>
-                          :
-                          <a href={"tel:+74995055031"} className="min-w-[160px] text-white">
-                             +7(499) 505-50-31
-                          </a>
+                     <a href={'tel:+74995055067'} className="min-w-[160px] text-white">
+                        +7(499) 505-50-67
+                     </a>
+                     : utm_source === 'vkontakte' ?
+                        <a href={'tel:+74995055087'} className="min-w-[160px] text-white">
+                           +7(499) 505-50-87
+                        </a>
+                        :
+                        <a href={"tel:+74995055031"} className="min-w-[160px] text-white">
+                           +7(499) 505-50-31
+                        </a>
 
                }
             </div>
          </div>
       </div>
-   );
-};
+   )
+}
 
-export default Footer;
+export default Footer

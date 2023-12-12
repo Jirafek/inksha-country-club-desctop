@@ -99,8 +99,7 @@ export const Programa = () => {
                      </div>
                   </h1>
                   <p className="text-center text-NYblack mb-10 yaes  font-semibold text-lg yaes">
-                     Программа для празднования Хэллоуина в загородном клабе Икша
-                     Кантри Клаб с 27 по 29 октября:
+                     Программа для празднования Нового года в загородном клубе Икша Кантри Клаб с 30 по 2 января
                   </p>
                   <div className="grid grid-cols-1 place-items-center  md:grid-cols-2 gap-y-20 gap-10">
                      <div className="flex col-span-1 md:col-span-2 flex-col relative  w-full md:w-[90%] justify-center items-center">

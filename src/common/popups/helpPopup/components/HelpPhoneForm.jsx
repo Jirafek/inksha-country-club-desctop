@@ -144,7 +144,7 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
             </div>
             <div className='w-full flex items-center justify-center'>
 
-               <button type='submit' disabled={isError} className={`w-[550px] h-[60px] rounded-[10px] text-white bg-brown mx-auto ${style.btn}`}>Отправить</button>
+               <button type='submit' disabled={isError} className={`w-[550px] h-[50px] rounded-[10px] text-white bg-[#4D382B] mx-auto ${style.btn}`}>Отправить</button>
             </div>
 
          </form >
