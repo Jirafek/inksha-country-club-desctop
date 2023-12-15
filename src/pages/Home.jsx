@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet"
 
-import Main from "../components/Home/Main";
-import About from "../components/Home/About";
-import Happy from "../components/Home/Happy";
-import Eat from "../components/Home/Eat";
-import Locations from "../components/Home/Locations";
-import Events from "../components/Home/Events";
-import Gallery from "../components/Home/Gallery";
-import Review from "../components/Home/Review";
-import Bron from "../components/Home/Bron";
-import Footer from "../components/Footer";
-import Map from "components/Home/Map/Map";
+import Map from "components/Home/Map/Map"
+import Footer from "../components/Footer"
+import About from "../components/Home/About"
+import Bron from "../components/Home/Bron"
+import Eat from "../components/Home/Eat"
+import Events from "../components/Home/Events"
+import Gallery from "../components/Home/Gallery"
+import Happy from "../components/Home/Happy"
+import Locations from "../components/Home/Locations"
+import Main from "../components/Home/Main"
+import Review from "../components/Home/Review"
 
 const Home = ({ isPopupOpen, togglePopup }) => {
 
@@ -33,7 +32,7 @@ const Home = ({ isPopupOpen, togglePopup }) => {
             <meta
                name="keywords"
                content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
-корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+корпоратив, тимбилдинг, цен, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
             />
          </Helmet>
 
@@ -49,7 +48,7 @@ const Home = ({ isPopupOpen, togglePopup }) => {
          <Bron />
          <Footer />
       </>
-   );
-};
+   )
+}
 
-export default Home;
+export default Home
