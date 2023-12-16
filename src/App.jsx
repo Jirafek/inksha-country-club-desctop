@@ -98,66 +98,73 @@ function App() {
    }, [])
 
 
-
    const setUrlParams = (isCoockieOnRight = undefined) => {
-      const isCookieOn = Cookies.get('cookies_on')
+
+      const isCookieOn = localStorage.getItem('cookies_on')
+      const urlParams = new URLSearchParams(window.location.search)
+
+      console.log(isCookieOn)
+
+      const urlParamsData = [
+         utm_source ? utm_source : urlParams.get("utm_source"),
+         utm_campaign ? utm_campaign : urlParams.get("utm_campaign"),
+         utm_content ? utm_content : urlParams.get("utm_content"),
+      ]
+
+      updateData(
+          ...urlParamsData
+      )
 
       if (isCoockieOnRight === undefined && isCookieOn === undefined) {
          return
       }
 
-      if (isCoockieOnRight === 'false') {
+      if (isCoockieOnRight === false) {
          return
       }
 
-      const urlParams = new URLSearchParams(window.location.search)
-
       const cookieData = {
-         utm_source: Cookies.get('utm_source'),
-         utm_campaign: Cookies.get('utm_campaign'),
-         utm_content: Cookies.get('utm_content'),
+         utm_source: localStorage.getItem('utm_source'),
+         utm_campaign: localStorage.getItem('utm_campaign'),
+         utm_content: localStorage.getItem('utm_content'),
       }
-
 
       const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : ''
 
       const settedData = [
-         cookieData.utm_source !== undefined ? cookieData.utm_source : utm_source
-            ? utm_source
-            : UTMSource || "Сайт",
+         cookieData.utm_source !== undefined && cookieData.utm_source ? cookieData.utm_source : utm_source
+             ? utm_source
+             : UTMSource || "Сайт",
 
-         cookieData.utm_campaign !== undefined ? cookieData.utm_campaign : utm_campaign
-            ? utm_campaign
-            : urlParams.get("utm_campaign") || "",
+         cookieData.utm_campaign !== undefined && cookieData.utm_campaign ? cookieData.utm_campaign : utm_campaign
+             ? utm_campaign
+             : urlParams.get("utm_campaign") || "",
 
-         cookieData.utm_content !== undefined ? cookieData.utm_content : utm_content
-            ? utm_content
-            : urlParams.get("utm_content") || ""
+         cookieData.utm_content !== undefined && cookieData.utm_content ? cookieData.utm_content : utm_content
+             ? utm_content
+             : urlParams.get("utm_content") || ""
       ]
 
       console.log(settedData)
 
+
       updateData(
-         ...settedData
+          ...settedData
       )
 
-      updateURLData(
-         ...settedData
-      )
-
-      if (cookieData.utm_source === undefined && UTMSource !== null) {
-         Cookies.set('utm_source', UTMSource, { expires: Infinity })
+      if ((cookieData.utm_source === undefined || !cookieData.utm_source) && UTMSource !== null) {
+         localStorage.setItem('utm_source', UTMSource)
       }
-      if (cookieData.utm_campaign === undefined && urlParams.get("utm_campaign") !== null) {
-         Cookies.set('utm_campaign', urlParams.get("utm_campaign"), { expires: Infinity })
+      if ((cookieData.utm_campaign === undefined || !cookieData.utm_campaign) && urlParams.get("utm_campaign") !== null) {
+         localStorage.setItem('utm_campaign', urlParams.get("utm_campaign"))
       }
-      if (cookieData.utm_content === undefined && urlParams.get("utm_content") !== null) {
-         Cookies.set('utm_content', urlParams.get("utm_content"), { expires: Infinity })
+      if ((cookieData.utm_content === undefined || !cookieData.utm_content) && urlParams.get("utm_content") !== null) {
+         localStorage.setItem('utm_content', urlParams.get("utm_content"))
       }
    }
 
    const [isPopupOpen, setIsPopupOpen] = useState(false)
-   const isCookieOn = Cookies.get('cookies_on')
+   const isCookieOn = localStorage.getItem('cookies_on');
    const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev)
