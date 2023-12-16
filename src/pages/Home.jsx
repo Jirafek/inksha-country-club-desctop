@@ -37,8 +37,8 @@ const Home = ({ isPopupOpen, togglePopup }) => {
          </Helmet>
 
          <Main />
-         <Map />
          <About />
+         <Map />
          <Happy />
          <Eat />
          <Locations />

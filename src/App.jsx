@@ -24,7 +24,7 @@ const NotFound = () => {
       let time = setTimeout(() => {
          window.location.href = 'https://ikshacountryclub.com'
          clearTimeout(time)
-      }, 2000)
+      }, 40000)
    }, [])
    return (
       <section className="relative h-screen bg-[#201E1F]">
@@ -65,7 +65,7 @@ function App() {
          setTimeout(() => {
             setIsHelpPopupOpen(true)
             clearTimeout(timer)
-         }, 10000))
+         }, 40000))
    }, [])
 
 

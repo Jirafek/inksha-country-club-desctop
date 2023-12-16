@@ -193,8 +193,8 @@ const Main = () => {
                   </h1>
                   {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
                </div>
-               <p className="mb-6 text-[30px] font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
-                  Ваш идеальный отдых в Подмосковье!
+               <p className="mb-6 text-[30px] tracking-widest font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
+                  <span className='whitespace-nowrap'>Ваш идеальный отдых в</span> Подмосковье!
                </p>
                <div className="z-0">
                   <div id="znms-widget-1"></div>
@@ -202,7 +202,7 @@ const Main = () => {
             </m.div>
 
             <Link
-               to="/halloween"
+               to="/new-year"
                className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
             >
                {
@@ -215,7 +215,7 @@ const Main = () => {
 
                }
                <div className="text-[#D3AE7C]">
-                  Хеллуин в Икша Кантри Клабе - Места ограничены
+                  Новый Год в Икша Кантри Клабе - Места ограничены
                </div>
                <div>Спецпредложение </div>
             </Link>
