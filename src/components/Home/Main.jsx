@@ -78,8 +78,10 @@ const Main = () => {
                 color: #fff !important;
             }
             .znms-widget__module-form-block__btn.znms-widget__v-color8 {
-              border-color: #4D382B !important;
-                    background-color: #4D382B !important
+               border-radius:22px !important;
+               border: 1px solid #AB8E67 !important;
+               background-color: #4D382B !important;
+               min-width:180px !important;
             }
             .znms-widget__horizontal-form-submit {
                 // margin-top: 0 !important;
@@ -92,6 +94,7 @@ const Main = () => {
             }
           `
          const styleElement = document.createElement("style")
+         const DarkButton = document.querySelector('.znms-widget__module-form-block__btn.znms-widget__v-color8')
          styleElement.innerHTML = customStyles
          document.head.appendChild(styleElement)
       }

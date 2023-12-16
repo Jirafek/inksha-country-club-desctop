@@ -1,12 +1,11 @@
-import React from "react";
-import LocationArrow from './icons/LocationArrow';
-import { Link, useNavigate } from "react-router-dom";
-
+import arrow from 'icons/arrow.png'
+import { useNavigate } from "react-router-dom"
+import LocationArrow from './icons/LocationArrow'
 const Title = ({ text, bg = "", isNeedBack = false, isMain = false }) => {
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const goBack = () => {
         navigate(-1)
-    };
+    }
 
     return (
         <div className="absolute lg:top-16 top-8 lg:left-52 left-12">
@@ -17,12 +16,13 @@ const Title = ({ text, bg = "", isNeedBack = false, isMain = false }) => {
                     </button>
                 }
 
-                <div style={bg ? { backgroundColor: bg } : {}} className="border border-[#AB8E67] rounded-sm px-[50px] py-[6px] text-white text-[20px] font-bold">
+                <div onClick={() => { navigate('/') }} style={bg ? { backgroundColor: bg } : {}} className="border cursor-pointer flex items-center gap-5 border-[#AB8E67] rounded-sm px-[50px] py-[6px] text-white text-[20px] font-bold">
                     {isMain ? <h1 className='m-0'>{text}</h1> : <>{text}</>}
+                    <span><img src={arrow} alt="" /></span>
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Title;
+export default Title

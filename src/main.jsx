@@ -63,9 +63,7 @@ function AppWithDelay() {
       const queryParams = url.searchParams
 
       const queryString = queryParams.toString()
-      console.log('pathname: ' + window.location.pathname)
-      console.log(window.location.pathname.includes('/location'))
-      console.log(window.location.search)
+
 
 
       switch (true) {
