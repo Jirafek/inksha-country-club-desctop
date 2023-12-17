@@ -57,7 +57,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
                <p className='font-bold text-md mb-2'>Нужна помощь?</p>
                <p className='text-sm mb-3'>Наши администраторы всегда на связи!</p>
                <form onSubmit={submitFirstForm}>
-                  <input name='input' className='border h-[100px] mb-4 border-black text-sm my-2 rounded-[10px] w-full p-2' onChange={changeQuestInput} value={questInput} type="text" />
+                  <input name='input' className='border h-[100px] mb-4 border-black text-black text-sm my-2 rounded-[10px] w-full p-2' onChange={changeQuestInput} value={questInput} type="text" />
                </form>
                <div className='flex flex-col gap-3'>
                   <button disabled={!isValid} onClick={submitFirstForm} className={` w-full max-w-[560px] mx-auto h-[50px] rounded-[10px] font-bold text-white hover:bg-transparent duration-300 hover:border-2 hover:border-[#4D382B]  bg-[#4D382B] ${style.btn}`}>Отправить</button>

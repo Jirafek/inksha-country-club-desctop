@@ -124,7 +124,7 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
             <input
                placeholder="Имя"
                name="name"
-               className='border h-[50px] border-black text-[17px] my-2 rounded-[10px] w-full p-2'
+               className='border h-[50px] text-black border-black text-[17px] my-2 rounded-[10px] w-full p-2'
                value={name}
                onChange={handleNameChange}
                type="text"
@@ -134,7 +134,7 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
                <InputMask
                   mask="+7 (999) 999-99-99"
                   placeholder="Телефон"
-                  className={`border h-[50px] border-black text-[17px] my-2 rounded-[10px] w-full p-2 ${!isValid ? "text-[#7d756d]" : ""
+                  className={`border h-[50px] border-black text-black text-[17px] my-2 rounded-[10px] w-full p-2 ${!isValid ? "text-[#7d756d]" : ""
                      }`}
                   name="phone"
                   value={phone}

@@ -32,7 +32,7 @@ const Footer = ({ className }) => {
                         <img className="z-10 h-9 w-9" src={inst} alt="" />
                      </a> */}
                      <a
-                        href="https://wa.me/79859091202"
+                        href={`https://wa.me/79859091202?text=${encodeURIComponent('Здравствуйте, меня интересует аренда домика')}`}
                         target="_blank"
                         rel="noreferrer"
                      >
