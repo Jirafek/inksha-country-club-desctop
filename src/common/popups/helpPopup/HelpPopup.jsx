@@ -45,7 +45,7 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
             />
          </div> */}
          <div className='border w-[70vw] mx-auto  h-[400px] text-white  relative montery border-black bg-[#75624A] rounded-[20px] p-5'>
-            <div className="absolute right-3 z-[60] p-2 top-3">
+            <div className="absolute cursor-pointer right-3 z-[60] p-2 top-3">
                <img
                   onClick={handlePopupClose}
                   src={close}

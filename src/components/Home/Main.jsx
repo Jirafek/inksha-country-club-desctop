@@ -196,7 +196,7 @@ const Main = () => {
                   </h1>
                   {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
                </div>
-               <p className="mb-6 text-[30px] tracking-widest font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
+               <p className="mb-6 text-[30px] tracking-wider font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
                   <span className='whitespace-nowrap'>Ваш идеальный отдых в</span> Подмосковье!
                </p>
                <div className="z-0">
