@@ -33,9 +33,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 )
 
 function AppWithDelay() {
-   console.log(window.location)
-   console.log(window.location.search)
-   console.log(window.location.search.includes('?korpOpen=1'))
+   // console.log(window.location)
+   // console.log(window.location.search)
+   // console.log(window.location.search.includes('?korpOpen=1'))
 
 
 

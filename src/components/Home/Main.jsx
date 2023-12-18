@@ -87,7 +87,8 @@ const Main = () => {
                 // margin-top: 0 !important;
             }
             .znms-widget__widget-btn.znms-widget__v-color4 {
-                background-color: #75624a !important;
+               background-color: #AB8E67 !important;
+               border:2px solid #75624a !important;
             }
             .nms-widget__module-form-block__items--booking-service-link {
                 display: none !important;
@@ -114,7 +115,7 @@ const Main = () => {
    }
 
    return (
-      <div className='relative'>
+      <div id='main' className='relative'>
          <Link to="/New-Year" className="absolute right-10 top-20 z-[1000]">
             <m.img
                transition={{

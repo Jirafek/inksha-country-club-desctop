@@ -8,6 +8,7 @@ import { updateURLData, useURLData } from "utils/URLData"
 import Cookie from './common/Cookie'
 import MainPopup from "./common/MainPopup"
 import HelpPopup from './common/popups/helpPopup/HelpPopup'
+import arrow from 'icons/arrow.png'
 // import Korporativy from "./pages/Korporativy";
 // import Keytering from "./pages/Keytering";
 // import Home from "./pages/Home";
@@ -57,17 +58,21 @@ function App() {
    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
    const [timer, setTimer] = useState(false)
    const [isHelpButtonActive, setIsHelpButtonActive] = useState(false)
+   const [isTimerOn, setIsTimerOn] = useState(!Cookies.get('isTimerOn'))
+
+   console.log()
+   // Cookies.set('isTimerOn', '')
 
 
-   useEffect(() => {
-
-      setTimer(
-         setTimeout(() => {
-            setIsHelpPopupOpen(true)
-            clearTimeout(timer)
-         }, 40000))
-   }, [])
-
+   if (isTimerOn) {
+      useEffect(() => {
+         setTimer(
+            setTimeout(() => {
+               setIsHelpPopupOpen(true)
+               // setIsHelpButtonActive(true)
+            }, 40000))
+      }, [])
+   }
 
 
    useEffect(() => {
@@ -112,7 +117,7 @@ function App() {
       ]
 
       updateData(
-          ...urlParamsData
+         ...urlParamsData
       )
 
       if (isCoockieOnRight === undefined && isCookieOn === undefined) {
@@ -133,23 +138,23 @@ function App() {
 
       const settedData = [
          cookieData.utm_source !== undefined && cookieData.utm_source ? cookieData.utm_source : utm_source
-             ? utm_source
-             : UTMSource || "Сайт",
+            ? utm_source
+            : UTMSource || "Сайт",
 
          cookieData.utm_campaign !== undefined && cookieData.utm_campaign ? cookieData.utm_campaign : utm_campaign
-             ? utm_campaign
-             : urlParams.get("utm_campaign") || "",
+            ? utm_campaign
+            : urlParams.get("utm_campaign") || "",
 
          cookieData.utm_content !== undefined && cookieData.utm_content ? cookieData.utm_content : utm_content
-             ? utm_content
-             : urlParams.get("utm_content") || ""
+            ? utm_content
+            : urlParams.get("utm_content") || ""
       ]
 
       console.log(settedData)
 
 
       updateData(
-          ...settedData
+         ...settedData
       )
 
       if ((cookieData.utm_source === undefined || !cookieData.utm_source) && UTMSource !== null) {
@@ -164,7 +169,7 @@ function App() {
    }
 
    const [isPopupOpen, setIsPopupOpen] = useState(false)
-   const isCookieOn = localStorage.getItem('cookies_on');
+   const isCookieOn = localStorage.getItem('cookies_on')
    const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev)
@@ -185,20 +190,23 @@ function App() {
 
          <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
          {isHelpPopupOpen && <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
-         {isHelpButtonActive && <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[100px] z-[10000]">
-            {/* <AnimationButton
-               h={72}
-               w={72}
-               className=" flex  justify-end shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
-               onClick={togglePopup}
-            // onClick={() => {
-            //    setIsKorpOpen(!isKorpOpen);
-            // }}
-            >
-               Свяжитесь со мной
-            </AnimationButton> */}
+         {/* {isHelpButtonActive && <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[100px] z-[10000]">
             <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
-         </div>}
+         </div>
+         } */}
+
+         {
+            isTimerOn ? (isHelpButtonActive ? <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
+               <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
+            </div> : <div></div>)
+               : <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
+                  <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
+               </div>
+         }
+
+         <a href='#main' className='fixed w-[72px] h-[72px] flex items-center border-[2px] border-[#58462E] justify-center bottom-[20px] bg-[#AB8E67] rounded-full cursor-pointer right-[100px] z-[10000]'>
+            <img className='-rotate-90 h-[19px]' src={arrow} alt="" />
+         </a>
 
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
