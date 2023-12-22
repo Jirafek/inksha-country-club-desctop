@@ -19,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                      {" "}
                      <img
+                        loading='lazy'
                         src="/image/download.gif"
                         alt="Изображение анимации загрузки"
                      />{" "}
@@ -97,6 +98,7 @@ function AppWithDelay() {
          {" "}
          <p className="text-center text-[22px] font-bold">Загрузка</p>{" "}
          <img
+            loading='lazy'
             className="rounded-[15px]"
             src="/image/download.gif"
             alt="Изображение анимации загрузки"

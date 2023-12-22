@@ -118,7 +118,7 @@ const Tariff = () => {
                      </li>
                   </ul>
                </div>
-               <img src={food} alt="" />
+               <img loading='lazy' src={food} alt="" />
             </div>
             <ScrollLink
                to="Form"
@@ -127,7 +127,7 @@ const Tariff = () => {
             >
                <Button className="btn-pum mx-auto mb-[10vh] bg-pumpkin text-white">
                   Оставить заявку
-                  <img src={down_arrow} className="h-7 w-7" alt="" />
+                  <img loading='lazy' src={down_arrow} className="h-7 w-7" alt="" />
                </Button>
             </ScrollLink>
             <div className="relative flex w-full items-center justify-center text-center">
@@ -172,12 +172,12 @@ const Tariff = () => {
                         className="btn-pum mx-auto h-[40px] w-1/2 bg-pumpkin text-white"
                      >
                         Отправить
-                        <img src={arrow} className="h-5 w-9" alt="" />
+                        <img loading='lazy' src={arrow} className="h-5 w-9" alt="" />
                      </Button>
                   </form>
                </div>
 
-               <img src={boo} className="absolute -bottom-20 right-0" alt="" />
+               <img loading='lazy' src={boo} className="absolute -bottom-20 right-0" alt="" />
             </div>
          </div>
       </div>

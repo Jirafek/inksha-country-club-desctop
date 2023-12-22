@@ -41,7 +41,7 @@ const AboutCard = ({ arrayData }) => {
                         {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
                         {/*    <img className="3xl:w-[95px] lg:w-[70px] w-[40px] lg:pb-4 pb-1" src={el.imgWebp} alt={el.imgAltText} />*/}
                         {/*</picture>*/}
-                        <img className="3xl:w-[95px] lg:w-[70px] w-[40px] lg:pb-4 pb-1" src={el.imgWebp} alt={el.imgAltText} />
+                        <img loading='lazy' className="3xl:w-[95px] lg:w-[70px] w-[40px] lg:pb-4 pb-1" src={el.imgWebp} alt={el.imgAltText} />
                         <p className="text-white 3xl:text-[22px] lg:text-[16px] text-[12px] font-bold">
                             {el.text}
                         </p>

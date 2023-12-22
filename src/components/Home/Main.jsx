@@ -148,9 +148,9 @@ const Main = () => {
             <div className="absolute max-w-[800px] h-full left-0 top-0 flex items-center">
                {/*<picture>*/}
                {/*    <source srcSet="/image/main_arrow_big.avif 1x" type="image/avif" />*/}
-               {/*    <img className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
+               {/*    <img loading='lazy' className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
                {/*</picture>*/}
-               <img
+               <img loading='lazy'
                   className="hidden  h-full lg:block"
                   src="/image/main_arrow_big.webp"
                   alt="Икша Кантри Клаб"
@@ -160,9 +160,9 @@ const Main = () => {
 
                {/*<picture>*/}
                {/*    <source srcSet="/image/main_arrow_md.avif 1x" type="image/avif" />*/}
-               {/*    <img className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="Икша Кантри Клаб" />*/}
+               {/*    <img loading='lazy' className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="Икша Кантри Клаб" />*/}
                {/*</picture>*/}
-               <img
+               <img loading='lazy'
                   className="-ml-[300px] hidden max-h-[750px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[790px] 2xl:animate-[arrowAnimation_5s_infinite]"
                   src="/image/main_arrow_md.webp"
                   alt="Икша Кантри Клаб"
@@ -170,9 +170,9 @@ const Main = () => {
 
                {/*<picture>*/}
                {/*    <source srcSet="/image/main_arrow_sm.avif 1x" type="image/avif" />*/}
-               {/*    <img className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="Икша Кантри Клаб" />*/}
+               {/*    <img loading='lazy' className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="Икша Кантри Клаб" />*/}
                {/*</picture>*/}
-               <img
+               <img loading='lazy'
                   className="-ml-[300px] hidden max-h-[620px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[650px] 2xl:animate-[arrowAnimation_5s_infinite]"
                   src="/image/main_arrow_sm.webp"
                   alt="Икша Кантри Клаб"

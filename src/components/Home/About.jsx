@@ -104,9 +104,9 @@ const About = () => {
 
                         {/*<picture>*/}
                         {/*    <source srcSet="/image/about-card.avif 1x" type="image/avif" />*/}
-                        {/*    <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="Домики для отдыха в Подмосковье" />*/}
+                        {/*    <img loading='lazy' className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="Домики для отдыха в Подмосковье" />*/}
                         {/*</picture>*/}
-                        <img className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="Домики для отдыха в Подмосковье" />
+                        <img loading='lazy' className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="Домики для отдыха в Подмосковье" />
                     </m.div>
                 </m.div>
                 <AboutCard arrayData={aboutData} />

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import routes from "../../utils/routes";
+
 import { Link } from "react-router-dom";
+
 import { v4 as uuidv4 } from "uuid";
+
 import { m } from "framer-motion";
+
+import routes from "../../utils/routes";
 
 const Header = () => {
    const [burgerState, setBurgerState] = useState(false);
@@ -36,9 +40,9 @@ const Header = () => {
                               ) : (
                                  // <picture>
                                  //     <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />
-                                 //     <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
+                                 //     <img loading='lazy' className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
                                  // </picture>
-                                 <img
+                                 <img loading='lazy'
                                     className="w-[47px] 2xl:w-[57px] 3xl:w-[65px]"
                                     src={el.icon}
                                     alt="Икша Кантри Клаб"
@@ -59,9 +63,9 @@ const Header = () => {
                               ) : (
                                  // <picture>
                                  //     <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />
-                                 //     <img className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
+                                 //     <img loading='lazy' className="3xl:w-[65px] 2xl:w-[57px] w-[47px]" src={el.icon} alt="Икша Кантри Клаб" />
                                  // </picture>
-                                 <img
+                                 <img loading='lazy'
                                     className="w-[47px] 2xl:w-[57px] 3xl:w-[65px]"
                                     src={el.icon}
                                     alt="Икша Кантри Клаб"
@@ -151,9 +155,9 @@ const Header = () => {
                         ) : (
                            // <picture>
                            //     <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />
-                           //     <img className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />
+                           //     <img loading='lazy' className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />
                            // </picture>
-                           <img
+                           <img loading='lazy'
                               className="w-[45px]"
                               src={el.icon}
                               alt="Икша Кантри Клаб"
@@ -173,9 +177,9 @@ const Header = () => {
                         >
                            {/*<picture>*/}
                            {/*    <source srcSet={`${el.iconAvif} 1x`} type="image/avif" />*/}
-                           {/*    <img className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />*/}
+                           {/*    <img loading='lazy' className="w-[45px]" src={el.icon} alt="Икша Кантри Клаб" />*/}
                            {/*</picture>*/}
-                           <img
+                           <img loading='lazy'
                               className="w-[45px]"
                               src={el.icon}
                               alt="Икша Кантри Клаб"

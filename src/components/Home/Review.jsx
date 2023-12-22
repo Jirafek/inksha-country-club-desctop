@@ -72,14 +72,14 @@ const Review = () => {
                                     <div className="relative flex">
                                         {/*<picture>*/}
                                         {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                                        {/*    <img src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
+                                        {/*    <img loading='lazy' src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
                                         {/*</picture>*/}
-                                        <img src="/image/comma.webp" alt="Икша Кантри Клаб" />
+                                        <img loading='lazy' src="/image/comma.webp" alt="Икша Кантри Клаб" />
                                         {/*<picture>*/}
                                         {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                                        {/*    <img className="absolute left-12" src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
+                                        {/*    <img loading='lazy' className="absolute left-12" src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
                                         {/*</picture>*/}
-                                        <img className="absolute left-12" src="/image/comma.webp" alt="Икша Кантри Клаб" />
+                                        <img loading='lazy' className="absolute left-12" src="/image/comma.webp" alt="Икша Кантри Клаб" />
                                     </div>
                                 </div>
                                 <div className="absolute right-0 -bottom-12 lg:block hidden">
@@ -87,23 +87,23 @@ const Review = () => {
 
                                         {/*<picture>*/}
                                         {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                                        {/*    <img className="rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
+                                        {/*    <img loading='lazy' className="rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
                                         {/*</picture>*/}
-                                        <img className="rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />
+                                        <img loading='lazy' className="rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />
 
                                         {/*<picture>*/}
                                         {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                                        {/*    <img className="absolute right-12 rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
+                                        {/*    <img loading='lazy' className="absolute right-12 rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />*/}
                                         {/*</picture>*/}
-                                        <img className="absolute right-12 rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />
+                                        <img loading='lazy' className="absolute right-12 rotate-180" src="/image/comma.webp" alt="Икша Кантри Клаб" />
                                     </div>
                                 </div>
 
                                 {/*<picture>*/}
                                 {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                                {/*    <img className="2xl:w-auto lg:w-[150px] w-[112px]" src={el.imgWebp} alt={el.imgAltText} />*/}
+                                {/*    <img loading='lazy' className="2xl:w-auto lg:w-[150px] w-[112px]" src={el.imgWebp} alt={el.imgAltText} />*/}
                                 {/*</picture>*/}
-                                <img className="2xl:w-auto lg:w-[150px] w-[112px]" src={el.imgWebp} alt={el.imgAltText} />
+                                <img loading='lazy' className="2xl:w-auto lg:w-[150px] w-[112px]" src={el.imgWebp} alt={el.imgAltText} />
 
                                 <div className="flex flex-col lg:gap-3">
                                     <h3 className="2xl:text-[58px] lg:text-[42px] text-[30px] text-[#AB8E67] font-semibold">

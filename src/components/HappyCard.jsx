@@ -34,9 +34,9 @@ const HappyCard = ({ arrayData }) => {
             >
                {/*<picture>*/}
                {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-               {/*    <img className="3xl:mb-5 mb-3" src={el.imgWebp} alt={el.imgAltText} />*/}
+               {/*    <img loading='lazy' className="3xl:mb-5 mb-3" src={el.imgWebp} alt={el.imgAltText} />*/}
                {/*</picture>*/}
-               <img
+               <img loading='lazy'
                   className="mb-3 3xl:mb-5"
                   src={el.imgWebp}
                   alt={el.imgAltText}

@@ -146,6 +146,7 @@ const Bron = () => {
                      className="flex items-center gap-2 2xl:gap-4"
                   >
                      <img
+                        loading='lazy'
                         className="w-[45px] 2xl:w-auto"
                         src={el.imgWebp}
                         alt={el.imgAltText}
@@ -157,6 +158,7 @@ const Bron = () => {
                ))}
             </m.div>
             <img
+               loading='lazy'
                className="absolute right-0 top-0 hidden h-screen xl:block"
                src="/image/bron_bg.webp"
                alt="Забронировать"

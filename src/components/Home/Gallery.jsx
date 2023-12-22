@@ -732,6 +732,7 @@ const Gallery = () => {
                         //     </picture>
                         // </Fragment>
                         <m.img
+                            loading='lazy'
                             initial={{ opacity: 0 }}
                             animate={{
                                 opacity: 1,

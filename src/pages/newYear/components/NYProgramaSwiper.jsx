@@ -57,6 +57,7 @@ const ProgramaSwiper = () => {
                      return (
                         <SwiperSlide key={i}>
                            <img
+                              loading='lazy'
                               src={item}
                               className="w-full h-full object-cover aspect-video"
                               alt=""

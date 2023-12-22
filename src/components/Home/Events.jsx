@@ -1,13 +1,15 @@
 import React from "react";
-import Title from '../Title';
-import Logo from '../Logo';
+
 import { v4 as uuid4 } from 'uuid';
 
 import Slider from 'react-slick';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import { CustomNextArrow, CustomPrevArrow } from '../CustomArrows';
+import Logo from '../Logo';
+import Title from '../Title';
 
 const eventsData = [
     {
@@ -137,9 +139,9 @@ const Events = () => {
                         <div className="sm:w-[400px_!important] w-[380px_!important] flex flex-col items-center h-[700px_!important] border border-[#AB8E67] bg-[#221C1C] rounded-[30px] pb-4" key={uuid4()}>
                             {/*<picture>*/}
                             {/*    <source srcSet={`${el.imgAvif} 1x`} type="image/avif" />*/}
-                            {/*    <img className="]" src={el.imgWebp} alt={el.imgAltText} />*/}
+                            {/*    <img loading='lazy' className="]" src={el.imgWebp} alt={el.imgAltText} />*/}
                             {/*</picture>*/}
-                            <img className="]" src={el.imgWebp} alt={el.imgAltText} />
+                            <img loading='lazy' className="]" src={el.imgWebp} alt={el.imgAltText} />
                             <h3 className="text-[30px] text-[#AB8E67] font-bold text-center">
                                 {el.title}
                             </h3>

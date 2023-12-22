@@ -29,28 +29,28 @@ const ProgramaSwiper = () => {
                }}
             >
                <SwiperSlide>
-                  <img
+                  <img loading='lazy'
                      src={swiper4}
                      className="aspect-video h-full w-full object-cover"
                      alt=""
                   />
                </SwiperSlide>
                <SwiperSlide>
-                  <img
+                  <img loading='lazy'
                      src={swiper1}
                      className="aspect-video h-full w-full object-cover"
                      alt=""
                   />
                </SwiperSlide>
                <SwiperSlide>
-                  <img
+                  <img loading='lazy'
                      src={swiper2}
                      className="aspect-video h-full w-full object-cover"
                      alt=""
                   />
                </SwiperSlide>
                <SwiperSlide>
-                  <img
+                  <img loading='lazy'
                      src={swiper3}
                      className="aspect-video h-full w-full object-cover"
                      alt=""
@@ -61,12 +61,12 @@ const ProgramaSwiper = () => {
                   className="absolute right-10 top-1/2 z-10 hidden -translate-y-1/2 transform md:block"
                   onClick={() => swiperRef.current?.slideNext()}
                >
-                  <img src={scroll} className="h-[90px] w-[90px]" alt="" />
+                  <img loading='lazy' src={scroll} className="h-[90px] w-[90px]" alt="" />
                </div>
             </Swiper>
          </div>
          <div className="mt-5 flex w-full justify-end md:hidden">
-            <img
+            <img loading='lazy'
                src={orange_scroll}
                className="h-[50px] w-[50px]"
                onClick={() => swiperRef.current?.slideNext()}
