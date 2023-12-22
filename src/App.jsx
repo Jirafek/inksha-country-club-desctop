@@ -1,4 +1,5 @@
 import messageIcon from 'icons/messageIcon.webp'
+import loadable from '@loadable/component'
 import Cookies from "js-cookie"
 import NYLanding from 'pages/newYear/NYLanding'
 import { lazy, useEffect, useState } from "react"
@@ -42,16 +43,16 @@ const NotFound = () => {
    )
 }
 
-const Home = lazy(() => import("pages/Home"))
-const Keytering = lazy(() => import("pages/Keytering"))
-const LocationId = lazy(() => import("pages/LocationId"))
-const Korporativy = lazy(() => import("pages/Korporativy"))
-const FAQ = lazy(() => import("pages/FAQ"))
-const Privacy = lazy(() => import("pages/Privacy"))
-const Thanks = lazy(() => import("pages/Thanks"))
-const Helloween = lazy(() => import("pages/Helloween"))
-const KorpLanding = lazy(() => import("pages/korpLanding/KorpLanding"))
-// const NYLanding = lazy(() => import("pages/newYear/NYLanding"));
+const Home = loadable(() => import("pages/Home"))
+const Keytering = loadable(() => import("pages/Keytering"))
+const LocationId = loadable(() => import("pages/LocationId"))
+const Korporativy = loadable(() => import("pages/Korporativy"))
+const FAQ = loadable(() => import("pages/FAQ"))
+const Privacy = loadable(() => import("pages/Privacy"))
+const Thanks = loadable(() => import("pages/Thanks"))
+const Helloween = loadable(() => import("pages/Helloween"))
+const KorpLanding = loadable(() => import("pages/korpLanding/KorpLanding"))
+// const NYLanding = loadable(() => import("pages/newYear/NYLanding"));
 
 function App() {
    const { updateData, utm_campaign, utm_content, utm_source } = useURLData()

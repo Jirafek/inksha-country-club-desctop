@@ -1,16 +1,17 @@
 import { Helmet } from "react-helmet"
+import loadable from '@loadable/component'
 
-import Map from "components/Home/Map/Map"
-import Footer from "../components/Footer"
-import About from "../components/Home/About"
-import Bron from "../components/Home/Bron"
-import Eat from "../components/Home/Eat"
-import Events from "../components/Home/Events"
-import Gallery from "../components/Home/Gallery"
-import Happy from "../components/Home/Happy"
-import Locations from "../components/Home/Locations"
-import Main from "../components/Home/Main"
-import Review from "../components/Home/Review"
+const Map = loadable(() => import("components/Home/Map/Map"));
+const Footer = loadable(() => import("../components/Footer"));
+const About = loadable(() => import("../components/Home/About"));
+const Bron = loadable(() => import("../components/Home/Bron"));
+const Eat = loadable(() => import("../components/Home/Eat"));
+const Events = loadable(() => import("../components/Home/Events"));
+const Gallery = loadable(() => import("../components/Home/Gallery"));
+const Happy = loadable(() => import("../components/Home/Happy"));
+const Locations = loadable(() => import("../components/Home/Locations"));
+const Main = loadable(() => import("../components/Home/Main"));
+const Review = loadable(() => import("../components/Home/Review"));
 
 const Home = ({ isPopupOpen, togglePopup }) => {
 
