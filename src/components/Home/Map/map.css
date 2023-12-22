@@ -1,3 +1,4 @@
+/* :root { */
 :root {
     --color-position-lines: rgb(28, 216, 44);
     --color-position-lines__hover: #ff0000;
@@ -324,7 +325,7 @@
     width: 800px;
     height: 600px;
     display: none;
-    transform: scale(.5) translateX(-50%);
+    transform: scale(1.5) translateY(-2%) translateX(-10%);
 }
 
 

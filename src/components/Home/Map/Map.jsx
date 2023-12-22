@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import './map.css'
-import { base, increase } from './logic';
-import { isItWinterNow } from 'utils/helpers';
+import { base, increase } from './logic'
+import { isItWinterNow } from 'utils/helpers'
 
 const Map = () => {
 
     useEffect(() => {
-        base(document);
-        increase(document);
-    }, []);
+        base(document)
+        increase(document)
+    }, [])
 
     return <div className='map' id='map'>
         <div className="map-wrapper">
@@ -306,7 +306,7 @@ const Map = () => {
                 <div className="map-tooltip_preview"></div>
             </div>
         </div>
-    </div>;
-};
+    </div>
+}
 
-export default Map;
+export default Map
