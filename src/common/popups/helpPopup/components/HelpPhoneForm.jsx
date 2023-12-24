@@ -24,10 +24,7 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
       let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType:
-            additionalDataType === null
-               ? "Попап Вопрос"
-               : additionalDataType,
+         formType:'call back',
          link: window.location.href,
          utm_source: utm_source,
          utm_campaign: utm_campaign,
