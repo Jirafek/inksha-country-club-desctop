@@ -10,6 +10,8 @@ import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
 
+import './utils/i18n.js'
+
 ReactDOM.createRoot(document.getElementById("root")).render(
    <BrowserRouter>
       <QueryParamProvider adapter={ReactRouter6Adapter}>

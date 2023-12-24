@@ -1,0 +1,148 @@
+{
+	"iksha": "Iksha",
+	"CB": "Country club",
+	"aboutData": [
+		{
+			"imgAvif": "/image/bed.avif",
+			"imgWebp": "/image/bed.webp",
+			"imgAltText": "Rest with overnight stay near Moscow",
+			"text": "Comfortable, secluded cottages equipped with everything you need"
+		},
+		{
+			"imgAvif": "/image/tree.avif",
+			"imgWebp": "/image/tree.webp",
+			"imgAltText": "Outdoor recreation",
+			"text": "Spacious locations of 50 sq.m. with a cozy veranda and a relaxation area"
+		},
+		{
+			"imgAvif": "/image/towel.avif",
+			"imgWebp": "/image/towel.webp",
+			"imgAltText": "Bathhouse near Moscow",
+			"text": "Russian sauna with a panoramic view where you can relax after long walks"
+		}
+	],
+	"bronData": [
+		{
+			"imgAvif": "/image/wa_bl.avif",
+			"imgWebp": "/image/wa_bl.webp",
+			"imgAltText": "Call",
+			"text": "${utm_source === 'yandex' ? '+7(499) 505-50-67' : utm_source === 'vkontakte' ? '+7(499) 505-50-87' : '+7 (499) 505-50-31'}",
+			"link": "${utm_source === 'yandex' ? 'tel:+74995055067' : utm_source === 'vkontakte' ? 'tel:+74995055087' : 'tel:+74995055031'}"
+		},
+		{
+			"imgAvif": "/image/tg_bl.avif",
+			"imgWebp": "/image/tg_bl.webp",
+			"imgAltText": "Telegram",
+			"text": "@ikshacountryclub",
+			"link": "https://t.me/ikshacountryclub"
+		},
+		{
+			"imgAvif": "/image/inst_bl.avif",
+			"imgWebp": "/image/inst_bl.webp",
+			"imgAltText": "Photo",
+			"text": "@ikshacountryclub",
+			"link": "https://instagram.com/ikshacountryclub"
+		},
+		{
+			"imgAvif": "/image/vk_bl.avif",
+			"imgWebp": "/image/vk_bl.webp",
+			"imgAltText": "VK",
+			"text": "@ikshacountryclub",
+			"link": "https://vk.com/ikshacountryclub"
+		},
+		{
+			"imgAvif": "/image/mail_bl.avif",
+			"imgWebp": "/image/mail_bl.webp",
+			"imgAltText": "Send an Email",
+			"text": "contact@ikshacountryclub.com",
+			"link": "mailto:contact@ikshacountryclub.com"
+		}
+	],
+
+	"eventsData": [
+		{
+			"imgAvif": "/image/events1.avif",
+			"imgWebp": "/image/events1.webp",
+			"imgAltText": "Outdoor Games",
+			"title": "SPORTS GAMES",
+			"text": "A healthy body leads to a healthy spirit. In a healthy atmosphere, there's healthy sports. Fresh air, Russian sauna, barbecue – an ideal choice for lovers of active recreation."
+		},
+		{
+			"imgAvif": "/image/events2.avif",
+			"imgWebp": "/image/events2.webp",
+			"imgAltText": "Outdoor Events",
+			"title": "BARBECUE",
+			"text": "Barbecue like in the movies? That's exactly how it looks here. Everything you need is in one place, in perfect proportions, and seasoned with excellent service."
+		},
+		{
+			"imgAvif": "/image/events3.avif",
+			"imgWebp": "/image/events3.webp",
+			"imgAltText": "Outdoor Celebration",
+			"title": "PICNIC",
+			"text": "Food in nature always tastes better, and with friends and family – even more delicious. Have your dream picnic with us; unforgettable memories are guaranteed."
+		},
+		{
+			"imgAvif": "/image/events4.avif",
+			"imgWebp": "/image/events4.webp",
+			"imgAltText": "Outdoor Shish Kebabs",
+			"title": "SHISH KEBABS",
+			"text": "Having fun and eating deliciously in the fresh air is the perfect combination. Invite your family, friends, or acquaintances and come to us for shish kebabs."
+		},
+		{
+			"imgAvif": "/image/events5.avif",
+			"imgWebp": "/image/events5.webp",
+			"imgAltText": "Birthday Celebration in Nature",
+			"title": "BIRTHDAY",
+			"text": "The most important celebration is worth remembering for a long time. Therefore, it should be celebrated correctly. We offer everything you need for this, especially for you!"
+		},
+		{
+			"imgAvif": "/image/events6.avif",
+			"imgWebp": "/image/events6.webp",
+			"imgAltText": "Sauna on the shore of Iksha Reservoir",
+			"title": "SAUNA AND SPA",
+			"text": "Unity with nature, a combination of Russian traditions and a modern approach to self-care. We know how to combine the uncombinable and create unforgettable experiences."
+		},
+		{
+			"imgAvif": "/image/events7.avif",
+			"imgWebp": "/image/events7.webp",
+			"imgAltText": "Outdoor Karaoke Party",
+			"title": "KARAOKE PARTY",
+			"text": "In a pleasant and soulful atmosphere, everyone sings and asks for music? In that case, everyone dances too! And sings too. Karaoke is at your service."
+		},
+		{
+			"imgAvif": "/image/events8.avif",
+			"imgWebp": "/image/events8.webp",
+			"imgAltText": "Celebrate an Event",
+			"title": "BACHELORETTE PARTY",
+			"text": "The female team wants to gossip and share secrets without unnecessary boys? Or vice versa, with them? Come and relax; we won't tell anyone."
+		},
+		{
+			"imgAvif": "/image/events9.avif",
+			"imgWebp": "/image/events9.webp",
+			"imgAltText": "Celebrate an Event",
+			"title": "BACHELOR PARTY",
+			"text": "The male company is looking for a place for a good masculine rest? Absolutely right, that's why we invite you."
+		},
+		{
+			"imgAvif": "/image/events10.avif",
+			"imgWebp": "/image/events10.webp",
+			"imgAltText": "Celebrate an Event",
+			"title": "WEDDING",
+			"text": "A wedding is one of the most important events in a person's life, a special day when everything should be perfect. Entrust the organization to us; we won't disappoint you."
+		},
+		{
+			"imgAvif": "/image/events11.avif",
+			"imgWebp": "/image/events11.webp",
+			"imgAltText": "Celebrate an Event",
+			"title": "POST-WEDDING PARTY",
+			"text": "The feeling of the beginning of your family history should also be perfect, and we know about it like no one else. We will help organize the continuation of your wedding ceremony."
+		},
+		{
+			"imgAvif": "/image/events2.avif",
+			"imgWebp": "/image/events2.webp",
+			"imgAltText": "Corporate Events in the Moscow Region",
+			"title": "CORPORATE & TEAM BUILDING",
+			"text": "Get out of the office and into the countryside? Great idea, but how to organize it all? The answer is simple – come to us. We have everything ready, beautiful nature, and complete comfort are waiting!"
+		}
+	]
+}

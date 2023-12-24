@@ -7,14 +7,20 @@ import style from './helpPopup.module.scss'
 const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsHelpButtonActive }) => {
    const [isValid, setIsValid] = useState(false)
    const [path, setPath] = useState(1)
-
+   const [isPhoneCall, setIsPhoneCall] = useState(false)
    const [questInput, setQuestInput] = useState('Как забронировать домик?')
 
    const changeQuestInput = (e) => {
       setQuestInput(e.target.value)
    }
-   const submitFirstForm = (e) => {
+   const submitFirstForm1 = (e) => {
       e.preventDefault()
+      setIsPhoneCall(false)
+      setPath(2)
+   }
+   const submitFirstForm2 = (e) => {
+      e.preventDefault()
+      setIsPhoneCall(true)
       setPath(2)
    }
 
@@ -56,16 +62,16 @@ const HelpPopup = ({ isHelpPopupOpen, setIsHelpPopupOpen, className = '', setIsH
 
                <p className='font-bold text-md mb-2'>Нужна помощь?</p>
                <p className='text-sm mb-3'>Наши администраторы всегда на связи!</p>
-               <form onSubmit={submitFirstForm}>
+               <form >
                   <input name='input' className='border h-[100px] mb-4 border-black text-black text-sm my-2 rounded-[10px] w-full p-2' onChange={changeQuestInput} value={questInput} type="text" />
                </form>
                <div className='flex flex-col gap-3'>
-                  <button disabled={!isValid} onClick={submitFirstForm} className={` w-full max-w-[560px] mx-auto h-[50px] rounded-[10px] font-bold text-white hover:bg-transparent duration-300 hover:border-2 hover:border-[#4D382B]  bg-[#4D382B] ${style.btn}`}>Отправить</button>
-                  <button onClick={submitFirstForm} className={` w-full h-[50px] max-w-[560px] mx-auto rounded-[10px] text-sm flex font-bold items-center hover:opacity-75 duration-300 justify-center bg-white border border-brown text-brown`}>Перезвоним в течение минуты</button>
+                  <button  disabled={!isValid} onClick={submitFirstForm1} className={` w-full max-w-[560px] mx-auto h-[50px] rounded-[10px] font-bold text-white hover:bg-transparent duration-300 hover:border-2 hover:border-[#4D382B]  bg-[#4D382B] ${style.btn}`}>Отправить</button>
+                  <button  onClick={submitFirstForm2} className={` w-full h-[50px] max-w-[560px] mx-auto rounded-[10px] text-sm flex font-bold items-center hover:opacity-75 duration-300 justify-center bg-white border border-brown text-brown`}>Перезвоним в течение минуты</button>
                </div>
             </div>}
             {path === 2 && <div>
-               <HelpPhoneForm addInfo={questInput} />
+               <HelpPhoneForm isPhoneCall={isPhoneCall} setIsPhoneCall={setIsPhoneCall} questInput={questInput} addInfo={questInput} />
             </div>}
 
 

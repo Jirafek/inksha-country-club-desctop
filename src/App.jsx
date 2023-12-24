@@ -10,6 +10,9 @@ import Cookie from './common/Cookie'
 import MainPopup from "./common/MainPopup"
 import HelpPopup from './common/popups/helpPopup/HelpPopup'
 import arrow from 'icons/arrow.png'
+
+import { useTranslation, withTranslation, Trans } from 'react-i18next';
+
 // import Korporativy from "./pages/Korporativy";
 // import Keytering from "./pages/Keytering";
 // import Home from "./pages/Home";
@@ -60,8 +63,9 @@ function App() {
    const [timer, setTimer] = useState(false)
    const [isHelpButtonActive, setIsHelpButtonActive] = useState(false)
    const [isTimerOn, setIsTimerOn] = useState(!Cookies.get('isTimerOn'))
+   const { t, i18n } = useTranslation();
 
-   console.log()
+   console.log(i18n.language)
    // Cookies.set('isTimerOn', '')
 
 
@@ -186,15 +190,14 @@ function App() {
 
    }
 
+   
+
    return (
       <div className='relative'>
 
          <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
+
          {isHelpPopupOpen && <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
-         {/* {isHelpButtonActive && <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[100px] z-[10000]">
-            <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
-         </div>
-         } */}
 
          {
             isTimerOn ? (isHelpButtonActive ? <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
@@ -209,8 +212,16 @@ function App() {
             <img className='-rotate-90 h-[19px]' src={arrow} alt="" />
          </a>
 
+         <div></div>
+
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
+
          <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
+
+
+
+
+         {/* routes */}
          <Routes className="relative">
             <Route
                path="/"

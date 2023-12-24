@@ -3,7 +3,7 @@ import InputMask from "react-input-mask"
 import { useURLData } from 'utils/URLData'
 import style from './../helpPopup.module.scss'
 import Cookies from 'js-cookie'
-const HelpPhoneForm = ({ addInfo = '', additionalData = null,
+const HelpPhoneForm = ({ isPhoneCall,setIsPhoneCall,addInfo = '',questInput='', additionalData = null,
    additionalDataType = null, }) => {
    const { utm_campaign, utm_content, utm_source } = useURLData()
    const [isPopupCompleted, setIsPopupCompleted] = useState(false)
@@ -17,6 +17,7 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
       const data = {
          name: name,
          phone: phone,
+         message:questInput,
          email: '-',
          groupID: import.meta.env.VITE_GROUP_ID,
       }
@@ -24,7 +25,9 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
       let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType:'call back',
+         formType: isPhoneCall ? "Call Back" : (additionalDataType === null
+                    ? "Форма имя + телефон"
+                    : additionalDataType),
          link: window.location.href,
          utm_source: utm_source,
          utm_campaign: utm_campaign,
@@ -64,22 +67,8 @@ const HelpPhoneForm = ({ addInfo = '', additionalData = null,
    }
 
 
-
-
-   // const handleSubmitBot = async () => {
-   //    const data = {
-   //       name: name,
-   //       phone: phone,
-   //       email: addInfo,
-   //       groupID: import.meta.env.VITE_GROUP_ID,
-   //    }
-   //    const res = await simpleBotSubmit(data, 'Попап Помощь')
-   //    // console.log(res)
-   // }
-
-
    useEffect(() => {
-      // Проверка на ошибки при изменении полей формы
+      
       const newIsError = !name || !phone || !isValid
       setIsError(newIsError)
    }, [name, phone])

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { m } from "framer-motion";
 import Title from '../Title';
 import AboutCard from '../AboutCard';
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const heading = {
     hidden: {},
@@ -42,34 +44,42 @@ const OpenRight = {
     },
 };
 
-const aboutData = [
-    {
-        imgAvif: '/image/bed.avif',
-        imgWebp: '/image/bed.webp',
-        imgAltText: 'Одых с ночевкой в Подмосковье',
-        text: 'Комфортабельные, уединеннные домики,оборудованные всем необходимым',
-    },
-    {
-        imgAvif: '/image/tree.avif',
-        imgWebp: '/image/tree.webp',
-        imgAltText: 'Отдых на природе',
-        text: 'Большие локации площадью 50 кв.м. с уютной верандой и зоной отдыха',
-    },
-    {
-        imgAvif: '/image/towel.avif',
-        imgWebp: '/image/towel.webp',
-        imgAltText: 'Баня в Подмосковье',
-        text: 'Русская баня с панорамным видом, где вы можете расслабиться после долгих прогулок',
-    },
-    // {
-    //     imgAvif: '/image/bicycle.avif',
-    //     imgwebp: '/image/bicycle.webp',
-    //     imgAltText: 'Активный отдых в Подмосковье',
-    //     text: 'Велосипеды и спорт-оборудование позволит Вам активно провести время на свежем воздухе',
-    // },
-];
+// const aboutData = [
+//     {
+//         imgAvif: '/image/bed.avif',
+//         imgWebp: '/image/bed.webp',
+//         imgAltText: 'Одых с ночевкой в Подмосковье',
+//         text: 'Комфортабельные, уединеннные домики,оборудованные всем необходимым',
+//     },
+//     {
+//         imgAvif: '/image/tree.avif',
+//         imgWebp: '/image/tree.webp',
+//         imgAltText: 'Отдых на природе',
+//         text: 'Большие локации площадью 50 кв.м. с уютной верандой и зоной отдыха',
+//     },
+//     {
+//         imgAvif: '/image/towel.avif',
+//         imgWebp: '/image/towel.webp',
+//         imgAltText: 'Баня в Подмосковье',
+//         text: 'Русская баня с панорамным видом, где вы можете расслабиться после долгих прогулок',
+//     },
+//     // {
+//     //     imgAvif: '/image/bicycle.avif',
+//     //     imgwebp: '/image/bicycle.webp',
+//     //     imgAltText: 'Активный отдых в Подмосковье',
+//     //     text: 'Велосипеды и спорт-оборудование позволит Вам активно провести время на свежем воздухе',
+//     // },
+// ];
+
+
+
 
 const About = () => {
+    const [t] = useTranslation();
+    const textBlocks = useMemo(() => t('aboutData', { returnObjects: true }), [t]);
+
+    console.log(textBlocks);
+    // debugger
     return (
         <section id="about" className="min-h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.webp)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
             <div className="absolute left-0 top-0 flex items-center">
@@ -109,7 +119,7 @@ const About = () => {
                         <img loading='lazy' className="rounded-l-[60px] 3xl:w-auto w-[600px]" src="/image/about-card.webp" alt="Домики для отдыха в Подмосковье" />
                     </m.div>
                 </m.div>
-                <AboutCard arrayData={aboutData} />
+                <AboutCard arrayData={textBlocks} />
             </div>
         </section>
     );

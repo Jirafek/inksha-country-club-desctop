@@ -5,6 +5,8 @@ import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
 import { isItWinterNow } from "utils/helpers"
 import Header from "./Header"
+import { useTranslation } from 'react-i18next';
+
 
 import bgWinAvif from 'images/welcome_bg_winter.webp'
 const heading = {
@@ -35,6 +37,8 @@ const headingLines = {
 
 const Main = () => {
    const { utm_source } = useURLData()
+   const { t, i18n } = useTranslation();
+
    useEffect(() => {
       const script = document.createElement("script")
       script.src = "//widget.bronirui-online.ru/js/app.js"
@@ -151,7 +155,7 @@ const Main = () => {
                {/*    <img loading='lazy' className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
                {/*</picture>*/}
                <img loading='lazy'
-                  className="hidden  h-full lg:block"
+                  className="hidden lg:h-full lg:block"
                   src="/image/main_arrow_big.webp"
                   alt="Икша Кантри Клаб"
                />
@@ -190,9 +194,10 @@ const Main = () => {
             >
                <div className="mb-[55px] flex flex-col 2xl:mb-[115px]">
                   <h1 className="text-[56px] font-extrabold uppercase leading-[60px] text-white md:text-[70px] 2xl:text-[98px] 2xl:leading-[100px]">
-                     Икша <br />
+                     {t('iksha')} <br />
                      <span className="gradient_title text-[45px] font-extrabold leading-[60px] md:text-[60px] 2xl:text-[78px] 2xl:leading-[100px]">
-                        КАНТРИ КЛАБ
+                        {t('CB')}
+                        {/* КАНТРИ КЛАБ */}
                      </span>
                   </h1>
                   {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
