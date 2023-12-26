@@ -9,6 +9,8 @@ import "./fonts.css"
 import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
+import {useURLData} from 'utils/URLData';
+import {fetchData} from '../firebase.js';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <BrowserRouter>
@@ -38,6 +40,13 @@ function AppWithDelay() {
    // console.log(window.location.search)
    // console.log(window.location.search.includes('?korpOpen=1'))
 
+   const { updatePhoneContent } = useURLData();
+   const groupID = -1002014846298;
+
+   useEffect(() => {
+
+      fetchData(groupID, updatePhoneContent)
+   }, [updatePhoneContent])
 
 
    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
