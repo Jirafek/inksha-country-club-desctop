@@ -1,8 +1,14 @@
 import React from "react";
+
 import { m } from "framer-motion";
-import Title from "../Title";
+
+import { useTranslation } from 'react-i18next';
+
+import { useMemo } from 'react';
+
 import HappyCard from "../HappyCard";
 import Logo from "../Logo";
+import Title from "../Title";
 
 const heading = {
    hidden: {},
@@ -28,49 +34,18 @@ const OpenLeft = {
    },
 };
 
-const happyData = [
-   {
-      imgAvif: "/image/happy_1.avif",
-      imgWebp: "/image/happy_1.webp",
-      imgAltText: "Блюда на мангале",
-      title: "ПОСИДЕЛКИ У КОСТРА",
-      text: "Отличный способ провести время после трудового дня в компании друзей и родных",
-      type: "text",
-   },
-   {
-      imgAvif: "/image/happy_2.avif",
-      imgWebp: "/image/happy_2.webp",
-      imgAltText: "Катание на лодках",
-      title: "РЫБАЛКА",
-      text: "Если вы любите рыбалку, Икша Кантри Клаб - прекрасное место для Вас. Водохранилище и форелевый пруд вас приятно удивят",
-      type: "text",
-   },
-   {
-      imgAvif: "/image/happy_3.avif",
-      imgWebp: "/image/happy_3.webp",
-      imgAltText: "Прогулки по лесу",
-      title: "ВИДЫ АКТИВНОГО ОТДЫХА",
-      text: [
-         "велосипед, квадроцикл",
-         "Сап-доски, лодка, катер, гидроцикл",
-         "волейбол, футбол, бадминтон",
-      ],
-      type: "array",
-   },
-   {
-      imgAvif: "/image/happy_4.avif",
-      imgWebp: "/image/happy_4.webp",
-      imgAltText: "Баня с купелью",
-      title: "БАНЯ И СПА",
-      text: "Единение с природой, сочетание русских традиций и современного подхода к уходу за собой",
-      type: "text",
-   },
-];
+
 
 const Happy = () => {
+   
+   const { t } = useTranslation();
+   const textBlocks = useMemo(() => t('happy.happyData', { returnObjects: true }), [t]);
+  
+   const translatedTitle = t('happy.sectionTitle');
+   const translatedSubtitle = t('happy.sectionSubtitle');
    return (
       <section id="happy" className="relative min-h-screen w-full bg-[#201E1F]">
-         <Title text={"Развлечения"} />
+         <Title text={translatedTitle} subtitle={translatedSubtitle} />
          <Logo />
          <m.div
             initial="hidden"
@@ -83,10 +58,10 @@ const Happy = () => {
                variants={OpenLeft}
                className=" text-[28px] font-extrabold text-white md:text-[40px] lg:text-[58px] 2xl:text-[68px]"
             >
-               МЫ ПРЕДЛАГАЕМ ВАМ <br /> НЕСКОЛЬКО{" "}
-               <span className="text-[#A69376]">ВИДОВ РАЗВЛЕЧЕНИЙ:</span>
+               {t('happy.weOfferYou')} <br /> {t('happy.severalTypesOfEntertainment')}{" "}
+               <span className="text-[#A69376]">{t('happy.colon')}</span>
             </m.h2>
-            <HappyCard arrayData={happyData} />
+            <HappyCard arrayData={textBlocks} />
          </m.div>
       </section>
    );

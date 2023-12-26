@@ -2,6 +2,98 @@
 	"iksha": "Икша",
 	"CB": "Кантри клаб",
 
+	"imgAltText": "Икша Кантри Клаб",
+	"outdoorRecreation": "Ваш идеальный отдых",
+	"inTheMoscowRegion": "в Подмосковье!",
+	"call": "Позвоните по номеру:",
+	"newYearAtIksha": "Новый Год в Икша Кантри Клабе",
+	"limitedSpots": "Места ограничены",
+	"specialOffer": "Спецпредложение",
+	"bronirui": {
+		"btn": "показать",
+		"Bronirovanie": "Бронирование",
+		"Nomerov": "Номеров"
+	},
+	"routes": {
+		"about": "О нас",
+		"locations": "Локации",
+		"events": "Мероприятия",
+		"gallery": "Галерея",
+		"happy": "Развлечения",
+		"map": "Карта территории",
+		"corporates": "Корпоративы",
+		"faq": "FAQ",
+		"vkIconAlt": "VK",
+		"instagramIconAlt": "Instagram",
+		"whatsappIconAlt": "WhatsApp"
+	},
+	"map": {
+		"forest": "Лесная резиденция",
+		"derevnya": "Олимпийская деревня",
+		"shale": "Шале",
+		"cottage": "Коттедж"
+	},
+
+	"common": {
+		"welcome": "Добро пожаловать",
+		"locations": "Локации",
+		"logoAlt": "Икша Кантри Клаб"
+	},
+
+	"about": {
+		"aboutUs": "О Нас",
+		"countrysideClub": "Загородный клуб",
+		"iksha": "Икша",
+		"countryClub": "Кантри Клаб",
+		"ikshaCountryClubDescription": "Икша Кантри Клаб на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных.",
+		"weHaveEverything": "У нас есть все, что нужно",
+		"forFullRecreation": "для полноценного отдыха:",
+		"presentationAboutUs": "Презентация о нас",
+		"videoAboutUs": "Видео о нас"
+	},
+
+	"happy": {
+		"sectionTitle": "Развлечения",
+		"sectionSubtitle": "Мы предлагаем вам несколько видов развлечений:",
+		"weOfferYou": "Мы предлагаем вам",
+		"severalTypesOfEntertainment": "несколько видов развлечений",
+		"colon": ":",
+		"happyData": [
+			{
+				"imgAvif": "/image/happy_1.avif",
+				"imgWebp": "/image/happy_1.webp",
+				"imgAltText": "Блюда на мангале",
+				"title": "МАНГАЛ",
+				"text": "Отличный способ провести время после трудного дня с друзьями и семьей"
+			},
+			{
+				"imgAvif": "/image/happy_2.avif",
+				"imgWebp": "/image/happy_2.webp",
+				"imgAltText": "Катание на лодках",
+				"title": "РЫБАЛКА",
+				"text": "Если вы любите рыбалку, Iksha Country Club - идеальное место для вас. Водохранилище и пруд с форелью приятно вас удивят"
+			},
+			{
+				"imgAvif": "/image/happy_3.avif",
+				"imgWebp": "/image/happy_3.webp",
+				"imgAltText": "Прогулки по лесу",
+				"title": "АКТИВНЫЙ ОТДЫХ",
+				"text": [
+					"велосипед, квадроцикл",
+					"SUP-доски, лодка, катер, гидроцикл",
+					"волейбол, футбол, бадминтон"
+				]
+			},
+			{
+				"imgAvif": "/image/happy_4.avif",
+				"imgWebp": "/image/happy_4.webp",
+				"imgAltText": "Баня с купелью",
+				"title": "САУНА И СПА",
+				"text": "Слияние с природой, сочетание русских традиций и современного подхода к самостоятельному уходу за собой"
+			}
+		]
+	},
+
 	"aboutData": [
 		{
 			"imgAvif": "/image/bed.avif",
@@ -22,6 +114,64 @@
 			"text": "Русская баня с панорамным видом, где вы можете расслабиться после долгих прогулок"
 		}
 	],
+
+	"reviews": {
+		"title": "Отзывы",
+		"subtitle": "ИКША КАНТРИ КЛАБ –",
+		"highlight": "ДАРИМ НЕЗАБЫВАЕМЫЕ ВПЕЧАТЛЕНИЯ",
+		"data": {
+			"fristName": "Анна, 26 лет",
+			"firstText": "Очень хорошее место! Красиво, чисто, уютно и все продумано до мелочей! Администратор всегда на связи и всегда готов приехать и предоставить доп услуги, как караоке например. Получили огромное удовольствие от отдыха и ещё вернёмся !",
+			"secondName": "Наталья, 34 года",
+			"secondText": "Снимали беседку с домиками на берегу, потрясающая природа, более чем комфортные условия для отдыха, отличная баня с красивым панорамным окном и видом на лес и водохранилище, всё чистенько и продумано, в шаговой доступности песчаный пляж, лодки, сапы в прокат"
+		}
+	},
+
+	"gallery": {
+		"gallery": "Галерея",
+		"forestResidence": "Лесная резиденция",
+		"chalet": "Шале",
+		"cottage": "Коттедж",
+		"olympicVillage": "Олимпийская деревня",
+		"ourGuests": "Наши гости",
+		"food": "Питание",
+		"entertainment": "Развлечения"
+	},
+
+	"eat": {
+		"sectionTitle": "Питание",
+		"weAreGladToOfferYou": "Мы рады предложить вам",
+		"orderFood": "Заказать питание",
+		"weAreReadyToOrganize": "Также мы готовы организовать для вас",
+		"catering": "кейтеринг",
+		"viewMenu": "Посмотреть меню",
+
+		"eatData": [
+			{
+				"img": "/image/fire.webp",
+				"text": "плов на огне"
+			},
+			{
+				"img": "/image/fire.webp",
+				"text": "рыбный суп на огне"
+			},
+			{
+				"img": "/image/chef.webp",
+				"text": "шашлык от шеф-повара"
+			}
+		]
+	},
+
+	"locations": {
+		"woodsResidence": "Лесная резиденция",
+		"cottageInSuburbs": "Коттедж в подмосковье",
+		"chaletsOnIkshaReservoir": "Домики на берегу Икшинского водохранилища",
+		"olympicVillage": "Олимпийская деревня",
+		"weHaveSeveralLocations": "У нас есть несколько локаций",
+		"speciallyForYou": "специально для вас",
+		"upTo30People": "До 30 человек",
+		"from15000Rubles": "от 15 000 ₽"
+	},
 
 	"eventsData": [
 		{

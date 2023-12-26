@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
 import { isItWinterNow } from "utils/helpers"
 import Header from "./Header"
-import { useTranslation } from 'react-i18next';
-
-
+import { useTranslation } from 'react-i18next'
 import bgWinAvif from 'images/welcome_bg_winter.webp'
+
+
 const heading = {
    hidden: {},
    visible: {
@@ -36,10 +36,12 @@ const headingLines = {
 }
 
 const Main = () => {
+
    const { utm_source } = useURLData()
-   const { t, i18n } = useTranslation();
+   const { t, i18n } = useTranslation()
 
    useEffect(() => {
+
       const script = document.createElement("script")
       script.src = "//widget.bronirui-online.ru/js/app.js"
       script.async = true
@@ -103,9 +105,21 @@ const Main = () => {
          styleElement.innerHTML = customStyles
          document.head.appendChild(styleElement)
       }
+
       script.onload = initializeWidget
       document.body.appendChild(script)
+      // setTimeout(() => {
+      //    const button = document.querySelector('.znms-widget__module-form-block__btn.znms-widget__v-color8')
+      //    const mainText = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--inline")
+
+      //    button.textContent = t('bronirui.btn')
+      //    // mainText.textContent = t("bronirui.Bronirovanie")
+      // }, 5000)
+
+
    }, [])
+
+
 
    const pumpkin_vars = {
       initial: {
@@ -125,7 +139,6 @@ const Main = () => {
                transition={{
                   repeat: Infinity,
                   duration: 1,
-
                   repeatType: "reverse",
                   repeatDelay: 0.6,
                }}
@@ -139,7 +152,6 @@ const Main = () => {
          </Link>
          <section
             style={{
-               // backgroundImage: `url(/image/welcome_bg${isItWinterNow()}.webp)`,
                backgroundImage: `url(${isItWinterNow() ? bgWinAvif : '/image/welcome_bg.webp'})`,
                backgroundPosition: "right",
                backgroundSize: "cover",
@@ -150,36 +162,24 @@ const Main = () => {
             <Header />
 
             <div className="absolute h-full left-0 top-0 flex items-center">
-               {/*<picture>*/}
-               {/*    <source srcSet="/image/main_arrow_big.avif 1x" type="image/avif" />*/}
-               {/*    <img loading='lazy' className="h-screen lg:block hidden" src="/image/main_arrow_big.webp" alt="Икша Кантри Клаб" />*/}
-               {/*</picture>*/}
-               <img loading='lazy'
+               <img
                   className="hidden lg:h-full lg:block"
                   src="/image/main_arrow_big.webp"
-                  alt="Икша Кантри Клаб"
+                  alt={t('imgAltText')}
                />
 
                <div className="absolute left-0 top-0 block h-screen w-screen bg-black opacity-70 duration-300 lg:hidden"></div>
 
-               {/*<picture>*/}
-               {/*    <source srcSet="/image/main_arrow_md.avif 1x" type="image/avif" />*/}
-               {/*    <img loading='lazy' className="2xl:max-h-[790px] lg:block hidden max-h-[750px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_md.webp" alt="Икша Кантри Клаб" />*/}
-               {/*</picture>*/}
-               <img loading='lazy'
+               <img
                   className="-ml-[300px] hidden max-h-[750px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[790px] 2xl:animate-[arrowAnimation_5s_infinite]"
                   src="/image/main_arrow_md.webp"
-                  alt="Икша Кантри Клаб"
+                  alt={t('imgAltText')}
                />
 
-               {/*<picture>*/}
-               {/*    <source srcSet="/image/main_arrow_sm.avif 1x" type="image/avif" />*/}
-               {/*    <img loading='lazy' className="2xl:max-h-[650px] lg:block hidden max-h-[620px] -ml-[300px] 2xl:animate-[arrowAnimation_5s_infinite] animate-[arrowAnimationMd_3s_infinite]" src="/image/main_arrow_sm.webp" alt="Икша Кантри Клаб" />*/}
-               {/*</picture>*/}
-               <img loading='lazy'
+               <img
                   className="-ml-[300px] hidden max-h-[620px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[650px] 2xl:animate-[arrowAnimation_5s_infinite]"
                   src="/image/main_arrow_sm.webp"
-                  alt="Икша Кантри Клаб"
+                  alt={t('imgAltText')}
                />
             </div>
             <m.div
@@ -197,13 +197,11 @@ const Main = () => {
                      {t('iksha')} <br />
                      <span className="gradient_title text-[45px] font-extrabold leading-[60px] md:text-[60px] 2xl:text-[78px] 2xl:leading-[100px]">
                         {t('CB')}
-                        {/* КАНТРИ КЛАБ */}
                      </span>
                   </h1>
-                  {/* <h2 className="2xl:text-[78px] md:text-[60px] text-[45px] font-extrabold gradient_title 2xl:leading-[100px] leading-[60px]">КАНТРИ КЛАБ</h2> */}
                </div>
                <p className="mb-6 text-[30px] tracking-wider font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
-                  <span className='whitespace-nowrap'>Ваш идеальный отдых в</span> Подмосковье!
+                  <span className='whitespace-nowrap'>{t('outdoorRecreation')}</span> {t('inTheMoscowRegion')}
                </p>
                <div className="z-0">
                   <div id="znms-widget-1"></div>
@@ -216,17 +214,16 @@ const Main = () => {
             >
                {
                   utm_source === 'yandex' ?
-                     <div>+7(499) 505-50-67</div>
+                     <div>{t('call')} +7(499) 505-50-67</div>
                      : utm_source === 'vkontakte' ?
-                        <div>+7(499) 505-50-87</div>
+                        <div>{t('call')} +7(499) 505-50-87</div>
                         :
-                        <div>+7(499) 505-50-31</div>
-
+                        <div>{t('call')} +7(499) 505-50-31</div>
                }
                <div className="text-[#D3AE7C]">
-                  Новый Год в Икша Кантри Клабе - Места ограничены
+                  {t('newYearAtIksha')} - {t('limitedSpots')}
                </div>
-               <div>Спецпредложение </div>
+               <div>{t('specialOffer')}</div>
             </Link>
          </section>
       </div>

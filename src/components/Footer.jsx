@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
 import { v4 as uuid4 } from 'uuid'
-import routes from '../utils/routes'
+import getRoutes from '../utils/routes'
 
 const Footer = () => {
     return (
         <footer className="w-full xl:h-[275px] sm:h-[410px] h-[500px] bg-[#201e1f] px-4 border-t-[1px] xl:border-t-transparent pt-5 flex flex-col justify-between border-t-[#AB8E67]">
             <ul className="flex justify-around flex-wrap gap-6">
                 {
-                    routes.map((el, i) => {
+                    getRoutes().map((el, i) => {
                         if (!el.title) return
                         if (el.link.includes('/')) {
                             return (

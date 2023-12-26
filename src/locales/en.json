@@ -1,6 +1,157 @@
 {
 	"iksha": "Iksha",
 	"CB": "Country club",
+	"imgAltText": "Iksha Country Club",
+	"outdoorRecreation": "Your perfect recreation",
+	"inTheMoscowRegion": "in the Moscow Region!",
+	"call": "Call:",
+	"newYearAtIksha": "New Year at Iksha Country Club",
+	"limitedSpots": "Limited spots",
+	"specialOffer": "Special offer",
+	"bronirui": {
+		"btn": "show",
+		"Bronirovanie": "Booking",
+		"Nomerov": "Rooms"
+	},
+	"routes": {
+		"about": "About Us",
+		"locations": "Locations",
+		"events": "Events",
+		"gallery": "Gallery",
+		"happy": "Entertainment",
+		"map": "Territory Map",
+		"corporates": "Corporates",
+		"faq": "FAQ",
+		"vkIconAlt": "VK",
+		"instagramIconAlt": "Instagram",
+		"whatsappIconAlt": "WhatsApp"
+	},
+
+	"gallery": {
+		"gallery": "gallery",
+		"forestResidence": "Forest Residence",
+		"chalet": "Chalet",
+		"cottage": "Cottage",
+		"olympicVillage": "Olympic Village",
+		"ourGuests": "Our Guests",
+		"food": "Food",
+		"entertainment": "Entertainment"
+	},
+
+	"map": {
+		"forest": "Forest Residence",
+		"derevnya": "Olympic Village",
+		"shale": "Chalet",
+		"cottage": "Cottage"
+	},
+	"common": {
+		"welcome": "Welcome",
+		"colon": ":",
+		"locations": "Locations",
+		"logoAlt": "Iksha Country Club"
+	},
+
+	"about": {
+		"aboutUs": "About Us",
+		"countrysideClub": "Countryside Club",
+		"iksha": "Iksha",
+		"countryClub": "Country Club",
+		"ikshaCountryClubDescription": "Iksha Country Club on the shore of the Iksha Reservoir is a cozy place where you can organize unforgettable events or simply relax with family or friends on the weekends.",
+		"weHaveEverything": "We have everything you need",
+		"forFullRecreation": "for a full recreation:",
+		"presentationAboutUs": "Presentation about us",
+		"videoAboutUs": "Video about us"
+	},
+
+	"happy": {
+		"sectionTitle": "Entertainment",
+		"sectionSubtitle": "We offer you several types of entertainment:",
+		"weOfferYou": "We offer you",
+		"severalTypesOfEntertainment": "several types of entertainment",
+		"colon": ":",
+		"happyData": [
+			{
+				"imgAvif": "/image/happy_1.avif",
+				"imgWebp": "/image/happy_1.webp",
+				"imgAltText": "Блюда на мангале",
+				"title": "CAMPFIRE",
+				"text": "A great way to spend time after a hard day with friends and family"
+			},
+			{
+				"imgAvif": "/image/happy_2.avif",
+				"imgWebp": "/image/happy_2.webp",
+				"imgAltText": "Катание на лодках",
+				"title": "FISHING",
+				"text": "If you love fishing, Iksha Country Club is the perfect place for you. The reservoir and trout pond will pleasantly surprise you"
+			},
+			{
+				"imgAvif": "/image/happy_3.avif",
+				"imgWebp": "/image/happy_3.webp",
+				"imgAltText": "Прогулки по лесу",
+				"title": "ACTIVE LEISURE",
+				"text": [
+					"bicycle, ATV",
+					"SUP boards, boat, boat, jet ski",
+					"volleyball, football, badminton"
+				]
+			},
+			{
+				"imgAvif": "/image/happy_4.avif",
+				"imgWebp": "/image/happy_4.webp",
+				"imgAltText": "Баня с купелью",
+				"title": "SAUNA AND SPA",
+				"text": "Unity with nature, a combination of Russian traditions and a modern approach to self-care"
+			}
+		]
+	},
+
+	"eat": {
+		"sectionTitle": "Food",
+		"weAreGladToOfferYou": "We are glad to offer you",
+		"orderFood": "Order food",
+		"weAreReadyToOrganize": "We are ready to organize",
+		"catering": "catering",
+		"viewMenu": "View Menu",
+
+		"eatData": [
+			{
+				"img": "/image/fire.webp",
+				"text": "plovOnFire"
+			},
+			{
+				"img": "/image/fire.webp",
+				"text": "fishSoupOnFire"
+			},
+			{
+				"img": "/image/chef.webp",
+				"text": "shishKebabFromChef"
+			}
+		]
+	},
+
+	"locations": {
+		"woodsResidence": "Woods Residence",
+		"cottageInSuburbs": "Cottage in Suburbs",
+		"chaletsOnIkshaReservoir": "Chalets on Iksha Reservoir",
+		"olympicVillage": "Olympic Village",
+		"weHaveSeveralLocations": "We have several locations",
+		"speciallyForYou": "specially for you",
+		"upTo30People": "Up to 30 people",
+		"from15000Rubles": "from 15,000 ₽"
+	},
+
+	"reviews": {
+		"title": "Reviews",
+		"subtitle": "IKSHA COUNTRY CLUB –",
+		"highlight": "CREATING UNFORGETTABLE MEMORIES",
+		"data": {
+			"firstName": "Anna, 26 years old",
+			"firstText": "A very nice place! Beautiful, clean, cozy, and everything is well thought out to the smallest detail! The administrator is always in touch and ready to come and provide additional services, like karaoke, for example. We had a great time and will definitely come back!",
+			"secondName": "Natalia, 34 years old",
+			"secondText": "We rented a gazebo with cottages by the shore, stunning nature, more than comfortable conditions for relaxation, excellent sauna with a beautiful panoramic window and a view of the forest and reservoir, everything is clean and well thought out. A sandy beach, boats, and paddleboards are within walking distance."
+		}
+	},
+
 	"aboutData": [
 		{
 			"imgAvif": "/image/bed.avif",
