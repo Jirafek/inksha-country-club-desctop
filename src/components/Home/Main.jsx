@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next'
 import bgWinAvif from 'images/welcome_bg_winter.webp'
 
 
+
 const heading = {
    hidden: {},
    visible: {
@@ -39,6 +40,18 @@ const Main = () => {
 
    const { utm_source } = useURLData()
    const { t, i18n } = useTranslation()
+
+
+
+   const toggleLanguage = () => {
+      if (i18n.language === 'en') {
+
+         i18n.changeLanguage('ru')
+      } else {
+         i18n.changeLanguage('en')
+
+      }
+   }
 
    useEffect(() => {
 
@@ -74,32 +87,36 @@ const Main = () => {
 
          // Примените ваши стили после инициализации виджета
          const customStyles = `
-            .znms-widget__module-form-block--opacity-bg {
-                background: #75624A  !important;
-            }
-            .znms-widget__module-form-block .znms-widget__module-form-block__title {
-                color: #fff !important;
-            }
-            .znms-widget__module-form-block__title a.znms-widget__module-form-block__items--booking-service-link {
-                color: #fff !important;
-            }
-            .znms-widget__module-form-block__btn.znms-widget__v-color8 {
-               border-radius:22px !important;
-               border: 1px solid #AB8E67 !important;
-               background-color: #4D382B !important;
-               min-width:180px !important;
-            }
-            .znms-widget__horizontal-form-submit {
-                // margin-top: 0 !important;
-            }
-            .znms-widget__widget-btn.znms-widget__v-color4 {
-               background-color: #AB8E67 !important;
-               border:2px solid #75624a !important;
-            }
-            .nms-widget__module-form-block__items--booking-service-link {
-                display: none !important;
-            }
-          `
+         .znms-widget__module-form-block--opacity-bg {
+            background: #75624A!important
+         }
+         .znms-widget__module-form-block.znms-widget__module-form-block__title {
+            color: #fff!important
+         }
+         .znms-widget__module-form-block__title a.znms-widget__module-form-block__items--booking-service-link {
+            color: #fff!important
+         }
+         .znms-widget__module-form-block__btn .znms-widget__v-color8 {
+            border- radius: 22px!important
+            border: 1px solid #AB8E67!important
+            background-color: #4D382B!important
+            min-width: 180px!important
+         }
+         .znms-widget__module-form-block__items__item .znms-widget__horizontal-form-submit{
+            border- radius: 22px!important
+            border: 1px solid #AB8E67!important
+            background-color: #4D382B!important
+            min-width: 180px!important
+         }
+         
+         .znms-widget__widget-btn .znms-widget__v-color4 {
+            background-color: #AB8E67!important
+            border: 2px solid #75624a!important
+         }
+         .nms-widget__module-form-block__items--booking-service-link {
+            display: none!important
+         }
+         `
          const styleElement = document.createElement("style")
          const DarkButton = document.querySelector('.znms-widget__module-form-block__btn.znms-widget__v-color8')
          styleElement.innerHTML = customStyles
@@ -134,6 +151,7 @@ const Main = () => {
 
    return (
       <div id='main' className='relative'>
+         {/* <div className='fixed top-5 right-5 text-white font-bold rounded-full bg-slate-300 px-4 cursor-pointer z-[10000] text-md' onClick={toggleLanguage}>{i18n.language}</div> */}
          <Link to="/New-Year" className="absolute right-10 top-20 z-[1000]">
             <m.img
                transition={{
@@ -221,7 +239,7 @@ const Main = () => {
                         <div>{t('call')} +7(499) 505-50-31</div>
                }
                <div className="text-[#D3AE7C]">
-                  {t('newYearAtIksha')} - {t('limitedSpots')}
+                  {t('newYearAtIksha')}-{t('limitedSpots')}
                </div>
                <div>{t('specialOffer')}</div>
             </Link>

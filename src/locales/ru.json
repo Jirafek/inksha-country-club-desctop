@@ -173,6 +173,21 @@
 		"from15000Rubles": "от 15 000 ₽"
 	},
 
+	"bron": {
+		"booking": "БРОНИРОВАНИЕ",
+		"call": "Позвонить",
+		"telegram": "Телеграм",
+		"photo": "Фото",
+		"VK": "ВК",
+		"sendEmail": "Написать письмо",
+		"fillForm": "Заполните форму",
+		"relaxAndMemorable": "Хотите комфортно отдохнуть и получить незабываемые впечатления? Забронируйте свой отдых",
+		"threeSimpleSteps": "за 3 простых шага",
+		"fillForm": "Заполните форму",
+		"checkEmail": "Проверьте почту",
+		"comeAndRelax": "Приезжайте и отдыхайте!"
+	},
+
 	"eventsData": [
 		{
 			"imgAvif": "/image/events1.avif",

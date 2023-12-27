@@ -152,6 +152,21 @@
 		}
 	},
 
+	"bron": {
+		"booking": "Booking",
+		"call": "Call",
+		"telegram": "Telegram",
+		"photo": "Photo",
+		"VK": "VK",
+		"sendEmail": "Send an Email",
+		"fillForm": "Fill out the form",
+		"relaxAndMemorable": "Want to relax comfortably and get unforgettable impressions? Book your stay",
+		"threeSimpleSteps": "in 3 simple steps",
+		"fillForm": "Fill out the form",
+		"checkEmail": "Check your email",
+		"comeAndRelax": "Come and relax!"
+	},
+
 	"aboutData": [
 		{
 			"imgAvif": "/image/bed.avif",
