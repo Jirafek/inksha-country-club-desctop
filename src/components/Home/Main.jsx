@@ -87,56 +87,51 @@ const Main = () => {
 
          // Примените ваши стили после инициализации виджета
          const customStyles = `
-         .znms-widget__module-form-block--opacity-bg {
-            background: #75624A!important
-         }
-         .znms-widget__module-form-block.znms-widget__module-form-block__title {
-            color: #fff!important
-         }
-         .znms-widget__module-form-block__title a.znms-widget__module-form-block__items--booking-service-link {
-            color: #fff!important
-         }
-         .znms-widget__module-form-block__btn .znms-widget__v-color8 {
-            border- radius: 22px!important
-            border: 1px solid #AB8E67!important
-            background-color: #4D382B!important
-            min-width: 180px!important
-         }
-         .znms-widget__module-form-block__items__item .znms-widget__horizontal-form-submit{
-            border- radius: 22px!important
-            border: 1px solid #AB8E67!important
-            background-color: #4D382B!important
-            min-width: 180px!important
-         }
-         
-         .znms-widget__widget-btn .znms-widget__v-color4 {
-            background-color: #AB8E67!important
-            border: 2px solid #75624a!important
-         }
-         .nms-widget__module-form-block__items--booking-service-link {
-            display: none!important
-         }
-         `
+            .znms-widget__module-form-block--opacity-bg {
+                background: #75624A  !important;
+            }
+            .znms-widget__module-form-block .znms-widget__module-form-block__title {
+                color: #fff !important;
+            }
+            .znms-widget__module-form-block__title a.znms-widget__module-form-block__items--booking-service-link {
+                color: #fff !important;
+            }
+            .znms-widget__module-form-block__btn.znms-widget__v-color8 {
+               border-radius:22px !important;
+               border: 1px solid #AB8E67 !important;
+               background-color: #4D382B !important;
+               min-width:180px !important;
+            }
+            .znms-widget__horizontal-form-submit {
+                // margin-top: 0 !important;
+            }
+            .znms-widget__widget-btn.znms-widget__v-color4 {
+               background-color: #AB8E67 !important;
+               border:2px solid #75624a !important;
+            }
+            .nms-widget__module-form-block__items--booking-service-link {
+                display: none !important;
+            }
+          `
          const styleElement = document.createElement("style")
          const DarkButton = document.querySelector('.znms-widget__module-form-block__btn.znms-widget__v-color8')
          styleElement.innerHTML = customStyles
          document.head.appendChild(styleElement)
       }
-
       script.onload = initializeWidget
       document.body.appendChild(script)
-      // setTimeout(() => {
-      //    const button = document.querySelector('.znms-widget__module-form-block__btn.znms-widget__v-color8')
-      //    const mainText = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--inline")
+      setTimeout(() => {
+         try {
+            const text = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--inline")
+            console.log(text.textContent)
 
-      //    button.textContent = t('bronirui.btn')
-      //    // mainText.textContent = t("bronirui.Bronirovanie")
-      // }, 5000)
+         } catch (error) {
+            console.log('плашка не успела загрузиться((')
+         }
+      }, 100)
 
 
    }, [])
-
-
 
    const pumpkin_vars = {
       initial: {

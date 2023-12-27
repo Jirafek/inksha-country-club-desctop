@@ -48,7 +48,9 @@
 		"welcome": "Welcome",
 		"colon": ":",
 		"locations": "Locations",
-		"logoAlt": "Iksha Country Club"
+		"logoAlt": "Iksha Country Club",
+		"name": "Name",
+		"phone": "Phone number"
 	},
 
 	"about": {
