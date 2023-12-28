@@ -27,6 +27,8 @@ const Header = () => {
       >
          <nav className="px-10 py-[10px] xl:bg-[#1e1c1dcc]">
             <ul className="flex items-center justify-between">
+
+
                {getRoutes().map((el, i) => {
                   if (el.link.startsWith("/")) {
                      return (
@@ -142,6 +144,7 @@ const Header = () => {
             style={{ display: `${burgerState ? "flex" : "none"}` }}
             className="absolute left-20 top-20 z-20 flex-col gap-3 rounded-[10px] border-[2px] border-[#AB8E67] bg-[#221C1C] px-8 py-6 text-[#AB8E67] duration-300"
          >
+
             {getRoutes().map((el, i) => {
                if (el.title)
                   return (

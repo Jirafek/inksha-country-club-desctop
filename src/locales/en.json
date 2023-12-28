@@ -1,6 +1,7 @@
 {
 	"iksha": "Iksha",
 	"CB": "Country club",
+	"fullName": "Iksha Country club",
 	"imgAltText": "Iksha Country Club",
 	"outdoorRecreation": "Your perfect recreation",
 	"inTheMoscowRegion": "in the Moscow Region!",
@@ -8,10 +9,22 @@
 	"newYearAtIksha": "New Year at Iksha Country Club",
 	"limitedSpots": "Limited spots",
 	"specialOffer": "Special offer",
+
+	"privacyPolicy": "Privacy Policy",
+	"accommodationRules": "Accommodation Rules",
+	"allRightsReserved": "All rights reserved Copyright © 2023",
+	"aboutUsPresentation": "About Us Presentation",
+	"offerAgreement": "Offer Agreement",
+
 	"bronirui": {
 		"btn": "show",
 		"Bronirovanie": "Booking",
-		"Nomerov": "Rooms"
+		"Nomerov": "Rooms",
+		"adult": "adults",
+		"guests": "Guests",
+		"checkIn": "Check-in",
+		"checkOut": "Check-out",
+		"choose": "Choose"
 	},
 	"routes": {
 		"about": "About Us",
@@ -56,13 +69,17 @@
 	"about": {
 		"aboutUs": "About Us",
 		"countrysideClub": "Countryside Club",
-		"iksha": "Iksha",
+		"iksha": "IKSHA",
 		"countryClub": "Country Club",
 		"ikshaCountryClubDescription": "Iksha Country Club on the shore of the Iksha Reservoir is a cozy place where you can organize unforgettable events or simply relax with family or friends on the weekends.",
 		"weHaveEverything": "We have everything you need",
-		"forFullRecreation": "for a full recreation:",
+		"forFullRecreation": "for a full recreation",
 		"presentationAboutUs": "Presentation about us",
 		"videoAboutUs": "Video about us"
+	},
+	"catering": {
+		"title": "CATERING",
+		"viewMenu": "View Menu"
 	},
 
 	"happy": {
@@ -109,7 +126,7 @@
 
 	"eat": {
 		"sectionTitle": "Food",
-		"weAreGladToOfferYou": "We are glad to offer you",
+		"weAreGladToOfferYou": "We are glad to offer you:",
 		"orderFood": "Order food",
 		"weAreReadyToOrganize": "We are ready to organize",
 		"catering": "catering",
@@ -118,17 +135,22 @@
 		"eatData": [
 			{
 				"img": "/image/fire.webp",
-				"text": "plovOnFire"
+				"text": "Plov on fire"
 			},
 			{
 				"img": "/image/fire.webp",
-				"text": "fishSoupOnFire"
+				"text": "Fish Soup On Fire"
 			},
 			{
 				"img": "/image/chef.webp",
-				"text": "shishKebabFromChef"
+				"text": "Barbecue From Chef"
 			}
 		]
+	},
+	"events": {
+		"title": "Events",
+		"organizeEvent": "ORGANIZE AN EVENT",
+		"learnMore": "LEARN MORE"
 	},
 
 	"locations": {

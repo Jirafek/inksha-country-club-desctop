@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 
-import { m } from "framer-motion";
+import { m } from "framer-motion"
 
-import AboutCard from '../AboutCard';
-import Title from '../Title';
+import AboutCard from '../AboutCard'
+import Title from '../Title'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -14,7 +14,7 @@ const heading = {
             staggerChildren: 0.15,
         },
     },
-};
+}
 
 const OpenLeft = {
     hidden: {
@@ -29,7 +29,7 @@ const OpenLeft = {
             duration: 2.5,
         },
     },
-};
+}
 
 const OpenRight = {
     hidden: {
@@ -44,7 +44,7 @@ const OpenRight = {
             duration: 2.5,
         },
     },
-};
+}
 
 // const aboutData = [
 //     {
@@ -79,10 +79,10 @@ const OpenRight = {
 
 
 const About = () => {
-    const { t } = useTranslation();
-    const textBlocks = useMemo(() => t('aboutData', { returnObjects: true }), [t]);
+    const { t } = useTranslation()
+    const textBlocks = useMemo(() => t('aboutData', { returnObjects: true }), [t])
 
-    
+
     return (
         <section id="about" className="min-h-screen xl:bg-[#201E1F] xl:bg-[url()] bg-[url(/image/about-card-bg.webp)] bg-center bg-no-repeat bg-cover duration-300 relative overflow-hidden">
             <div className="absolute left-0 top-0 flex items-center">
@@ -98,7 +98,7 @@ const About = () => {
                     className="pt-[70px] flex justify-between mb-[35px] items-center sm:pl-0">
                     <m.div variants={OpenLeft} className="flex flex-col lg:pt-10 pt-2 lg:pl-0 pl-[40px]">
                         <h3 className="text-[#AB8E67] 3xl:text-[38px] lg:text-[33px] text-[28px] font-bold lg:mb-7">{t('about.countrysideClub')}</h3>
-                        <h2 className="3xl:text-[68px] 2xl:text-[60px] lg:text-[50px] sm:text-[40px] text-[30px] font-bold text-[#9E835F]">
+                        <h2 className="3xl:text-[68px] flex gap-6 items-center 2xl:text-[60px] lg:text-[50px] sm:text-[40px] text-[30px] font-bold text-[#9E835F]">
                             <span className="text-white 3xl:text-[78px] 2xl:text-[70px] lg:text-[60px] sm:text-[50px] text-[40px] font-extrabold">{t('about.iksha')}</span>
                             {t('about.countryClub')}
                         </h2>
@@ -114,11 +114,11 @@ const About = () => {
                     </m.div>
                 </m.div>
                 {/* Ваш компонент AboutCard */}
-                   <AboutCard arrayData={textBlocks} />
+                <AboutCard arrayData={textBlocks} />
             </div>
         </section>
-    );
-};
+    )
+}
 
 export default About;
 

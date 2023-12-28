@@ -1,23 +1,23 @@
 // В вашем файле компонента Eat
 
-import React from "react";
+import React from "react"
 
-import { m } from "framer-motion";
+import { m } from "framer-motion"
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import { v4 as uuid4 } from 'uuid';
+import { v4 as uuid4 } from 'uuid'
 
-import { useTranslation } from 'react-i18next'; 
+import { useTranslation } from 'react-i18next'
 
-import Logo from '../Logo';
-import Title from '../Title';
+import Logo from '../Logo'
+import Title from '../Title'
 import { useMemo } from 'react'
 
 const Eat = () => {
-    const {t} = useTranslation(); // Достаем функцию для перевода
-    const textBlocks = useMemo(() => t('eat.eatData', { returnObjects: true }), [t]);
-    console.log(textBlocks);
+    const { t } = useTranslation() // Достаем функцию для перевода
+    const textBlocks = useMemo(() => t('eat.eatData', { returnObjects: true }), [t])
+
     const heading = {
         hidden: {},
         visible: {
@@ -25,7 +25,7 @@ const Eat = () => {
                 staggerChildren: 0.15,
             },
         },
-    };
+    }
 
     const OpenBottom = {
         hidden: {
@@ -40,7 +40,7 @@ const Eat = () => {
                 duration: 2.5,
             },
         },
-    };
+    }
 
     const OpenLeft = {
         hidden: {
@@ -55,9 +55,9 @@ const Eat = () => {
                 duration: 2.5,
             },
         },
-    };
+    }
 
-  
+
 
     return (
         <section id='eat' className="min-h-screen w-full relative bg-[#201E1F]">
@@ -80,7 +80,7 @@ const Eat = () => {
                     variants={heading}
                     className="md:pl-[90px] pl-[40px] 2xl:pt-[120px] pt-[110px] mb-6 z-10">
                     <m.h2 variants={OpenLeft} className="2xl:text-[68px] lg:text-[58px] md:text-[40px] text-[28px] text-white font-extrabold">
-                        {t('eat.weAreGladToOfferYou')} <br /> <span className="text-[#A69376]">{t('common.colon')}</span>
+                        {t('eat.weAreGladToOfferYou')} <br />
                     </m.h2>
                     <m.div variants={OpenBottom} className="flex lg:justify-start justify-center w-full">
                         <div className="lg:ml-[230px] pt-[30px] mb-[60px] flex flex-col items-center gap-4 lg:w-[540px] sm:w-[440px] w-[330px]">
@@ -90,7 +90,7 @@ const Eat = () => {
                                         <div className="lg:w-16 lg:h-16 w-10 h-10 bg-center bg-no-repeat bg-cover absolute top-1/2 left-[10px] -translate-y-1/2" style={{ backgroundImage: `url(${el.img})` }}></div>
                                         <p className="text-white text-center lg:text-[28px] sm:text-[22px] text-[18px] font-semibold">
                                             {el.text}
-                                        </p>    
+                                        </p>
                                     </div>
                                 ))
                             }
@@ -110,4 +110,4 @@ const Eat = () => {
     )
 }
 
-export default Eat;
+export default Eat

@@ -673,7 +673,7 @@ const Gallery = () => {
         setIsMenuOpen(false)
     }
 
-    console.log(GD)
+
     useEffect(() => {
         const selectedData = GD.find(item => item.title === menuItem)
         if (selectedData) {

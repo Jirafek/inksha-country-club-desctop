@@ -1,7 +1,7 @@
 {
 	"iksha": "Икша",
 	"CB": "Кантри клаб",
-
+	"fullName": "Икша Кантри Клаб",
 	"imgAltText": "Икша Кантри Клаб",
 	"outdoorRecreation": "Ваш идеальный отдых",
 	"inTheMoscowRegion": "в Подмосковье!",
@@ -9,10 +9,30 @@
 	"newYearAtIksha": "Новый Год в Икша Кантри Клабе",
 	"limitedSpots": "Места ограничены",
 	"specialOffer": "Спецпредложение",
+
+	"privacyPolicy": "Политика конфиденциальности",
+	"accommodationRules": "Правила проживания",
+	"allRightsReserved": "Все права защищены Copyright © 2023",
+	"aboutUsPresentation": "Презентация о нас",
+	"offerAgreement": "Договор оферты",
+
+	"common": {
+		"welcome": "Добро пожаловать",
+		"locations": "Локации",
+		"logoAlt": "Икша Кантри Клаб",
+		"name": "Имя",
+		"phone": "Номер телефона"
+	},
+
 	"bronirui": {
 		"btn": "показать",
 		"Bronirovanie": "Бронирование",
-		"Nomerov": "Номеров"
+		"Nomerov": "Номеров",
+		"adult": "Взрослых",
+		"guests": "Гости",
+		"checkIn": "Заезд",
+		"checkOut": "Выезд",
+		"choose": "Выбрать"
 	},
 	"routes": {
 		"about": "О нас",
@@ -34,14 +54,6 @@
 		"cottage": "Коттедж"
 	},
 
-	"common": {
-		"welcome": "Добро пожаловать",
-		"locations": "Локации",
-		"logoAlt": "Икша Кантри Клаб",
-		"name": "Имя",
-		"phone": "Номер телефона"
-	},
-
 	"about": {
 		"aboutUs": "О Нас",
 		"countrysideClub": "Загородный клуб",
@@ -49,9 +61,13 @@
 		"countryClub": "Кантри Клаб",
 		"ikshaCountryClubDescription": "Икша Кантри Клаб на берегу Икшинского водохранилища – это уютное место, где вы можете организовать незабываемые мероприятия или просто отдохнуть с семьей или друзьями на выходных.",
 		"weHaveEverything": "У нас есть все, что нужно",
-		"forFullRecreation": "для полноценного отдыха:",
+		"forFullRecreation": "для полноценного отдыха",
 		"presentationAboutUs": "Презентация о нас",
 		"videoAboutUs": "Видео о нас"
+	},
+	"catering": {
+		"title": "КЕЙТЕРИНГ",
+		"viewMenu": "Смотреть меню"
 	},
 
 	"happy": {
@@ -139,10 +155,15 @@
 		"food": "Питание",
 		"entertainment": "Развлечения"
 	},
+	"events": {
+		"title": "Мероприятия",
+		"organizeEvent": "ОРГАНИЗОВАТЬ СОБЫТИЕ",
+		"learnMore": "УЗНАТЬ БОЛЬШЕ"
+	},
 
 	"eat": {
 		"sectionTitle": "Питание",
-		"weAreGladToOfferYou": "Мы рады предложить вам",
+		"weAreGladToOfferYou": "Мы рады предложить вам:",
 		"orderFood": "Заказать питание",
 		"weAreReadyToOrganize": "Также мы готовы организовать для вас",
 		"catering": "кейтеринг",

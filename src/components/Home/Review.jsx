@@ -36,7 +36,7 @@ const getReviewData = () => {
             imgAvif: "/image/review1.avif",
             imgWebp: "/image/review1.webp",
             imgAltText: "Отзыв Анны о нашем загородном клубе",
-            title: t('reviews.data.firstTitle'),
+            title: t('reviews.data.firstName'),
             text: t('reviews.data.firstText'),
 
         },

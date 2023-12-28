@@ -5,8 +5,9 @@ import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
 import { isItWinterNow } from "utils/helpers"
 import Header from "./Header"
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 import bgWinAvif from 'images/welcome_bg_winter.webp'
+
 
 
 
@@ -120,15 +121,43 @@ const Main = () => {
       }
       script.onload = initializeWidget
       document.body.appendChild(script)
-      setTimeout(() => {
+
+      //пизда)))
+      const interval = setInterval(() => {
          try {
-            const text = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--inline")
-            console.log(text.textContent)
+            const element = document.querySelector('.znms-widget__module-form-block__title')
+            const ww = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer.znms-widget__input-people-counter-horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__item--lg > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__select")
+            const button = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > button")
+            const guests = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer.znms-widget__input-people-counter-horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__item--lg > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__label")
+            const checkIn = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span:nth-child(1) > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__label")
+            const choose1 = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span.znms-widget__brononline-calendar.znms-widget__brononline-calendar--horizontal.znms-widget__brononline-calendar--horizontal--right.znms-widget__brononline-calendar--horizontal--static.znms-widget__validating--invalid > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__input.znms-widget__module-form-block__input--fake.znms-widget__module-form-block__input--fake--empty.znms-widget__module-form-block__input--pointer")
+            const choose2 = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span:nth-child(1) > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__input.znms-widget__module-form-block__input--fake.znms-widget__module-form-block__input--fake--empty.znms-widget__module-form-block__input--pointer")
+            const checkOut = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span.znms-widget__brononline-calendar.znms-widget__brononline-calendar--horizontal.znms-widget__brononline-calendar--horizontal--right.znms-widget__brononline-calendar--horizontal--static.znms-widget__validating--invalid > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__label")
+
+
+            guests.textContent = t('bronirui.guests')
+            checkIn.textContent = t('bronirui.checkIn')
+            checkOut.textContent = t('bronirui.checkOut')
+            choose1.textContent = t('bronirui.choose')
+            choose2.textContent = t('bronirui.choose')
+            button.textContent = t('bronirui.btn')
+
+            ww.textContent = 2 + '' + t('bronirui.adult')
 
          } catch (error) {
-            console.log('плашка не успела загрузиться((')
+            console.log('Произошла ошибка:', error)
          }
-      }, 100)
+      }, 3000)
+
+      // setTimeout(() => {
+      //    try {
+      //       const text = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--inline")
+      //       console.log(text.textContent)
+
+      //    } catch (error) {
+      //       console.log('плашка не успела загрузиться((')
+      //    }
+      // }, 100)
 
 
    }, [])
