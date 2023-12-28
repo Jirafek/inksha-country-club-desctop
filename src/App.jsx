@@ -9,7 +9,7 @@ import { updateURLData, useURLData } from "utils/URLData"
 import Cookie from './common/Cookie'
 import MainPopup from "./common/MainPopup"
 import HelpPopup from './common/popups/helpPopup/HelpPopup'
-import arrow from 'icons/arrow.png'
+
 // import Korporativy from "./pages/Korporativy";
 // import Keytering from "./pages/Keytering";
 // import Home from "./pages/Home";
@@ -205,9 +205,7 @@ function App() {
                </div>
          }
 
-         <a href='#main' className='fixed w-[72px] h-[72px] flex items-center border-[2px] border-[#58462E] justify-center bottom-[20px] bg-[#AB8E67] rounded-full cursor-pointer right-[100px] z-[10000]'>
-            <img className='-rotate-90 h-[19px]' src={arrow} alt="" />
-         </a>
+
 
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
@@ -226,6 +224,7 @@ function App() {
             /> */}
             <Route path="/faq" element={<FAQ />} />
             <Route path="/thanks" element={<Thanks />} />
+            <Route path="/success" element={<Thanks />} />
             <Route path="/halloween" element={<Helloween />} />
             <Route path="/korp-landing" element={<KorpLanding />} />
             <Route path="/New-Year" element={<NYLanding />} />
