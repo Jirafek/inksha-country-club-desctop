@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid"
 
-import { m } from "framer-motion";
+import { m } from "framer-motion"
 
-import routes from "../../utils/routes";
+import getRoutes from "../../utils/routes"
+import { LanguageComponent } from './../../App'
+
 
 const Header = () => {
-   const [burgerState, setBurgerState] = useState(false);
+   const [burgerState, setBurgerState] = useState(false)
 
    const handleBurger = () => {
-      setBurgerState(!burgerState);
-   };
+      setBurgerState(!burgerState)
+   }
    return (
       <m.header
          initial={{ opacity: 0 }}
@@ -27,7 +29,9 @@ const Header = () => {
       >
          <nav className="px-10 py-[10px] xl:bg-[#1e1c1dcc]">
             <ul className="flex items-center justify-between">
-               {routes.map((el, i) => {
+
+
+               {getRoutes().map((el, i) => {
                   if (el.link.startsWith("/")) {
                      return (
                         <li key={uuidv4()}>
@@ -50,7 +54,7 @@ const Header = () => {
                               )}
                            </Link>
                         </li>
-                     );
+                     )
                   } else {
                      return (
                         <li key={uuidv4()}>
@@ -73,9 +77,14 @@ const Header = () => {
                               )}
                            </a>
                         </li>
-                     );
+                     )
                   }
                })}
+               <li>
+
+                  <LanguageComponent />
+               </li>
+
             </ul>
          </nav>
          <button
@@ -142,7 +151,8 @@ const Header = () => {
             style={{ display: `${burgerState ? "flex" : "none"}` }}
             className="absolute left-20 top-20 z-20 flex-col gap-3 rounded-[10px] border-[2px] border-[#AB8E67] bg-[#221C1C] px-8 py-6 text-[#AB8E67] duration-300"
          >
-            {routes.map((el, i) => {
+
+            {getRoutes().map((el, i) => {
                if (el.title)
                   return (
                      <a
@@ -164,10 +174,10 @@ const Header = () => {
                            />
                         )}
                      </a>
-                  );
+                  )
             })}
             <div className="flex items-center gap-3">
-               {routes.map((el, i) => {
+               {getRoutes().map((el, i) => {
                   if (!el.title)
                      return (
                         <Link
@@ -185,12 +195,12 @@ const Header = () => {
                               alt="Икша Кантри Клаб"
                            />
                         </Link>
-                     );
+                     )
                })}
             </div>
          </div>
       </m.header>
-   );
-};
+   )
+}
 
-export default Header;
+export default Header

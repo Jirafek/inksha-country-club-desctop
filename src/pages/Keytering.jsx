@@ -1,14 +1,15 @@
-import React from "react";
-import { v4 as uuid4 } from 'uuid';
-import LocationArrow from '../components/icons/LocationArrow';
-import { useNavigate } from "react-router-dom";
+import React from "react"
+import { v4 as uuid4 } from 'uuid'
+import LocationArrow from '../components/icons/LocationArrow'
+import { useNavigate } from "react-router-dom"
 
-import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick"
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
-import { CustomNextArrow, CustomPrevArrow } from '../components/CustomArrows';
-import {Helmet} from "react-helmet";
+import { CustomNextArrow, CustomPrevArrow } from '../components/CustomArrows'
+import { Helmet } from "react-helmet"
+import { useTranslation } from 'react-i18next'
 
 const imageData = [
     {
@@ -46,14 +47,17 @@ const imageData = [
         imgWebp: "/image/keyt7.webp",
         imgAltText: 'Изображение блюда из меню загородного клуба Икша Кантри Клаб - свежевыжатые соки'
     }
-];
+]
 
 const Keytering = () => {
 
-    const navigate = useNavigate();
+    const { t } = useTranslation()
+
+
+    const navigate = useNavigate()
     const goBack = () => {
         navigate(-1)
-    };
+    }
 
     const settings = {
         dots: false,
@@ -67,7 +71,7 @@ const Keytering = () => {
         slidesToScroll: 1,
         nextArrow: <CustomNextArrow url="/image/arrow_gallery.webp" />,
         prevArrow: <CustomPrevArrow url="/image/arrow_gallery.webp" />,
-    };
+    }
 
     return (
         <>
@@ -96,12 +100,12 @@ const Keytering = () => {
                 <div className="pt-3">
                     <div className="flex justify-center">
                         <h1 className="sm:text-[68px] text-[32px] gradient_title font-extrabold mb-2">
-                            КЕЙТЕРИНГ
+                            {t('catering.title')}
                         </h1>
                     </div>
                     <div className="flex justify-center mb-2">
                         <a href="/pdf/menu.pdf" target="_blank" className="py-3 px-8 flex justify-center items-center rounded-[10px] bg-[#AB8E67] text-white text-[20px] font-medium">
-                            Смотреть меню
+                            {t('catering.viewMenu')}
                         </a>
                     </div>
                     <Slider {...settings}>
@@ -118,7 +122,7 @@ const Keytering = () => {
                 </div>
             </section>
         </>
-    );
-};
+    )
+}
 
-export default Keytering;
+export default Keytering

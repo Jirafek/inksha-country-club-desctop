@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useURLData } from "utils/URLData"
 import phone from "./../assets/phone.png"
 import what from "./../assets/what.png"
+import { useTranslation } from 'react-i18next'
 
 const slideVariants = {
    initial: {
@@ -16,15 +17,16 @@ const slideVariants = {
    },
 }
 const Footer = ({ className }) => {
-   const { utm_source, phoneContent } = useURLData();
-   const matchingPhone = phoneContent.find(item => item.utm === utm_source);
-   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
+   const { utm_source, phoneContent } = useURLData()
+   const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
+   const { t } = useTranslation()
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
             <div className="flex justify-between gap-5 py-5">
-               <div className="flex w-full items-center justify-between gap-5 md:justify-start">
-                  <div>Икша Кантри Kлаб 2023 </div>
+               <div className="flex w-full items-center justify-between text-white gap-5 md:justify-start">
+                  <div>{t('fullName')} 2023 </div>
                   <div className="fixed bottom-5 md:bottom-[70px]  right-5 z-10 flex flex-col gap-5 md:left-5 md:flex-row">
                      {/* <a
                         target="_blank"
@@ -57,9 +59,9 @@ const Footer = ({ className }) => {
                      </motion.a>
                   </div>
                </div>
-                        <a href={`tel:${phoneNumber}`} className="min-w-[160px] text-white">
-                           {phoneNumber}
-                        </a>
+               <a href={`tel:${phoneNumber}`} className="min-w-[160px] text-white">
+                  {phoneNumber}
+               </a>
             </div>
          </div>
       </div>

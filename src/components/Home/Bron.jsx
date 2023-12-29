@@ -1,10 +1,10 @@
 import { m } from "framer-motion"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 import { useURLData } from "utils/URLData"
 import { v4 as uuid4 } from "uuid"
 import Title from "../Title"
 import MainPopup from "./../../common/MainPopup"
-
 
 const heading = {
    hidden: {},
@@ -31,58 +31,70 @@ const OpenLeft = {
 }
 
 const Bron = () => {
-   const { utm_source, phoneContent } = useURLData();
-   const matchingPhone = phoneContent.find(item => item.utm === utm_source);
-   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031';
+   const { utm_source, phoneContent } = useURLData()
+   const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
+   const { t } = useTranslation()
 
 
    const bronData = [
       {
          imgAvif: "/image/wa_bl.avif",
          imgWebp: "/image/wa_bl.webp",
-         imgAltText: "Позвонить",
-         text: phoneNumber,
-         link: `tel:${phoneNumber}`,
+         imgAltText: t("bron.call"),
+         text:
+            utm_source === "yandex"
+               ? "+7(499) 505-50-67"
+               : utm_source === "vkontakte"
+                  ? "+7(499) 505-50-87"
+                  : "+7 (499) 505-50-31",
+         link:
+            utm_source === "yandex"
+               ? "tel:+74995055067"
+               : utm_source === "vkontakte"
+                  ? "tel:+74995055087"
+                  : "tel:+74995055031",
       },
       {
          imgAvif: "/image/tg_bl.avif",
          imgWebp: "/image/tg_bl.webp",
-         imgAltText: "Телеграм",
+         imgAltText: t("bron.telegram"),
          text: "@ikshacountryclub",
          link: "https://t.me/ikshacountryclub",
       },
       {
          imgAvif: "/image/inst_bl.avif",
          imgWebp: "/image/inst_bl.webp",
-         imgAltText: "Фото",
+         imgAltText: t("bron.photo"),
          text: "@ikshacountryclub",
          link: "https://instagram.com/ikshacountryclub",
       },
       {
          imgAvif: "/image/vk_bl.avif",
          imgWebp: "/image/vk_bl.webp",
-         imgAltText: "ВК",
+         imgAltText: t("bron.VK"),
          text: "@ikshacountryclub",
          link: "https://vk.com/ikshacountryclub",
       },
       {
          imgAvif: "/image/mail_bl.avif",
          imgWebp: "/image/mail_bl.webp",
-         imgAltText: "Написать письмо",
+         imgAltText: t("bron.sendEmail"),
          text: "contact@ikshacountryclub.com",
          link: "mailto:contact@ikshacountryclub.com",
       },
    ]
 
    const [isPopupOpen, setIsPopupOpen] = useState(false)
+
    const togglePopup = () => {
       setIsPopupOpen((prev) => !prev)
    }
 
    return (
-      <section id='contacts' className="relative min-h-screen w-full bg-[#201E1F]">
+      <section id="contacts" className="relative min-h-screen w-full bg-[#201E1F]">
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
-         <Title text={"Бронирование"} />
+         <Title text={t("bron.booking")} />
          <m.div
             initial="hidden"
             whileInView="visible"
@@ -95,12 +107,11 @@ const Bron = () => {
                className="z-10 flex flex-col pl-[40px] pt-[90px] sm:pt-[140px] xl:pl-[70px]"
             >
                <h2 className="text-[35px] font-extrabold text-[#AB8E67] sm:text-[42px] 2xl:text-[68px]">
-                  БРОНИРОВАНИЕ
+                  {t("bron.booking")}
                </h2>
                <p className="mb-5 w-[350px] font-medium text-white sm:w-[450px] sm:text-[18px] 2xl:w-[700px] 2xl:text-[32px]">
-                  Хотите комфортно отдохнуть и получить незабываемые
-                  впечатления? Забронируйте свой отдых{" "}
-                  <span className="text-[#AB8E67]">за 3 простых шага:</span>
+                  {t("bron.relaxAndMemorable")}
+                  <span className="text-[#AB8E67]">{t("bron.threeSimpleSteps")}</span>
                </p>
                <div className="flex items-center gap-4 text-[#AB8E67] sm:gap-11">
                   <p className="text-[42px] font-extrabold text-[#75624A] sm:text-[55px] 2xl:text-[78px]">
@@ -110,7 +121,7 @@ const Bron = () => {
                      onClick={togglePopup}
                      className="cursor-pointer text-[24px] font-extrabold underline sm:text-[28px] 2xl:text-[38px]"
                   >
-                     Заполните форму
+                     {t("bron.fillForm")}
                   </div>
                </div>
                <div className="my-9 flex items-center gap-4 text-[#AB8E67] sm:gap-11">
@@ -118,7 +129,7 @@ const Bron = () => {
                      02
                   </p>
                   <p className="text-[24px] font-extrabold sm:text-[28px] 2xl:text-[38px]">
-                     Проверьте почту
+                     {t("bron.checkEmail")}
                   </p>
                </div>
                <div className="flex items-center gap-4 text-[#AB8E67] sm:gap-11">
@@ -126,7 +137,7 @@ const Bron = () => {
                      03
                   </p>
                   <p className="text-[24px] font-extrabold sm:text-[28px] 2xl:text-[38px]">
-                     Приезжайте и отдыхайте!
+                     {t("bron.comeAndRelax")}
                   </p>
                </div>
             </m.div>
@@ -148,7 +159,7 @@ const Bron = () => {
                      className="flex items-center gap-2 2xl:gap-4"
                   >
                      <img
-                        loading='lazy'
+                        loading="lazy"
                         className="w-[45px] 2xl:w-auto"
                         src={el.imgWebp}
                         alt={el.imgAltText}
@@ -160,10 +171,10 @@ const Bron = () => {
                ))}
             </m.div>
             <img
-               loading='lazy'
+               loading="lazy"
                className="absolute right-0 top-0 hidden h-screen xl:block"
                src="/image/bron_bg.webp"
-               alt="Забронировать"
+               alt={t("bron.book")}
             />
          </m.div>
       </section>

@@ -5,9 +5,11 @@ import arrow from "icons/arrow.png"
 import InputMask from "react-input-mask"
 import { useNavigate } from "react-router-dom"
 import { useURLData } from "utils/URLData"
+import { useTranslation } from 'react-i18next'
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 const Form = ({ additionalData = null,
    additionalDataType = null }) => {
+   const { t } = useTranslation()
    const navigate = useNavigate()
    const [name, setName] = useState("")
    const [phone, setPhone] = useState("")
@@ -114,12 +116,12 @@ const Form = ({ additionalData = null,
                action=""
             >
                <h2 className="mb-10 text-center text-md text-white">
-                  Оставьте ваши данные, и наш менеджер свяжется с вами для
-                  уточнения деталей
+
+                  {t('korpform.leave')}
                </h2>
                <input
                   type="text"
-                  placeholder="Имя"
+                  placeholder={t('common.name')}
                   className="mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px]"
                   onChange={handleNameChange}
                   value={name}
@@ -133,7 +135,7 @@ const Form = ({ additionalData = null,
                   {(inputProps) => (
                      <input
                         type="text"
-                        placeholder="Телефон"
+                        placeholder={t('common.phone')}
                         className={`mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px] ${phoneError ? "border-red-500" : ""
                            }`}
                         {...inputProps}
@@ -153,7 +155,7 @@ const Form = ({ additionalData = null,
                   onClick={handleSubmit}
                   className="mx-auto h-[40px]  md:h-[60px] montserrat gap-10 md:w-[600px] w-1/2 bg-brown text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                >
-                  Отправить
+                  {t('common.send')}
                   <img src={arrow} className="h-5 w-9" alt="" />
                </Button>
             </form>

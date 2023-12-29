@@ -1,12 +1,16 @@
 import React from "react";
+
 import { v4 as uuid4 } from "uuid";
+
 import { m } from "framer-motion";
 
 import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HappyCard = ({ arrayData }) => {
+   
    const sliderSettings = {
       slidesToShow: arrayData.length,
       responsive: [
@@ -51,7 +55,18 @@ const HappyCard = ({ arrayData }) => {
                      </p>
                   ) : (
                      <div className="flex flex-col gap-2">
-                        {el.text.map((text, index) => (
+                        
+                        {typeof el.text === 'string' ? <div
+                              key={uuid4()}
+                              className="flex items-center gap-2"
+                           >
+                              <div className="relative h-[16px] w-[16px] 3xl:h-[20px] 3xl:w-[20px]">
+                                 <div className="h-[16px] w-[16px] rounded-full border-[2px] border-[#AB8E67] 3xl:h-[20px] 3xl:w-[20px]"></div>
+                              </div>
+                              <p className="text-[17px] font-medium text-white 3xl:text-[22px]">
+                                 {el.text}
+                              </p>
+                           </div> :  el.text?.map((text, index) => (
                            <div
                               key={uuid4()}
                               className="flex items-center gap-2"

@@ -9,16 +9,34 @@ import { updateURLData, useURLData } from "utils/URLData"
 import Cookie from './common/Cookie'
 import MainPopup from "./common/MainPopup"
 import HelpPopup from './common/popups/helpPopup/HelpPopup'
+import arrow from 'icons/arrow.png'
+import { useTranslation, withTranslation, Trans } from 'react-i18next'
+import ru_icon from 'icons/ru.webp'
+import en_icon from 'icons/eng.webp'
+import global from 'icons/global.webp'
+import { changeLanguage } from 'utils/i18n'
 
-// import Korporativy from "./pages/Korporativy";
-// import Keytering from "./pages/Keytering";
-// import Home from "./pages/Home";
-// import Privacy from "./pages/Privacy";
-// import LocationId from "./pages/LocationId";
-// import FAQ from "./pages/FAQ";
-// import Thanks from "./pages/Thanks";
-// import Helloween from "./pages/Helloween";
+export const LanguageComponent = () => {
+   const { i18n } = useTranslation()
 
+   const toggleLanguage = () => {
+      const newLanguage = i18n.language === "en" ? "ru" : "en"
+      changeLanguage(newLanguage) // Use the changeLanguage function to update i18n and save to localStorage
+      // window.location.reload()
+
+   }
+
+
+
+   return (
+      <div onClick={toggleLanguage} className='cursor-pointer'>
+         {/* Add logic to display the appropriate language icon */}
+         {/* Example: */}
+         {/* {i18n.language === 'en' ? <img className='w-[100px] h-[50px]' src={en_icon} alt="" /> : <img className='w-[100px] h-[50px]' src={ru_icon} alt='' />} */}
+         <img className='w-[40px] h-[40px]' src={global} alt="" />
+      </div>
+   )
+}
 
 const NotFound = () => {
    useEffect(() => {
@@ -54,14 +72,25 @@ const Helloween = loadable(() => import("pages/Helloween"))
 const KorpLanding = loadable(() => import("pages/korpLanding/KorpLanding"))
 // const NYLanding = loadable(() => import("pages/newYear/NYLanding"));
 
+
+
+const ToTheTopComponent = () => {
+   return (
+      <a href='#main' className='fixed w-[72px] h-[72px] flex items-center border-[2px] border-[#58462E] justify-center bottom-[20px] bg-[#AB8E67] rounded-full cursor-pointer right-[100px] z-[10000]'>
+         <img className='-rotate-90 h-[19px]' src={arrow} alt="" />
+      </a>
+   )
+}
+
 function App() {
    const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
    const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
    const [timer, setTimer] = useState(false)
    const [isHelpButtonActive, setIsHelpButtonActive] = useState(false)
    const [isTimerOn, setIsTimerOn] = useState(!Cookies.get('isTimerOn'))
+   const { t, i18n } = useTranslation()
 
-   console.log()
+
    // Cookies.set('isTimerOn', '')
 
 
@@ -186,15 +215,14 @@ function App() {
 
    }
 
+
+
    return (
       <div className='relative'>
 
          <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
+
          {isHelpPopupOpen && <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
-         {/* {isHelpButtonActive && <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[100px] z-[10000]">
-            <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
-         </div>
-         } */}
 
          {
             isTimerOn ? (isHelpButtonActive ? <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
@@ -206,9 +234,15 @@ function App() {
          }
 
 
-
+         {/* <LanguageComponent /> */}
+         <ToTheTopComponent />
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
+
+
+
+
+         {/* routes */}
          <Routes className="relative">
             <Route
                path="/"

@@ -1,29 +1,30 @@
-import menu from "./../assets/menu.png";
+import menu from "./../assets/menu.png"
 
 
-import { AnimatePresence } from "framer-motion";
-import Reveal from "./Reveal";
-import { opacity } from "../constants/motion";
-import { Link } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
+import { AnimatePresence } from "framer-motion"
+import Reveal from "./Reveal"
+import { opacity } from "../constants/motion"
+import { Link } from "react-router-dom"
+import { Link as ScrollLink } from "react-scroll"
 
 
 import Menu from 'common/Menu'
+import { useTranslation } from 'react-i18next'
 
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ toggleMenu, isMenuOpen, className,MenuClassName, links }) => {
-
+const Header = ({ toggleMenu, isMenuOpen, className, MenuClassName, links }) => {
+   const { t } = useTranslation()
    return (
       <div className={` ${className} `}>
          <AnimatePresence>
             <div className="wrapper  ">
                {isMenuOpen && (
-                  <Menu toggleMenu={toggleMenu} MenuClassName={MenuClassName} links={links}/>
+                  <Menu toggleMenu={toggleMenu} MenuClassName={MenuClassName} links={links} />
                )}
                <Reveal duration={2} variants={opacity()}>
                   <div className=" flex justify-between py-5">
-                     <Link to="/">Икша Кантри Kлаб</Link>
+                     <Link to="/">{t('fullName')}</Link>
                      <ul className="hidden gap-10 md:flex">
                         {links.map((link, i) => {
                            return (
@@ -37,7 +38,7 @@ const Header = ({ toggleMenu, isMenuOpen, className,MenuClassName, links }) => {
                                     {link.title}
                                  </ScrollLink>
                               </li>
-                           );
+                           )
                         })}
                      </ul>
                      <div onClick={toggleMenu} className="flex md:hidden">
@@ -48,7 +49,7 @@ const Header = ({ toggleMenu, isMenuOpen, className,MenuClassName, links }) => {
             </div>
          </AnimatePresence>
       </div>
-   );
-};
+   )
+}
 
-export default Header;
+export default Header

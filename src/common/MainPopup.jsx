@@ -4,11 +4,13 @@ import { useURLData } from 'utils/URLData'
 import close from "./../assets/close.png"
 import FormInput from "./FormInput"
 import TellInput from "./TellInput"
-const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null,
-   additionalDataType = null, }) => {
+import { useTranslation } from 'react-i18next'
+
+const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null, additionalDataType = null }) => {
+   const { t } = useTranslation()
    const { utm_campaign, utm_content, utm_source } = useURLData()
    const [isPopupCompleted, setIsPopupCompleted] = useState(false)
-   const [isError, setIsError] = useState(true) // State for tracking errors
+   const [isError, setIsError] = useState(true)
    const [name, setName] = useState("")
    const [isValid, setIsValid] = useState(true)
    const [phone, setPhone] = useState("")
@@ -25,10 +27,7 @@ const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null,
       let sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType:
-            additionalDataType === null
-               ? "Форма имя + телефон"
-               : additionalDataType,
+         formType: additionalDataType === null ? t('form.namePhoneForm') : additionalDataType,
          link: window.location.href,
          utm_source: utm_source,
          utm_campaign: utm_campaign,
@@ -57,27 +56,27 @@ const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null,
                navigate("/thanks")
             }, 1000)
          } else {
-            alert("Произошла ошибка при отправке данных")
+            alert(t('form.submitError'))
          }
       } catch (error) {
          console.error(error)
-         alert("Произошла ошибка при отправке данных")
+         alert(t('form.submitError'))
       }
    }
 
    useEffect(() => {
-      // Проверка на ошибки при изменении полей формы
       const newIsError = !name || !phone || !isValid
       setIsError(newIsError)
    }, [name, phone])
 
    const handlePhoneChange = (e) => {
       const inputValue = e.target.value
-      const numericValue = inputValue.replace(/[^\d]/g, "") // Убираем все символы, кроме цифр
-      const isValidPhone = numericValue.length === 11 // Проверяем, что длина равна 11
+      const numericValue = inputValue.replace(/[^\d]/g, "")
+      const isValidPhone = numericValue.length === 11
       setPhone(numericValue)
-      setIsValid(isValidPhone) // Устанавливаем валидность номера телефона
+      setIsValid(isValidPhone)
    }
+
    const handleNameChange = (e) => {
       const { value } = e.target
       setName(value)
@@ -99,95 +98,50 @@ const MainPopup = ({ isPopupOpen, togglePopup, additionalData = null,
          email: "-",
       }
       handleSubmitBot()
-      // ... ваша существующая логика ...
-      setPhone("") // Очищаем состояние телефона
-      setName("") // Очищаем состояние телефона
+      setPhone("")
+      setName("")
       setIsPopupCompleted(!isPopupCompleted)
    }
+
    return (
       <div className="montery">
          {isPopupOpen && (
             <div>
                {isPopupCompleted ? (
-                  <div
-                     className={`fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[60%]`}
-                  >
+                  <div className={`fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[60%]`}>
                      <div className="absolute right-5 top-5">
-                        <img
-                           className="h-7 w-7 cursor-pointer object-cover"
-                           onClick={handlePopupClose}
-                           src={close}
-                           alt="close"
-                        />
+                        <img className="h-7 w-7 cursor-pointer object-cover" onClick={handlePopupClose} src={close} alt="close" />
                      </div>
                      <p className="text-[16px] font-bold text-[#6C6053]">
-                        Ваши данные успешно отправлены!
-                        <br />
-                        Спасибо, что выбрали нас! Наш менеджер свяжется с вами в
-                        ближайшее время для уточнения информации
+                        {t('form.successMessage')}
                      </p>
-                     <button
-                        onClick={handlePopupClose}
-                        className={`mt-4 flex h-[40px] w-full items-center justify-center rounded-[10px] border bg-[#7C6F61]  text-white`}
-                     >
-                        Закрыть
+                     <button onClick={handlePopupClose} className={`mt-4 flex h-[40px] w-full items-center justify-center rounded-[10px] border bg-[#7C6F61] text-white`}>
+                        {t('form.close')}
                      </button>
                   </div>
                ) : (
                   <div className="fixed left-1/2 top-1/2 z-[2000] flex min-h-[300px] w-[70%] -translate-x-1/2  -translate-y-1/2 transform flex-col  items-center justify-center rounded-[30px] border-2 border-[#7C6F61] bg-white px-6 py-2 text-center shadow-2xl lg:w-[60%]">
                      <div className="absolute right-5 top-5">
-                        <img
-                           className="h-7 w-7 cursor-pointer object-cover"
-                           onClick={togglePopup}
-                           src={close}
-                           alt="close"
-                        />
+                        <img className="h-7 w-7 cursor-pointer object-cover" onClick={togglePopup} src={close} alt="close" />
                      </div>
                      <p className="text-[25px] font-bold text-[#6C6053]">
-                        Заполните форму, чтобы мы связались с вами
+                        {t('form.fillForm')}
                      </p>
-                     <form
-                        className="flex w-full  flex-col gap-5"
-                        onSubmit={handleSubmit}
-                     >
-                        {/* <input
-                           placeholder="Имя"
-                           type="text"
-                           className={`border-b-[1px] border-[#7C6F61] bg-transparent `}
-                           name="name"
-                           value={formData.name}
-                           onChange={handleInputChange}
-                        />
-                        <input
-                           placeholder="Телефон"
-                           type="tel"
-                           className={`border-b-[1px] border-[#7C6F61] bg-transparent `}
-                           name="phone"
-                           value={formData.phone}
-                           onChange={handleInputChange}
-                        /> */}
+                     <form className="flex w-full flex-col gap-5" onSubmit={handleSubmit}>
                         <FormInput
-                           placeholder="Имя"
+                           placeholder={t('common.name')}
                            name="name"
                            value={name}
                            onChange={handleNameChange}
                            type="text"
                         />
-
                         <TellInput
                            value={phone}
                            isValid={isValid}
                            onChange={handlePhoneChange}
                         />
-                        <button
-                           type="submit"
-                           disabled={isError}
-                           className={`h-[40px] rounded-[10px] ${isError
-                              ? "border-none bg-[#D0C9C9]"
-                              : "white border-[2px] border-green-400"
-                              } w-full`}
-                        >
-                           Отправить
+                        <button type="submit" disabled={isError} className={`h-[40px] rounded-[10px] ${isError ? "border-none bg-[#D0C9C9]" : "white border-[2px] border-green-400"} w-full`}>
+                           {t('form.send')}
                         </button>
                      </form>
                   </div>

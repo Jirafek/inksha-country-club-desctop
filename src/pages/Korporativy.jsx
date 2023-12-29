@@ -1,17 +1,18 @@
-import React, { useRef, useState } from "react";
-import { v4 as uuid4 } from "uuid";
-import { useForm, Controller } from "react-hook-form";
-import emailjs from "@emailjs/browser";
-import { Link, useNavigate, Navigate } from "react-router-dom";
-import LocationArrow from "../components/icons/LocationArrow";
-import InputMask from "react-input-mask";
+import React, { useRef, useState } from "react"
+import { v4 as uuid4 } from "uuid"
+import { useForm, Controller } from "react-hook-form"
+import emailjs from "@emailjs/browser"
+import { Link, useNavigate, Navigate } from "react-router-dom"
+import LocationArrow from "../components/icons/LocationArrow"
+import InputMask from "react-input-mask"
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import close from "./../assets/close.png";
-import { m } from "framer-motion";
-import { Helmet } from "react-helmet";
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import close from "./../assets/close.png"
+import { m } from "framer-motion"
+import { Helmet } from "react-helmet"
+import { useTranslation } from 'react-i18next'
 
 const heading = {
    hidden: {},
@@ -20,7 +21,7 @@ const heading = {
          staggerChildren: 0.15,
       },
    },
-};
+}
 
 const OpenBottom = {
    hidden: {
@@ -35,7 +36,7 @@ const OpenBottom = {
          duration: 2.5,
       },
    },
-};
+}
 
 const OpenLeft = {
    hidden: {
@@ -50,58 +51,64 @@ const OpenLeft = {
          duration: 2.5,
       },
    },
-};
+}
 
-const korpData = [
-   {
-      title: "Растопка бани/купели",
-      name: "bania",
-   },
-   {
-      title: "Дополнительная беседка на 35 чел",
-      name: "besedka",
-   },
-   {
-      title: "Аренда территории",
-      name: "territory",
-   },
-   {
-      title: "Волейбол",
-      name: "voley",
-   },
-   {
-      title: "Активный отдых",
-      name: "active",
-   },
-   {
-      title: "Сап-доски",
-      name: "sap",
-   },
-   {
-      title: "Рыбалка на форелевом пруду",
-      name: "riba",
-   },
-   {
-      title: "Кальян",
-      name: "shoosh",
-   },
-   {
-      title: "Кейтеринг",
-      name: "keyt",
-   },
-   {
-      title: "Караоке",
-      name: "karaoke",
-   },
-   {
-      title: "Квадроциклы ",
-      name: "squer",
-   },
-   {
-      title: "Оформление юр.договора +10%",
-      name: "dogovor",
-   },
-];
+const getKorpData = () => {
+   const { t } = useTranslation()
+
+   const korpData = [
+      {
+         title: t('korp.bania'),
+         name: "bania",
+      },
+      {
+         title: t('korp.besedka'),
+         name: "besedka",
+      },
+      {
+         title: t('korp.territory'),
+         name: "territory",
+      },
+      {
+         title: t('korp.voley'),
+         name: "voley",
+      },
+      {
+         title: t('korp.active'),
+         name: "active",
+      },
+      {
+         title: t('korp.sap'),
+         name: "sap",
+      },
+      {
+         title: t('korp.riba'),
+         name: "riba",
+      },
+      {
+         title: t('korp.shoosh'),
+         name: "shoosh",
+      },
+      {
+         title: t('korp.keyt'),
+         name: "keyt",
+      },
+      {
+         title: t('korp.karaoke'),
+         name: "karaoke",
+      },
+      {
+         title: t('korp.squer'),
+         name: "squer",
+      },
+      {
+         title: t('korp.dogovor'),
+         name: "dogovor",
+      },
+   ]
+   return korpData
+}
+
 
 const images = [
    {
@@ -128,46 +135,48 @@ const images = [
       imgAvif: "/image/korp6.avif",
       imgWebp: "/image/korp6.webp",
    },
-];
+]
 
 const Korporativy = ({ isKorpOpen, toggleKorp }) => {
-   const navigate = useNavigate();
+   const korpData = getKorpData()
+   const { t } = useTranslation()
+   const navigate = useNavigate()
    const goBack = () => {
-      navigate(-1);
-   };
+      navigate(-1)
+   }
 
-   const [peopleState, setPeopleState] = useState(10);
-   const [isImageOpen, setIsImageOpen] = useState(false);
+   const [peopleState, setPeopleState] = useState(10)
+   const [isImageOpen, setIsImageOpen] = useState(false)
 
    const handleImageClick = () => {
-      setIsImageOpen(true);
-   };
+      setIsImageOpen(true)
+   }
 
    const handleBackdropClick = () => {
-      setIsImageOpen(false);
-   };
+      setIsImageOpen(false)
+   }
 
    const handleInputChange = (e) => {
-      let value = e.target.value;
+      let value = e.target.value
 
       try {
-         const val = Number(value);
-         if (val > 50 || val < 0) return;
-         setPeopleState(val);
+         const val = Number(value)
+         if (val > 50 || val < 0) return
+         setPeopleState(val)
       } catch (err) {
-         return;
+         return
       }
-   };
+   }
 
-   const sliderRef = useRef(null);
+   const sliderRef = useRef(null)
 
    const onNextClick = () => {
-      sliderRef.current.slickNext();
-   };
+      sliderRef.current.slickNext()
+   }
 
    const handleDownload = (url) => {
-      window.open(url, "_blank");
-   };
+      window.open(url, "_blank")
+   }
 
    const settings = {
       dots: false,
@@ -181,7 +190,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
       slidesToShow: 1,
       slidesToScroll: 1,
       vertical: true,
-   };
+   }
 
    const settingsBig = {
       dots: false,
@@ -193,68 +202,65 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
       speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
-   };
+   }
 
    const {
       register,
       handleSubmit,
       control,
       formState: { errors },
-   } = useForm();
-   const [navigation, setNavigation] = useState(false);
+   } = useForm()
+   const [navigation, setNavigation] = useState(false)
 
    const onSubmit = (dataFromForm) => {
       for (var key in dataFromForm) {
          if (dataFromForm[key] === true) {
-            const title = korpData.find((item) => item.name === key.toString());
-            dataFromForm[key] = title.title + ", ";
+            const title = korpData.find((item) => item.name === key.toString())
+            dataFromForm[key] = title.title + ", "
          } else if (dataFromForm[key] === false) {
-            dataFromForm[key] = "";
+            dataFromForm[key] = ""
          }
       }
 
-      dataFromForm.people = peopleState;
+      dataFromForm.people = peopleState
 
       const email = {
          email: "-",
-      };
-      const data = Object.assign({}, dataFromForm, email);
+      }
+      const data = Object.assign({}, dataFromForm, email)
 
       emailjs
          .send("service_a1dan7b", "template_rmhn4mc", data, "V_IkuqWqNwJlUw72K")
          .then(
             (result) => {
                // onNextClick();
-               setNavigation(true);
+               setNavigation(true)
             },
             (error) => {
-               alert("Ошибка при отправке формы");
+               alert("Ошибка при отправке формы")
             }
-         ); // sending to email
-   };
+         ) // sending to email
+   }
+
    return (
       <>
          {isKorpOpen && (
             <div className="korpo_wrapp  fixed bottom-0 left-1/2 z-[100] h-[90vh] w-[99%] -translate-x-1/2 transform overflow-y-scroll rounded-[20px] border shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] ">
                <Helmet>
                   <title>
-                     Корпоративы в Подмосковье на берегу Икшинского
-                     водохранилища - Икша Кантри Клаб
+                     {t('korp.title')}
                   </title>
                   <meta
                      name="description"
-                     content="Корпоративы в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте
-            отдохнуть со своей командой и укрепить командый дух на берегу Икшинского водохранилища.
-             Уютные домики, Шашлыки, красивые закаты. Постройте свою лучшую команду на природе, недалеко от Москвы"
+                     content={t('korp.description')}
                   />
                   <meta
                      name="title"
-                     content="Корпоративы в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+                     content={t('korp.metaTitle')}
                   />
                   <meta
                      name="keywords"
-                     content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
-                корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+                     content={t('korp.keywords')}
                   />
                </Helmet>
                <section className="relative min-h-screen w-full bg-[#201E1F]">
@@ -275,7 +281,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                   >
                      <m.div variants={OpenLeft} className="flex justify-center">
                         <h1 className="gradient_title mb-7 text-[20px] font-extrabold sm:mb-12 sm:text-[32px] md:text-[42px] xl:text-[68px]">
-                           КОРПОРАТИВЫ & ТИМБИЛДИНГ
+                           {t('korp.heading')}
                         </h1>
                      </m.div>
                      {isImageOpen && (
@@ -283,15 +289,6 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                            className="fixed left-0 top-0 z-40 flex h-screen w-screen items-center justify-center bg-black bg-opacity-70"
                            onClick={handleBackdropClick}
                         >
-                           {/*<picture>*/}
-                           {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
-                           {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
-                           {/*    <img*/}
-                           {/*        src="/image/doca.png"*/}
-                           {/*        alt="Икша Кантри Клаб"*/}
-                           {/*        className="max-h-[90vh] rounded-3xl"*/}
-                           {/*    />*/}
-                           {/*</picture>*/}
                            <img
                               src="/image/doca.png"
                               alt="Икша Кантри Клаб"
@@ -309,7 +306,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                  <div className="flex flex-col gap-2">
                                     <div className="flex h-[80px] w-[380px] items-center gap-1 rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] pl-8 text-white sm:w-[400px]">
                                        <p className="text-[26px] font-semibold">
-                                          Количество человек:
+                                          {t('korp.people')}
                                        </p>
                                        <input
                                           onChange={handleInputChange}
@@ -321,7 +318,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                     <div className="h-[80px] w-[380px] rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] text-white sm:w-[400px]">
                                        <label className="flex h-full items-center justify-between gap-1 pl-8 pr-4">
                                           <p className="text-[26px] font-semibold">
-                                             Нужен ли вам ночлег?
+                                             {t('korp.overnight')}
                                           </p>
                                           <input
                                              className="h-[15px] w-[15px] rounded-lg border border-[#4D382B] bg-[#AB8E67] sm:h-[20px] sm:w-[20px] 3xl:h-[30px] 3xl:w-[30px]"
@@ -335,8 +332,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                  </div>
                                  <div className="relative flex w-[380px] flex-col items-center rounded-[10px] border-[2px] border-[#AB8E67] bg-[rgba(117,_98,_74,_0.50)] px-11 py-8 sm:w-[550px] 3xl:w-[800px]">
                                     <h4 className="mb-14 text-center text-[18px] font-semibold text-white sm:text-[22px] 3xl:text-[32px]">
-                                       Мы предлагаем нашим корпоративным гостям
-                                       следующие услуги:
+                                       {t('korp.services')}
                                     </h4>
                                     <div className="grid grid-cols-2 gap-x-8 gap-y-4 sm:gap-x-12 sm:gap-y-8">
                                        {korpData.map((el, i) => (
@@ -363,7 +359,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                        type="button"
                                        className=" mt-2 rounded-[20px] border-[5px] border-[#4D382B] bg-[#AB8E67] px-12 py-2 text-[22px] font-semibold text-white sm:px-20 sm:py-3 3xl:text-[32px]"
                                     >
-                                       стоимость
+                                       {t('korp.cost')}
                                     </button>
                                  </div>
 
@@ -371,7 +367,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                     to="/korp-landing"
                                     className="z-10 cursor-pointer pb-5 leading-4 tracking-widest text-white underline"
                                  >
-                                    подробнее
+                                    {t('korp.learnMore')}
                                  </Link>
                               </div>
                               <div className="flex flex-col items-center gap-8 pb-10 xl:pb-0">
@@ -380,11 +376,6 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                        type="button"
                                        onClick={handleImageClick}
                                     >
-                                       {/*<picture>*/}
-                                       {/*    <source srcSet="/image/doca.avif 1x" type="image/avif" />*/}
-                                       {/*    <source srcSet="/image/doca.webp 1x" type="image/webp" />*/}
-                                       {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/doca.png" alt="Икша Кантри Клаб" />*/}
-                                       {/*</picture>*/}
                                        <img
                                           className="w-[200px] rounded-[15px] 3xl:w-[300px]"
                                           src="/image/doca.png"
@@ -397,11 +388,6 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                           handleDownload("/pdf/keyt.pdf")
                                        }
                                     >
-                                       {/*<picture>*/}
-                                       {/*    <source srcSet="/image/menu_list.avif 1x" type="image/avif" />*/}
-                                       {/*    <source srcSet="/image/menu_list.webp 1x" type="image/webp" />*/}
-                                       {/*    <img className="3xl:w-[300px] w-[200px] rounded-[15px]" src="/image/menu_list.jpg" alt="Меню в Икша Кантри Клаб" />*/}
-                                       {/*</picture>*/}
                                        <img
                                           className="w-[200px] rounded-[15px] 3xl:w-[300px]"
                                           src="/image/menu_list.jpg"
@@ -432,8 +418,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                            <div className="flex h-full items-center justify-center">
                               <div className="flex h-[420px] w-[380px] flex-col items-center rounded-[40px] border-[2px] border-[#AB8E67] bg-[#75624A] px-[50px] py-9 sm:h-[500px] sm:w-[500px] lg:h-[760px] lg:w-[770px] lg:px-[90px]">
                                  <p className="mb-8 text-center text-[18px] font-semibold text-white sm:text-[22px] lg:mb-16 lg:text-[32px]">
-                                    Оставьте ваши данные, и наш менеджер
-                                    свяжется с вами для уточнения деталей
+                                    {t('korp.leaveUrData')}
                                  </p>
                                  <input
                                     placeholder="Имя"
@@ -462,7 +447,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                           {(inputProps) => (
                                              <input
                                                 type="text"
-                                                placeholder="Телефон"
+                                                placeholder={t('common.name')}
                                                 className={`mb-8 w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:mb-16 lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]`}
                                                 {...inputProps}
                                              />
@@ -475,7 +460,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                     type="submit"
                                     className="mb-[100px] rounded-[20px] border-[4px] border-[#AB8E67] bg-[rgb(171,_142,_103)] px-[30px] py-[15px] text-[18px] font-medium text-white sm:text-[22px] lg:rounded-[30px] lg:py-[25px] lg:text-[32px]"
                                  >
-                                    Отправить заявку
+                                    {t('korp.leaveZajavka')}
                                  </button>
                               </div>
                            </div>
@@ -486,7 +471,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
             </div>
          )}
       </>
-   );
-};
+   )
+}
 
-export default Korporativy;
+export default Korporativy

@@ -1,29 +1,38 @@
-import trans2 from "images/korpLanding/trans2.png";
-import why1 from "images/korpLanding/whyus/1.png";
-import why2 from "images/korpLanding/whyus/2.png";
-import why3 from "images/korpLanding/whyus/3.png";
-import why4 from "images/korpLanding/whyus/4.png";
+import trans2 from "images/korpLanding/trans2.png"
+import why1 from "images/korpLanding/whyus/1.png"
+import why2 from "images/korpLanding/whyus/2.png"
+import why3 from "images/korpLanding/whyus/3.png"
+import why4 from "images/korpLanding/whyus/4.png"
+import { useTranslation } from 'react-i18next'
 
-const whyusmap = [
-   {
-      img: why1,
-      text: "Большие локации площадью 50 кв.м. с уютной верандой и зоной отдыха",
-   },
-   {
-      img: why2,
-      text: "Русская баня с панорамным видом, где вы можете расслабиться после долгих прогулок",
-   },
-   {
-      img: why3,
-      text: "Комфортабельные, уединеннные домики,оборудованные всем необходимым",
-   },
-   {
-      img: why4,
-      text: "Велосипеды, лыжи, коньки и спорт-оборудование позволит Вам активно провести время на свежем воздухе",
-   },
-];
+const getWhyusmap = () => {
+   const { t } = useTranslation()
+   const whyusmap = [
+      {
+         img: why1,
+         text: t('whyus.reason1'),
+      },
+      {
+         img: why2,
+         text: t('whyus.reason2'),
+      },
+      {
+         img: why3,
+         text: t('whyus.reason3'),
+      },
+      {
+         img: why4,
+         text: t('whyus.reason4'),
+      },
+   ]
+
+   return whyusmap
+}
 
 const Whyus = () => {
+   const { t } = useTranslation()
+
+   const whyusmap = getWhyusmap()
    return (
       <div
          id="whyus"
@@ -32,7 +41,7 @@ const Whyus = () => {
          <div className="wrapper">
             <div className="text-center">
                <h1 className="mb-[1em] text-lg text-white">
-                  Почему Нас Выбирают
+                  {t('whyus.whyChooseUs')}
                </h1>
                <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
                   {whyusmap.map((item, i) => {
@@ -47,14 +56,14 @@ const Whyus = () => {
                            />
                            <div className="text-sm">{item.text}</div>
                         </div>
-                     );
+                     )
                   })}
                </div>
             </div>
          </div>
          <img className="absolute w-full object-cover" src={trans2} alt="" />
       </div>
-   );
-};
+   )
+}
 
-export default Whyus;
+export default Whyus

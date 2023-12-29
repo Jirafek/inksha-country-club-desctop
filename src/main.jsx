@@ -12,6 +12,8 @@ import "./index.css"
 import {useURLData} from 'utils/URLData';
 import {fetchData} from '../firebase.js';
 
+import './utils/i18n.js'
+
 ReactDOM.createRoot(document.getElementById("root")).render(
    <BrowserRouter>
       <QueryParamProvider adapter={ReactRouter6Adapter}>

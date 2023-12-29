@@ -1,61 +1,74 @@
 // import Swiper core and required modules
-import { Navigation, Autoplay } from "swiper/modules";
-import { useState } from 'react';
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules"
+import { useState } from 'react'
+import { Swiper, SwiperSlide } from "swiper/react"
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "swiper/css/scrollbar";
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/autoplay"
+import "swiper/css/scrollbar"
 import blagFull from 'images/gram_korp.webp'
-import guest1 from "images/korpLanding/guest/001.webp";
-import guest2 from "images/korpLanding/guest/002.webp";
-import guest3 from "images/korpLanding/guest/003.webp";
-import guest4 from "images/korpLanding/guest/004.webp";
-import blag from "images/korpLanding/blag.png";
-import korpprev from "icons/korpprev.png";
-import korpnext from "icons/korpnext.png";
-import { useRef } from "react";
-import trans2 from "images/korpLanding/trans2.png";
-import Lightbox from 'common/Lightbox';
-const guests = [
-   {
-      img: guest4,
-      name: "Полина  М",
-      date: "25 июня",
-      text: "Идеальная площадка для летних мероприятий с безумно красивым видом и оформлением. Уютные чистые домики, приветливый персонал. Есть все, что необходимо для вечеринки. Спасибо за отличный праздник!",
-   },
-   {
-      img: guest2,
-      name: "Мария  К",
-      date: "25 июня",
-      text: "Идеальная площадка для летних мероприятий с безумно красивым видом и оформлением. Уютные чистые домики, приветливый персонал. Есть все, что необходимо для вечеринки. Спасибо за отличный праздник!",
-   },
-   {
-      img: guest3,
-      name: "Игорь Ф",
-      date: "8 июля",
-      text: "Вертикаль МСК: планировалось отметить день рождения компании. С первых минут общения с Юрием, где то внутри себя, наверное интуиция) понял, что это то самое место и надо брать) собственно, так и поступили. Мы довольны и искренне рекомендуем Икша Кантри Клаб!",
-   },
-   {
-      img: guest1,
-      name: "Вадим Х",
-      date: "25 июля",
-      text: "Снимали весь комплекс 24.07.2022 года на 20 человек, все очень понравилось! Ребята молодцы!",
-   },
-];
+import guest1 from "images/korpLanding/guest/001.webp"
+import guest2 from "images/korpLanding/guest/002.webp"
+import guest3 from "images/korpLanding/guest/003.webp"
+import guest4 from "images/korpLanding/guest/004.webp"
+import blag from "images/korpLanding/blag.png"
+import korpprev from "icons/korpprev.png"
+import korpnext from "icons/korpnext.png"
+import { useRef } from "react"
+import trans2 from "images/korpLanding/trans2.png"
+import Lightbox from 'common/Lightbox'
+import { useTranslation } from 'react-i18next'
+
+
+const getGuests = () => {
+   const { t } = useTranslation()
+
+   const guests = [
+      {
+         img: guest4,
+         name: t("guests.guest1.name"),
+         date: t("guests.guest1.date"),
+         text: t("guests.guest1.text"),
+      },
+      {
+         img: guest2,
+         name: t("guests.guest2.name"),
+         date: t("guests.guest2.date"),
+         text: t("guests.guest2.text"),
+      },
+      {
+         img: guest3,
+         name: t("guests.guest3.name"),
+         date: t("guests.guest3.date"),
+         text: t("guests.guest3.text"),
+      },
+      {
+         img: guest1,
+         name: t("guests.guest4.name"),
+         date: t("guests.guest4.date"),
+         text: t("guests.guest4.text"),
+      },
+   ]
+   return guests
+}
+
+
+
 const menus = [
    { img: blagFull }
-];
+]
 const KorpGuest = () => {
-   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const guests = getGuests()
+
+   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
    const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen);
-   };
-   const swiperRef = useRef();
+      setIsMenuOpen(!isMenuOpen)
+   }
+   const swiperRef = useRef()
    return (
       <div className="bg-brown korp-guest relative pt-[5vh] pb-[15vh] md:pb-[25vh]">
          {isMenuOpen && <Lightbox toggleMenu={toggleMenu} items={menus} isButtonVisible={false} />}
@@ -73,7 +86,7 @@ const KorpGuest = () => {
                slidesPerView={1}
                navigation
                onBeforeInit={(swiper) => {
-                  swiperRef.current = swiper;
+                  swiperRef.current = swiper
                }}
             >
                {guests.map((guest, i) => {
@@ -94,7 +107,7 @@ const KorpGuest = () => {
                            </div>
                         </div>
                      </SwiperSlide>
-                  );
+                  )
                })}
             </Swiper>
             <div className="flex max-w-[700px] my-5 ml-auto z-10 justify-between">
@@ -132,7 +145,7 @@ const KorpGuest = () => {
             className="absolute w-full -bottom-[20vh] object-cover   "
          />
       </div>
-   );
-};
+   )
+}
 
-export default KorpGuest;
+export default KorpGuest
