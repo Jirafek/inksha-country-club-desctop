@@ -1,18 +1,18 @@
-import { useRef } from "react";
+import { useRef } from "react"
 // import Swiper core and required modules
-import { Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules"
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import next from "icons/next_photo.png";
-import prev from "icons/prev_photo.png";
+import { Swiper, SwiperSlide } from "swiper/react"
+import next from "icons/next_photo.png"
+import prev from "icons/prev_photo.png"
 
-import photo1 from "images/korpLanding/photo/001.webp";
-import photo2 from "images/korpLanding/photo/002.webp";
-import photo3 from "images/korpLanding/photo/003.webp";
-import photo4 from "images/korpLanding/photo/004.webp";
-import photo5 from "images/korpLanding/photo/005.webp";
-import photo6 from "images/korpLanding/photo/006.webp";
-import photo7 from "images/korpLanding/photo/007.webp";
+import photo1 from "images/korpLanding/photo/001.webp"
+import photo2 from "images/korpLanding/photo/002.webp"
+import photo3 from "images/korpLanding/photo/003.webp"
+import photo4 from "images/korpLanding/photo/004.webp"
+import photo5 from "images/korpLanding/photo/005.webp"
+import photo6 from "images/korpLanding/photo/006.webp"
+import photo7 from "images/korpLanding/photo/007.webp"
 
 const photos = [
    { img: photo1 },
@@ -22,23 +22,25 @@ const photos = [
    { img: photo5 },
    { img: photo6 },
    { img: photo7 },
-];
+]
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
+import { useTranslation } from 'react-i18next'
 
 // const ytSrc = "https://www.youtube.com/watch?v=Eat2wgPNuIo";
 // const ytId = ytSrc.split("/")[ytSrc.split("/").length - 1];
 const Photo = () => {
-   const swiperRef = useRef();
+   const { t } = useTranslation()
+   const swiperRef = useRef()
    return (
       <div id="photo" className="bg-korpPrimary py-[10vh]">
          <div className="wrapper">
             <div className="text-center">
-               <h1 className=" mb-[30px] text-lg text-white">
-                  Фотографии наших мероприятий
+               <h1 className="mb-[30px] text-lg text-white">
+                  {t('photos.title')}
                </h1>
                <div className="relative">
                   <Swiper
@@ -50,10 +52,10 @@ const Photo = () => {
                      loop={true}
                      className="photo_swiper relative "
                      onBeforeInit={(swiper) => {
-                        swiperRef.current = swiper;
+                        swiperRef.current = swiper
                      }}
-                     // onSwiper={(swiper) => console.log(swiper)}
-                     // onSlideChange={() => console.log("slide change")}
+                  // onSwiper={(swiper) => console.log(swiper)}
+                  // onSlideChange={() => console.log("slide change")}
                   >
                      {/* <SwiperSlide className="">
                         <div className="">
@@ -90,13 +92,13 @@ const Photo = () => {
                                  alt=""
                               />
                            </SwiperSlide>
-                        );
+                        )
                      })}
                   </Swiper>
                   <button
                      className="absolute right-0 md:-right-10 top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
                      onClick={() => {
-                        swiperRef.current?.slideNext();
+                        swiperRef.current?.slideNext()
                      }}
                   >
                      <img src={next} alt="" />
@@ -104,7 +106,7 @@ const Photo = () => {
                   <button
                      className="absolute left-0 md:-left-10 top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
                      onClick={() => {
-                        swiperRef.current?.slidePrev();
+                        swiperRef.current?.slidePrev()
                      }}
                   >
                      <img src={prev} alt="" />
@@ -113,7 +115,7 @@ const Photo = () => {
             </div>
          </div>
       </div>
-   );
-};
+   )
+}
 
-export default Photo;
+export default Photo

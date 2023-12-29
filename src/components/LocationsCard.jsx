@@ -21,7 +21,7 @@ const LocationsCard = ({ arrayData }) => {
         <m.div
             initial='hidden'
             whileInView='visible'
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             variants={heading}
             className="flex flex-wrap justify-center gap-x-8 items-center md:gap-y-20 gap-y-8 3xl:pr-[90px] mt-6"
         >

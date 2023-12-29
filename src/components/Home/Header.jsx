@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from "uuid"
 import { m } from "framer-motion"
 
 import getRoutes from "../../utils/routes"
+import { LanguageComponent } from './../../App'
+
 
 const Header = () => {
    const [burgerState, setBurgerState] = useState(false)
@@ -78,6 +80,11 @@ const Header = () => {
                      )
                   }
                })}
+               <li>
+
+                  <LanguageComponent />
+               </li>
+
             </ul>
          </nav>
          <button

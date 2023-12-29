@@ -16,15 +16,43 @@
 	"aboutUsPresentation": "About Us Presentation",
 	"offerAgreement": "Offer Agreement",
 
+	"common": {
+		"welcome": "Welcome",
+		"colon": ":",
+		"locations": "Locations",
+		"logoAlt": "Iksha Country Club",
+		"name": "Name",
+		"phone": "Phone number",
+		"send": "Send"
+	},
+	"form": {
+		"namePhoneForm": "Form name + phone",
+		"submitError": "An error occurred while submitting data",
+		"successMessage": "Your data has been successfully submitted! Thank you for choosing us! Our manager will contact you soon to confirm the information.",
+		"close": "Close",
+		"fillForm": "Fill out the form, and we'll contact you",
+		"send": "Send",
+		"leaveYourData": "Leave your data and we'll get in touch with you soon!",
+		"administratorsAlwaysAvailable": "Our administrators are always available!"
+	},
 	"bronirui": {
 		"btn": "show",
 		"Bronirovanie": "Booking",
 		"Nomerov": "Rooms",
-		"adult": "adults",
+		"adult": " adults",
 		"guests": "Guests",
 		"checkIn": "Check-in",
 		"checkOut": "Check-out",
-		"choose": "Choose"
+		"choose": "Choose",
+		"service": "Service Bronirui Online",
+		"main": "Rooms rents"
+	},
+	"helpPopup": {
+		"defaultQuestion": "How to book a cottage?",
+		"needHelp": "Need help?",
+		"administrators": "Our administrators are always in touch!",
+		"send": "Send",
+		"callBack": "We'll call you back within a minute"
 	},
 	"routes": {
 		"about": "About Us",
@@ -56,14 +84,6 @@
 		"derevnya": "Olympic Village",
 		"shale": "Chalet",
 		"cottage": "Cottage"
-	},
-	"common": {
-		"welcome": "Welcome",
-		"colon": ":",
-		"locations": "Locations",
-		"logoAlt": "Iksha Country Club",
-		"name": "Name",
-		"phone": "Phone number"
 	},
 
 	"about": {
@@ -334,5 +354,253 @@
 			"title": "CORPORATE & TEAM BUILDING",
 			"text": "Get out of the office and into the countryside? Great idea, but how to organize it all? The answer is simple – come to us. We have everything ready, beautiful nature, and complete comfort are waiting!"
 		}
-	]
+	],
+	"thanks": {
+		"pageTitle": "Countryside Retreat near Ikshinskoye Reservoir - Visit Iksha Country Club",
+		"pageDescription": "Countryside retreat near Moscow with Iksha Country Club - Visit our country club. We offer fishing, sauna and spa, water sports. Come and relax on the shores of Ikshinskoye Reservoir. Cozy cottages, barbecue, beautiful sunsets. Spend your weekends in nature, not far from Moscow",
+		"pageKeywords": "Countryside retreat, Iksha Country Club, Iksha, order, book, question, answer, country club, Moscow region, sauna, barbecue, karaoke, corporate, team building, price, in nature, by the water, water activities, for the weekend, spa, fishing, near Moscow, near Moscow, company, skating, cottage, gazebo",
+		"message": "Thank you for choosing us! Our manager will contact you soon!",
+		"returnHome": "Back to homepage"
+	},
+	"locationId": {
+		"meta": {
+			"title": "Country Houses near Ikshinsky Reservoir - Iksha Country Club",
+			"description": "Country houses near Iksha Country Club - also gazebos for fishing, sauna and spa, water sports. Come to relax on the shore of Ikshinsky Reservoir. Cozy houses and gazebos, Shashliks, beautiful sunsets. Spend your weekends in nature, not far from Moscow",
+			"keywords": "Rest in Moscow Region, Iksha Country Club, Iksha, order, book, question, answer, country club, Moscow region, sauna, shashlik, karaoke, corporate, glamping, price, in nature, by the water, water activities, on weekends, spa, fishing, near Moscow, near Moscow, company, skating, house, gazebos"
+		},
+		"locations": "Locations",
+		"title": "Locations",
+		"imgAltText": "Alternative image text",
+		"texts": ["Text 1", "Text 2", "Text 3"],
+		"area": "Total Area",
+		"totalArea": "Total Area",
+		"people": "Number of People",
+		"weekendDays": "Weekend Days",
+		"rentalTime": "Rental Time",
+
+		"book": "Book",
+		"holidays": {
+			"title": "Holiday Title",
+			"eachPeople": "Number of People for Each Holiday",
+			"night": "Night on Holidays"
+		},
+		"weekdays": "Weekdays",
+		"days": {
+			"title": "Weekday Title",
+			"eachPeople": "Number of People on Weekdays",
+			"night": "Night on Weekdays"
+		},
+		"plashTitle": "Plash Title",
+		"plashCost": "Plash Cost",
+		"plashPeople": "Number of People on Plash",
+		"rentTime": "Rent Time",
+		"time": "Time",
+		"bookNow": "Book Now",
+		"data": {
+			"forest": {
+				"title": "FOREST RESIDENCE",
+				"imgAltText": "Location image - forest residence",
+				"texts": [
+					"Covered BBQ area with sink and table",
+					"Glazed veranda with table for 20+ guests",
+					"Equipment for presentations available",
+					"Private pier and bathhouse with tub on the shore",
+					"Hot tub, chef (pilaf, fish soup, shish kebab), hookah master, bathhouse attendant"
+				],
+				"area": "15 acres",
+				"people": "Up to 30 people",
+				"holidays": {
+					"title": "20,000 (10 people)",
+					"eachPeople": "Additional +1,000 per guest",
+					"night": "Overnight stay +10,000"
+				},
+				"days": {
+					"title": "15,000 (10 people)",
+					"eachPeople": "Additional +1,000 per guest",
+					"night": "Overnight stay +5,000"
+				},
+				"time": "14:00 - 21:00"
+			},
+			"cottage": {
+				"title": "COTTAGE",
+				"imgAltText": "Location image - cottage",
+				"texts": [
+					"Two-story cottage, heated area 150m2, furnished and equipped, wifi",
+					"Covered veranda for outdoor events 40m2 and BBQ area",
+					"Canopy 30m2 with parking for 2 cars",
+					"Spacious fenced area 10 acres, along the border of which there is a trout pond",
+					"You can use the bathhouse and separate veranda, bicycles, fishing"
+				],
+				"area": "150 m²",
+				"people": "Up to 10 people",
+				"holidays": {
+					"title": "30,000 (up to 10 people)",
+					"eachPeople": "Per day",
+					"night": ""
+				},
+				"days": {
+					"title": "20,000 (up to 10 people)",
+					"eachPeople": "Per day",
+					"night": ""
+				},
+				"time": "15:00 - 12:00"
+			},
+			"chalet": {
+				"title": "CHALET",
+				"imgAltText": "Location image - chalet",
+				"texts": [
+					"Glazed veranda with table for 15 guests",
+					"BBQ area outside (grill, skewers, grates, 4 kg charcoal, kindling included)",
+					"Cottage available for overnight stay (for 10 sleeping places)",
+					"Equipment for presentations available",
+					"Landscaped area outside, sun loungers, picnic table"
+				],
+				"area": "50 m²",
+				"people": "Up to 15 people",
+				"holidays": {
+					"title": "20,000 (10 people)",
+					"eachPeople": "Additional +1,000 per guest",
+					"night": "Cottage +20,000"
+				},
+				"days": {
+					"title": "10,000 (10 people)",
+					"eachPeople": "Additional +1,000 per guest",
+					"night": "Cottage +15,000"
+				},
+				"time": "12:00 - 21:00"
+			},
+			"olympicVillage": {
+				"title": "OLYMPIC VILLAGE",
+				"imgAltText": "Location image - Olympic village",
+				"texts": [
+					"2 bedrooms with double bed",
+					"Kitchen-living room with dining table, sofa bed, and garden view",
+					"Terrace overlooking the reservoir and beach",
+					"BBQ area with barbecue (all necessary included in rent)",
+					"Picnic area on the lawn, sun loungers"
+				],
+				"area": "",
+				"people": "",
+				"time": "15:00 - 12:00",
+				"plash": [
+					{
+						"title": "1 cottage (weekend +10,000)",
+						"cost": "15,000/day",
+						"people": "Up to 6 sleeping places"
+					},
+					{
+						"title": "2 cottages",
+						"cost": "30,000/day",
+						"people": "Up to 12 sleeping places"
+					},
+					{
+						"title": "3 cottages",
+						"cost": "50,000/day",
+						"people": "Up to 18 sleeping places"
+					}
+				]
+			}
+		}
+	},
+
+	"korp": {
+		"hero": {
+			"title": "CORPORATE EVENTS & TEAM BUILDING",
+			"description": "Get out of the office and into nature! The perfect setting for your corporate events awaits, surrounded by beautiful landscapes and complete comfort.",
+			"button": "Organize an Event"
+		},
+
+		"title": "Title",
+		"description": "Description",
+		"metaTitle": "Meta Title",
+		"keywords": "Keywords",
+		"heading": "Page Heading",
+		"people": "Number of People",
+		"overnight": "Overnight Stay",
+		"services": "Services",
+		"bania": "Sauna",
+		"besedka": "Gazebo",
+		"territory": "Territory Rental",
+		"voley": "Volleyball",
+		"active": "Active Recreation",
+		"sap": "SUP Boards",
+		"riba": "Fishing at Trout Pond",
+		"shoosh": "Hookah",
+		"keyt": "Catering",
+		"karaoke": "Karaoke",
+		"squer": "ATVs",
+		"dogovor": "Legal Agreement +10%",
+		"cost": "Cost",
+		"learnMore": "Learn More",
+		"learnUrData": "Leave your details, and our manager will contact you to clarify the details.",
+		"leaveZajavka": "Submit Application"
+	},
+	"photo": "Photos",
+	"locations": "Locations",
+	"kay": "Catering",
+	"add": "Additional Services",
+	"contactMe": "Contact Me",
+
+	"guests": {
+		"guest1": {
+			"name": "Polina M",
+			"date": "June 25",
+			"text": "Perfect venue for summer events with an insanely beautiful view and decoration. Cozy clean houses, friendly staff. Has everything you need for a party. Thanks for a great holiday!"
+		},
+		"guest2": {
+			"name": "Maria K",
+			"date": "June 25",
+			"text": "Perfect venue for summer events with an insanely beautiful view and decoration. Cozy clean houses, friendly staff. Has everything you need for a party. Thanks for a great holiday!"
+		},
+		"guest3": {
+			"name": "Igor F",
+			"date": "July 8",
+			"text": "Vertical MSK: planned to celebrate the company's birthday. From the first minutes of communication with Yuri, somewhere inside, probably intuition) I realized that this is the place and you need to take it) actually, that's what we did. We are satisfied and sincerely recommend Iksha Country Club!"
+		},
+		"guest4": {
+			"name": "Vadim K",
+			"date": "July 25",
+			"text": "Rented the entire complex on July 24, 2022, for 20 people, everything was very pleasant! Well done guys!"
+		}
+	},
+	"whyus": {
+		"whyChooseUs": "Why Choose Us",
+		"reason1": "Big areas with a cozy veranda and a rest zone",
+		"reason2": "Russian bath with a panoramic view for relaxation",
+		"reason3": "Comfortable, secluded houses equipped with everything necessary",
+		"reason4": "Bicycles, skis, skates, and sports equipment for active outdoor activities"
+	},
+	"korplocations": {
+		"forestResidence": "Forest Residence",
+		"upTo30People": "Up to 30 people",
+		"from15000Rubles": "from 15,000 rubles",
+		"cottage": "Cottage",
+		"chalet": "Chalet",
+		"olympicVillage": "Olympic Village",
+		"title": "Locations",
+		"weHaveLocations": "We have locations",
+		"especiallyForYou": "especially for you",
+		"learnMore": "Learn more"
+	},
+	"kayt": {
+		"heading": "Catering",
+		"description": "We offer you professional catering that will give you and your guests an unforgettable experience. Our team of experienced chefs is ready to satisfy the most refined tastes, creating unique dishes that are not only visually appealing but also delicious.",
+		"selectDishes": "Choose dishes for the event",
+		"viewMenu": "View Menu"
+	},
+	"tab1Label": "Sauna/Hot Tub Heating",
+	"tab2Label": "Territory Rental",
+	"tab3Label": "Outdoor Activities (ATVs, Boat Fishing, etc.)",
+	"tab4Label": "Karaoke",
+	"tab5Label": "Catering",
+	"tab6Label": "Hookah",
+	"additionalServices": "Additional Services",
+	"optionalServiceAgreement": "We can also provide a service of a legal contract (+10% to the total amount)",
+	"getCost": "Get Cost",
+	"photos": {
+		"title": "Photos of Our Events"
+	},
+	"korpform": {
+		"leave": "Leave your details, and our manager will contact you to clarify the details"
+	}
 }

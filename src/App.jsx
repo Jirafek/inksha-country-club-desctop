@@ -13,24 +13,27 @@ import arrow from 'icons/arrow.png'
 import { useTranslation, withTranslation, Trans } from 'react-i18next'
 import ru_icon from 'icons/ru.webp'
 import en_icon from 'icons/eng.webp'
+import global from 'icons/global.webp'
+import { changeLanguage } from 'utils/i18n'
 
-
-const LanguageComponent = () => {
+export const LanguageComponent = () => {
    const { i18n } = useTranslation()
 
    const toggleLanguage = () => {
-      if (i18n.language === 'en') {
-         i18n.changeLanguage('ru')
-      } else {
-         i18n.changeLanguage('en')
-      }
+      const newLanguage = i18n.language === "en" ? "ru" : "en"
+      changeLanguage(newLanguage) // Use the changeLanguage function to update i18n and save to localStorage
+      // window.location.reload()
+
    }
 
+
+
    return (
-      <div onClick={toggleLanguage} className='fixed z-[100000] top-12 left-5'>
-         {
-            i18n.language === 'en' ? <img className='w-[100px] h-[50px]' src={en_icon} alt="" /> : <img className='w-[100px] h-[50px]' src={ru_icon} alt='' />
-         }
+      <div onClick={toggleLanguage} className='cursor-pointer'>
+         {/* Add logic to display the appropriate language icon */}
+         {/* Example: */}
+         {/* {i18n.language === 'en' ? <img className='w-[100px] h-[50px]' src={en_icon} alt="" /> : <img className='w-[100px] h-[50px]' src={ru_icon} alt='' />} */}
+         <img className='w-[40px] h-[40px]' src={global} alt="" />
       </div>
    )
 }
@@ -231,7 +234,7 @@ function App() {
          }
 
 
-         <LanguageComponent />
+         {/* <LanguageComponent /> */}
          <ToTheTopComponent />
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
