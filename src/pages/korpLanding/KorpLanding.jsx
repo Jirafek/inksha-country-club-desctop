@@ -19,7 +19,7 @@ const KorpLanding = () => {
       const links = [
          // { title: "Почему мы", link: "whyus" },
          { title: t('photo'), link: "photo" },
-         { title: t('locations'), link: "locations" },
+         { title: t('hlocations'), link: "locations" },
          { title: t('kay'), link: "kay" },
          { title: t('add'), link: "add" },
          { title: t('contactMe'), link: "Form" },

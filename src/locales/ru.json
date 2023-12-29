@@ -14,6 +14,12 @@
 	"allRightsReserved": "Все права защищены Copyright © 2023",
 	"aboutUsPresentation": "Презентация о нас",
 	"offerAgreement": "Договор оферты",
+
+	"photo": "Фотографии",
+	"hlocations": "Локации",
+	"kay": "Кейтеринг",
+	"add": "Дополнительные услуги",
+	"contactMe": "Связаться со мной",
 	"common": {
 		"welcome": "Добро пожаловать",
 		"locations": "Локации",
@@ -204,7 +210,7 @@
 	"locations": {
 		"woodsResidence": "Лесная резиденция",
 		"cottageInSuburbs": "Коттедж в подмосковье",
-		"chaletsOnIkshaReservoir": "Домики на берегу Икшинского водохранилища",
+		"chaletsOnIkshaReservoir": "Домики на берегу",
 		"olympicVillage": "Олимпийская деревня",
 		"weHaveSeveralLocations": "У нас есть несколько локаций",
 		"speciallyForYou": "специально для вас",

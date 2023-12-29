@@ -3,13 +3,15 @@ import React from "react"
 import { m } from "framer-motion"
 
 import { useTranslation } from 'react-i18next'
+import { v4 as uuid4 } from 'uuid'
 
 import LocationsCard from '../LocationsCard'
 import Logo from '../Logo'
 import Title from '../Title'// Import the useTranslation hook
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { v4 as uuid4 } from "uuid"
+import { useRef } from 'react'
+
 const heading = {
     hidden: {},
     visible: {
@@ -52,15 +54,21 @@ const OpenLeft = {
 const Locations = () => {
 
 
+
     const { t, i18n } = useTranslation()
     const [language, setLanguage] = useState(i18n.language)
-    const [key, setKey] = useState(uuid4()) // Используйте уникальный ключ
-
+    const [key, setKey] = useState(uuid4())
+    const initialLanguageRef = useRef(i18n.language)
 
     useEffect(() => {
-        // Обновить компонент при изменении языка
-        setLanguage(i18n.language)
-        setKey(uuid4()) // Измените ключ для принудительного перерендера
+        // Compare the initial language with the current language
+        if (initialLanguageRef.current !== i18n.language) {
+            // Language has changed, update the component
+            setLanguage(i18n.language)
+            setKey(uuid4()) // Change the key for a forced re-render
+            // Update the initial language in the ref
+            initialLanguageRef.current = i18n.language
+        }
     }, [i18n.language])
 
     const locationsData = [
