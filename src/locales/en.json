@@ -3,8 +3,8 @@
 	"CB": "Country club",
 	"fullName": "Iksha Country club",
 	"imgAltText": "Iksha Country Club",
-	"outdoorRecreation": "Your perfect recreation",
-	"inTheMoscowRegion": "in the Moscow Region!",
+	"outdoorRecreation": "Your perfect recreation in the",
+	"inTheMoscowRegion": "Moscow Region!",
 	"call": "Call:",
 	"newYearAtIksha": "New Year at Iksha Country Club",
 	"limitedSpots": "Limited spots",
@@ -602,5 +602,11 @@
 	},
 	"korpform": {
 		"leave": "Leave your details, and our manager will contact you to clarify the details"
+	},
+	"cookie": {
+		"message": "We use cookies. By continuing to use our site, you automatically agree to the use of these technologies.",
+		"privacyPolicy": "Privacy Policy",
+		"reject": "Reject",
+		"accept": "Accept"
 	}
 }
