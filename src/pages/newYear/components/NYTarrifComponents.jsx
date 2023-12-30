@@ -16,77 +16,86 @@ import { Reveal } from "common/Reveal"
 import { slideFromLeft, slideFromRight } from "constants/motion"
 import { Link as ScrollLink } from "react-scroll"
 import NYGreenButton from './NYGreenButton'
+import { useTranslation } from 'react-i18next'
 
 
+const getTraif = () => {
+   const { t } = useTranslation()
 
-const tariffContent = {
-   1: {
-      counter: '01',
-      title: 'Тариф "Звездный Огонь"',
-      dom: 'Домик на 6 гостей',
-      location: 'Домик Олимпийская деревня',
-      includes: [
-         'Проживание от 3 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 30, выезд 2'
-      ],
-      price: '26 250',
-
-   },
-   2: {
-      counter: '02',
-      title: 'Тариф "Снежное Шале"',
-      dom: 'Домик на 10 человек',
-      location: 'Шале',
-      includes: [
-         'Проживание в новогоднюю ночь (без спальных мест)',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях. Возможно проживание в коттедже (узнавать по телефону)', 'заезд 31, выезд 1'
-      ],
-      price: '59 000р'
-   },
-   3: {
-      counter: '03',
-      title: 'Тариф "Коттеджные Сказки"',
-      dom: 'Двухэтажный дом на 10 гостей',
-      location: 'Коттедж',
-      includes: [
-         'Проживание от 3 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 30, выезд 2'
-      ],
-      price: '49 000р',
-
-   },
-   4: {
-      counter: '04',
-      title: 'Тариф "Лесные Снегурочки"',
-      dom: 'Лесная локация с баней, верандой и костровой зоной на 10 гостей',
-      location: 'Лесная Резиденция',
-      includes: [
-         'Проживание от 2 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 31, выезд 2 января'
-      ],
-      price: '45 000р',
-
-   },
-   5: {
-      counter: '05',
-      title: 'Тариф "Дуплекс С Новогодним Чудом"',
-      dom: 'Дом-дуплекс на 10 гостей',
-      location: 'Дуплекс',
-      includes: [
-         'Проживание от 3 суток',
-         '2 часа бани на воде',
-         'участие в новогодних мероприятиях', 'заезд 30, выезд 2'
-      ],
-      price: '34 500р',
-
+   const tariffContent = {
+      1: {
+         counter: '01',
+         title: t('ny.tarif.01.title'),
+         dom: t('ny.tarif.01.dom'),
+         location: t('ny.tarif.01.location'),
+         includes: [
+            t('ny.tarif.01.includes.0'),
+            t('ny.tarif.01.includes.1'),
+            t('ny.tarif.01.includes.2'),
+            t('ny.tarif.01.includes.3'),
+         ],
+         price: t('ny.tarif.01.price')
+      },
+      2: {
+         counter: '02',
+         title: t('ny.tarif.02.title'),
+         dom: t('ny.tarif.02.dom'),
+         location: t('ny.tarif.02.location'),
+         includes: [
+            t('ny.tarif.02.includes.0'),
+            t('ny.tarif.02.includes.1'),
+            t('ny.tarif.02.includes.2'),
+            t('ny.tarif.02.includes.3'),
+         ],
+         price: t('ny.tarif.02.price')
+      },
+      3: {
+         counter: '03',
+         title: t('ny.tarif.03.title'),
+         dom: t('ny.tarif.03.dom'),
+         location: t('ny.tarif.03.location'),
+         includes: [
+            t('ny.tarif.03.includes.0'),
+            t('ny.tarif.03.includes.1'),
+            t('ny.tarif.03.includes.2'),
+            t('ny.tarif.03.includes.3'),
+         ],
+         price: t('ny.tarif.03.price')
+      },
+      4: {
+         counter: '04',
+         title: t('ny.tarif.04.title'),
+         dom: t('ny.tarif.04.dom'),
+         location: t('ny.tarif.04.location'),
+         includes: [
+            t('ny.tarif.04.includes.0'),
+            t('ny.tarif.04.includes.1'),
+            t('ny.tarif.04.includes.2'),
+            t('ny.tarif.04.includes.3'),
+         ],
+         price: t('ny.tarif.04.price')
+      },
+      5: {
+         counter: '05',
+         title: t('ny.tarif.05.title'),
+         dom: t('ny.tarif.05.dom'),
+         location: t('ny.tarif.05.location'),
+         includes: [
+            t('ny.tarif.05.includes.0'),
+            t('ny.tarif.05.includes.1'),
+            t('ny.tarif.05.includes.2'),
+            t('ny.tarif.05.includes.3'),
+         ],
+         price: t('ny.tarif.05.price')
+      },
    }
+   return tariffContent
 }
 
+
 function TariffComponents() {
+   const tariffContent = getTraif()
+   const { t } = useTranslation()
    return (
       <div className="flex flex-col yaes text-white items-center justify-center gap-[100px]">
          {/* Блок 1 */}
@@ -106,7 +115,8 @@ function TariffComponents() {
                         <p>  {tariffContent[1].location}</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold  text-violet">
-                              Что включено
+                              {t('ny.what')}
+
                            </h2>
                            <ul className="list-disc">
                               {tariffContent[1].includes.map((item, i) => {
@@ -125,7 +135,7 @@ function TariffComponents() {
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold whitespace-nowrap">
-                           {tariffContent[1].price}<span className='text-sm'>в сутки</span>
+                           {tariffContent[1].price}<span className='text-sm'>{t('ny.day')}</span>
                         </div>
                      </div>
                   </div>
@@ -149,7 +159,8 @@ function TariffComponents() {
                      duration={1000} // Длительность анимации скролла (в миллисекундах)
                   >
                      <NYGreenButton className="absolute text-black right-0  -bottom-5">
-                        Забронировать место
+                        {t('ny.booking.button')}
+
                         {/* <img src={arrow} className="w-9 h-5" alt="" /> */}
                      </NYGreenButton>
                   </ScrollLink>
@@ -170,7 +181,9 @@ function TariffComponents() {
                   <p>{tariffContent[2].dom}</p>
                   <p>{tariffContent[2].location}</p>
                   <div className="ml-[10%]">
-                     <h2 className="font-bold  text-violet">Что включено</h2>
+                     <h2 className="font-bold  text-violet">{t('ny.what')}
+
+                     </h2>
                      <ul className="list-disc">
                         {tariffContent[2].includes.map((item, i) => (
                            <li key={i}>{item}</li>
@@ -180,7 +193,7 @@ function TariffComponents() {
                </div>
                <div className="flex items-center justify-center">
                   <div className="rotate-0 md:rotate-90 text-xl font-bold whitespace-nowrap">
-                     {tariffContent[2].price}<span className='text-sm'>сутки</span>
+                     {tariffContent[2].price}<span className='text-sm'>{t('ny.day')}</span>
                   </div>
                </div>
             </div>
@@ -204,7 +217,7 @@ function TariffComponents() {
                duration={1000} // Длительность анимации скролла (в миллисекундах)
             >
                <NYGreenButton className="absolute text-black right-0  -bottom-5">
-                  Забронировать место
+                  {t('ny.booking.button')}
                   {/* <img src={arrow} className="w-9 h-5" alt="" /> */}
                </NYGreenButton>
             </ScrollLink>
@@ -227,7 +240,7 @@ function TariffComponents() {
                         <p>{tariffContent[3].location}</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold text-violet">
-                              Что включено
+                              {t('ny.what')}
                            </h2>
                            <ul className="list-disc">
                               {tariffContent[3].includes.map((item, i) => (
@@ -238,7 +251,7 @@ function TariffComponents() {
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold whitespace-nowrap">
-                           {tariffContent[3].price} <span className='text-sm'>сутки</span>
+                           {tariffContent[3].price} <span className='text-sm'>{t('ny.day')}</span>
                         </div>
                      </div>
                   </div>
@@ -262,7 +275,8 @@ function TariffComponents() {
                      duration={1000}
                   >
                      <NYGreenButton className="absolute text-black right-0 -bottom-5">
-                        Забронировать место
+                        {t('ny.booking.button')}
+
                         {/* <img src={arrow} className="w-9 h-5" alt="" /> */}
                      </NYGreenButton>
                   </ScrollLink>
@@ -286,7 +300,9 @@ function TariffComponents() {
                         <p>{tariffContent[4].location}</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold text-violet">
-                              Что включено
+                              {t('ny.what')}
+
+
                            </h2>
                            <ul className="list-disc">
                               {tariffContent[4].includes.map((item, i) => (
@@ -297,7 +313,7 @@ function TariffComponents() {
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold whitespace-nowrap">
-                           {tariffContent[4].price} <span className='text-sm'>сутки</span>
+                           {tariffContent[4].price} <span className='text-sm'>{t('ny.day')}</span>
                         </div>
                      </div>
                   </div>
@@ -321,7 +337,8 @@ function TariffComponents() {
                      duration={1000}
                   >
                      <NYGreenButton className="absolute text-black right-0 -bottom-5">
-                        Забронировать место
+                        {t('ny.booking.button')}
+
                         {/* <img src={arrow} className="w-9 h-5" alt="" /> */}
                      </NYGreenButton>
                   </ScrollLink>
@@ -345,7 +362,9 @@ function TariffComponents() {
                         <p>{tariffContent[5].location}</p>
                         <div className="ml-[10%]">
                            <h2 className="font-bold text-violet">
-                              Что включено
+                              {t('ny.what')}
+
+
                            </h2>
                            <ul className="list-disc">
                               {tariffContent[5].includes.map((item, i) => (
@@ -356,7 +375,7 @@ function TariffComponents() {
                      </div>
                      <div className="flex items-center justify-center">
                         <div className="rotate-0 md:rotate-90 text-xl font-bold whitespace-nowrap">
-                           {tariffContent[5].price} <span className='text-sm'>сутки</span>
+                           {tariffContent[5].price} <span className='text-sm'>{t('ny.day')}</span>
                         </div>
                      </div>
                   </div>
@@ -368,11 +387,7 @@ function TariffComponents() {
                      />
                   </div>
                   <div>
-                     {/* <img
-               className="absolute -bottom-10 rotate-45 -left-10 h-[70px] w-[90px] md:w-[170px] md:h-[140px] "
-               src={bat}
-               alt=""
-            /> */}
+
                   </div>
                   <ScrollLink
                      to="Form"
@@ -380,7 +395,8 @@ function TariffComponents() {
                      duration={1000}
                   >
                      <NYGreenButton className="absolute text-black right-0 -bottom-5">
-                        Забронировать место
+                        {t('ny.booking.button')}
+
                         {/* <img src={arrow} className="w-9 h-5" alt="" /> */}
                      </NYGreenButton>
                   </ScrollLink>

@@ -23,7 +23,8 @@
 		"logoAlt": "Iksha Country Club",
 		"name": "Name",
 		"phone": "Phone number",
-		"send": "Send"
+		"send": "Send",
+		"loading": "Loading"
 	},
 	"form": {
 		"namePhoneForm": "Form name + phone",
@@ -608,5 +609,165 @@
 		"privacyPolicy": "Privacy Policy",
 		"reject": "Reject",
 		"accept": "Accept"
+	},
+	"ny": {
+		"routes": {
+			"program": "Program",
+			"tariff": "Tariffs",
+			"contact": "Contact me"
+		},
+		"program": {
+			"title": "Program",
+			"description": "Program for celebrating New Year at the Iksha Country Club from December 30 to January 2",
+			"day1": {
+				"title": "Thursday, December 30:",
+				"event1": {
+					"time": "15:00-16:00",
+					"title": "Guest Check-in"
+				},
+				"event2": {
+					"time": "16:00-20:00",
+					"title": "Preparation for the Celebration"
+				}
+			},
+			"day2": {
+				"title": "Friday, December 31:",
+				"event1": {
+					"time": "18:30-20:00",
+					"title": "Festive Dinner at Various Locations and Presentation of New Year's Gifts"
+				},
+				"event2": {
+					"time": "00:00",
+					"title": "New Year's Fireworks"
+				}
+			},
+			"day3": {
+				"title": "Saturday, January 1:",
+				"event1": {
+					"time": "12:00-14:00",
+					"title": "New Year BBQ at Various Locations"
+				},
+				"event2": {
+					"time": "16:00-18:00",
+					"title": "Sports Games and Competitions. Ski Excursion"
+				},
+				"event3": {
+					"time": "18:30-20:00",
+					"title": "Dinner"
+				}
+			},
+			"day4": {
+				"title": "Sunday, January 2:",
+				"event1": {
+					"time": "09:00-11:00",
+					"title": "Breakfast at Various Locations"
+				},
+				"event2": {
+					"time": "12:00-18:00:30",
+					"title": "Floating in the Water Sauna"
+				},
+				"event3": {
+					"time": "18:30-20:00",
+					"title": "Dinner at Various Locations"
+				}
+			}
+		},
+		"booking": {
+			"button": "Book a Spot"
+		},
+		"viewRates": {
+			"button": "View Rates"
+		},
+		"what": "What's included",
+		"day": "per day",
+		"hero": {
+			"newYear": "New Year",
+			"inIksaCountryClub": "in Iksa Country Club!",
+			"newYearDescription": "New Year is one of the most anticipated holidays at the Icra Country Club in the Moscow Region!",
+			"bookNow": "Book Now"
+		},
+
+		"tarif": {
+			"title": "Rates",
+			"subtitle": "On this mysterious night, we offer you the following incredible accommodation options",
+			"button": "Submit Request",
+			"additionalFood": {
+				"title": "You can add additional food to any rate",
+				"description": "You can add an additional guest to all locations for 2000 (without a sleeping place)",
+				"breakfast": "Breakfast",
+				"priceBreakfast": "2000 per guest",
+				"bbqLunch": "BBQ Lunch",
+				"priceBbqLunch": "5000 per guest",
+				"dinner": "Dinner",
+				"priceDinner": "7000 per guest"
+			},
+			"reserveButton": "Reserve a Spot",
+			"leave": "Leave your details, and we will definitely get in touch with you.",
+			"01": {
+				"counter": "01",
+				"title": "Tariff \"Star Fire\"",
+				"dom": "Cottage for 6 guests",
+				"location": "Cottage Olympic Village",
+				"includes": [
+					"Accommodation for 3 days",
+					"2 hours of water bath",
+					"Participation in New Year's events",
+					"Check-in 30, check-out 2"
+				],
+				"price": "26,250"
+			},
+			"02": {
+				"counter": "02",
+				"title": "Tariff \"Snow Chalet\"",
+				"dom": "Cottage for 10 people",
+				"location": "Chalet",
+				"includes": [
+					"Accommodation on New Year's night (without sleeping places)",
+					"2 hours of water bath",
+					"Participation in New Year's events. Possible accommodation in a cottage (check by phone)",
+					"Check-in 31, check-out 1"
+				],
+				"price": "59,000"
+			},
+			"03": {
+				"counter": "03",
+				"title": "Tariff \"Cottage Tales\"",
+				"dom": "Two-story house for 10 guests",
+				"location": "Cottage",
+				"includes": [
+					"Accommodation for 3 days",
+					"2 hours of water bath",
+					"Participation in New Year's events",
+					"Check-in 30, check-out 2"
+				],
+				"price": "49,000"
+			},
+			"04": {
+				"counter": "04",
+				"title": "Tariff \"Forest Snow Maidens\"",
+				"dom": "Forest location with bath, veranda, and bonfire area for 10 guests",
+				"location": "Forest Residence",
+				"includes": [
+					"Accommodation for 2 days",
+					"2 hours of water bath",
+					"Participation in New Year's events",
+					"Check-in 31, check-out January 2"
+				],
+				"price": "45,000"
+			},
+			"05": {
+				"counter": "05",
+				"title": "Tariff \"Duplex With New Year Miracle\"",
+				"dom": "Duplex house for 10 guests",
+				"location": "Duplex",
+				"includes": [
+					"Accommodation for 3 days",
+					"2 hours of water bath",
+					"Participation in New Year's events",
+					"Check-in 30, check-out 2"
+				],
+				"price": "34,500"
+			}
+		}
 	}
 }

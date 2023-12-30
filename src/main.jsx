@@ -9,10 +9,11 @@ import "./fonts.css"
 import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
-import {useURLData} from 'utils/URLData';
-import {fetchData} from '../firebase.js';
+import { useURLData } from 'utils/URLData'
+import { fetchData } from '../firebase.js'
 
 import './utils/i18n.js'
+import { useTranslation } from 'react-i18next'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <BrowserRouter>
@@ -38,12 +39,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 )
 
 function AppWithDelay() {
+   const { t } = useTranslation()
    // console.log(window.location)
    // console.log(window.location.search)
    // console.log(window.location.search.includes('?korpOpen=1'))
 
-   const { updatePhoneContent } = useURLData();
-   const groupID = -1002014846298;
+   const { updatePhoneContent } = useURLData()
+   const groupID = -1002014846298
 
    useEffect(() => {
 
@@ -107,7 +109,7 @@ function AppWithDelay() {
    return isLoading ? (
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
          {" "}
-         <p className="text-center text-[22px] font-bold">Загрузка</p>{" "}
+         <p className="text-center text-[22px] font-bold">{t('common.loading')}</p>{" "}
          <img
             loading='lazy'
             className="rounded-[15px]"

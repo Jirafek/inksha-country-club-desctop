@@ -4,9 +4,10 @@ import InputMask from 'react-input-mask'
 import { useNavigate } from 'react-router-dom'
 import { useURLData } from 'utils/URLData'
 import NYGreenButton from './NYGreenButton'
+import { useTranslation } from 'react-i18next'
 const NYForm = ({ additionalData = null,
    additionalDataType = null, }) => {
-
+   const { t } = useTranslation()
    const navigate = useNavigate()
    const [name, setName] = useState("")
    const [phone, setPhone] = useState("")
@@ -121,13 +122,14 @@ const NYForm = ({ additionalData = null,
                   <img className='absolute w-[100px] md:w-auto md:-top-[170px] -left-0  -top-14 md:-left-[170px]' src={gift} alt="" />
                   <img className='absolute w-[100px] md:w-auto md:-bottom-[140px] -right-0 -bottom-8 md:-right-[140px]' src={gift} alt="" />
                   <div className="text-md font-bold mb-5 ">
-                     Оставьте свои данные, и мы обязательно свяжемся с вами
+                     {t('ny.tarif.leave')}
+                     {/* Оставьте свои данные, и мы обязательно свяжемся с вами */}
                   </div>
                   <form onSubmit={handleSubmit} className=" relative flex flex-col justify-center items-center w-full" action="">
 
                      <input
                         type="text"
-                        placeholder="Имя"
+                        placeholder={t('common.name')}
                         onChange={handleNameChange}
                         value={name}
                         className="rounded-[20px] mount p-5 md:min-w-[400px] h-[50px] md:min-h-[60px] mb-5 text-black text-[20px] md:text-[30px] w-full bg-white "
@@ -141,7 +143,7 @@ const NYForm = ({ additionalData = null,
                         {(inputProps) => (
                            <input
                               type="text"
-                              placeholder="Телефон"
+                              placeholder={t('common.phone')}
                               className={`rounded-[20px] mount p-5 md:min-w-[400px] h-[50px] md:min-h-[60px] mb-5 text-black text-[20px] md:text-[30px] w-full bg-white  ${phoneError ? "border-red-500" : ""
                                  }`}
                               {...inputProps}
@@ -149,7 +151,7 @@ const NYForm = ({ additionalData = null,
                         )}
                      </InputMask>
                      <NYGreenButton style={{ marginTop: '0px' }} onClick={handleSubmit} className="w-full md:w-1/2 mt-0 mx-auto text-white">
-                        Отправить
+                        {t('common.send')}
                         {/* <img src={arrow} className="w-9 h-5" alt="" /> */}
                      </NYGreenButton>
                   </form>

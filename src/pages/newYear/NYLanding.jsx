@@ -8,19 +8,21 @@ import { Programa } from "./components/NYPrograma"
 import ProgramaSwiper from './components/NYProgramaSwiper'
 import Tariff from "./components/NYTariff"
 import "./index.css"
+import { useTranslation } from 'react-i18next'
 
 
 
 const NYLanding = () => {
+   const { t } = useTranslation()
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen)
    }
 
    const links = [
-      { title: "Программа", link: "Programa" },
-      { title: "Тарифы", link: "Tariff" },
-      { title: "Связаться со мной", link: "Form" },
+      { title: t('ny.routes.program'), link: "Programa" },
+      { title: t('ny.routes.tariff'), link: "Tariff" },
+      { title: t('ny.routes.contact'), link: "Form" },
    ]
    return (
       <div className="yaes">
@@ -51,19 +53,9 @@ const NYLanding = () => {
          <div className='ny-bg relative  w-full h-full'>
             <Hero />
             <ProgramaSwiper />
-            {/* <div className='relative mt-[5vh ] sm:mt-[15vh]'>
-
-               <img src={venok} className='max-h-[500px] absolute  -bottom-[140px] z-[100]  w-screen' alt="" />
-            </div> */}
-            {/* <div className='ny-bg  relative w-full h-full'> */}
-
             <Programa />
-
-
-
             <Tariff />
          </div>
-         {/* </div> */}
          <NYForm />
          <Footer className='bg-NYheader text-NYgreen' />
       </div>

@@ -1,11 +1,4 @@
-
-// import bat from "images/NY/bat.png";
-
-// import arrow from "images/NY/arrow.png";
-// import down_arrow from "icons/down_arrow.png";
-
 import { Link as ScrollLink } from "react-scroll"
-
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/navigation"
@@ -21,68 +14,80 @@ import NYGreenButton from './NYGreenButton'
 // import prog1 from 'images/NY/prog/001.webp'
 import prog2 from 'images/NY/prog/002.webp'
 import prog3 from 'images/NY/prog/003.webp'
+import { useTranslation } from 'react-i18next'
 
 
-const programaContent = {
-   1: {
-      events: [
-         {
-            time: '15:00-16:00: ',
-            title: 'Заезд гостей'
-         },
-         {
-            time: '16:00-20:00: ',
-            title: 'Подготовка к празднику'
-         }
-      ]
-   },
-   2: {
-      events: [
-         {
-            time: '18:30 - 20:00:',
-            title: 'Праздничный ужин на локациях и вручение новогодних подарков'
-         },
-         {
-            time: '00:00: ',
-            title: 'Новогодний фейерверк'
-         }
-      ]
-   },
-   3: {
-      events: [
-         {
-            time: '12:00 - 14:00: ',
-            title: 'Новогоднее BBQ на локациях'
-         },
-         {
-            time: '16:00 - 18:00: ',
-            title: 'Спортивные игры и соревнования. Лыжная экскурсия'
-         },
-         {
-            time: '18:30 - 20:00: ',
-            title: 'Ужин'
-         }
-      ]
-   },
-   4: {
-      events: [
-         {
-            time: '09:00 - 11:00: ',
-            title: 'Завтрак на локациях'
-         },
-         {
-            time: '12:00 - 18:00:30: ',
-            title: 'Парения в Бане на воде'
-         },
-         {
-            time: '18:30 - 20:00: ',
-            title: 'Ужин на локациях'
-         }
-      ]
+const getProgramaContent = () => {
+   const { t } = useTranslation()
+
+   const programaContent = {
+      1: {
+         events: [
+            {
+               time: '15:00-16:00: ',
+               title: t('ny.program.day1.event1.title'),
+            },
+            {
+               time: '16:00-20:00: ',
+               title: t('ny.program.day1.event2.title'),
+            },
+         ],
+      },
+      2: {
+         events: [
+            {
+               time: '18:30 - 20:00:',
+               title: t('ny.program.day2.event1.title'),
+            },
+            {
+               time: '00:00: ',
+               title: t('ny.program.day2.event2.title'),
+            },
+         ],
+      },
+      3: {
+         events: [
+            {
+               time: '12:00 - 14:00: ',
+               title: t('ny.program.day3.event1.title'),
+            },
+            {
+               time: '16:00 - 18:00: ',
+               title: t('ny.program.day3.event2.title'),
+            },
+            {
+               time: '18:30 - 20:00: ',
+               title: t('ny.program.day3.event3.title'),
+            },
+         ],
+      },
+      4: {
+         events: [
+            {
+               time: '09:00 - 11:00: ',
+               title: t('ny.program.day4.event1.title'),
+            },
+            {
+               time: '12:00 - 18:00:30: ',
+               title: t('ny.program.day4.event2.title'),
+            },
+            {
+               time: '18:30 - 20:00: ',
+               title: t('ny.program.day4.event3.title'),
+            },
+         ],
+      },
    }
+
+   return programaContent
 }
 
+
+
 export const Programa = () => {
+   const { t } = useTranslation()
+
+   const programaContent = getProgramaContent()
    return (
       <div
          id="Programa"
@@ -93,13 +98,13 @@ export const Programa = () => {
             <Reveal duration={1} variants={slideFromRight()}>
                <div className='tariff-bg p-3 370p:p-6  md:p-14'>
                   <h1 className="text-xl mb-6 mount tracking-widest relative">
-                     Программа
+                     {t('ny.program.title')}
                      <div className="absolute left-2 -top-[30px] md:-top-[70px] text-[64px] md:text-[128px]  opacity-10">
-                        Программа
+                        {t('ny.program.title')}
                      </div>
                   </h1>
                   <p className="text-center text-NYblack mb-10 yaes  font-semibold text-lg yaes">
-                     Программа для празднования Нового года в загородном клубе Икша Кантри Клаб с 30 по 2 января
+                     {t('ny.program.description')}
                   </p>
                   <div className="grid grid-cols-1 place-items-center  md:grid-cols-2 gap-y-20 gap-10">
                      <div className="flex col-span-1 md:col-span-2 flex-col relative  w-full md:w-[90%] justify-center items-center">
@@ -111,7 +116,7 @@ export const Programa = () => {
                         />
                         <div className="bg-NYblack w-full text-white yaes relative rounded-[20px] ">
                            <h2 className="md:text-[40px] relative py-10 w-full text-center text-[25px] font-extrabold">
-                              Четверг, 30 декабря:
+                              {t('ny.program.day1.title')}
                               <div className='absolute w-full border-b-[3px]  border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 flex   flex-col gap-7 md:px-[50px]'>
@@ -128,32 +133,7 @@ export const Programa = () => {
                                     </div>
                                  )
                               })}
-                              {/* <div className='flex  flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
-                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    15:00-16:00:
-                                 </h2>
-                                 <h2 className="text-md mb-6 w-full font-light ">
-                                    заезд гостей
-                                 </h2>
-                              </div>
-                              <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
-                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    16:00-20:00
-                                 </h2>
-                                 <h2 className="text-md mb-6 w-full  font-light ">
-                                    Welcome-программа и подготовка к празднику
-                                 </h2>
-                              </div> */}
-                              {/* <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
-                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    20:30 - 22:00{" "}
-                                 </h2>
-                                 <h2 className="text-md mb-6  font-light ">
-                                    Вечеринка с живой музыкой и DJ в Шатре Аниматоры
-                                    проведут игры и развлечения для детей, включая охоту
-                                    за сладостями и конкурс на лучший детский костюм
-                                 </h2>
-                              </div> */}
+
                               <Reveal variants={scale()}>
                                  {/* <img
                                     src={bat}
@@ -174,7 +154,7 @@ export const Programa = () => {
                         />
                         <div className="bg-NYblack w-full text-white yaes relative rounded-[20px] ">
                            <h2 className="md:text-[40px] relative py-10 w-full text-center text-[25px] font-extrabold">
-                              Пятница, 31 декабря:
+                              {t('ny.program.day2.title')}
                               <div className='absolute w-full border-b-[3px]  border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 flex   flex-col gap-7 md:px-[50px]'>
@@ -191,32 +171,7 @@ export const Programa = () => {
                                     </div>
                                  )
                               })}
-                              {/* <div className='flex flex-col w-full md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
-                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    18:30 - 20:00:
-                                 </h2>
-                                 <h2 className="text-md mb-6 w-full font-light ">
-                                    Праздничный ужин с живой музыкой и вручение новогодних подарков
-                                 </h2>
-                              </div>
-                              <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
-                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    21:00 - 23:00:
-                                 </h2>
-                                 <h2 className="text-md mb-6  font-light ">
-                                    Новогодняя вечеринка с фейерверками и дискотекой
-                                 </h2>
-                              </div> */}
-                              {/* <div className='flex flex-col md:flex-row justify-between gap-1 md:gap-5 text-center md:text-start'>
-                                 <h2 className=" md:text-[40px] whitespace-nowrap mount text-[25px]  font-bold ">
-                                    20:30 - 22:00{" "}
-                                 </h2>
-                                 <h2 className="text-md mb-6  font-light ">
-                                    Вечеринка с живой музыкой и DJ в Шатре Аниматоры
-                                    проведут игры и развлечения для детей, включая охоту
-                                    за сладостями и конкурс на лучший детский костюм
-                                 </h2>
-                              </div> */}
+
                               <Reveal variants={scale()}>
                                  {/* <img
                                     src={bat}
@@ -237,7 +192,8 @@ export const Programa = () => {
                         />
                         <div className="bg-NYblack text-center md:text-start text-white yaes relative rounded-[20px] ">
                            <h2 className="md:text-[40px] relative py-10 w-full text-center text-[25px] font-extrabold">
-                              Суббота, 1 января:
+                              {t('ny.program.day3.title')}
+
                               <div className='absolute w-full border-b-[3px] border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 md:px-[50px]'>
@@ -255,31 +211,7 @@ export const Programa = () => {
                                     </div>
                                  )
                               })}
-                              {/*                             
-                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 09:00 - 11:00:
-                              </h2>
-                              <h2 className="text-md mb-6  font-light ">
-                                 Поздний завтрак на локациях
-                              </h2>
-                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 11:30 - 13:30:
-                              </h2>
-                              <h2 className="text-md mb-6  font-light ">
-                                 Ледовое катание и игры на снегу
-                              </h2>
-                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 16:00 - 18:00:
-                              </h2>
-                              <h2 className="text-md mb-6  font-light ">
-                                 Мастер-класс по созданию новогодних поделок для детей и взрослых
-                              </h2>
-                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 18:30 - 20:00:
-                              </h2>
-                              <h2 className="text-md mb-6  font-light ">
-                                 Ужин с новогодней программой
-                              </h2> */}
+
                               <Reveal variants={scale()}>
                                  {/* <img
                                     src={bat}
@@ -301,7 +233,7 @@ export const Programa = () => {
                         <div className="bg-NYblack w-full text-white yaes relative rounded-[20px] ">
 
                            <h2 className="md:text-[40px] py-10 relative text-center text-[25px] font-extrabold">
-                              Воскресенье, 2 января:
+                              {t('ny.program.day4.title')}
                               <div className='absolute w-full border-b-[3px] border-b-NYred my-5 border-dashed h-[4px]'></div>
                            </h2>
                            <div className='px-3 md:px-[50px]'>
@@ -319,26 +251,7 @@ export const Programa = () => {
                                  )
                               })}
 
-                              {/* <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 09:00 - 11:00:
-                              </h2>
-                              <h2 className="text-md  mb-6  font-light">
-                                 Завтрак на локациях
-                              </h2>
-                              <h2 className=" md:text-[40px] mount text-[25px] sm:text-[30px]  font-bold ">
-                                 11:30 - 13:30:
-                              </h2>
-                              <h2 className="text-md  mb-6  font-light">
-                                 Спортивные игры и соревнования. Лыжная экскурсия
-                              </h2>
-                              <h2 className="md:text-[40px] mount text-[25px]  font-bold ">16:00 - 18:00:</h2>
-                              <h2 className=" text-md font-light  mb-6 ">
-                                 Катание на санках и конкурс на лучший новогодний костюм
-                              </h2>
-                              <h2 className="md:text-[40px] mount text-[25px]  font-bold ">18:30 - 20:00:</h2>
-                              <h2 className=" text-md font-light  mb-6 ">
-                                 Ужин с новогодней программой
-                              </h2> */}
+
                               <Reveal delay={0.5} variants={scale()}>
                                  {/* <img
                                  src={bat}
@@ -359,7 +272,7 @@ export const Programa = () => {
                   duration={1000} // Длительность анимации скролла (в миллисекундах)
                >
                   <NYGreenButton className="mx-auto text-black">
-                     Забронировать место
+                     {t('ny.booking.button')}
                      {/* <img src={arrow} className="w-9 h-5" alt="" /> */}
                   </NYGreenButton>
                </ScrollLink>
@@ -369,7 +282,7 @@ export const Programa = () => {
                   duration={1000} // Длительность анимации скролла (в миллисекундах)
                >
                   <NYCreamButton className="mx-auto">
-                     Посмотреть тарифы
+                     {t('ny.viewRates.button')}
                      {/* <img src={down_arrow} className="w-6 h-8" alt="" /> */}
                   </NYCreamButton>
                </ScrollLink>
