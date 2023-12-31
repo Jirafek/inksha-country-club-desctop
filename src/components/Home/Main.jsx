@@ -39,7 +39,9 @@ const headingLines = {
 
 const Main = () => {
 
-   const { utm_source } = useURLData()
+   const { utm_source, phoneContent } = useURLData()
+   const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    const { t, i18n } = useTranslation()
 
 
@@ -269,14 +271,7 @@ const Main = () => {
                to="/new-year"
                className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
             >
-               {
-                  utm_source === 'yandex' ?
-                     <div>{t('call')} +7(499) 505-50-67</div>
-                     : utm_source === 'vkontakte' ?
-                        <div>{t('call')} +7(499) 505-50-87</div>
-                        :
-                        <div>{t('call')} +7(499) 505-50-31</div>
-               }
+                        <div>{t('call')} {phoneNumber}</div>
                <div className="text-[#D3AE7C]">
                   {t('newYearAtIksha')}-{t('limitedSpots')}
                </div>

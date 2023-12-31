@@ -42,18 +42,8 @@ const Bron = () => {
          imgAvif: "/image/wa_bl.avif",
          imgWebp: "/image/wa_bl.webp",
          imgAltText: t("bron.call"),
-         text:
-            utm_source === "yandex"
-               ? "+7(499) 505-50-67"
-               : utm_source === "vkontakte"
-                  ? "+7(499) 505-50-87"
-                  : "+7 (499) 505-50-31",
-         link:
-            utm_source === "yandex"
-               ? "tel:+74995055067"
-               : utm_source === "vkontakte"
-                  ? "tel:+74995055087"
-                  : "tel:+74995055031",
+         text: phoneNumber,
+         link: phoneNumber,
       },
       {
          imgAvif: "/image/tg_bl.avif",

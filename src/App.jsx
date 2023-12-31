@@ -138,8 +138,6 @@ function App() {
       const isCookieOn = localStorage.getItem('cookies_on')
       const urlParams = new URLSearchParams(window.location.search)
 
-      console.log(isCookieOn)
-
       const urlParamsData = [
          utm_source ? utm_source : urlParams.get("utm_source"),
          utm_campaign ? utm_campaign : urlParams.get("utm_campaign"),
@@ -179,8 +177,6 @@ function App() {
             ? utm_content
             : urlParams.get("utm_content") || ""
       ]
-
-      console.log(settedData)
 
 
       updateData(
