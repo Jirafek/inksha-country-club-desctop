@@ -47,13 +47,13 @@ const Bron = () => {
                ? "+7(499) 505-50-67"
                : utm_source === "vkontakte"
                   ? "+7(499) 505-50-87"
-                  : "+7 (499) 505-50-31",
+                  : "+79859091202",
          link:
             utm_source === "yandex"
                ? "tel:+74995055067"
                : utm_source === "vkontakte"
                   ? "tel:+74995055087"
-                  : "tel:+74995055031",
+                  : "tel:++79859091202",
       },
       {
          imgAvif: "/image/tg_bl.avif",
@@ -138,6 +138,10 @@ const Bron = () => {
                   </p>
                   <p className="text-[24px] font-extrabold sm:text-[28px] 2xl:text-[38px]">
                      {t("bron.comeAndRelax")}
+                     <p className='sm:text-[18px] text-white 2xl:text-[28px'>
+                        обл. Московская, р-н Мытищинский,<br /> сельское поселение
+                        Федоскинское, п. Менжинец,<br /> СНТ "Икша" участок 4
+                     </p>
                   </p>
                </div>
             </m.div>

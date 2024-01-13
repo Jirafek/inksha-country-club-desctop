@@ -26,24 +26,29 @@ const Footer = () => {
                     }
                 })}
             </ul>
-            <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-20 gap-4 pb-2">
-                <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/confi.pdf" target="_blank">
-                    {t('privacyPolicy')}
-                </a>
-                <Link className="text-white 2xl:text-[18px] text-[15px] font-medium underline" to="/rules">
-                    {t('accommodationRules')}
-                </Link>
-                <p className="text-white 2xl:text-[18px] text-[15px] text-center font-medium">
-                    {t("fullName")} <br />
-                    {t('allRightsReserved')}
-                </p>
-                <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" target='_blank' href="/pdf/about.pdf">
-                    {t('aboutUsPresentation')}
-                </a>
+            <div className='flex flex-col justify-center items-center'>
 
-                <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/oferta.pdf" target="_blank">
-                    {t('offerAgreement')}
-                </a>
+
+                <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-20 gap-4 pb-2">
+                    <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/confi.pdf" target="_blank">
+                        {t('privacyPolicy')}
+                    </a>
+                    <Link className="text-white 2xl:text-[18px] text-[15px] font-medium underline" to="/rules">
+                        {t('accommodationRules')}
+                    </Link>
+                    <p className="text-white 2xl:text-[18px] text-[15px] text-center font-medium">
+                        {t("fullName")} <br />
+                        {t('allRightsReserved')}
+                    </p>
+                    <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" target='_blank' href="/pdf/about.pdf">
+                        {t('aboutUsPresentation')}
+                    </a>
+
+                    <a className="text-white 2xl:text-[18px] text-[15px] font-medium underline" href="/pdf/oferta.pdf" target="_blank">
+                        {t('offerAgreement')}
+                    </a>
+                </div>
+                <div className='text-white text-center text-[10px] mt-[20px]' >ИП Владышевский Юрий Максимович</div>
             </div>
         </footer>
     )
