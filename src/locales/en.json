@@ -115,14 +115,16 @@
 				"imgWebp": "/image/happy_1.webp",
 				"imgAltText": "Блюда на мангале",
 				"title": "CAMPFIRE",
-				"text": "A great way to spend time after a hard day with friends and family"
+				"text": "A great way to spend time after a hard day with friends and family",
+				"link": ""
 			},
 			{
 				"imgAvif": "/image/happy_2.avif",
 				"imgWebp": "/image/happy_2.webp",
 				"imgAltText": "Катание на лодках",
 				"title": "FISHING",
-				"text": "If you love fishing, Iksha Country Club is the perfect place for you. The reservoir and trout pond will pleasantly surprise you"
+				"text": "If you love fishing, Iksha Country Club is the perfect place for you. The reservoir and trout pond will pleasantly surprise you",
+				"link": "/fishing"
 			},
 			{
 				"imgAvif": "/image/happy_3.avif",
@@ -133,14 +135,16 @@
 					"bicycle, ATV",
 					"SUP boards, boat, boat, jet ski",
 					"volleyball, football, badminton"
-				]
+				],
+				"link": "/active"
 			},
 			{
 				"imgAvif": "/image/happy_4.avif",
 				"imgWebp": "/image/happy_4.webp",
 				"imgAltText": "Баня с купелью",
 				"title": "SAUNA AND SPA",
-				"text": "Unity with nature, a combination of Russian traditions and a modern approach to self-care"
+				"text": "Unity with nature, a combination of Russian traditions and a modern approach to self-care",
+				"link": "/banya"
 			}
 		]
 	},

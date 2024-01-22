@@ -9,7 +9,9 @@ export default {
          xl: "clamp(30px, 5vw, 70px)",
          lg: "clamp(12px, 5vw, 48px)",
          "36px": "clamp(11px, 4vw, 36px)",
+         "md+": "clamp(17px, 4vw, 34px)",
          md: "clamp(10px, 4vw, 28px)",
+         "md-": "clamp(6px, 4vw, 18px)",
          extramd: "clamp(10px, 3vw, 28px)",
 
          sm: "clamp(9px, 3vw, 18px)",
@@ -32,6 +34,8 @@ export default {
             NYbrown: "#BC8E4A",
             NYred: "#EF004B",
             NYheader: "#041106",
+            FBlack: '#081130',
+            ChillBrown: '#593723'
          },
          container: {
             center: true,
@@ -40,7 +44,7 @@ export default {
          screens: {
             "3xl": "2500px",
             vsm: "355px",
-            '900p':'900px',
+            '900p': '900px',
             "370p": "370px",
          },
          keyframes: {
@@ -56,7 +60,7 @@ export default {
          addVariant(
             "supports-backdrop-blur",
             "@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))"
-         );
+         )
       },
    ],
-};
+}

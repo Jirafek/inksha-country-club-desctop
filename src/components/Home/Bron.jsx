@@ -42,6 +42,8 @@ const Bron = () => {
          imgAvif: "/image/wa_bl.avif",
          imgWebp: "/image/wa_bl.webp",
          imgAltText: t("bron.call"),
+         text: phoneNumber,
+         link: phoneNumber,
          text:
             utm_source === "yandex"
                ? "+7(499) 505-50-67"
@@ -60,7 +62,7 @@ const Bron = () => {
          imgWebp: "/image/tg_bl.webp",
          imgAltText: t("bron.telegram"),
          text: "@ikshacountryclub",
-         link: "https://t.me/ikshacountryclub",
+         link: `https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_`,
       },
       {
          imgAvif: "/image/inst_bl.avif",

@@ -72,6 +72,9 @@ const Helloween = loadable(() => import("pages/Helloween"))
 const KorpLanding = loadable(() => import("pages/korpLanding/KorpLanding"))
 // const NYLanding = loadable(() => import("pages/newYear/NYLanding"));
 
+const BanLanding = loadable(() => import("./pages/banLanding/BanLanding"))
+const ChillLanding = loadable(() => import("./pages/chillLanding/ChillLanding"))
+const FishingLanding = loadable(() => import("./pages/fishingLanding/FishingLanding"))
 
 
 const ToTheTopComponent = () => {
@@ -138,8 +141,6 @@ function App() {
       const isCookieOn = localStorage.getItem('cookies_on')
       const urlParams = new URLSearchParams(window.location.search)
 
-      console.log(isCookieOn)
-
       const urlParamsData = [
          utm_source ? utm_source : urlParams.get("utm_source"),
          utm_campaign ? utm_campaign : urlParams.get("utm_campaign"),
@@ -179,8 +180,6 @@ function App() {
             ? utm_content
             : urlParams.get("utm_content") || ""
       ]
-
-      console.log(settedData)
 
 
       updateData(
@@ -266,6 +265,10 @@ function App() {
                path="/rules"
                element={<Privacy title={"Правила проживания"} />}
             />
+
+            <Route path="/banya" element={<BanLanding />} />
+            <Route path="/fishing" element={<FishingLanding />} />
+            <Route path="/active" element={<ChillLanding />} />
 
             <Route path="*" element={<NotFound />} />
          </Routes>
