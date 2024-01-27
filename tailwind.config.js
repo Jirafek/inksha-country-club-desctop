@@ -3,17 +3,17 @@ export default {
    content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
    theme: {
       fontSize: {
-         "3xl": "clamp(60px, 20vw, 128px)",
+         "3xl": "clamp(60px, 20vw, 100px)",
          ultra: "clamp(48px, 10vw, 128px)",
          tarif: "clamp(6px, 5vw, 24px)",
          xl: "clamp(30px, 5vw, 70px)",
          lg: "clamp(12px, 5vw, 48px)",
-         "36px": "clamp(11px, 4vw, 36px)",
+         "36px": "clamp(18px, 4vw, 36px)",
+         "32px": "clamp(21px, 4vw, 32px)",
          "md+": "clamp(17px, 4vw, 34px)",
          md: "clamp(10px, 4vw, 28px)",
          "md-": "clamp(6px, 4vw, 18px)",
          extramd: "clamp(10px, 3vw, 28px)",
-
          sm: "clamp(9px, 3vw, 18px)",
          small: "clamp(6px, 3vw, 18px)",
       },

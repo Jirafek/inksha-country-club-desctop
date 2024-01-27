@@ -728,6 +728,9 @@ const Gallery = () => {
                     </div>
                 </div>
             </m.button>
+
+
+
             <Slider {...sliderSettings} className="flex justify-center pt-[250px] pb-5 max-h-[1500px] 3xl:px-40 2xl:px-32 md:px-24 px-0">
                 {
                     selectedImages.map(({ imgAvif, imgWebp, imgAltText }) => (
