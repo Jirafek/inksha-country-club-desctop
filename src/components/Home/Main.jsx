@@ -1,5 +1,5 @@
 import { m } from "framer-motion"
-import nyLogo from 'icons/ny-logo.webp'
+import nyLogo from 'icons/events/active.png'
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { useURLData } from "utils/URLData"
@@ -193,7 +193,7 @@ const Main = () => {
    return (
       <div id='main' className='relative'>
          {/* <div className='fixed top-5 right-5 text-white font-bold rounded-full bg-slate-300 px-4 cursor-pointer z-[10000] text-md' onClick={toggleLanguage}>{i18n.language}</div> */}
-         <Link to="/New-Year" className="absolute right-10 top-20 z-[1000]">
+         <Link to="/active" className="absolute right-10 top-20 z-[1000]">
             <m.img
                transition={{
                   repeat: Infinity,
@@ -271,7 +271,7 @@ const Main = () => {
                to="/new-year"
                className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
             >
-                        <div>{t('call')} {phoneNumber}</div>
+               <div>{t('call')} {phoneNumber}</div>
                <div className="text-[#D3AE7C]">
                   {t('newYearAtIksha')}-{t('limitedSpots')}
                </div>

@@ -4,7 +4,7 @@ import Button from "common/Button"
 
 import { URLData } from "utils/URLData"
 
-import s from './../chill.module.scss'
+import s from './../chill.module.css'
 
 import InputMask from "react-input-mask"
 
@@ -36,7 +36,7 @@ const ChillForm = () => {
       const sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "Баня лендинг",
+         formType: "Активный Отдых лендинг",
          link: window.location.href,
          ...URLData,
       }

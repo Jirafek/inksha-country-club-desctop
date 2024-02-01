@@ -232,9 +232,12 @@ function App() {
                </div>
          }
 
+         <ToTheTopComponent />
+
 
          {/* <LanguageComponent /> */}
-         <ToTheTopComponent />
+
+
          <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
          <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
 

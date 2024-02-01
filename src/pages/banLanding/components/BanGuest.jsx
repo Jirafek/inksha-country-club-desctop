@@ -38,8 +38,8 @@ const guests = [
 const BanGuest = () => {
    const swiperRef = useRef()
    return (
-      <div className=" relative pt-[5vh] pb-[15vh] md:pb-[25vh]">
-         <div className='text-black font-bold text-center mb-[10vh] text-md+'>Почему нас выбирают</div>
+      <div className=" relative pt-[15vh] pb-[5vh] ">
+         <div className='text-black font-bold text-center mb-[10vh] text-lg'>Почему нас выбирают</div>
          <div className="">
             <Swiper
                // install Swiper modules

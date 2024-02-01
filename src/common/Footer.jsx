@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
-// import inst from "./../assets/inst.png";
-import { motion } from "framer-motion"
-import { useURLData } from "utils/URLData"
-import phone from "./../assets/phone.png"
+import inst from "./../assets/inst.png"
 import what from "./../assets/what.png"
-import { useTranslation } from 'react-i18next'
+import phone from "./../assets/phone.png"
+import { m } from "framer-motion"
+import { useURLData } from 'utils/URLData'
 
 const slideVariants = {
    initial: {
@@ -16,33 +15,42 @@ const slideVariants = {
       scale: 1,
    },
 }
-const Footer = ({ className }) => {
-   const { utm_source, phoneContent } = useURLData()
-   const matchingPhone = phoneContent.find(item => item.utm === utm_source)
-   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
-   const { t } = useTranslation()
+const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
+   const { utm_source } = useURLData()
+   // const matchingPhone = phoneContent.find(item => item.utm === utm_source)
+   // const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    return (
       <div className={`${className || ""}`}>
          <div className="wrapper  ">
-            <div className="flex justify-between gap-5 py-5">
-               <div className="flex w-full items-center justify-between text-white gap-5 md:justify-start">
-                  <div>{t('fullName')} 2023 </div>
-                  <div className="fixed bottom-5 md:bottom-[70px]  right-5 z-10 flex flex-col gap-5 md:left-5 md:flex-row">
-                     {/* <a
+            <div className="flex justify-between flex-col md:flex-row gap-5 py-5">
+               <div className="flex w-full items-center  justify-between gap-5 md:justify-start">
+                  <div className='flex gap-5 items-center'>
+
+                     <a className='underline font-bold' href='/'>Икша Кантри Kлаб 2023 </a>
+                     {FooterLinks.length !== 0 && FooterLinks.map((item, i) => {
+                        return (
+                           <div key={i}>
+                              <a className='underline' target='_blank' rel="noreferrer" href={item.link}>{item.title}</a>
+                           </div>
+                        )
+                     })}
+                  </div>
+                  {isMediaOpen && <div className="fixed bottom-5 md:bottom-[70px]  right-5 z-10 flex flex-col gap-5 md:left-5 md:flex-row">
+                     <a
                         target="_blank"
                         rel="noreferrer"
                         href="https://www.instagram.com/ikshacountryclub/"
                      >
                         <img className="z-10 h-9 w-9" src={inst} alt="" />
-                     </a> */}
+                     </a>
                      <a
-                        href={`https://wa.me/79859091202?text=${encodeURIComponent('Здравствуйте, меня интересует аренда домика')}`}
+                        href="https://wa.me/79859091202"
                         target="_blank"
                         rel="noreferrer"
                      >
                         <img className="z-10 h-9 w-9" src={what} alt="" />
                      </a>
-                     <motion.a
+                     <m.a
                         variants={slideVariants}
                         transition={{
                            repeat: Infinity,
@@ -53,15 +61,38 @@ const Footer = ({ className }) => {
                         }}
                         initial="initial"
                         animate="animate"
-                        href={`tel:${phoneNumber}`}
+                        href="tel:+7 (499) 505-50-31"
                      >
                         <img className="z-10 h-9 w-9" src={phone} alt="" />
-                     </motion.a>
-                  </div>
+                     </m.a>
+                  </div>}
+
                </div>
-               <a href={`tel:${phoneNumber}`} className="min-w-[160px] text-white">
-                  {phoneNumber}
-               </a>
+
+               {/* <div className="hidden  justify-center gap-10 md:flex">
+                  <a href="#Programa">Программа</a>
+                  <a href="#Tariff">Тарифы</a>
+                  <a href="tel:+7 (499) 505-50-31">Связаться со мной</a>
+               </div> */}
+               {/* <a href={`tel:${phoneNumber}`} className="min-w-[160px]">
+                  {phoneNumber} */}
+
+               {
+                  utm_source === 'yandex' ?
+                     <a href={'tel:+74995055067'}>
+                        <h4 className="min-w-[160px] underline cursor-pointer">+7(499) 505-50-67</h4>
+                     </a>
+                     : utm_source === 'vkontakte' ?
+                        <a href={'tel:+74995055087'}>
+                           <h4 className="min-w-[160px] underline cursor-pointer">+7(499) 505-50-87</h4>
+                        </a>
+                        :
+                        <a href={"tel:+74995055031"}>
+                           <h4 className="min-w-[160px] underline cursor-pointer">+7(499) 505-50-31</h4>
+                        </a>
+
+               }
+               {/* </a> */}
             </div>
          </div>
       </div>
