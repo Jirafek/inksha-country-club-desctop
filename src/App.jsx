@@ -15,6 +15,7 @@ import ru_icon from 'icons/ru.webp'
 import en_icon from 'icons/eng.webp'
 import global from 'icons/global.webp'
 import { changeLanguage } from 'utils/i18n'
+import ValenLanding from 'pages/valenLanding/ValenLanding'
 
 export const LanguageComponent = () => {
    const { i18n } = useTranslation()
@@ -272,6 +273,7 @@ function App() {
             <Route path="/banya" element={<BanLanding />} />
             <Route path="/fishing" element={<FishingLanding />} />
             <Route path="/active" element={<ChillLanding />} />
+            <Route path="/valentine" element={<ValenLanding />} />
 
             <Route path="*" element={<NotFound />} />
          </Routes>

@@ -4,7 +4,7 @@ import Reveal from "common/Reveal"
 import { useEffect } from 'react'
 import { isItWinterNow } from "utils/helpers"
 import Button from 'common/Button'
-import s from './../chill.module.css'
+import s from './../valen.module.scss'
 
 import next from 'icons/slider/brown/next.png'
 import prev from 'icons/slider/brown/prev.png'
@@ -43,7 +43,7 @@ const photos = [photo7, photo6, photo5, photo4, photo3, photo2, photo1]
 const winterPhotos = [winterPhoto1, winterPhoto2, winterPhoto3, winterPhoto4, winterPhoto5, winterPhoto6, winterPhoto7, winterPhoto8]
 
 // eslint-disable-next-line react/prop-types
-const ChillHero = ({ currentTime }) => {
+const ValenHero = ({ currentTime }) => {
 
    useEffect(() => {
       const script = document.createElement("script")
@@ -173,12 +173,12 @@ const ChillHero = ({ currentTime }) => {
    const swiperRef = useRef()
 
    return (
-      <div id="Hero" className='mb-[10vh]'>
+      <div id="Hero" className=' bg-[#DF8B85]'>
          <div className={` text-black text-center `}>
             <div className="relative  flex h-[80vh]  flex-col-reverse items-center justify-center ">
                <div className="z-10  flex max-w-[1000px] flex-col items-center justify-center ">
                   <Reveal delay={0.25}>
-                     <div className={`text-white acariBold text-xl font-bold`}>
+                     <div className={`text-white ${s.acariBold} text-xl font-bold`}>
                         Активный отдых
                         <br />
                         в Подмосковье
@@ -243,16 +243,19 @@ const ChillHero = ({ currentTime }) => {
             {/* <div id="znms-widget-1"></div> */}
          </div>
          <Reveal delay={0.5}>
-            <div className="text-md max-w-[1200px] text-[#593723] text-center mt-[15vh] border-2 rounded-[20px] border-[#593723] p-4 md:p-12 mx-[20px] md:mx-auto font-semibold">
-               <span className='font-[800] text-md'>Икша кантри клаб</span> - идеальное место для активного отдыха на природе. Здесь вы сможете заняться различными видами спорта, такими как верховая езда, занятия в тренажерном зале или игры в теннис. Кроме того, вас ждут увлекательные экскурсии на велосипеде или пешие прогулки по живописным просторам. Расположенный в окружении лесов и рек, Икша кантри клаб станет настоящим райским местом для всех любителей активного отдыха и приключений.
+            <div className="text-md max-w-[1200px]  text-white text-center py-[10vh] rounded-[20px] mx-[20px] md:mx-auto font-semibold">
+               <span className='font-[800] text-md'>Приглашаем вас погрузиться в мир нежности в загородном клубе Икша Кантри Клаб в самый прекрасный день в году - День Святого Валентина!
+                  Откройте для себя абсолютно незабываемую атмосферу любви, окруженную великолепной природой и уютом загородного клуба. Наши заботливые организаторы подготовили для вас вечер полный магии и романтики, который окутает вас незабываемыми эмоциями и подарит прекрасные воспоминания.<br /><br />
+
+                  Для вашего удобства мы подготовили специальные пакеты свиданий.</span>
             </div>
          </Reveal>
 
-         <a href='#program' className='w-[300px]' >
+         {/* <a href='#program' className='w-[300px]' >
             <Button className='bg-[#593723] px-3 h-[40px] md:h-[60px] md:w-[700px] w-[300px] text-md mx-auto text-white'>Забронировать</Button>
-         </a>
+         </a> */}
       </div >
    )
 }
 
-export default ChillHero
+export default ValenHero

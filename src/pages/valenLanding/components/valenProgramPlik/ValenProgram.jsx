@@ -3,12 +3,17 @@
 import { v4 as uuid4 } from 'uuid'
 import { m } from 'framer-motion'
 
-import main1 from 'images/fishing/program/001.webp'
-import main2 from 'images/fishing/program/002.webp'
-import main3 from 'images/fishing/program/003.webp'
-import main4 from 'images/fishing/program/004.webp'
-import main5 from 'images/fishing/program/005.webp'
-import main6 from 'images/fishing/program/006.webp'
+import main1 from 'images/valen/program/001.webp'
+import main2 from 'images/valen/program/002.webp'
+import main3 from 'images/valen/program/003.webp'
+import main4 from 'images/valen/program/004.webp'
+import main5 from 'images/valen/program/005.webp'
+import main6 from 'images/valen/program/006.webp'
+import main7 from 'images/valen/program/007.webp'
+import main8 from 'images/valen/program/008.webp'
+import main9 from 'images/valen/program/009.webp'
+import main10 from 'images/valen/program/010.webp'
+import main11 from 'images/valen/program/011.webp'
 
 // import main30 from 'images/chill/program/030.webp'
 
@@ -40,7 +45,7 @@ import Button from 'common/Button'
 
 
 
-import s from './../fishing.module.scss'
+import s from './../../valen.module.scss'
 import { useEffect, useRef, useState } from 'react'
 
 const GetProgram = () => {
@@ -48,23 +53,24 @@ const GetProgram = () => {
 
       {
          img: main1,
-         title: 'Казан плова/ухи + аренда удочки + чай из самовара/ глинтвейн',
-         oldPrice: '10 990 ₽ /чел',
-         price: '1990 ₽ /чел',
+         title: 'Пакет “База”',
+         price: '7990₽',
          number: 1,
          hasAbout: false,
+         oldPrice: '',
          desc: '',
+
          time: 'Лето',
          isManyPeople: false,
       },
       {
          img: main2,
-         title: 'Казан плова +заезд на фэтбайках',
-         price: '1990 ₽ /чел.',
-         oldPrice: '8990 ₽ /чел.',
+         title: 'Пакет “Морской Бой”',
+         price: '12490₽',
+         oldPrice: '',
          number: 2,
          hasAbout: false,
-         desc: 'с онлайн-гидом',
+         // desc: 'с онлайн-гидом',
 
 
          time: ['Зима', 'Лето'],
@@ -73,54 +79,106 @@ const GetProgram = () => {
       },
       {
          img: main3,
-         title: 'Баня с купелью',
-         // oldPrice: '10 990 ₽ /чел', 
-         price: '10 000 ₽',
+         title: 'Пакет “Мастер-Гриль”',
+         price: '15490₽',
+         oldPrice: '',
          number: 3,
          hasAbout: false,
-         desc: '* цена за 2 часа',
+         desc: '',
+
+         time: 'Лето',
+         isManyPeople: false,
+      },
+
+
+      {
+         img: main4,
+         title: 'Пакет “Мне надоел ресторан”',
+         price: '21 500 ₽',
+         oldPrice: '',
+         number: 4,
+
+         hasAbout: false,
+         // desc: '* цена за 1 час',
+         type: 'Лето'
+
+      },
+      {
+         img: main5,
+         title: 'Пакет “Забанили”',
+         price: '26 500 ₽',
+         oldPrice: '',
+         number: 5,
+         hasAbout: false,
+         // desc: '* цена за 1 час',
+         // type: 'Лето'
+      },
+      {
+         img: main6,
+         title: 'Пакет “Совместное потение”',
+         price: '25 900 ₽',
+         oldPrice: '',
+         number: 6,
+         hasAbout: false,
+         // desc: '* цена за 1 шт',
+         // type: 'Лето'
+      },
+      {
+         img: main7,
+         title: 'Пакет “Netflix & Чили”',
+         price: '11 200 ₽',
+         oldPrice: '',
+         number: 7,
+         hasAbout: false,
+         desc: '',
+         type: 'Лето'
+      },
+      {
+         img: main8,
+         title: 'Пакет “Инстасамка”',
+         oldPrice: '',
+         price: '18 000₽',
+         number: 8,
+         hasAbout: false,
+         // desc: '* цена за 1 час',
+         // type: 'Лето'
+
+      },
+      {
+         img: main9,
+         title: 'Пакет “Она у меня певица”',
+         oldPrice: '',
+         price: '18 900 ₽',
+         number: 9,
+         hasAbout: false,
+         desc: '',
 
 
          time: 'Зима',
          isManyPeople: false,
       },
       {
-         img: main4,
-         title: 'Казан плова + заезд на лодке',
-         price: '1990 ₽ /чел.',
-         oldPrice: '8990 ₽ /чел.',
+         img: main10,
+         title: 'Пакет “Служебный Роман”',
+         price: '44 500 ₽',
+         oldPrice: '',
          number: 10,
          hasAbout: false,
-         desc: '',
+         // desc: '',
 
 
          time: 'Лето',
          isManyPeople: false,
       },
       {
-         img: main5,
-         title: 'Снегоход',
-         price: '1 590 ₽ /чел.',
-         oldPrice: '3 990 ₽ /чел',
-         number: 5,
-         hasAbout: false,
-         desc: '* цена за 1 час',
-
-
-         time: 'Лето',
-         isManyPeople: false,
-      },
-      {
-         img: main6,
-         title: 'Стрельба из лука + баня с купелью на 3 часа + аренда мангала',
-         price: '1 990 ₽ /чел',
-         oldPrice: '15 990 ₽ /чел.',
-         number: 6,
+         img: main11,
+         title: 'Пакет “Мажорный VIP”',
+         price: '62 000 ₽',
+         oldPrice: '',
+         number: 11,
          hasAbout: false,
          desc: '',
-
-         time: 'Лето',
-         isManyPeople: false,
+         type: 'Лето'
       },
 
 
@@ -132,13 +190,13 @@ const GetProgram = () => {
 
 
 
-const FishProgram = () => {
+const ValenProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
    const program = GetProgram()
 
 
    const [isManyPeople, setIsManyPeople] = useState(false)
-   const [currentTime, setTime] = useState('Лето')
+
 
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const [selectedimages, setSelectedimages] = useState(program)
@@ -157,9 +215,9 @@ const FishProgram = () => {
 
    }
 
-   useEffect(() => {
-      filter()
-   }, [])
+   // useEffect(() => {
+   //    filter()
+   // }, [])
 
 
    const togglePeople = () => {
@@ -223,9 +281,9 @@ const FishProgram = () => {
    console.log()
 
    return (
-      <div name='proga' id='program' className='relative bg-[#081130] py-[10vh] text-black'>
+      <div name='proga' id='program' className='relative text-black'>
          <div id="znms-service-widget-module"></div>
-         <div className="text-center text-white mb-[10vh] text-lg font-bold leading-[62.40px]">Активный отдых в Икша Кантри Клаб</div>
+         <div className="text-center text-[#79072C] py-[2vh] text-lg font-bold leading-[62.40px]">Пакеты свиданий</div>
          {/* <div className=' font-bold text-center mb-[10vh] text-ChillHeadBrown text-lg'>Активный отдых в Икша Кантри Клаб</div> */}
 
 
@@ -259,6 +317,7 @@ const FishProgram = () => {
 
 
          {/* <div className='flex justify-center mb-[50px] md:mb-[100px] items-center gap-5'>
+
             <div className="w-[101.84px] h-[46.98px] ">
                <div
                   onClick={toggleTime}
@@ -308,16 +367,19 @@ const FishProgram = () => {
                <div className="text-center text-stone-600 text-sm font-semibold leading-normal tracking-tight">{isManyPeople ? <div>Много людей (от 10)</div> : <div>Мало людей (от 4)</div>}</div>
 
             </div>
+
+
+
          </div> */}
 
 
 
          <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
 
-            {selectedimages.map((item, i) => {
+            {program.map((item, i) => {
                return (
 
-                  <div key={i} className={` ${s.acariMedium} w-[94%] sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
+                  <div key={i} className={` ${s.acariMedium} w-[94%] sm:max-w-[500.43px]  bg-white rounded-[10px] border border-[#79072C]`}>
 
 
                      <div className={` ${s.acariMedium} h-[217.35px] relative`}>
@@ -325,11 +387,11 @@ const FishProgram = () => {
                         <img className="w-full  absolute h-[217.35px]  border-b-2 " src={item.img} />
                      </div>
                      <div className=' p-[15px] md:p-[30px] '>
-                        <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
+                        <div className='text-32px text-[#79072C] leading-[41.60px] acariBold'>{item.title}</div>
                         <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                         <div className='flex justify-between mb-[20px]'>
-                           {item.oldPrice !== '' ?
+                           {item.oldPrice !== '' || undefined ?
                               <div className='flex flex-col items-center justify-center w-full'>
                                  <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
                                  <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
@@ -338,22 +400,22 @@ const FishProgram = () => {
                               </div>
                               :
                               <div className='flex flex-col'>
-                                 <div className="text-left text-36px text-stone-700 font-semibold">{item.price}</div>
+                                 <div className="text-left text-36px text-[#79072C] font-semibold">{item.price}</div>
                               </div>
                            }
                         </div>
 
                         <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                           <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
-                              <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
+                           <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#79072C]">
+                              <div className="text-center text-[#79072C] font-semibold ">Забронировать</div>
                            </div>
                            {item.hasAbout ?
-                              <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                              <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
+                                 <div className="text-center text-[#FF96B8] font-semibold">Подробнее</div>
                               </div>
                               :
-                              <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                              <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
+                                 <div className="text-center text-[#FF96B8] font-semibold">Подробнее</div>
                               </a>
                            }
 
@@ -415,7 +477,7 @@ const FishProgram = () => {
 
 
 
-                        <div key={i} className={` ${s.acariMedium} w-full  bg-white rounded-[10px] border border-stone-700`}>
+                        <div key={i} className={` ${s.acariMedium} w-full  bg-white rounded-[10px] border border-[#79072C]`}>
 
 
                            <div className={` ${s.acariMedium} h-[217.35px] relative`}>
@@ -425,7 +487,7 @@ const FishProgram = () => {
 
 
                            <div className=' p-[15px] md:p-[30px] '>
-                              <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
+                              <div className='text-32px text-[#79072C] leading-[41.60px] acariBold'>{item.title}</div>
                               <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                               <div className='flex justify-between mb-[20px]'>
@@ -438,7 +500,7 @@ const FishProgram = () => {
                                     </div>
                                     :
                                     <div className='flex flex-col'>
-                                       <div className="text-left text-36px text-stone-700 font-semibold">{item.price}</div>
+                                       <div className="text-left text-36px text-[#79072C] font-semibold">{item.price}</div>
 
 
                                     </div>
@@ -446,16 +508,16 @@ const FishProgram = () => {
                               </div>
 
                               <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
-                                    <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
+                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-[#79072C]">
+                                    <div className="text-center text-[#79072C] font-semibold ">Забронировать</div>
                                  </div>
                                  {item.hasAbout ?
-                                    <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                    <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
+                                       <div className="text-center text-[#FF96B8] font-semibold">Подробнее</div>
                                     </div>
                                     :
-                                    <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
+                                    <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
+                                       <div className="text-center text-[#FF96B8] font-semibold">Подробнее</div>
                                     </a>
                                  }
 
@@ -471,7 +533,7 @@ const FishProgram = () => {
             </Swiper>
          </div>
 
-         {/* <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
+         <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
             <div className='text-white text-center text-md font-semibold'>
                Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
 
@@ -480,11 +542,11 @@ const FishProgram = () => {
          </div>
          <a className='mx-auto' href='#module'>
             <Button className='bg-[#593723] md:w-[600px] text-md md:h-[70px] text-white mx-auto'>Посмотреть локации</Button>
-         </a> */}
+         </a>
 
 
       </div >
    )
 }
 
-export default FishProgram
+export default ValenProgram

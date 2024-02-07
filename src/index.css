@@ -1,9 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+
+
+@font-face {
+   font-family: 'Acari Sans Bold';
+   font-display: swap;
+   src: url('./../public/fonts/AcariSans-Bold.ttf') format('truetype');
+   font-weight: bold;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Acari Sans Medium';
+   font-display: swap;
+   src: url('./../public/fonts/AcariSans-Medium.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+
 
 @layer base {
   html {
@@ -212,7 +231,7 @@ body {
 
 @font-face {
   font-family: 'Droid Sans'; /* Название вашего шрифта */
-  src: url('./../public/fonts/DroidSans.ttf') format('truetype'); /* Путь к вашему файлу WOFF-шрифта */
+  src:  url('./../public/fonts/DroidSans.ttf') format('truetype'); /* Путь к вашему файлу WOFF-шрифта */
   /* Дополнительные свойства (опционально) */
   font-weight: normal;
   font-style: normal;
@@ -246,30 +265,15 @@ body {
   font-style: normal;
 }
 
-@font-face {
-   font-family: 'Acari Sans Bold';
-   font-display: swap;
-   src: url('./../public/fonts/AcariSans-Bold.ttf') format('truetype');
-   font-weight: bold;
-   font-style: normal;
-}
 
-@font-face {
-   font-family: 'Acari Sans Medium';
-   font-display: swap;
-   src: url('./../public/fonts/AcariSans-Medium.ttf') format('truetype');
-   font-weight: normal;
-   font-style: normal;
-}
 
 
 .acariBold {
-   font-family: 'Acari Sans Bold', sans-serif !important;
-
+   font-family: 'Acari Sans Bold';
 }
 
 .acariMedium {
-   font-family: 'Acari Sans Medium', sans-serif;
+   font-family: 'Acari Sans Medium';
 
 }
 

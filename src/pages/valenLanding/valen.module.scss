@@ -1,23 +1,4 @@
-
-@font-face {
-	font-family: 'Acari Sans Bold';
-	font-display: swap;
-	src: local('AcariSans-Bold'),
-		url('./fonts/AcariSans-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Acari Sans Medium';
-	font-display: swap;
-	src: url('./fonts/AcariSans-Medium.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-
-.bg {
+/* .bg {
 	background-image: url('./../../../public/image/ban/bg.png');
 
 	background-position: center center;
@@ -26,15 +7,41 @@
 
 	background-color: rgba(255, 255, 255, 0.499);
 	overflow-x: hidden;
+} */
+
+.programBg{
+	background-image: url('./../../../public/image/valen/programBg.png');
+
+	/* background-position: center center; */
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* background-color: rgba(255, 255, 255, 0.499); */
+	overflow-x: hidden;
 }
 
 .banner {
 	background-color: #8bb26f8a;
 }
 
+@font-face {
+	font-family: 'Acari Sans Bold';
+	font-display: swap;
+	src: url('./../../../public/fonts/AcariSans-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Acari Sans Medium';
+	font-display: swap;
+	src: url('./../../../public/fonts/AcariSans-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 
 .acariBold {
-	font-family: 'Acari Sans Bold' !important;
+	font-family: 'Acari Sans Bold', sans-serif;
 }
 
 .acariMedium {
@@ -85,3 +92,5 @@
 .services_wrapper:first-of-type {
 	border-top: 1px solid black;
 }
+
+
