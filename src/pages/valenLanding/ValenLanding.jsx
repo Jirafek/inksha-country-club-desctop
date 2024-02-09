@@ -33,7 +33,26 @@ const ValenLanding = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const [currentTime, setTime] = useState(isItWinterNow() === '_winter' ? 'Зима' : 'Лето')
 
+   useEffect(() => {
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
 
+      const initializeWidget = () => {
+         window.znmsWidget.init("#znms-service-widget-module", {
+            moduleId: 5026,
+            type: 'booking-services',
+         })
+
+
+      }
+      script.onload = initializeWidget
+
+
+
+      document.body.appendChild(script)
+
+   }, [])
 
 
    const toggleMenu = () => {
@@ -86,20 +105,20 @@ const ValenLanding = () => {
    return (
       <div className={`montserrat `}>
          <Helmet>
-            <title>Новый год в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
+            <title>14 февраля в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
             <meta
                name="description"
-               content="Новый год в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
+               content="14 февраля в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
             отдохнуть и укрепить командый дух на берегу Икшинского водохранилища.
      Уютные домики, Шашлыки, красивые закаты. Постройте свою лучшую команду на природе, недалеко от Москвы"
             />
             <meta
                name="title"
-               content="Новый год в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+               content="14 февраля в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
             />
             <meta
                name="keywords"
-               content="Отдых в Подмосковье,Новый год, Праздник, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+               content="Отдых в Подмосковье,14 февраля, Праздник, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
 корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
             />
          </Helmet>
@@ -111,7 +130,7 @@ const ValenLanding = () => {
             className='bg-white acariBold font-bold text-[#FF96B8]' />
          <div className={`bg-[#E8B2C4] relative  w-full h-full`}>
 
-
+            <div id="znms-service-widget-module"></div>
             {productId && <ValenProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
             <ValenHero currentTime={currentTime} />
             <div className={s.programBg}>
@@ -129,7 +148,7 @@ const ValenLanding = () => {
          </div>
          {/* </div> */}
 
-         <Footer FooterLinks={footerLinks} isMediaOpen={false} className='bg-ValenBrown text-white' />
+         <Footer FooterLinks={footerLinks} isMediaOpen={false} className='bg-ValenBrown text-[#FF96B8]' />
       </div>
    )
 }

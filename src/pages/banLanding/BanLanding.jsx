@@ -24,6 +24,26 @@ import BanProgram from './components/BanProgram/BanProgram'
 import BanProgramPopup from './components/BanProgram/BanProgramPopup'
 
 const BanLanding = () => {
+   useEffect(() => {
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
+
+      const initializeWidget = () => {
+         window.znmsWidget.init("#znms-service-widget-module", {
+            moduleId: 5026,
+            type: 'booking-services',
+         })
+
+
+      }
+      script.onload = initializeWidget
+
+
+
+      document.body.appendChild(script)
+
+   }, [])
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen)
@@ -72,20 +92,20 @@ const BanLanding = () => {
    return (
       <div className={`montserrat ${s.bg}`}>
          <Helmet>
-            <title>Новый год в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
+            <title>Баня в Подмосковье на берегу Икшинского водохранилища - Икша Кантри Клаб</title>
             <meta
                name="description"
-               content="Новый год в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
+               content="Баня в Подмосковье с Икша Кантри Клаб - Корпоративные мероприятия а также Рыбалка, Баня и СПА, водные виды спорта. Приезжайте 
             отдохнуть и укрепить командый дух на берегу Икшинского водохранилища.
      Уютные домики, Шашлыки, красивые закаты. Постройте свою лучшую команду на природе, недалеко от Москвы"
             />
             <meta
                name="title"
-               content="Новый год в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
+               content="Баня в Подмосковье на природе, на берегу Икшинского водохранилища - Икша Кантри Клаб."
             />
             <meta
                name="keywords"
-               content="Отдых в Подмосковье,Новый год, Праздник, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+               content="Отдых в Подмосковье,Баня, Праздник, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
 корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
             />
          </Helmet>
@@ -96,7 +116,7 @@ const BanLanding = () => {
             MenuClassName='bg-white text-black'
             className=' font-bold bg-[#221C1C] text-white' />
          <div className={` ${s.bg} relative  w-full h-full`}>
-
+            <div id="znms-service-widget-module"></div>
             {productId && <BanProgramPopup productId={productId} onClose={() => setProductId(undefined)} />}
 
             <BanHero />

@@ -56,7 +56,7 @@ const GetProgram = () => {
          title: 'Пакет “База”',
          price: '7990₽',
          number: 1,
-         hasAbout: false,
+         hasAbout: true,
          oldPrice: '',
          desc: '',
 
@@ -69,7 +69,7 @@ const GetProgram = () => {
          price: '12490₽',
          oldPrice: '',
          number: 2,
-         hasAbout: false,
+         hasAbout: true,
          // desc: 'с онлайн-гидом',
 
 
@@ -83,7 +83,7 @@ const GetProgram = () => {
          price: '15490₽',
          oldPrice: '',
          number: 3,
-         hasAbout: false,
+         hasAbout: true,
          desc: '',
 
          time: 'Лето',
@@ -98,7 +98,7 @@ const GetProgram = () => {
          oldPrice: '',
          number: 4,
 
-         hasAbout: false,
+         hasAbout: true,
          // desc: '* цена за 1 час',
          type: 'Лето'
 
@@ -109,7 +109,7 @@ const GetProgram = () => {
          price: '26 500 ₽',
          oldPrice: '',
          number: 5,
-         hasAbout: false,
+         hasAbout: true,
          // desc: '* цена за 1 час',
          // type: 'Лето'
       },
@@ -119,7 +119,7 @@ const GetProgram = () => {
          price: '25 900 ₽',
          oldPrice: '',
          number: 6,
-         hasAbout: false,
+         hasAbout: true,
          // desc: '* цена за 1 шт',
          // type: 'Лето'
       },
@@ -129,7 +129,7 @@ const GetProgram = () => {
          price: '11 200 ₽',
          oldPrice: '',
          number: 7,
-         hasAbout: false,
+         hasAbout: true,
          desc: '',
          type: 'Лето'
       },
@@ -139,7 +139,7 @@ const GetProgram = () => {
          oldPrice: '',
          price: '18 000₽',
          number: 8,
-         hasAbout: false,
+         hasAbout: true,
          // desc: '* цена за 1 час',
          // type: 'Лето'
 
@@ -150,7 +150,7 @@ const GetProgram = () => {
          oldPrice: '',
          price: '18 900 ₽',
          number: 9,
-         hasAbout: false,
+         hasAbout: true,
          desc: '',
 
 
@@ -163,7 +163,7 @@ const GetProgram = () => {
          price: '44 500 ₽',
          oldPrice: '',
          number: 10,
-         hasAbout: false,
+         hasAbout: true,
          // desc: '',
 
 
@@ -176,7 +176,7 @@ const GetProgram = () => {
          price: '62 000 ₽',
          oldPrice: '',
          number: 11,
-         hasAbout: false,
+         hasAbout: true,
          desc: '',
          type: 'Лето'
       },
@@ -256,20 +256,7 @@ const ValenProgram = ({ handleProductClick, currentTime, setTime, }) => {
             type: 'booking-services',
          })
 
-         // const customStyles = `
-         //  .znms-widget__brononline_popup_full {
-         //    width: 90vw !important;
-         //    height: 60vh !important;
-         //    position: fixed !important;
-         //    top: 50% !important;
-         //    left: 50% !important;
-         //    transform: translate(-50%, -50%) !important;
-         // }
 
-         // `
-         // const styleElement = document.createElement("style")
-         // styleElement.innerHTML = customStyles
-         // document.head.appendChild(styleElement)
       }
       script.onload = initializeWidget
 
@@ -281,7 +268,7 @@ const ValenProgram = ({ handleProductClick, currentTime, setTime, }) => {
    console.log()
 
    return (
-      <div name='proga' id='program' className='relative text-black'>
+      <div name='proga' id='program' className='relative py-[120px] text-black'>
          <div id="znms-service-widget-module"></div>
          <div className="text-center text-[#79072C] py-[2vh] text-lg font-bold leading-[62.40px]">Пакеты свиданий</div>
          {/* <div className=' font-bold text-center mb-[10vh] text-ChillHeadBrown text-lg'>Активный отдых в Икша Кантри Клаб</div> */}
@@ -471,7 +458,7 @@ const ValenProgram = ({ handleProductClick, currentTime, setTime, }) => {
                navigation
 
             >
-               {selectedimages.map((item, i) => {
+               {program.map((item, i) => {
                   return (
                      <SwiperSlide className="py-[30px]" key={i}>
 
@@ -541,7 +528,7 @@ const ValenProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
          </div>
          <a className='mx-auto' href='#module'>
-            <Button className='bg-[#593723] md:w-[600px] text-md md:h-[70px] text-white mx-auto'>Посмотреть локации</Button>
+            <Button className='bg-ValenPurple md:w-[600px] text-md h-[40px] md:h-[70px] text-white mx-auto'>Посмотреть локации</Button>
          </a>
 
 

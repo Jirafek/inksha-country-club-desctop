@@ -6,19 +6,13 @@ import { isItWinterNow } from "utils/helpers"
 import Button from 'common/Button'
 import s from './../valen.module.scss'
 
-import next from 'icons/slider/brown/next.png'
-import prev from 'icons/slider/brown/prev.png'
 
 
 import { useRef } from "react"
 
-import { Pagination } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/react"
+import { motion } from 'framer-motion'
 
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import "swiper/css/scrollbar"
+import heart from 'images/valen/heart.png'
 
 import photo1 from "images/chill/hero/summer/001.webp"
 import photo2 from "images/chill/hero/summer/002.webp"
@@ -41,6 +35,17 @@ import winterPhoto8 from 'images/chill/hero/winter/008.webp'
 const photos = [photo7, photo6, photo5, photo4, photo3, photo2, photo1]
 
 const winterPhotos = [winterPhoto1, winterPhoto2, winterPhoto3, winterPhoto4, winterPhoto5, winterPhoto6, winterPhoto7, winterPhoto8]
+
+const vars = {
+   initial: {
+      // y: "5px", // Начальная позиция за пределами экрана справа
+      scale: 1,
+   },
+   animate: {
+      // y: "-10px", // Конечная позиция за пределами экрана слева
+      scale: 1.1,
+   },
+}
 
 // eslint-disable-next-line react/prop-types
 const ValenHero = ({ currentTime }) => {
@@ -173,70 +178,61 @@ const ValenHero = ({ currentTime }) => {
    const swiperRef = useRef()
 
    return (
-      <div id="Hero" className=' bg-[#DF8B85]'>
-         <div className={` text-black text-center `}>
-            <div className="relative  flex h-[80vh]  flex-col-reverse items-center justify-center ">
-               <div className="z-10  flex max-w-[1000px] flex-col items-center justify-center ">
+      <div id="Hero" className=' bg-[#E8B2C4]'>
+         <div className={`relative text-black `}>
+            <div className="relative flex h-[60vh]  flex-col-reverse items-start justify-center ">
+               <div className="relative md:pl-[200px] z-10 flex-col flex  items-center md:items-start">
+
                   <Reveal delay={0.25}>
-                     <div className={`text-white ${s.acariBold} text-xl font-bold`}>
-                        Активный отдых
-                        <br />
-                        в Подмосковье
+                     <div className={`${s.rosarium} text-white text-2xl`}>
+                        День всех влюблённых
                      </div>
                   </Reveal>
-                  <a href='#program' className='md:w-auto w-[300px] mx-auto' >
-                     <Button className='bg-[#593723] px-3 h-[40px] md:h-[60px] md:w-[700px] text-md mx-auto text-white'>Выбрать услуги</Button>
-                  </a>
-                  <div className='absolute bottom-12 flex justify-center gap-[20px] left-0'>
-                     <button
-                        className=" z-20 h-[50px] w-[50px] md:h-[100px] md:w-[100px] -translate-y-1/2 transform "
-                        onClick={() => {
-                           swiperRef.current?.slidePrev()
-                        }}
-                     >
-                        <img src={prev} alt="" />
-                     </button>
-                     <button
-                        className=" z-20 h-[50px] w-[50px] md:h-[100px] md:w-[100px] -translate-y-1/2 transform "
-                        onClick={() => {
-                           swiperRef.current?.slideNext()
-                        }}
-                     >
-                        <img src={next} alt="" />
-                     </button>
 
-                  </div>
-               </div>
+                  <motion.img
+                     transition={{
+                        repeat: Infinity,
+                        duration: 0.5,
+                        repeatType: "reverse",
+                        repeatDelay: 0.1,
 
-               <div className='absolute h-[80vh]  w-full'>
-                  <Swiper
-                     // install Swiper modules
-                     modules={[Pagination]}
-                     spaceBetween={50}
-                     slidesPerView={1}
-                     navigation
-                     loop={true}
-                     className="photo_swiper h-[80vh]"
-                     onBeforeInit={(swiper) => {
-                        swiperRef.current = swiper
                      }}
-                  >
+                     variants={vars}
+                     initial="initial"
+                     animate="animate"
+                     className="block md:hidden transform w-[50%] -left-1/2 translate-x-1/2" src={heart} alt=""
+                  />
 
-                     {(currentTime === 'Лето' ? photos : winterPhotos).map((photo, i) => {
-                        return (
-                           <SwiperSlide className="w-full h-full" key={i}>
-                              <img
-                                 className="w-full filter brightness-75 h-full object-cover"
-                                 src={photo}
-                                 alt=""
-                              />
-                           </SwiperSlide>
-                        )
-                     })}
+                  <Reveal delay={0.25}>
+                     <div className={`text-white text-center md:text-start ${s.rosarioLight} text-md font-light`}>
+                        Проведи романтический<br /> ужин со своей половинкой<br />
+                        на берегу вдали от суеты
+                     </div>
+                  </Reveal>
+
+                  <a href='#program' className='w-full' >
+                     <Button className='bg-[#FF2D72] px-3 h-[40px] md:h-[60px] md:w-full w-[300px] text-md mx-auto text-white'>Забронировать</Button>
+                  </a>
 
 
-                  </Swiper>
                </div>
+
+               <motion.img
+                  transition={{
+                     repeat: Infinity,
+                     duration: 0.5,
+                     repeatType: "reverse",
+                     repeatDelay: 0.1,
+
+                  }}
+                  variants={vars}
+                  initial="initial"
+                  animate="animate"
+                  className="absolute right-0 transform hidden md:block translate-y-1/2" src={heart} alt=""
+               />
+
+
+
             </div>
          </div>
          <div className='hidden md:block'>
@@ -244,7 +240,7 @@ const ValenHero = ({ currentTime }) => {
          </div>
          <Reveal delay={0.5}>
             <div className="text-md max-w-[1200px]  text-white text-center py-[10vh] rounded-[20px] mx-[20px] md:mx-auto font-semibold">
-               <span className='font-[800] text-md'>Приглашаем вас погрузиться в мир нежности в загородном клубе Икша Кантри Клаб в самый прекрасный день в году - День Святого Валентина!
+               <span className={` ${s.rosarioSBold} text-md`}>Приглашаем вас погрузиться в мир нежности в загородном клубе Икша Кантри Клаб в самый прекрасный день в году - День Святого Валентина!
                   Откройте для себя абсолютно незабываемую атмосферу любви, окруженную великолепной природой и уютом загородного клуба. Наши заботливые организаторы подготовили для вас вечер полный магии и романтики, который окутает вас незабываемыми эмоциями и подарит прекрасные воспоминания.<br /><br />
 
                   Для вашего удобства мы подготовили специальные пакеты свиданий.</span>

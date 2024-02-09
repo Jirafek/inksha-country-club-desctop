@@ -38,6 +38,7 @@ const ValenModule = () => {
          const customStyles = `
             #module > div > div:nth-child(1) > div > div {
                position: unset !important;
+               background-color: #FF96B8 !important;
             }
             @media (min-width: 960px){
                .znms-widget__module-form-block__items--input-container{
@@ -48,29 +49,22 @@ const ValenModule = () => {
                
             }
            
-            .znms-widget__main-wrapper {
 
-               
-               margin:0 auto 50px auto !important;
-               box-shadow: none !important;
-               width:auto !important;
-               margin:auto !important;
-            }
              
             .znms-widget__module-form-block__btn {
                box-shadow: none !important;
                position: unset !important;
                border:none !important;
             }
-               .znms-widget__main-wrapper {
-                  position: unset !important;
-               
-                  background-color: #AB8E67 !important;
-                  backdrop-filter: none !important;
-                  -webkit-backdrop-filter: none !important;
-                  --tw-backdrop-blur: none !important;
-                  box-shadow: none !important;
-               }
+            .znms-widget__main-wrapper {
+               position: unset !important;
+            
+               background-color: #FF96B8 !important;
+               backdrop-filter: none !important;
+               -webkit-backdrop-filter: none !important;
+               --tw-backdrop-blur: none !important;
+               box-shadow: none !important;
+            }
 
                .znms-widget__teleporter {
                   position: relative;
@@ -83,7 +77,7 @@ const ValenModule = () => {
                }
 
                .znms-widget__module-form-block {
-                  background-color: #AB8E67 !important;
+                  background-color: #FF96B8 !important;
                   // backdrop-filter: none !important;
                   // -webkit-backdrop-filter: none !important;
                   // --tw-backdrop-blur: none !important;
@@ -106,7 +100,7 @@ const ValenModule = () => {
 
                .znms-widget__module-form-block__item {
                   opacity: ${isItWinterNow() ? '1' : '0.8 '} ;
-                  background: #AB8E67;
+                  background: #FF96B8;
                   color:#AB8E67;
                   
                   padding-top: 0 !important;

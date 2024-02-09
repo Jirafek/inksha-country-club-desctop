@@ -3,6 +3,9 @@
 
 import arrow from 'icons/brownarrow.png'
 
+import time from 'images/valen/icons/time.png'
+import money from 'images/valen/icons/money.png'
+
 // import one from 'images/chill/program/group1.png'
 import two from 'images/chill/group/group2.webp'
 import three from 'images/chill/group/group3.webp'
@@ -12,119 +15,160 @@ import six from 'images/chill/group/group6.webp'
 import seven from 'images/chill/group/group7.webp'
 import eight from 'images/chill/group/group8.webp'
 import nine from 'images/chill/group/group9.webp'
+
+import s from './../../valen.module.scss'
+
+import popupBg from 'images/valen/popupBg.png'
 // import { useEffect } from 'react'
 
 import { useQueryParam, StringParam } from 'use-query-params'
 
 const GetInfo = () => {
    const info = {
-      '2': {
-         img: two,
+      '1': {
          title: 'Экскурсия в усадьбу Марфино',
-         about: 'Марфино – дворянская усадьба, которая находится в селе Мытищинского городского округа, в 25 километрах от МКАДа. Расположенная на высоком берегу реки Учи, усадьба открывает великолепный вид на лес и позволяет окунуться в атмосферу давних времён.',
-         needs: '',
-         prices: [
-            { title: 'Взрослый', price: '2000₽' },
-            { title: 'Ребёнок (до 18 лет)', price: '1000₽' },
-         ],
-         number: 3,
+         time: "5",
+         price: "7 990",
+         includes: ['Романтический пикник(фрукты, хлеб, закуски)', 'Пуфы, пледы и чай из самовара', 'Романтическая музыка(Ты знаешь её любимые песни ?)', 'Аренда гриля и угля', 'Настолки и карточные игры для двоих(по запросу)'],
+         number: 1,
+      },
+      '2': {
+         title: 'Пакет “Морской Бой”',
+         time: "7",
+         price: "12 490",
+         includes: ['Романтический пикник(фрукты, хлеб, закуски) ',
+            'Аренда фэтбайков для прогулки по заснеженному лесу',
+            'Пледы и чай из самовара',
+            'Аренда гриля и угля',],
+         number: 2,
       },
       '3': {
-         img: three,
-         title: 'Прогулки на фэтбайках',
-         about: 'Особенность фэтбайка - это его широкие покрышки, которые имеют гораздо больший объем, чем у обычных велосипедов. Это позволяет фэтбайку ездить по различным типам поверхностей, включая снег, песок, гравий и грязь, с легкостью и стабильностью.\n\nТакже, в тёплое время года мы организуем велосипедные экскурсии на фэтбайках в усадьбу Марфино',
-         needs: '',
-         prices: [
-            { title: 'Фэтбайк', price: '1000₽ в час' },
-            // { title: 'Дополнительный человек на квадроцикл/ багги', price: '500' },
-         ],
+         title: 'Пакет “Мастер-Гриль”',
+         time: "7",
+         price: "15 490",
+         includes: ['Фрукты, маршмеллоу',
+            'Авторские рецепты и инструкции по готовке от профессионального шеф-повара',
+            'Специальные соусы и приправы',
+            'Мясо и овощи для гриля',
+            'Аренда гриля и угля',],
          number: 3,
       },
+
       '4': {
-         img: four,
-         title: 'Аренда гидроцикла',
-         about: 'В Икша Кантри Клаб мы рады предложить своим гостям гидроциклы в аренду. В стоимость входит спасательный жилет и сопровождение инструктора.',
-         needs: '*Для самостоятельного управления гидроциклом требуется наличие прав категории А1',
-         prices: [
-            { title: 'Гидроцикл', price: '4000₽ в час' },
-         ],
+         title: 'Пакет “Мне надоел ресторан”',
+         time: "24",
+         price: "21 500",
+         includes: ['Организация пикника на природе с шашлыками и закусками',
+            'Дегустация напитков народов мира с сырами и мясом',
+            'Личный шеф-повар, который приготовит блюдо при вас на мангале',
+            'Ночь в лесном домике с видом на засненеженное озеро',
+            'Фрукты',],
          number: 4,
       },
+
       '5': {
-         img: five,
-         title: 'Аренда волейбольной площадки',
-         about: 'В летнее время года мы рады предложить гостям волейбольную площадку в аренду. Площадка подходит как для маленькой, так и большой компании.',
-         needs: '*Для самостоятельного управления гидроциклом требуется наличие прав категории А1',
-         prices: [
-            { title: 'Волейбольная площадка', price: '1000₽ в час' },
-            { title: 'Волейбольный мяч', price: '100₽ в час' },
-         ],
+         title: 'Пакет “Мне надоел ресторан”',
+         time: "24",
+         price: "26 500",
+         includes: ['Баня с панорамным видом на лес',
+            'Тёплая купель в русском стиле с хвоей и шишками',
+            'Индивидуальные и парные парения. Прогрев с пят до плечей. Прогрев спины.',
+            'Расслабляющий массаж, пилинги',
+            'Ночь в лесном домике',
+            'Чайная церемония с традиционным русским самоваром. На выбор: русский облепиховый чай или русская рябина',],
          number: 5,
       },
+
       '6': {
-         img: six,
-         title: 'Аренда сап-досок (SUP)',
-         about: 'В летнее время года мы рады предложить гостям SUP-борды(сап-доски) в аренду. Спасательный жилет входит в стоимость и выдается по желанию.',
-         needs: '',
-         prices: [
-            { title: 'Сап-доска', price: '2000₽ в час' },
+         title: 'Пакет “Совместное потение”',
+         time: "24",
+         price: "25 900",
+         includes: ['Баня с панорамным видом на лес и купель с подогревом',
+            'Совместный заезд на фэтбайках/лыжах/коньках',
+            'Здоровый ужин от нашего шефа и свежевыжатые соки',
+            'Ночь в лесном домике с видом на водную гладь',
+            'Фрукты',
+
          ],
          number: 6,
       },
+
       '7': {
-         img: seven,
-         title: 'Аренда катера',
-         about: 'В летнее время года мы рады предложить гостям катер в аренду. Катер отлично подойдет для свидания или прогулке по Икшинскому водохранилищу.',
-         needs: '*Необходимо иметь права категории А1',
-         prices: [
-            { title: 'Катер (с капитаном)', price: '5000₽ в час' },
-            {
-               title: 'Катер (самостоятельное управление *) ', price: '10000₽ в час'
-            },
+         title: 'Пакет “Netflix & Чили”',
+         time: "7",
+         price: "11 200",
+         includes: ['Фрукты, орео, попкорн, снеки',
+            'Уютный кинотеатр с большим экраном и пуфами',
+            'Просмотр любимого фильма или сериала',
+
          ],
          number: 7,
       },
+
       '8': {
-         img: eight,
-         title: 'Баня с купелью',
-         about: 'Мы предлагаем своим гостям насладиться полезными процедурами в нашей бане с купелью. На ваш выбор почасовая аренда бани с купелью, а также три варианта посещения специально для вашего удобства: Уединение, Командный дух, Семейное древо. Более подробно вы можете ознакомиться с вариантами здесь.В стоимость включёны веник, набор полотенец, фен, тапочки, халат.',
-         needs: '*Необходимо иметь права категории А1',
-         prices: [
-            { title: 'Баня с купелью', price: '5000₽ в час' },
-            { title: 'Самовар на дровах', price: '5000₽' },
-            { title: 'Витаминный сет (ягоды, орехи)', price: '5000₽' },
-            {
-               title: 'Услуги пармастера', price: '5000₽ в час'
-            },
+         title: 'Пакет “Инстасамка”',
+         time: "7",
+         price: "18 900",
+         includes: ['Романтический пикник на берегу (фрукты, закуски)',
+            'Закатная фотосессия для двоих с профессиональным фотографом ',
+            'Уникальный локейшн и стилизация',
+            'Печать фотографий на память',
+            'Ретушь и обработка фотографий',
+            'Пуфы, пледы и чай, романтическая музыка',
+            ' Аренда гриля и угля',
          ],
          number: 8,
       },
-      '9': {
-         img: nine,
-         title: 'Настольные игры и кино',
-         about: 'В любое время года мы рады предложить нашим гостям разнообразные настольные игры, а также просмотр кино/сериала в локации “Шале”.Вы также можете заказать уху из форели или плов от шефа.',
-         needs: '*Стоимость указана при проживании на базе отдыха Икша Кантри Клаб',
-         prices: [
-            { title: 'Настольная игра', price: '200₽ в час' },
-            { title: 'Просмотр кино/сериала', price: '1000₽' },
 
+      '9': {
+         title: 'Пакет “Она у меня певица”',
+         time: "24",
+         price: "18 900",
+         includes: [
+            'Баня с панорамным видом на лес и купель с подогревом',
+            'Чайная церемония с традиционным русским самоваром - разогревающий связки сбор с мёдом и имбирём ',
+            'Караоке-система с двумя микрофонами и подборкой песен для двоих',
+            'Ночь в лесном домике с видом на заснеженное озеро',
          ],
          number: 9,
       },
 
-      // '10': {
-      //    img: one1,
-      //    title: 'Уединение',
-      //    about: 'В нашем клубе вы можете арендовать квадроцикл и багги. Прокат возможен в любое время года. Вся экипировка включена в стоимость:\nВетро / грязезащитные комбинезоны(не утеплённые)\nПерчатки\nШлем',
-      //    people: 'до 2 человек ',
-      //    time: 'от 3-х часов',
-      //    needs: '',
-      //    prices: [
-      //       { title: 'Квадроцикл/багги', price: '4000' },
-      //       { title: 'Дополнительный человек на квадроцикл/ багги', price: '500' },
-      //    ],
-      //    number: 1,
-      // },
+      '10': {
+         title: 'Пакет “Служебный роман”',
+         time: "24",
+         price: "44 500",
+         includes: [
+            'Трансфер до места на автомобиле премиум-класса в обе стороны',
+            'Баня с панорамным видом на заснеженный лес и купель с подогревом ',
+            'Закатный ужин на двоих при свечах от нашего шефа',
+            'Ночь в лесном домике с видом на водную гладь',
+            'Фрукты, французский сыр',
+            'Романтическая прогулка по лесу',
+            'Ночь в лесном домике с видом на озеро',
+         ],
+         number: 10,
+      },
+
+      '11': {
+         title: 'Пакет “Мажорный VIP”',
+         time: "24",
+         price: "62 000",
+         includes: [
+            'Трансфер до места на автомобиле премиум-класса в обе стороны',
+            'Баня с панорамным видом на заснеженный лес и купель с подогревом ',
+            'Тёплая купель в русском стиле с хвоей и шишками',
+            'Индивидуальные и парные парения. Прогрев с пят до плечей. Прогрев спины.',
+            'Расслабляющий массаж, пилинги',
+            'Чайная церемония с традиционным русским самоваром. На выбор русский облепиховый чай или русская рябина',
+            'Закатный ужин на двоих при свечах от нашего шефа',
+            'Фрукты, французский сыр, стейк из свежепойманной форели или из парной говядины',
+            'Ночь в лесном домике с видом на заснеженное озеро',
+         ],
+         number: 11,
+      },
+
+
+
 
    }
    return info
@@ -139,72 +183,62 @@ const ValenProgramPopup = ({ onClose }) => {
 
    // const about = info.about.split('\n')
 
-   const about = info.about.split('\n').map((paragraph, index) => (
-      <p key={index}>{paragraph}</p>
-   ))
+   // const about = info.about.split('\n').map((paragraph, index) => (
+   //    <p key={index}>{paragraph}</p>
+   // ))
 
    return (
-      <div className='fixed transform top-1/2 -translate-y-1/2 border overflow-y-auto border-stone-700 rounded-[10px] -translate-x-1/2 left-1/2 z-[10000000] w-screen md:max-w-[1000px] acariMedium h-screen md:h-[90vh] flex justify-between bg-white text-black'>
-         <div className='p-[20px] pb-[40px] md:p-[40px] max-w-[500px]'>
-            <div className="text-stone-700 font-medium mb-[10px] text-md">{info.title}</div>
+      <div className={`fixed bg-white transform top-1/2 -translate-y-1/2 border overflow-y-auto border-ValenPurple rounded-[10px] -translate-x-1/2 left-1/2 z-[10000000]  acariMedium w-[90vw] max-h-[95vh] md:h-auto md:min-w-[700px] lg:min-w-[1000px] md:w-auto flex justify-center   text-ValenPurple`}>
+         <div className='px-[20px] md:px-[100px] py-[50px] md:py-[40px] text-center'>
+            <div className={`text-ValenPurple ${s.rosarium} font-medium mb-[10px] text-[30px] md:text-lg`}>{info.title}</div>
 
-            <div className=" text-stone-700 text-md- mb-[20px] font-semibold leading-loose">{about}</div>
-
-
-            <div className='mb-[20px] '>
-               <div className="max-w-[531.13px]  rounded-[20px] p-[10px] md:p-[30px] border-2 border-yellow-900">
-                  <div className="text-stone-700 text-md font-semibold text-left">Стоимость аренды:</div>
-                  {info.prices.map((item, i) => {
-                     return (
-                        <div key={i} className='flex text-md- w-full gap-[20px] items-center justify-between'>
-                           <div>
-                              {item.title}
-                           </div>
-                           <div>
-
-                              {item.price}
-                           </div>
-                        </div>
-                     )
-                  })}
+            <div className={`flex font-bold ${s.rosarioSBold} justify-center gap-12`}>
+               <div className='flex gap-4 items-center text-sm'>
+                  <img src={time} alt="" />
+                  <div>
+                     {info.time} часов
+                  </div>
                </div>
-               {info.needs != '' ? <div>{info.needs}</div> : ''}
+
+               <div className='flex gap-4 items-center text-sm'>
+                  <img src={money} alt="" />
+                  <div>
+                     {info.price}₽
+                  </div>
+               </div>
             </div>
-
-
-
-            {/* <div className='flex gap-[10px] gap-y-[15px] mb-[20px] flex-wrap'>
-               {info.includes.map((incl, i) => {
-
+            <ul className={`${s.rosarium} mb-[40px]`}>
+               {info.includes.map((item, i) => {
                   return (
-                     <div key={i} className=" h-[17px] md:h-[28.68px] rounded-[10px] border px-[20px] text-[11px] md:text-[18px] border-stone-600">{incl}</div>
+                     <div className=' text-lg sm:text-md  font-light' key={i}>
+                        *{item}
+                     </div>
                   )
                })}
-            </div> */}
+
+
+            </ul>
+
             <div className="items-center sm:justify-start justify-center mb-[20px] gap-5 flex-col sm:flex-row flex">
                <div onClick={onClose} className=" cursor-pointer flex items-center gap-2 h-3 ">
                   <img src={arrow} className='transform rotate-180' alt="" />
-                  <div className="text-stone-700 font-medium  leading-snug">Вернуться назад</div>
+                  <div className="text-ValenPurple font-medium  leading-snug">Вернуться назад</div>
                </div>
 
                <div>
 
                </div>
-               <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module'); onClose() }} className="w-[184.02px] cursor-pointer h-[41.89px] flex items-center justify-center rounded-tr-[20px] rounded-bl-[20px] border-2 border-stone-700">
-                  <div className="w-[135.03px] h-[17.26px] text-center text-stone-700 text-base font-bold montserrat leading-snug tracking-tight">Забронировать</div>
+               <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module'); onClose() }} className="w-[80%] monterrat max-w-[600px] h-[47.26px] flex justify-center items-center rounded-[20px] text-center text-white bg-[#79072C] text-base font-bold montserrat leading-snug tracking-tight cursor-pointer">
+                  <div className="">Забронировать</div>
                </div>
+               {/* href='#form' */}
 
-               <a onClick={() => { onClose() }} href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                  <div className="text-center text-zinc-500 font-semibold">Узнать подробнее</div>
-               </a>
 
             </div>
 
          </div>
 
-         <div className='h-full hidden md:block w-[450px]'>
-            <img src={info.img} className='h-full w-full' alt="" />
-         </div>
+
 
       </div>
    )
