@@ -48,7 +48,7 @@ const Footer = () => {
                         {t('offerAgreement')}
                     </a>
                 </div>
-                <div className='text-white text-center text-[10px] mt-[20px]' >ИП Владышевский Юрий Максимович</div>
+
             </div>
         </footer>
     )

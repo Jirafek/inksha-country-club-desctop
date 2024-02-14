@@ -28,6 +28,7 @@ export default defineConfig({
          utils: path.resolve(__dirname, "./src/utils/"),
          pages: path.resolve(__dirname, "./src/pages/"),
          locales: path.resolve(__dirname, "./src/locales/"),
+         constants: path.resolve(__dirname, "./src/constants/"),
       },
    },
 });

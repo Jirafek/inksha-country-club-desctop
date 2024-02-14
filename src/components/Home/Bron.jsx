@@ -140,10 +140,7 @@ const Bron = () => {
                   </p>
                   <p className="text-[24px] font-extrabold sm:text-[28px] 2xl:text-[38px]">
                      {t("bron.comeAndRelax")}
-                     <p className='sm:text-[18px] text-white 2xl:text-[28px'>
-                        обл. Московская, р-н Мытищинский,<br /> сельское поселение
-                        Федоскинское, п. Менжинец,<br /> СНТ "Икша" участок 4
-                     </p>
+
                   </p>
                </div>
             </m.div>

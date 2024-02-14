@@ -7,6 +7,7 @@ import brownarrow from "icons/brownarrow.png"
 import Button from "common/Button"
 import { Link } from "react-router-dom"
 import { useTranslation } from 'react-i18next'
+import { getLocation } from 'constants/locations'
 
 const getLocations = () => {
    const { t } = useTranslation()
@@ -44,7 +45,7 @@ const getLocations = () => {
 }
 const KorpLocations = () => {
    const { t } = useTranslation()
-   const locations = getLocations()
+
    return (
       <div id="locations" className="location ">
          <div className="wrapper py-[10vh]">
@@ -54,7 +55,7 @@ const KorpLocations = () => {
                <span className="text-brown">{t('korplocations.especiallyForYou')}</span>
             </h2>
             <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-               {locations.map((loc, i) => {
+               {getLocation().map((loc, i) => {
                   return (
                      <Link
                         to={loc.link}

@@ -36,10 +36,10 @@ const LocationsCard = ({ arrayData }) => {
                             <div className="flex items-center md:gap-3">
                                 <div className="flex flex-col md:gap-6">
                                     <p className="text-white 3xl:text-[32px] whitespace-nowrap md:text-[26px] font-semibold">
-                                        {t('locations.upTo30People')}
+                                        {el.people}
                                     </p>
                                     <p className="text-white 3xl:text-[32px] md:text-[26px] font-semibold">
-                                        {t('locations.from15000Rubles')}
+                                        {el.price}
                                     </p>
                                 </div>
                                 <div className="group-hover:translate-x-4 duration-500 md:w-auto w-[65px]">

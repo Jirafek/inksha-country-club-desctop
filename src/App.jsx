@@ -16,6 +16,7 @@ import en_icon from 'icons/eng.webp'
 import global from 'icons/global.webp'
 import { changeLanguage } from 'utils/i18n'
 import ValenLanding from 'pages/valenLanding/ValenLanding'
+import ManLanding from 'pages/manLanding/ManLanding'
 
 export const LanguageComponent = () => {
    const { i18n } = useTranslation()
@@ -80,9 +81,9 @@ const FishingLanding = loadable(() => import("./pages/fishingLanding/FishingLand
 
 const ToTheTopComponent = () => {
    return (
-      <a href='#main' className='fixed w-[72px] h-[72px] flex items-center border-[2px] border-[#58462E] justify-center bottom-[20px] bg-[#AB8E67] rounded-full cursor-pointer right-[100px] z-[10000]'>
+      <div onClick={() => { window.scrollTo(0, 0) }} className='fixed w-[72px] h-[72px] flex items-center border-[2px] border-[#58462E] justify-center bottom-[20px] bg-[#AB8E67] rounded-full cursor-pointer right-[100px] z-[10000]'>
          <img className='-rotate-90 h-[19px]' src={arrow} alt="" />
-      </a>
+      </div>
    )
 }
 
@@ -274,6 +275,7 @@ function App() {
             <Route path="/fishing" element={<FishingLanding />} />
             <Route path="/active" element={<ChillLanding />} />
             <Route path="/valentine" element={<ValenLanding />} />
+            <Route path="/defender" element={<ManLanding />} />
 
             <Route path="*" element={<NotFound />} />
          </Routes>

@@ -6,14 +6,14 @@ import InputMask from "react-input-mask"
 import { useNavigate } from "react-router-dom"
 import { useURLData } from "utils/URLData"
 import { useTranslation } from 'react-i18next'
-const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+
 const Form = ({ additionalData = null,
    additionalDataType = null }) => {
    const { t } = useTranslation()
    const navigate = useNavigate()
    const [name, setName] = useState("")
    const [phone, setPhone] = useState("")
-   const [email, setEmail] = useState("")
+
    const [isValid, setIsValid] = useState(true)
    const [phoneError] = useState("")
    const [isError, setIsError] = useState(true) // State for tracking errors
@@ -22,13 +22,10 @@ const Form = ({ additionalData = null,
       const data = {
          name: name,
          phone: phone,
-         email: email,
+         email: '-',
          groupID: import.meta.env.VITE_GROUP_ID,
       }
-      if (!email.match(emailRegex)) {
-         alert("Введите корректный почтовый адрес")
-         return
-      }
+
 
       let sendingData = {
          ...data,
@@ -65,7 +62,7 @@ const Form = ({ additionalData = null,
             // ... ваша существующая логика ...
             setPhone("") // Очищаем состояние телефона
             setName("") // Очищаем состояние телефона
-            setEmail("") // Очищаем состояние телефона
+
          } else {
             alert("Произошла ошибка при отправке данных")
          }
@@ -78,9 +75,9 @@ const Form = ({ additionalData = null,
    useEffect(() => {
 
       // Проверка на ошибки при изменении полей формы
-      const newIsError = !name || !phone || !email || !isValid
+      const newIsError = !name || !phone || !isValid
       setIsError(newIsError)
-   }, [name, phone, email])
+   }, [name, phone])
 
    const handlePhoneChange = (e) => {
       const inputValue = e.target.value
@@ -94,10 +91,7 @@ const Form = ({ additionalData = null,
       setName(value)
    }
 
-   const handleEmailChange = (e) => {
-      const { value } = e.target
-      setEmail(value)
-   }
+
    const handleSubmit = (e) => {
       e.preventDefault()
       if (isError) {
@@ -143,13 +137,7 @@ const Form = ({ additionalData = null,
                   )}
                </InputMask>
 
-               <input
-                  type="text"
-                  placeholder="Email"
-                  className="mb-5 h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[80%] md:w-full rounded-[20px] bg-[#ECE9E9] p-2 text-[14px] text-black outline-none md:text-[27px]"
-                  onChange={handleEmailChange}
-                  value={email}
-               />
+
 
                <Button
                   onClick={handleSubmit}

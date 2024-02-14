@@ -3,22 +3,12 @@
 
 import arrow from 'icons/brownarrow.png'
 
-import time from 'images/valen/icons/time.png'
-import money from 'images/valen/icons/money.png'
-
 // import one from 'images/chill/program/group1.png'
-import two from 'images/chill/group/group2.webp'
-import three from 'images/chill/group/group3.webp'
-import four from 'images/chill/group/group4.webp'
-import five from 'images/chill/group/group5.webp'
-import six from 'images/chill/group/group6.webp'
-import seven from 'images/chill/group/group7.webp'
-import eight from 'images/chill/group/group8.webp'
-import nine from 'images/chill/group/group9.webp'
 
-import s from './../../valen.module.scss'
 
-import popupBg from 'images/valen/popupBg.png'
+import s from './../../man.module.scss'
+
+
 // import { useEffect } from 'react'
 
 import { useQueryParam, StringParam } from 'use-query-params'
@@ -177,7 +167,7 @@ const GetInfo = () => {
    }
    return info
 }
-const ValenProgramPopup = ({ onClose }) => {
+const ManProgramPopup = ({ onClose }) => {
    const infos = GetInfo()
    const [productQueryParam] = useQueryParam('productId', StringParam)
 
@@ -192,9 +182,9 @@ const ValenProgramPopup = ({ onClose }) => {
    // ))
 
    return (
-      <div className={`fixed bg-white transform top-1/2 -translate-y-1/2 border overflow-y-auto border-ValenPurple rounded-[10px] -translate-x-1/2 left-1/2 z-[10000000]  acariMedium w-[90vw] max-h-[95vh] md:h-auto md:min-w-[700px] lg:min-w-[1000px] md:w-auto flex justify-center   text-ValenPurple`}>
+      <div className={`fixed bg-white transform top-1/2 -translate-y-1/2 border overflow-y-auto border-ManPurple rounded-[10px] -translate-x-1/2 left-1/2 z-[10000000]  acariMedium w-[90vw] max-h-[95vh] md:h-auto md:min-w-[700px] lg:min-w-[1000px] md:w-auto flex justify-center   text-ManPurple`}>
          <div className='px-[20px] md:px-[100px] py-[50px] md:py-[40px] text-center'>
-            <div className={`text-ValenPurple ${s.rosarium} font-medium mb-[10px] text-[30px] md:text-lg`}>{info.title}</div>
+            <div className={`text-ManPurple ${s.rosarium} font-medium mb-[10px] text-[30px] md:text-lg`}>{info.title}</div>
 
             <div className={`flex font-bold ${s.rosarioSBold} justify-center gap-12`}>
                <div className='flex gap-4 items-center text-sm'>
@@ -226,7 +216,7 @@ const ValenProgramPopup = ({ onClose }) => {
             <div className="items-center sm:justify-start justify-center mb-[20px] gap-5 flex-col sm:flex-row flex">
                <div onClick={onClose} className=" cursor-pointer flex items-center gap-2 h-3 ">
                   <img src={arrow} className='transform rotate-180' alt="" />
-                  <div className="text-ValenPurple font-medium  leading-snug">Вернуться назад</div>
+                  <div className="text-ManPurple font-medium  leading-snug">Вернуться назад</div>
                </div>
 
                <div>
@@ -248,4 +238,4 @@ const ValenProgramPopup = ({ onClose }) => {
    )
 }
 
-export default ValenProgramPopup
+export default ManProgramPopup

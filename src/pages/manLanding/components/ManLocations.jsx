@@ -7,40 +7,11 @@ import longarrow from "icons/longbrownarrow.png"
 // import arrow from "icons/arrow.png"
 
 import { Link } from "react-router-dom"
-import ValenModule from './ValenModule'
+import ManModule from './ManModule'
 import { getLocation } from 'constants/locations'
 
-const locations = [
-   {
-      title: "ЛЕСНАЯ РЕЗИДЕНЦИЯ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc1,
-      link: '/locations-about',
-   },
-   {
-      title: "КОТТЕДЖ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc2,
-      link: '/locations-about',
-   },
-   {
-      title: "ШАЛЕ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc3,
-      link: '/locations-about',
-   },
-   {
-      title: "ОЛИМПИЙСКАЯ ДЕРЕВНЯ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc4,
-      link: '/locations-about',
-   },
-]
-const ValenLocations = () => {
+
+const ManLocations = () => {
    return (
       <div id="locations" className=" text-black ">
          <div className="wrapper py-[15vh]">
@@ -80,15 +51,15 @@ const ValenLocations = () => {
             </div>
             {/* <LocationsBlocks /> */}
             {/* <a href="#form">
-               <Button className="bg-ValenBrown text-md  w-auto h-[40px] md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-white">
+               <Button className="bg-ManBrown text-md  w-auto h-[40px] md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-white">
                   Забронировать
 
                </Button>
             </a> */}
-            <ValenModule />
+            <ManModule />
          </div>
       </div>
    )
 }
 
-export default ValenLocations
+export default ManLocations

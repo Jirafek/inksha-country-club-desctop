@@ -16,7 +16,6 @@ const ValenForm = () => {
    const navigate = useNavigate()
    const [name, setName] = useState("")
    const [phone, setPhone] = useState("")
-   const [email, setEmail] = useState("")
    const [isValid, setIsValid] = useState(true)
    const [phoneError] = useState("")
    const [isError, setIsError] = useState(true) // State for tracking errors
@@ -25,13 +24,10 @@ const ValenForm = () => {
       const data = {
          name: name,
          phone: phone,
-         email: email,
+         email: '-',
          groupID: 1002014846298,
       }
-      if (!email.match(emailRegex)) {
-         alert("Введите корректный почтовый адрес")
-         return
-      }
+
 
       const sendingData = {
          ...data,
@@ -61,7 +57,7 @@ const ValenForm = () => {
             // ... ваша существующая логика ...
             setPhone("") // Очищаем состояние телефона
             setName("") // Очищаем состояние телефона
-            setEmail("") // Очищаем состояние телефона
+
          } else {
             alert("Произошла ошибка при отправке данных")
          }
@@ -74,9 +70,9 @@ const ValenForm = () => {
    useEffect(() => {
 
       // Проверка на ошибки при изменении полей формы
-      const newIsError = !name || !phone || !email || !isValid
+      const newIsError = !name || !phone || !isValid
       setIsError(newIsError)
-   }, [name, phone, email])
+   }, [name, phone])
 
    const handlePhoneChange = (e) => {
       const inputValue = e.target.value
@@ -88,11 +84,6 @@ const ValenForm = () => {
    const handleNameChange = (e) => {
       const { value } = e.target
       setName(value)
-   }
-
-   const handleEmailChange = (e) => {
-      const { value } = e.target
-      setEmail(value)
    }
    const handleSubmit = (e) => {
       e.preventDefault()
@@ -139,13 +130,7 @@ const ValenForm = () => {
                   )}
                </InputMask>
 
-               <input
-                  type="text"
-                  placeholder="Email"
-                  className="mb-5 border border-[#FF2D72] h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-[#FF2D72] outline-none md:text-[27px]"
-                  onChange={handleEmailChange}
-                  value={email}
-               />
+
 
                <Button
                   onClick={handleSubmit}

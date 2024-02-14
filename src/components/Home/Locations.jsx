@@ -80,6 +80,9 @@ const Locations = () => {
             title: t('woodsResidence'), // Translate the title
             variant: OpenBottom,
             link: '/location/1',
+
+            people: 'до 30 чел',
+            price: 'от 10 000 ₽',
         },
         {
 
@@ -90,6 +93,9 @@ const Locations = () => {
             title: t('cottageInSuburbs'), // Translate the title
             variant: OpenBottom,
             link: '/location/2',
+
+            people: 'до 10 чел',
+            price: 'от 21 000 ₽',
         },
         {
 
@@ -100,6 +106,9 @@ const Locations = () => {
             title: t('chaletsOnIkshaReservoir'), // Translate the title
             variant: OpenBottom,
             link: '/location/3',
+
+            people: 'до 15 чел',
+            price: 'от 11 000 ₽',
         },
         {
 
@@ -110,6 +119,9 @@ const Locations = () => {
             title: t('olympicVillage'), // Translate the title
             variant: OpenBottom,
             link: '/location/4',
+
+            people: 'до 30 чел',
+            price: 'от 16 000 ₽',
         },
     ]
 
