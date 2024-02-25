@@ -2,6 +2,7 @@ import { m } from "framer-motion"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useURLData } from "utils/URLData"
+import { getPhoneNumber } from "utils/helpers"
 import { v4 as uuid4 } from "uuid"
 import Title from "../Title"
 import MainPopup from "./../../common/MainPopup"
@@ -42,20 +43,8 @@ const Bron = () => {
          imgAvif: "/image/wa_bl.avif",
          imgWebp: "/image/wa_bl.webp",
          imgAltText: t("bron.call"),
-         text: phoneNumber,
-         link: phoneNumber,
-         text:
-            utm_source === "yandex"
-               ? "+7(499) 505-50-67"
-               : utm_source === "vkontakte"
-                  ? "+7(499) 505-50-87"
-                  : "+79859091202",
-         link:
-            utm_source === "yandex"
-               ? "tel:+74995055067"
-               : utm_source === "vkontakte"
-                  ? "tel:+74995055087"
-                  : "tel:++79859091202",
+         text: getPhoneNumber(),
+         link: getPhoneNumber(),
       },
       {
          imgAvif: "/image/tg_bl.avif",
@@ -113,8 +102,9 @@ const Bron = () => {
                </h2>
                <p className="mb-5 w-[350px] font-medium text-white sm:w-[450px] sm:text-[18px] 2xl:w-[700px] 2xl:text-[32px]">
                   {t("bron.relaxAndMemorable")}
-                  <span className="text-[#AB8E67]">{t("bron.threeSimpleSteps")}</span>
+
                </p>
+               <p className="mb-5 w-[350px] font-medium  sm:w-[450px] sm:text-[18px] 2xl:w-[700px] text-[#AB8E67] 2xl:text-[32px]"> {t("bron.threeSimpleSteps")}</p>
                <div className="flex items-center gap-4 text-[#AB8E67] sm:gap-11">
                   <p className="text-[42px] font-extrabold text-[#75624A] sm:text-[55px] 2xl:text-[78px]">
                      01
