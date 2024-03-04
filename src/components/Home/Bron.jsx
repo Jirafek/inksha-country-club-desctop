@@ -32,7 +32,7 @@ const OpenLeft = {
 }
 
 const Bron = () => {
-   const { utm_source, phoneContent } = useURLData()
+   const { utm_source, phoneContent, clientId } = useURLData()
    const matchingPhone = phoneContent.find(item => item.utm === utm_source)
    const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    const { t } = useTranslation()
@@ -51,7 +51,7 @@ const Bron = () => {
          imgWebp: "/image/tg_bl.webp",
          imgAltText: t("bron.telegram"),
          text: "@ikshacountryclub",
-         link: `https://t.me/IkshaCountryClubSupportBot?start=${utm_source}_`,
+         link: `https://t.me/IkshaCountryClubSupportBot?start=${utm_source}__${clientId ?? ""}`,
       },
       {
          imgAvif: "/image/inst_bl.avif",
