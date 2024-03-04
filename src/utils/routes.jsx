@@ -1,7 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { isItWinterNow } from "./helpers"
+import {useURLData} from "utils/URLData";
 
 const getRoutes = () => {
+   const { utm_source } = useURLData()
+   const waPhone = utm_source === 'yandex' ? '74995055067' : '74995055031'
 
    const { t } = useTranslation()
 
@@ -54,7 +57,7 @@ const getRoutes = () => {
       },
       {
          title: "",
-         link: `https://wa.me/79859091202?text=${encodeURIComponent('Здравствуйте, меня интересует аренда домика')}`,
+         link: `https://wa.me/${waPhone}?text=${encodeURIComponent('Здравствуйте, меня интересует аренда домика')}`,
          icon: `/image/whatsapp${isItWinterNow()}.webp`,
          iconAvif: `/image/whatsapp${isItWinterNow()}.avif`,
          iconAlt: t("routes.whatsappIconAlt"),
