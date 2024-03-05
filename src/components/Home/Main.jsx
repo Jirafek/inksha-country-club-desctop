@@ -7,7 +7,7 @@ import Header from "./Header"
 import { useTranslation, Trans } from 'react-i18next'
 import bgWinAvif from 'images/welcome_bg_winter.webp'
 
-import logo from 'icons/events/mart.png'
+import logo from 'icons/events/butter.png'
 
 
 
@@ -193,7 +193,7 @@ const Main = () => {
    return (
       <div id='main' className='relative'>
          {/* <div className='fixed top-5 right-5 text-white font-bold rounded-full bg-slate-300 px-4 cursor-pointer z-[10000] text-md' onClick={toggleLanguage}>{i18n.language}</div> */}
-         <Link to="/mart" className="absolute flex justify-center items-center flex-col right-10 top-20 z-[1000]">
+         <Link to="/butter" className="absolute flex justify-center items-center flex-col right-10 top-20 z-[1000]">
             <m.img
                transition={{
                   repeat: Infinity,
