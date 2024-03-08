@@ -51,7 +51,7 @@ const Bron = () => {
          imgWebp: "/image/tg_bl.webp",
          imgAltText: t("bron.telegram"),
          text: "@ikshacountryclub",
-         link: `https://t.me/IkshaCountryClubSupportBot?start=${utm_source}__${clientId ?? ""}`,
+         link: `https://t.me/IkshaCountryClubSupportBot?start=${utm_source === "Сайт" ? "" : utm_source}__${clientId ?? ""}`,
       },
       {
          imgAvif: "/image/inst_bl.avif",
