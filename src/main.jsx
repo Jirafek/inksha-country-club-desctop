@@ -10,7 +10,7 @@ import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
 import { useURLData } from 'utils/URLData'
-import { fetchData } from '../firebase.js'
+import {addUser, fetchData} from '../firebase.js'
 
 import './utils/i18n.js'
 import { useTranslation } from 'react-i18next'
@@ -47,20 +47,10 @@ function AppWithDelay() {
    const { updatePhoneContent, setClienId } = useURLData()
    const groupID = -1002014846298
 
-   const cookies = document.cookie.split('; ')
-   let maxUid = -1
-   cookies.forEach(cookie => {
-      if (cookie.startsWith('_ym_uid')) {
-         const uidValue = cookie.split('=')[1]
-         if (+uidValue > +maxUid) {
-            maxUid = +uidValue
-         }
-      }
-   })
-
    useEffect(() => {
-      if (maxUid !== -1) {
-         setClienId(maxUid)
+      if (window.globalClientId) {
+         addUser(window.globalClientId).then();
+         setClienId(window.globalClientId);
       }
 
       fetchData(groupID, updatePhoneContent)
