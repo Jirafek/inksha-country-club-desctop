@@ -603,7 +603,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, }) => {
             {selectedimages.map((item, i) => {
                return (
 
-                  <div key={i} className={` ${s.acariMedium} w-[94%] sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
+                  <div key={i} className={` ${s.acariMedium} w-full sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
 
 
                      <div className={` ${s.acariMedium} h-[217.35px] relative`}>
@@ -614,7 +614,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, }) => {
                         <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
                         <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
-                        <div className='flex justify-between mb-[20px]'>
+                        <div className='flex justify-between'>
                            {item.oldPrice !== '' ?
                               <div className='flex flex-col items-center justify-center w-full'>
                                  <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
