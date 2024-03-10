@@ -18,6 +18,7 @@ import { changeLanguage } from 'utils/i18n'
 import ValenLanding from 'pages/valenLanding/ValenLanding'
 import ManLanding from 'pages/manLanding/ManLanding'
 import MartLanding from 'pages/martLanding/MartLanding'
+import ButterLanding from 'pages/butterLanding/ButterLanding'
 
 export const LanguageComponent = () => {
    const { i18n } = useTranslation()
@@ -278,6 +279,8 @@ function App() {
             <Route path="/valentine" element={<ValenLanding />} />
             <Route path="/defender" element={<ManLanding />} />
             <Route path="/mart" element={<MartLanding />} />
+            <Route path="/butter" element={<ButterLanding />} />
+
 
             <Route path="*" element={<NotFound />} />
          </Routes>
