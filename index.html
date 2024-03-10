@@ -22,12 +22,10 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-
-    
-
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
+      var globalClientId;
+
       (function (m, e, t, r, i, k, a) {
         m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
         m[i].l = 1 * new Date();
@@ -49,6 +47,10 @@
         accurateTrackBounce: true,
         webvisor: true,
       });
+
+      ym(87405071, 'getClientID', function(clientID) {
+        globalClientId = clientID;
+      });
     </script>
     <noscript>
       <div>
@@ -56,6 +58,11 @@
       </div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <script type="module" src="/src/main.jsx"></script>
+
+    
+
 
     <!-- VK Retargeting script -->
     <script type="text/javascript">
