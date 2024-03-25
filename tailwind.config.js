@@ -46,6 +46,8 @@ export default {
             ButterDarkBlue: '#153B73',
             ButterLightBlue: '#6977A4',
             BirthPurple: '#8348AB',
+            BirthLightPurple: '#BC8DDC',
+            BirthDarkPurple: '#38194D'
 
 
          },

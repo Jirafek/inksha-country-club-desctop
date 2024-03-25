@@ -1,18 +1,19 @@
 /* eslint-disable react/prop-types */
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import { Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
 
-import closeblack from "icons/closeblack.png";
-import next from "icons/next_photo.png";
-import prev from "icons/prev_photo.png";
-import { useRef } from "react";
+import closeblack from "icons/closeblack.png"
+import next from "icons/next_photo.png"
+import prev from "icons/prev_photo.png"
+
+import { useRef } from "react"
 
 const Lightbox = ({ toggleMenu, items, isButtonVisible = true }) => {
-   const swiperRef = useRef();
+   const swiperRef = useRef()
    return (
       <div className="fixed inset-0 z-[10000] flex items-center justify-center  h-full w-[100vw] bg-slate-100 bg-opacity-60 ">
          <div
@@ -33,9 +34,9 @@ const Lightbox = ({ toggleMenu, items, isButtonVisible = true }) => {
             slidesPerView={1}
             navigation
             loop={true}
-            className="absolute photo_swiper "
+            className=" "
             onBeforeInit={(swiper) => {
-               swiperRef.current = swiper;
+               swiperRef.current = swiper
             }}
          // onSwiper={(swiper) => console.log(swiper)}
          // onSlideChange={() => console.log("slide change")}
@@ -48,7 +49,7 @@ const Lightbox = ({ toggleMenu, items, isButtonVisible = true }) => {
                   >
                      <img className="object-cover lightbox-img" src={photo.img} alt="" />
                   </SwiperSlide>
-               );
+               )
             })}
          </Swiper>
          {isButtonVisible &&
@@ -57,7 +58,7 @@ const Lightbox = ({ toggleMenu, items, isButtonVisible = true }) => {
                <button
                   className="absolute right-0  top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
                   onClick={() => {
-                     swiperRef.current?.slideNext();
+                     swiperRef.current?.slideNext()
                   }}
                >
                   <img src={next} alt="" />
@@ -65,7 +66,7 @@ const Lightbox = ({ toggleMenu, items, isButtonVisible = true }) => {
                <button
                   className="absolute left-0  top-1/2 z-20 h-[50px] w-[50px] md:h-[150px] md:w-[150px] -translate-y-1/2 transform "
                   onClick={() => {
-                     swiperRef.current?.slidePrev();
+                     swiperRef.current?.slidePrev()
                   }}
                >
                   <img src={prev} alt="" />
@@ -73,7 +74,7 @@ const Lightbox = ({ toggleMenu, items, isButtonVisible = true }) => {
             </div>
          }
       </div>
-   );
-};
+   )
+}
 
-export default Lightbox;
+export default Lightbox

@@ -19,6 +19,7 @@ import ValenLanding from 'pages/valenLanding/ValenLanding'
 import ManLanding from 'pages/manLanding/ManLanding'
 import MartLanding from 'pages/martLanding/MartLanding'
 import ButterLanding from 'pages/butterLanding/ButterLanding'
+import BirthLanding from 'pages/birthLanding/BirthLanding'
 
 export const LanguageComponent = () => {
    const { i18n } = useTranslation()
@@ -110,6 +111,24 @@ function App() {
             }, 40000))
       }, [])
    }
+
+   //бронируй онлайн попап услуг 
+   useEffect(() => {
+      const script = document.createElement("script")
+      script.src = "//widget.bronirui-online.ru/js/app.js"
+      script.async = true
+      const initializeWidget = () => {
+         window.znmsWidget.init("#znms-service-widget-module", {
+            moduleId: 5026,
+            type: 'booking-services',
+         })
+      }
+      script.onload = initializeWidget
+      document.body.appendChild(script)
+   }, [])
+
+
+
 
 
    useEffect(() => {
@@ -223,6 +242,9 @@ function App() {
    return (
       <div className='relative'>
 
+
+         <div id="znms-service-widget-module"></div>
+
          <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
 
          {isHelpPopupOpen && <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
@@ -280,6 +302,8 @@ function App() {
             <Route path="/defender" element={<ManLanding />} />
             <Route path="/mart" element={<MartLanding />} />
             <Route path="/butter" element={<ButterLanding />} />
+            <Route path="/birthday" element={<BirthLanding />} />
+
 
 
             <Route path="*" element={<NotFound />} />
