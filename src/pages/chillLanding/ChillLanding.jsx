@@ -33,9 +33,6 @@ const ChillLanding = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const [currentTime, setTime] = useState(isItWinterNow() === '_winter' ? 'Зима' : 'Лето')
 
-
-
-
    const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen)
    }

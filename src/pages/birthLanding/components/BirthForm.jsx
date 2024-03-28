@@ -32,7 +32,7 @@ const BirthForm = () => {
       const sendingData = {
          ...data,
          source: "https://ikshacountryclub.com/",
-         formType: "масленица лендинг",
+         formType: "день рождения лендинг",
          link: window.location.href,
          ...URLData,
       }
@@ -102,14 +102,14 @@ const BirthForm = () => {
                name="Form"
                action=""
             >
-               <h2 className="mb-10 text-center text-md text-ButterDarkBlue">
+               <h2 className="mb-10 text-center text-md text-BirthPurple">
                   Оставьте ваши данные, и наш менеджер свяжется с вами для
                   уточнения деталей
                </h2>
                <input
                   type="text"
                   placeholder="Имя"
-                  className="mb-5 border border-ButterDarkBlue h-[40px] pl-[25px] md:pl-[50px] md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-ButterDarkBlue outline-none md:text-[27px]"
+                  className="mb-5 border border-BirthPurple h-[40px] pl-[25px] md:pl-[50px] md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-BirthPurple outline-none md:text-[27px]"
                   onChange={handleNameChange}
                   value={name}
                />
@@ -123,7 +123,7 @@ const BirthForm = () => {
                      <input
                         type="text"
                         placeholder="Телефон"
-                        className={`mb-5 border border-ButterDarkBlue h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-ButterDarkBlue outline-none md:text-[27px] ${phoneError ? "border-red-500" : ""
+                        className={`mb-5 border border-BirthPurple h-[40px] pl-[25px] md:pl-[50px]  md:h-[80px] w-[100%] md:w-full rounded-[20px] bg-white p-2 text-[14px] text-BirthPurple outline-none md:text-[27px] ${phoneError ? "border-red-500" : ""
                            }`}
                         {...inputProps}
                      />
@@ -134,7 +134,7 @@ const BirthForm = () => {
 
                <Button
                   onClick={handleSubmit}
-                  className="mx-auto h-[40px] w-full md:h-[60px] montserrat bg-ButterDarkBlue gap-10 md:w-full  bg-Martext-ButterDarkBlue text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
+                  className="mx-auto h-[40px] w-full md:h-[60px] montserrat bg-BirthDarkPurple gap-10 md:w-full  text-white shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]"
                >
                   Узнать стоимость
 

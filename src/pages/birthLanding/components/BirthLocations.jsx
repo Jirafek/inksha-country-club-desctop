@@ -1,7 +1,4 @@
-import loc1 from "images/korpLanding/locations/003.webp"
-import loc2 from "images/korpLanding/locations/001.webp"
-import loc3 from "images/korpLanding/locations/002.webp"
-import loc4 from "images/korpLanding/locations/004.webp"
+
 import longarrow from "icons/longbrownarrow.png"
 import brownarrow from "icons/brownarrow.png"
 import Button from "common/Button"
@@ -11,46 +8,13 @@ import { getLocation } from 'constants/locations'
 
 import map from 'images/fishing/map.webp'
 
-const getLocations = () => {
-   const { t } = useTranslation()
-   const locations = [
-      {
-         title: t('korplocations.forestResidence'),
-         people: t('korplocations.upTo30People'),
-         price: t('korplocations.from15000Rubles'),
-         img: loc1,
-         link: "/location/1",
-      },
-      {
-         title: t('korplocations.cottage'),
-         people: t('korplocations.upTo30People'),
-         price: t('korplocations.from15000Rubles'),
-         img: loc2,
-         link: "/location/2",
-      },
-      {
-         title: t('korplocations.chalet'),
-         people: t('korplocations.upTo30People'),
-         price: t('korplocations.from15000Rubles'),
-         img: loc3,
-         link: "/location/3",
-      },
-      {
-         title: t('korplocations.olympicVillage'),
-         people: t('korplocations.upTo30People'),
-         price: t('korplocations.from15000Rubles'),
-         img: loc4,
-         link: "/location/4",
-      },
-   ]
-   return locations
-}
+
 const BirthLocations = () => {
    const { t } = useTranslation()
 
    return (
       <div id="locations" className="location bg-BirthLightPurple py-[70px]">
-         <h1 className="text-center font-[700] pb-[30px] text-BirthDarkPurple  mx-auto text-lg">{t('korplocations.title')}</h1>
+         <h1 className="text-center font-[700] pb-[30px] text-BirthDarkPurple  mx-auto text-lg">{t('korp.locations.title')}</h1>
 
          <img className='w-full min-h-[500px] h-full object-left md:object-center object-cover' src={map} alt="" />
 
@@ -96,7 +60,7 @@ const BirthLocations = () => {
             </div>
             <a href="#form">
                <Button className="bg-white bg-opacity-70 w-auto h-[40px] text-md+ md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-black">
-                  {t('korplocations.learnMore')}
+                  {t('korp.locations.learnMore')}
 
                </Button>
             </a>

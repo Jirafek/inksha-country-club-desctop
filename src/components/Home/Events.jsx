@@ -60,7 +60,7 @@ const Events = () => {
                             {el.text}
                         </p>
                         <div className="flex justify-center">
-                            <a href="https://bronirui-online.ru/iksha-country-club/uslugi" className="text-[rgba(34,_28,_28,_0.70)] text-[25px] font-semibold py-4 px-8 border border-[#604E3A] bg-[#75624A] rounded-lg" rel="noreferrer">
+                            <a href={el.link} className="text-[rgba(34,_28,_28,_0.70)] text-[25px] font-semibold py-4 px-8 border border-[#604E3A] bg-[#75624A] rounded-lg" rel="noreferrer">
                                 {t('events.learnMore')}
                             </a>
                         </div>

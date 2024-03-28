@@ -7,7 +7,7 @@ import add5 from "images/korpLanding/add/005.webp"
 import add6 from "images/korpLanding/add/006.webp"
 
 import Button from "common/Button"
-import korpnext from "icons/next_photo.png"
+import korpnext from "icons/slider/orange/next.png"
 
 import trans2 from "images/korpLanding/trans2.png"
 
@@ -65,7 +65,7 @@ const BirthAdd = () => {
                            <div
                               key={index}
                               className={`${index === activeTab
-                                 ? "text-BirthPurple border border-white rounded-[30px] p-2 border-opacity-50"
+                                 ? "text-BirthPurple border border-BirthPurple rounded-[30px] p-2 "
                                  : ""
                                  } cursor-pointer text-md font-semibold text-center  md:text-start`}
                               onClick={() => handleTabClick(index)}

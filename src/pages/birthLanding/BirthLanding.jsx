@@ -16,9 +16,20 @@ import BirthGuest from './components/BirthGuest'
 import BirthForm from './components/BirthForm'
 import BirthAdd from './components/BirthAdd'
 import BirthContacts from './components/BirthContacts'
-
+import BirthProgram from './components/BirthProgram'
+import { isItWinterNow } from 'utils/helpers.js'
+import BirthModule from './components/BirthModule'
 
 const BirthLanding = () => {
+   const [isMenuOpen, setIsMenuOpen] = useState(false)
+   const [currentTime, setTime] = useState(isItWinterNow() === '_winter' ? 'Зима' : 'Лето')
+
+   const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen)
+   }
+
+
+
    const getLinks = () => {
       const { t } = useTranslation()
       const links = [
@@ -44,10 +55,7 @@ const BirthLanding = () => {
    const footerLinks = GetFooterLinks()
 
    const links = getLinks()
-   const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const toggleMenu = () => {
-      setIsMenuOpen(!isMenuOpen)
-   }
+
    return (
       <div>
          <Helmet>
@@ -78,15 +86,16 @@ const BirthLanding = () => {
                className={`bg-BirthPurple font-bold text-white `}
             />
             <BirthHero />
-
+            <BirthProgram setTime={setTime} currentTime={currentTime} />
             <BirthPhoto />
             <BirthLocations />
+            <BirthModule />
             <BirthKaytering />
             <BirthGuest />
             <BirthAdd />
             <BirthContacts />
             <BirthForm />
-            <Footer FooterLinks={footerLinks} isMediaOpen={false} className={`bg-white  text-ButterDarkBlue`} />
+            <Footer FooterLinks={footerLinks} isMediaOpen={false} className={`text-white  bg-BirthPurple`} />
          </div>
       </div>
    )

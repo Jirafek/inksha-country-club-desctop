@@ -10,7 +10,7 @@ import "./fonts/Lato-Regular.ttf"
 import "./fonts/MontserratAlternates-Regular.ttf"
 import "./index.css"
 import { useURLData } from 'utils/URLData'
-import {addUser, fetchData} from '../firebase.js'
+import { addUser, fetchData } from '../firebase.js'
 
 import './utils/i18n.js'
 import { useTranslation } from 'react-i18next'
@@ -49,8 +49,8 @@ function AppWithDelay() {
 
    useEffect(() => {
       if (window.globalClientId) {
-         addUser(window.globalClientId).then();
-         setClienId(window.globalClientId);
+         addUser(window.globalClientId).then()
+         setClienId(window.globalClientId)
       }
 
       fetchData(groupID, updatePhoneContent)
