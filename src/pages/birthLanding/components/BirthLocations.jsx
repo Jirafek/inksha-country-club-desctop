@@ -14,7 +14,7 @@ const BirthLocations = () => {
 
    return (
       <div id="locations" className="location bg-BirthLightPurple py-[70px]">
-         <h1 className="text-center font-[700] pb-[30px] text-BirthDarkPurple  mx-auto text-lg">{t('korp.locations.title')}</h1>
+         <h1 className="text-center font-[700] pb-[30px] text-BirthDarkPurple  mx-auto text-lg">{t('korplocations.title')}</h1>
 
          <img className='w-full min-h-[500px] h-full object-left md:object-center object-cover' src={map} alt="" />
 
@@ -60,7 +60,7 @@ const BirthLocations = () => {
             </div>
             <a href="#form">
                <Button className="bg-white bg-opacity-70 w-auto h-[40px] text-md+ md:h-[60px] gap-10 md:min-w-[600px]   mx-auto montserrat z-20 text-black">
-                  {t('korp.locations.learnMore')}
+                  {t('korplocations.learnMore')}
 
                </Button>
             </a>
