@@ -165,7 +165,7 @@ const MajHero = () => {
                   <Reveal delay={0.25}>
                      <div className={`relative  ${s.cormReg}`}>
                         <div className={` text-MajRed text-ultra`}>
-                           Масленица
+                           Майские праздники
                         </div>
                      </div>
                   </Reveal>

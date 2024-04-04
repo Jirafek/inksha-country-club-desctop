@@ -10,28 +10,28 @@ const getLocation = () => {
          people: "До 30 чел",
          price: "от 10 000 руб",
          img: loc1,
-         link: '/locations-about',
+         link: '/location/1',
       },
       {
          title: "КОТТЕДЖ",
          people: "До 10 чел",
          price: "от 21 000 руб",
          img: loc2,
-         link: '/locations-about',
+         link: '/location/2',
       },
       {
          title: "ШАЛЕ",
          people: "До 15 чел",
          price: "от 11 000 руб",
          img: loc3,
-         link: '/locations-about',
+         link: '/location/3',
       },
       {
          title: "ОЛИМПИЙСКАЯ ДЕРЕВНЯ",
          people: "До 30 чел",
          price: "от 16 000 руб",
          img: loc4,
-         link: '/locations-about',
+         link: '/location/4',
       },
    ]
 

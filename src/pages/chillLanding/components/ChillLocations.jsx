@@ -10,36 +10,7 @@ import { Link } from "react-router-dom"
 import ChillModule from './ChillModule'
 import { getLocation } from 'constants/locations'
 
-const locations = [
-   {
-      title: "ЛЕСНАЯ РЕЗИДЕНЦИЯ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc1,
-      link: '/locations-about',
-   },
-   {
-      title: "КОТТЕДЖ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc2,
-      link: '/locations-about',
-   },
-   {
-      title: "ШАЛЕ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc3,
-      link: '/locations-about',
-   },
-   {
-      title: "ОЛИМПИЙСКАЯ ДЕРЕВНЯ",
-      people: "До 30 чел",
-      price: "от 15 000 руб",
-      img: loc4,
-      link: '/locations-about',
-   },
-]
+
 const ChillLocations = () => {
    return (
       <div id="locations" className=" text-black ">
