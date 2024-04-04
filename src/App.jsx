@@ -46,7 +46,6 @@ export const LanguageComponent = () => {
 
 const NotFound = () => {
    useEffect(() => {
-
       let time = setTimeout(() => {
          window.location.href = 'https://ikshacountryclub.com'
          clearTimeout(time)

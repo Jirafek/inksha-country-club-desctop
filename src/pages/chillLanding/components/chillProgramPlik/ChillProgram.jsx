@@ -414,7 +414,7 @@ const GetProgram = () => {
 
 
 
-const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisible }) => {
+const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpensive }) => {
 
    const program = GetProgram()
 
@@ -444,6 +444,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
    }, [])
 
 
+
    const togglePeople = () => {
 
       setIsManyPeople(!isManyPeople)
@@ -460,7 +461,9 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
       filter()
    }
 
-
+   const znms_widget_open = () => {
+      window.znmsWidget.open('#znms-service-widget-module')
+   }
    useEffect(() => {
       filter()
    }, [currentTime, isManyPeople])
@@ -603,7 +606,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
             {selectedimages.map((item, i) => {
                return (
 
-                  <div key={i} className={` ${s.acariMedium} w-full sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
+                  <div key={i} className={` ${s.acariMedium} w-[94%] sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
 
 
                      <div className={` ${s.acariMedium} h-[217.35px] relative`}>
@@ -614,8 +617,8 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
                         <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
                         <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
-                        <div className='flex justify-between'>
-                           {item.oldPrice !== '' && isOldPriceVisible ?
+                        <div className='flex justify-between mb-[20px]'>
+                           {item.oldPrice !== '' && !showOnlyExpensive ?
                               <div className='flex flex-col items-center justify-center w-full'>
                                  <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
                                  <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
@@ -623,8 +626,8 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
 
                               </div>
                               :
-                              <div className='flex flex-col text-center'>
-                                 <div className="text-left text-36px text-stone-700 font-semibold">{item.price}</div>
+                              <div className='flex w-full flex-col'>
+                                 <div className="text-center text-36px text-stone-700 font-semibold">{showOnlyExpensive ? item.oldPrice : item.price}</div>
                               </div>
                            }
                         </div>
@@ -715,7 +718,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
                               <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                               <div className='flex justify-between mb-[20px]'>
-                                 {item.oldPrice !== '' && isOldPriceVisible ?
+                                 {item.oldPrice !== '' && !showOnlyExpensive ?
                                     <div className='flex flex-col items-center justify-center w-full'>
                                        <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
                                        <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
@@ -723,10 +726,8 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, isOldPriceVisi
 
                                     </div>
                                     :
-                                    <div className='flex flex-col'>
-                                       <div className="text-left text-36px text-stone-700 font-semibold">{item.price}</div>
-
-
+                                    <div className='flex w-full flex-col'>
+                                       <div className="text-center text-36px text-stone-700 font-semibold">{showOnlyExpensive ? item.oldPrice : item.price}</div>
                                     </div>
                                  }
                               </div>
