@@ -124,59 +124,6 @@ const Main = () => {
       script.onload = initializeWidget
       document.body.appendChild(script)
 
-      const clear = (inter) => {
-         clearInterval(inter)
-      }
-
-      //пизда)))
-
-      const interval = setInterval(() => {
-         try {
-
-            const element = document.querySelector('.znms-widget__module-form-block__title')
-            const ww = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer.znms-widget__input-people-counter-horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__item--lg > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__select")
-            const button = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > button")
-            const guests = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer.znms-widget__input-people-counter-horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__item--lg > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__label")
-            const checkIn = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span:nth-child(1) > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__label")
-            const choose1 = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span.znms-widget__brononline-calendar.znms-widget__brononline-calendar--horizontal.znms-widget__brononline-calendar--horizontal--right.znms-widget__brononline-calendar--horizontal--static.znms-widget__validating--invalid > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__input.znms-widget__module-form-block__input--fake.znms-widget__module-form-block__input--fake--empty.znms-widget__module-form-block__input--pointer")
-            const choose2 = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span:nth-child(1) > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__input.znms-widget__module-form-block__input--fake.znms-widget__module-form-block__input--fake--empty.znms-widget__module-form-block__input--pointer")
-            const checkOut = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__items--input-container > div.znms-widget__input-calendar-range.znms-widget__input-calendar-range--horizontal.znms-widget__module-form-block__items__item.znms-widget__module-form-block__items__item--first.znms-widget__form_inp-wrapper.znms-widget__form_inp-wrapper--vertical.znms-widget__datepicker > span.znms-widget__brononline-calendar.znms-widget__brononline-calendar--horizontal.znms-widget__brononline-calendar--horizontal--right.znms-widget__brononline-calendar--horizontal--static.znms-widget__validating--invalid > div.znms-widget__module-form-block__item.znms-widget__module-form-block__item--pointer > div.znms-widget__module-form-block__left > div.znms-widget__module-form-block__label")
-            // const service = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--inline > a")
-            const main = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--inline")
-            const mainSmaller = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__title.znms-widget__module-form-block__items__item.znms-widget__module-form-block__title--block")
-            const serviceSmaller = document.querySelector("#main > section > div.relative.mb-\\[15\\%\\].mt-\\[120px\\].flex.flex-col.px-\\[40px\\].md\\:px-\\[90px\\] > div.z-0 > div > div:nth-child(1) > div > div > div > div.znms-widget__module-form-block__items--links-container > a")
-            main.textContent = ''
-
-            mainSmaller.textContent = t('bronirui.main')
-            serviceSmaller.textContent = t('bronirui.service')
-
-            const mmm = document.createElement('div')
-            mmm.innerHTML = `${t('bronirui.Bronirovanie')} <br/> ${t('bronirui.Nomerov')}`
-            // Add some styling to the div to ensure the line break is visible
-            mmm.style.whiteSpace = 'normal'
-            main.appendChild(mmm)
-
-            // service.textContent = t('bronirui.service')
-            guests.textContent = t('bronirui.guests')
-            checkIn.textContent = t('bronirui.checkIn')
-            checkOut.textContent = t('bronirui.checkOut')
-            choose1.textContent = t('bronirui.choose')
-            choose2.textContent = t('bronirui.choose')
-            button.textContent = t('bronirui.btn')
-
-            ww.textContent = 2 + '' + t('bronirui.adult')
-
-         } catch (error) {
-            // console.log('Произошла ошибка:', error)
-         }
-
-
-      }, 4000)
-
-
-
-
-
    }, [])
 
    const pumpkin_vars = {

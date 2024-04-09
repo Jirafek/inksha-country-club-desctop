@@ -761,7 +761,6 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
          <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
             <div className='text-white text-center text-md font-semibold'>
                Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'> 16 990 ₽ </span><span className='text-NYred'> 9990 ₽ </span>
-
             </div>
 
          </div>
