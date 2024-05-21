@@ -117,7 +117,6 @@ const Main = () => {
             }
           `
          const styleElement = document.createElement("style")
-         const DarkButton = document.querySelector('.znms-widget__module-form-block__btn.znms-widget__v-color8')
          styleElement.innerHTML = customStyles
          document.head.appendChild(styleElement)
       }

@@ -50,8 +50,12 @@ export default {
             BirthDarkPurple: '#38194D',
             MajOrange: '#E7A96A',
             MajGreen: "#55BD9B",
-            MajRed: "#DF3F8A"
-
+            MajRed: "#DF3F8A",
+            GradPurple: "#2E1A44",
+            GradCyan: "#019AB0",
+            RusDarkBlue: "#0B1E42",
+            RusLigthBlue: "#2A5691",
+            RusDarkRed: "#A00000"
 
          },
          container: {
