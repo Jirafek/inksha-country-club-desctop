@@ -194,52 +194,33 @@ const GetProgram = () => {
          isManyPeople: false,
 
       },
-
-
-
-
    ]
-
    return program
 }
 
 
 const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
-
    const program = GetProgram()
-
-
    const [isManyPeople, setIsManyPeople] = useState(false)
-
-
    const [isMenuOpen, setIsMenuOpen] = useState(false)
    const [selectedimages, setSelectedimages] = useState(program)
 
 
    const filter = () => {
-
       const filteredProgram = program.filter(item => {
-
          return item.isManyPeople === isManyPeople && item.time.includes(currentTime)
       })
 
-
       setSelectedimages(filteredProgram)
-
-
    }
 
    useEffect(() => {
       filter()
    }, [])
 
-
    const togglePeople = () => {
-
       setIsManyPeople(!isManyPeople)
-
    }
-
 
    const toggleTime = () => {
       if (currentTime === 'Лето') {
@@ -250,14 +231,11 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
       filter()
    }
 
-
    useEffect(() => {
       filter()
    }, [currentTime, isManyPeople])
 
-
    const swiperRef = useRef()
-
 
    useEffect(() => {
       const script = document.createElement("script")
@@ -269,17 +247,11 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
             moduleId: 5026,
             type: 'booking-services',
          })
-
-
       }
       script.onload = initializeWidget
 
-
-
       document.body.appendChild(script)
-
    }, [])
-   console.log()
 
    return (
       <div name='proga' id='program' className='relative bg-RusLigthBlue py-[120px] '>

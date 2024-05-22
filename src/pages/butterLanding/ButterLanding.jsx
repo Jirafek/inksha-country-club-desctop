@@ -91,15 +91,15 @@ const ButterLanding = () => {
    const handleProductClick = (productId) => {
       setProductId(productId)
    }
-   useEffect(() => {
-      if (productId === undefined) {
-         document.body.style.overflow = 'auto'
+   // useEffect(() => {
+   //    if (productId === undefined) {
+   //       document.body.style.overflow = 'auto'
 
-      } else {
-         document.body.style.overflow = 'hidden'
-      }
+   //    } else {
+   //       document.body.style.overflow = 'hidden'
+   //    }
 
-   }, [productId])
+   // }, [productId])
 
 
 
