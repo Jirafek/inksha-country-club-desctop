@@ -55,7 +55,8 @@ export default {
             GradCyan: "#019AB0",
             RusDarkBlue: "#0B1E42",
             RusLigthBlue: "#2A5691",
-            RusDarkRed: "#A00000"
+            RusDarkRed: "#A00000",
+            HousingGreen: "#95BC6F"
 
          },
          container: {

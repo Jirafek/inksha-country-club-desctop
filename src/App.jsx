@@ -23,6 +23,7 @@ import BirthLanding from 'pages/birthLanding/BirthLanding'
 import MajLanding from 'pages/majLanding/MajLanding'
 import GradLanding from 'pages/gradLanding/GradLanding'
 import RusLanding from 'pages/rusLanding/RusLanding'
+import HousingLanding from 'pages/housingLanding/HousingLanding'
 
 export const LanguageComponent = () => {
    const { i18n } = useTranslation()
@@ -308,6 +309,10 @@ function App() {
             <Route path="/may" element={<MajLanding />} />
             <Route path="/graduation" element={<GradLanding />} />
             <Route path="/russiaDay" element={<RusLanding />} />
+            <Route path="/housing" element={<HousingLanding />} />
+
+
+
 
             <Route path="*" element={<NotFound />} />
          </Routes>
