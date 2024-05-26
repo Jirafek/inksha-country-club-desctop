@@ -38,7 +38,7 @@ const guests = [
 const RusGuest = () => {
    const swiperRef = useRef()
    return (
-      <div className={`  relative bg-RusDarkBlue pt-[5vh] pb-[5vh] max-h-[1000px] text-white md:pb-[25vh]`}>
+      <div className={`  relative ${s.guestBg} pt-[5vh] pb-[5vh] max-h-[1000px] text-white md:pb-[25vh]`}>
          <div className={`text-white ${s.cormReg} font-bold text-center mb-[3vh] text-lg`}>Что говорят наши гости</div>
          <div className="flex px-[20px] w-full ml-auto gap-4 md:pr-[100px]  z-10 justify-end">
             <button

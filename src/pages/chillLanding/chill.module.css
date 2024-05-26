@@ -42,14 +42,14 @@
 }
 
 .formBg {
-	background-image: url('./../../../public/image/chill/form.webp');
+	background-image: url('./../../../public/image/chill/form.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 
 .guestBg {
-	background-image: url('./../../../public/image/chill/guest.webp');
+	background-image: url('./../../../public/image/chill/guest.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;

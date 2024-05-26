@@ -53,11 +53,13 @@
 }
 
 
+
+
 ///// bg
 
 .formBg {
 	
-	background-image: url('./../../../public/image/maj/formBg.webp');
+	background-image: url('./../../../public/image/maj/formBg.webp') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -65,7 +67,7 @@
 
 .guestBg {
 	/* background-color: #2a57918e; */
-	background-image: url('./../../../public/image/rus/guestBg.png');
+	background-image: url('./../../../public/image/rus/guestBg.png') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -77,7 +79,7 @@
 }
 
 .programBg{
-	background-image: url('./../../../public/image/maj/servicesBg.png');
+	background-image: url('./../../../public/image/maj/servicesBg.png') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #2A5691;

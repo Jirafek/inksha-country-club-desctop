@@ -40,7 +40,7 @@
 
 .formBg {
 	
-	background-image: url('./../../../public/image/maj/formBg.png');
+	background-image: url('./../../../public/image/maj/formBg.png') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -48,7 +48,7 @@
 
 .guestBg {
 	background-color: #e7a96abd;
-	background-image: url('./../../../public/image/maj/guestBg.png');
+	background-image: url('./../../../public/image/maj/guestBg.png') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -60,7 +60,7 @@
 }
 
 .programBg{
-	background-image: url('./../../../public/image/maj/servicesBg.png');
+	background-image: url('./../../../public/image/maj/servicesBg.png') !important;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: #e7a96abd;

@@ -26,7 +26,7 @@ const RusLocations = () => {
                      >
                         <img
 
-                           className={`w-[110px] sm:w-[150px] h-full`}
+                           className={`w-[110px] ${s.LocationImg} sm:w-[150px] h-full`}
                            src={loc.img}
                            alt=""
                         />
