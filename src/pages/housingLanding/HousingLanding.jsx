@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import Header from 'common/Header'
 import HousingHero from './components/HousingHero'
+import HousingConcept from './components/HousingConcept'
 
 const HousingLanding = () => {
    const getLinks = () => {
@@ -12,7 +13,7 @@ const HousingLanding = () => {
          // { title: t('hlocations'), link: "locations" },
          // { title: t('kay'), link: "kay" },
          // { title: t('add'), link: "add" },
-         { title: "Концепт", link: "Form" },
+         { title: "Концепт", link: "concept" },
          { title: "Услуги", link: "Form" },
          { title: "Развлечения", link: "Form" },
          { title: "Окружение", link: "Form" },
@@ -57,6 +58,7 @@ const HousingLanding = () => {
                className="montserrat bg-korpHeader text-grey"
             />
             <HousingHero />
+            <HousingConcept />
             <Footer className="montserrat bg-korpHeader" />
          </div>
       </div>
