@@ -64,6 +64,7 @@ import Button from 'common/Button'
 
 import s from './../../chill.module.css'
 import { useEffect, useRef, useState } from 'react'
+import ProgramSlider from 'common/landings/ProgramSlider'
 
 const GetProgram = () => {
    const program = [
@@ -423,7 +424,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
 
 
    const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [selectedimages, setSelectedimages] = useState(program)
+   const [selectedImages, setSelectedImages] = useState(program)
 
 
    const filter = () => {
@@ -434,7 +435,7 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
       })
 
 
-      setSelectedimages(filteredProgram)
+      setSelectedImages(filteredProgram)
 
 
    }
@@ -594,169 +595,9 @@ const ChillProgram = ({ handleProductClick, currentTime, setTime, showOnlyExpens
                <div className="text-center text-stone-600 text-sm font-semibold leading-normal tracking-tight">{isManyPeople ? <div>Много людей (от 10)</div> : <div>Мало людей (от 4)</div>}</div>
 
             </div>
-
-
-
          </div>
 
-
-
-         <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
-
-            {selectedimages.map((item, i) => {
-               return (
-
-                  <div key={i} className={` ${s.acariMedium} w-[94%] sm:max-w-[500.43px]  bg-white rounded-[10px] border border-stone-700`}>
-
-
-                     <div className={` ${s.acariMedium} h-[217.35px] relative`}>
-                        {item.oldPrice !== '' && <div className='absolute -top-5 right-0 z-[2] flex justify-center items-center acariBold text-white w-[100px] md:w-[200px] h-[30px] md:h-[60px] text-md rounded-[10px] bg-NYred'>Акция</div>}
-                        <img className="w-full  absolute h-[217.35px]  border-b-2 " src={item.img} />
-                     </div>
-                     <div className=' p-[15px] md:p-[30px] '>
-                        <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
-                        <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
-
-                        <div className='flex justify-between mb-[20px]'>
-                           {item.oldPrice !== '' && !showOnlyExpensive ?
-                              <div className='flex flex-col items-center justify-center w-full'>
-                                 <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                 <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
-
-
-                              </div>
-                              :
-                              <div className='flex w-full flex-col'>
-                                 <div className="text-center text-36px text-stone-700 font-semibold">{showOnlyExpensive ? item.oldPrice : item.price}</div>
-                              </div>
-                           }
-                        </div>
-
-                        <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                           <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
-                              <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
-                           </div>
-                           {item.hasAbout ?
-                              <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
-                              </div>
-                              :
-                              <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                 <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
-                              </a>
-                           }
-
-                        </div>
-
-
-                     </div>
-                  </div>
-               )
-            })}
-
-
-         </div >
-         <div className="flex md:hidden px-[20px] w-full ml-auto gap-4 md:pr-[100px]  z-10 justify-end">
-            <button
-               className="z-[200]"
-               onClick={() => swiperRef.current?.slidePrev()}
-            >
-               <img
-                  className="aspect-square hover:scale-110 duration-300 w-[40px] md:w-[120px]"
-                  src={korpprev}
-                  alt=""
-               />
-            </button>
-            <button
-               className="z-[200]"
-               onClick={() => swiperRef.current?.slideNext()}
-            >
-               <img
-                  className="aspect-square hover:scale-110 duration-300 w-[40px] md:w-[120px]"
-                  src={korpnext}
-                  alt=""
-               />
-            </button>
-         </div>
-         <div className='block md:hidden'>
-
-            <Swiper
-               // install Swiper modules
-               modules={[Navigation, Autoplay]}
-               // style={{ display: 'none' }}
-               className="hidden chill"
-               spaceBetween={50}
-               loop={true}
-               autoplay={{
-                  delay: 1500,
-                  disableOnInteraction: true,
-               }}
-               onBeforeInit={(swiper) => {
-                  swiperRef.current = swiper
-               }}
-               slidesPerView={window.innerWidth > 450 ? 2 : 1}
-               navigation
-
-            >
-               {selectedimages.map((item, i) => {
-                  return (
-                     <SwiperSlide className="py-[30px]" key={i}>
-
-
-
-                        <div key={i} className={` ${s.acariMedium} w-full  bg-white rounded-[10px] border border-stone-700`}>
-
-
-                           <div className={` ${s.acariMedium} h-[217.35px] relative`}>
-                              {item.oldPrice !== '' && <div className='absolute -top-5 right-0 z-[2] flex justify-center items-center acariBold text-white  w-[100px] md:w-[200px] h-[30px] md:h-[60px] text-md rounded-[10px] bg-NYred'>Акция</div>}
-                              <img className="w-full  absolute h-[217.35px]  border-b-2 " src={item.img} />
-                           </div>
-
-
-                           <div className=' p-[15px] md:p-[30px] '>
-                              <div className='text-32px text-[#593723] leading-[41.60px] acariBold'>{item.title}</div>
-                              <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
-
-                              <div className='flex justify-between mb-[20px]'>
-                                 {item.oldPrice !== '' && !showOnlyExpensive ?
-                                    <div className='flex flex-col items-center justify-center w-full'>
-                                       <div className="text-center text-yellow-900 text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                       <div className="text-center text-red-600  text-36px font-semibold leading-loose">{item.price}</div>
-
-
-                                    </div>
-                                    :
-                                    <div className='flex w-full flex-col'>
-                                       <div className="text-center text-36px text-stone-700 font-semibold">{showOnlyExpensive ? item.oldPrice : item.price}</div>
-                                    </div>
-                                 }
-                              </div>
-
-                              <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
-                                 <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-stone-700">
-                                    <div className="text-center text-stone-700 font-semibold ">Забронировать</div>
-                                 </div>
-                                 {item.hasAbout ?
-                                    <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
-                                    </div>
-                                    :
-                                    <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
-                                       <div className="text-center text-zinc-500 font-semibold">Подробнее</div>
-                                    </a>
-                                 }
-
-                              </div>
-
-
-                           </div>
-                        </div>
-
-                     </SwiperSlide>
-                  )
-               })}
-            </Swiper>
-         </div>
+         <ProgramSlider mainColor="#593723" secondaryColor="#44403c" selectedImages={selectedImages} prevBtn={korpprev} showOnlyExpensive={showOnlyExpensive} nextBtn={korpnext} font={s.acariMedium} />
 
          <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
             <div className='text-white text-center text-md font-semibold'>
