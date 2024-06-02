@@ -1,6 +1,9 @@
 import React from 'react'
+
 import bg from 'images/housing/hero.webp'
+
 import qr from 'images/housing/pngs/qr.png'
+
 const HousingHero = () => {
    return (
       <div className='relative h-screen w-full'>

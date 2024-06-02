@@ -4,6 +4,13 @@ import { Helmet } from 'react-helmet'
 import Header from 'common/Header'
 import HousingHero from './components/HousingHero'
 import HousingConcept from './components/HousingConcept'
+import HousingServices from './components/HousingServices'
+import HousingEntertainment from './components/HousingFun'
+import HousingCommunity from './components/HousingCommunity'
+import HousingFinancies from './components/HousingFinancies'
+import HousingStart from './components/HousingStart'
+import HousingContacts from './components/HousingContacts'
+import HousingJoinus from './components/HousingJoinus'
 
 const HousingLanding = () => {
    const getLinks = () => {
@@ -14,10 +21,10 @@ const HousingLanding = () => {
          // { title: t('kay'), link: "kay" },
          // { title: t('add'), link: "add" },
          { title: "Концепт", link: "concept" },
-         { title: "Услуги", link: "Form" },
-         { title: "Развлечения", link: "Form" },
+         { title: "Услуги", link: "services" },
+         { title: "Развлечения", link: "fun" },
          { title: "Окружение", link: "Form" },
-         { title: "Контакты", link: "Form" },
+         { title: "Контакты", link: "contacts" },
       ]
       return links
    }
@@ -48,7 +55,7 @@ const HousingLanding = () => {
 корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
             />
          </Helmet>
-         <div className="montserrat relative">
+         <div className="montserrat bg-[#221C1C] text-white relative">
 
             <Header
                MenuClassName='montserrat bg-brown'
@@ -59,6 +66,14 @@ const HousingLanding = () => {
             />
             <HousingHero />
             <HousingConcept />
+            <HousingServices />
+            <HousingEntertainment />
+            <HousingCommunity />
+            <HousingFinancies />
+            <HousingStart />
+            <HousingContacts />
+            <HousingJoinus />
+
             <Footer className="montserrat bg-korpHeader" />
          </div>
       </div>

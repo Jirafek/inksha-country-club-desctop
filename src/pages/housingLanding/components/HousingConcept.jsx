@@ -20,17 +20,17 @@ const GetConceptList = () => {
 
 const HousingConcept = () => {
    return (
-      <div key="concept" id="concept" className='text-white p-[60px] bg-[#221C1C] w-full h-full'>
-         <div className='flex justify-between gap-1 items-center'>
+      <div key="concept" id="concept" className='p-[60px] pr-0 w-full h-full'>
+         <div className='flex justify-between gap-1 mb-[20px] items-center'>
             <div className='flex gap-[40px] flex-col'>
-               <h2 className='text-36px font-bold'>Дома выходного дня:<span className='text-brown'>концепт</span></h2>
-               <p className='text-md-'>А что если у вас будет свой укромный уголок на природе, куда можно выбраться всей семьёй в любой момент времени по цене аренды небольшой квартиры в Москве?</p>
+               <h2 className='text-36px font-bold'>ДОМА ВЫХОДНОГО ДНЯ:<span className='text-brown'> КОНЦЕПТ</span></h2>
+               <p className='text-24px'>А что если у вас будет свой укромный уголок на природе, куда можно выбраться всей семьёй в любой момент времени по цене аренды небольшой квартиры в Москве?</p>
             </div>
             <img src={logo} className='object-cover aspect-square max-w-[200px] max-h-[200px]' alt="" />
          </div>
 
-         <div className='flex max-h-[700px] text-left'>
-            <div className='flex flex-col justify-center items-center gap-[32px]'>
+         <div className='flex max-h-[600px] text-left'>
+            <div className='flex flex-col justify-center items-center gap-[32px] h-full'>
                <div className='text-brown font-bold w-full text-left text-md+'>Что мы предлагаем?</div>
                <ul className={`${s.conceptList} `}>
                   {GetConceptList().map((item, i) => {
@@ -40,7 +40,7 @@ const HousingConcept = () => {
                   })}
                </ul>
             </div>
-            <img src={conceptImg} className='object-cover w-full h-full ' alt="" />
+            <img src={conceptImg} className='object-cover w-full' alt="" />
          </div>
 
       </div>

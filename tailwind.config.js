@@ -15,9 +15,12 @@ export default {
          md: "clamp(10px, 4vw, 28px)",
          extramd: "clamp(10px, 3vw, 28px)",
          "24px": "clamp(9px, 4vw, 24px)",
+         "20px": "clamp(16px, 4vw, 20px)",
          "md-": "clamp(6px, 4vw, 18px)",
          sm: "clamp(9px, 3vw, 18px)",
          small: "clamp(6px, 3vw, 18px)",
+         "17px": "clamp(13px, 4vw, 17px)",
+         "14px": "clamp(12px, 4vw, 14px)",
       },
       extend: {
          colors: {
