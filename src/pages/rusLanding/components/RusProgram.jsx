@@ -59,6 +59,7 @@ import Button from 'common/Button'
 
 import s from './../rus.module.scss'
 import { useEffect, useRef, useState } from 'react'
+import ProgramSlider from 'common/landings/ProgramSlider'
 
 const GetProgram = () => {
    const program = [
@@ -322,9 +323,9 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
          </div>
 
+         <ProgramSlider nextBtn={korpnext} prevBtn={korpprev} selectedImages={selectedimages} mainColor='rgb(42 86 145)' secondaryColor='rgb(42 86 145)' />
 
-
-         <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
+         {/* <div className='md:grid hidden  max-w-[1400px] mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-content-start place-items-start md:px-[30px] gap-[40px] w-full'>
 
             {selectedimages.map((item, i) => {
                return (
@@ -481,7 +482,7 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
                   )
                })}
             </Swiper>
-         </div>
+         </div> */}
 
          <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
             <div className='text-white text-center text-md font-semibold'>

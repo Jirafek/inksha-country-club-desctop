@@ -9,7 +9,7 @@ import "swiper/css/pagination"
 import "swiper/css/autoplay"
 import "swiper/css/scrollbar"
 
-const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryColor = "black", showOnlyExpensive, prevBtn, nextBtn }) => {
+const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryColor = "black", showOnlyExpensive = false, prevBtn, nextBtn }) => {
    const swiperRef = useRef()
 
    return (
@@ -44,11 +44,11 @@ const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryCol
                               <div className="text-center  font-semibold" style={{ color: mainColor }}>Забронировать</div>
                            </a>
                            {item.hasAbout ?
-                              <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                              <div style={{ borderColor: secondaryColor }} onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
                                  <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
                               </div>
                               :
-                              <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                              <a style={{ borderColor: secondaryColor }} href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 ">
                                  <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
                               </a>
                            }
@@ -127,11 +127,11 @@ const ProgramSlider = ({ selectedImages, font, mainColor = "black", secondaryCol
                                     <div className="text-center  font-semibold" style={{ color: mainColor }}>Забронировать</div>
                                  </a>
                                  {item.hasAbout ?
-                                    <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                                    <div style={{ borderColor: secondaryColor }} onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
                                        <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
                                     </div>
                                     :
-                                    <a href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
+                                    <a style={{ borderColor: secondaryColor }} href='#form' className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center border-2 border-zinc-500">
                                        <div className="text-center font-semibold" style={{ color: secondaryColor }}>Подробнее</div>
                                     </a>
                                  }
