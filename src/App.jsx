@@ -289,14 +289,15 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/thanks" element={<Thanks />} />
             <Route path="/success" element={<Thanks />} />
-            <Route path="/halloween" element={<Helloween />} />
-            <Route path="/korp-landing" element={<KorpLanding />} />
-            <Route path="/New-Year" element={<NYLanding />} />
+
             <Route
                path="/rules"
                element={<Privacy title={"Правила проживания"} />}
             />
 
+            <Route path="/halloween" element={<Helloween />} />
+            <Route path="/korp-landing" element={<KorpLanding />} />
+            <Route path="/New-Year" element={<NYLanding />} />
             <Route path="/banya" element={<BanLanding />} />
             <Route path="/fishing" element={<FishingLanding />} />
             <Route path="/active" element={<ChillLanding />} />
