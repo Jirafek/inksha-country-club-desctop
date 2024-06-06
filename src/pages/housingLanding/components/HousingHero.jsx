@@ -3,38 +3,50 @@ import React from 'react'
 import bg from 'images/housing/hero.webp'
 
 import qr from 'images/housing/pngs/qr.png'
+import Reveal from 'common/Reveal'
+import { bounce, slideAndFade, slideFromBottom, slideFromLeft, slideFromRight } from 'constants/motion'
+
 
 const HousingHero = () => {
    return (
-      <div className='relative h-screen w-full'>
-         <img src={bg} className='w-full h-full object-cover' alt="Housing Hero Background" />
+      <div className='relative w-full h-screen'>
+         <img src={bg} className='object-cover w-full h-full' alt="Housing Hero Background" />
          <div className='absolute inset-0 z-10 flex '>
-            <div className='h-full w-full relative'>
-               <div className='text-white absolute left-1/2 transform -translate-x-1/2 top-5 font-extrabold text-xl text-nowrap bg-[#4D382B] bg-opacity-80 p-5'>
-                  ОБРЕТИ ВТОРОЙ ДОМ<br />
-                  <span className='text-HousingGreen'>В ИКША КАНТРИ КЛАБ</span>
-               </div>
 
-               <div className='bg-[#4D382B] rounded-[20px] bg-opacity-80 p-5 font-extrabold absolute transform right-[40px]  text-white max-w-[700px] flex justify-between gap-1 top-[40vh]'>
-                  <div className='text-36px p-0 m-0 w-auto'>
-                     Дома выходного дня для вашего отдыха круглый год
+            <div className='relative w-full h-full'>
+               <Reveal duration={1} variants={slideFromLeft()}>
+                  <div className='text-white rounded-[20px] md:w-auto absolute transform left-1/2 -translate-x-1/2 top-[80px] font-extrabold text-xl text-nowrap bg-[#4D382B] bg-opacity-80 p-5'>
+                     ОБРЕТИ ВТОРОЙ ДОМ<br />
+                     <span className='text-HousingGreen'>В ИКША КАНТРИ КЛАБ</span>
                   </div>
-                  <div className='text-md- self-end text-right'>
-                     <div className='text-md+ text-nowrap'>от 60</div>
-                     тысяч в месяц
-                  </div>
-               </div>
+               </Reveal>
 
-               <div className='bg-[#4D382B] rounded-[20px] bg-opacity-80 p-5 absolute transform text-white max-w-[500px] flex justify-between gap-4 bottom-5 right-5'>
+               <Reveal delay={0.5} duration={1} variants={slideAndFade()}>
+                  <div className='bg-[#4D382B] bg-opacity-80 rounded-[20px] p-5 font-medium md:font-extrabold absolute transform left-1/2 -translate-x-1/2 text-center top-[40vh] md:right-[5vw] md:transform-none md:text-left md:top-[40vh] text-white w-[80%] md:max-w-[700px] md:flex justify-between gap-1 '>
+                     <div className='w-auto p-0 m-0 text-36px'>
+                        Дома выходного дня для вашего отдыха круглый год
+                        <span className='block text-center text-md- md:hidden md:self-end md:text-right'>
+                           <span className='text-md+ md:font-medium font-bold md:text-nowrap'>от 60 </span>
+                           тысяч в месяц
+                        </span>
+                     </div>
+                     <div className='hidden text-center text-md- md:block md:self-end md:text-right'>
+                        <div className='text-md+ md:text-nowrap'>от 60</div>
+                        тысяч в месяц
+                     </div>
+                  </div>
+               </Reveal>
+
+               <div className='bg-[#4D382B] rounded-[20px] bg-opacity-80 p-5 absolute transform md:transform-none text-white w-[90%] md:max-w-[500px] flex justify-between gap-4 left-1/2 md:left-auto -translate-x-1/2 bottom-5 md:right-[10vw]'>
                   <div className='flex flex-col justify-between gap-1'>
-                     <div className='text-md- font-bold'>
+                     <div className='font-bold text-md-'>
                         Присоединяйся сейчас!
                      </div>
                      <div className='font-normal'>
                         Заполняй анкету онлайн
                         или уточняй у администратора
                      </div>
-                     <div className='text-md- font-extrabold'>
+                     <div className='font-extrabold text-md-'>
                         + 7-499-505-50-31
                      </div>
                   </div>

@@ -16,26 +16,26 @@ const HousingEntertainment = () => {
    const funItems = GetFun()
 
    return (
-      <div id="fun" key="fun" className='pl-[60px] border-y border-brown pt-[60px]'>
+      <div id="fun" key="fun" className='md:pl-[60px] p-5 border-y border-brown pt-[60px]'>
          <div className='flex justify-between gap-1 mb-[20px] items-center'>
             <div className='flex gap-[40px] flex-col'>
-               <h2 className='text-36px font-bold'>ДОМА ВЫХОДНОГО ДНЯ:<span className='text-brown'> КОНЦЕПТ</span></h2>
-               <p className='text-24px'>А что если у вас будет свой укромный уголок на природе, куда можно выбраться всей семьёй в любой момент времени по цене аренды небольшой квартиры в Москве?</p>
+               <h2 className='text-36px font-bold'>РАЗВЛЕЧЕНИЯ И<span className='text-brown'> МЕРОПРИЯТИЯ</span></h2>
+               <p className='text-24px'>В Икша Кантри Клабе мы гордимся широким спектром развлекательных программ и мероприятий для всех наших гостей</p>
             </div>
          </div>
 
-         <div className='grid grid-cols-2 items-center w-full px-[80px]'>
+         <div className='grid grid-cols-1 md:grid-cols-2 items-center w-full md:px-[80px]'>
             {funItems.map((item, i) => (
                <div key={i} className=' border-t w-full h-full py-[30px] justify-center place-content-center place-items-center border-brown'>
 
                   {item.img === undefined ? (
-                     <div className={`${(i + 1) % 2 === 0 ? "text-right justify-end ml-5" : "text-left mr-5"} flex flex-col`}>
+                     <div className={`${(i + 1) % 2 === 0 ? "md:text-right md:justify-end md:ml-5" : "md:text-left md:mr-5"} text-center items-center justify-center flex flex-col`}>
                         <div className='text-brown font-bold text-24px'>{item.title}</div>
                         <div className='text-20px'>{item.text}</div>
                      </div>
                   ) : (
                      <div>
-                        <img src={item.img} className='rounded-[10px]' alt="" />
+                        <img src={item.img} className='rounded-[10px] md:h-auto object-cover h-[40vh]' alt="" />
                      </div>
                   )}
 

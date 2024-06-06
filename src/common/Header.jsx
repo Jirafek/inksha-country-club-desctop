@@ -3,7 +3,7 @@ import menu from "./../assets/menu.png"
 
 import { AnimatePresence } from "framer-motion"
 import Reveal from "./Reveal"
-import { opacity } from "../constants/motion"
+import { fadeIn, opacity } from "../constants/motion"
 import { Link } from "react-router-dom"
 import { Link as ScrollLink } from "react-scroll"
 
@@ -13,17 +13,17 @@ import { useTranslation } from 'react-i18next'
 
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ toggleMenu, isMenuOpen, className, MenuClassName, links }) => {
+const Header = ({ toggleMenu, isMenuOpen, className, MenuClassName, links, style }) => {
    const { t } = useTranslation()
    return (
-      <div className={` ${className} `}>
+      <div style={style} className={` ${className} `}>
          <AnimatePresence>
-            <div className="wrapper  ">
+            <div className="wrapper ">
                {isMenuOpen && (
                   <Menu toggleMenu={toggleMenu} MenuClassName={MenuClassName} links={links} />
                )}
-               <Reveal duration={2} variants={opacity()}>
-                  <div className=" flex justify-between py-5">
+               <Reveal duration={2} variants={fadeIn()}>
+                  <div className="flex justify-between py-5 ">
                      <Link to="/">{t('fullName')}</Link>
                      <ul className="hidden gap-10 md:flex">
                         {links.map((link, i) => {

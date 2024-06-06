@@ -22,12 +22,12 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
    const waPhone = utm_source === 'yandex' ? '74995055067' : '74995055031'
    return (
       <div className={`${className || ""}`}>
-         <div className="wrapper  ">
-            <div className="flex justify-between flex-col md:flex-row gap-5 py-5">
-               <div className="flex w-full items-center  justify-between gap-5 md:justify-start">
-                  <div className='flex gap-5 items-center'>
+         <div className="wrapper ">
+            <div className="flex flex-col justify-between gap-5 py-5 md:flex-row">
+               <div className="flex items-center justify-between w-full gap-5 md:justify-start">
+                  <div className='flex items-center gap-5'>
 
-                     <a className='underline font-bold' href='/'>Икша Кантри Kлаб 2023 </a>
+                     <a className='font-bold underline' href='/'>Икша Кантри Kлаб 2023 </a>
                      {FooterLinks.length !== 0 && FooterLinks.map((item, i) => {
                         return (
                            <div key={i}>
@@ -69,15 +69,6 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
                   </div>}
 
                </div>
-
-               {/* <div className="hidden  justify-center gap-10 md:flex">
-                  <a href="#Programa">Программа</a>
-                  <a href="#Tariff">Тарифы</a>
-                  <a href="tel:+7 (499) 505-50-31">Связаться со мной</a>
-               </div> */}
-               {/* <a href={`tel:${phoneNumber}`} className="min-w-[160px]">
-                  {phoneNumber} */}
-
                {
                   utm_source === 'yandex' ?
                      <a href={'tel:+74995055067'}>
@@ -93,6 +84,11 @@ const Footer = ({ className, FooterLinks = [], isMediaOpen = true }) => {
                         </a>
 
                }
+
+               <div className='flex flex-wrap items-center gap-2'>
+                  <a className='underline' target='_blank' href="/pdf/oferta.pdf">Договор оферты</a>
+                  <a className='underline' target='_blank' href="https://ikshacountryclub.com/rules">Правила проживания</a>
+               </div>
                {/* </a> */}
             </div>
          </div>

@@ -4,7 +4,7 @@
 import Footer from "common/Footer"
 import Header from "common/Header"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { Helmet } from 'react-helmet'
 // import { useTranslation } from 'react-i18next'

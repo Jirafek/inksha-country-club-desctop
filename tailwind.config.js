@@ -7,7 +7,7 @@ export default {
          "2xl": "clamp(32px, 5vw, 96px)",
          ultra: "clamp(48px, 10vw, 128px)",
          tarif: "clamp(6px, 5vw, 24px)",
-         xl: "clamp(30px, 5vw, 70px)",
+         xl: "clamp(30px, 4vw, 70px)",
          lg: "clamp(12px, 5vw, 48px)",
          "36px": "clamp(18px, 4vw, 36px)",
          "32px": "clamp(21px, 4vw, 32px)",

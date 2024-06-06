@@ -11,6 +11,9 @@ import HousingFinancies from './components/HousingFinancies'
 import HousingStart from './components/HousingStart'
 import HousingContacts from './components/HousingContacts'
 import HousingJoinus from './components/HousingJoinus'
+import HousingEnv from './components/HousingEnv'
+
+import s from './housing.module.scss'
 
 const HousingLanding = () => {
    const getLinks = () => {
@@ -23,7 +26,7 @@ const HousingLanding = () => {
          { title: "Концепт", link: "concept" },
          { title: "Услуги", link: "services" },
          { title: "Развлечения", link: "fun" },
-         { title: "Окружение", link: "Form" },
+         { title: "Финансы", link: "finances" },
          { title: "Контакты", link: "contacts" },
       ]
       return links
@@ -55,26 +58,34 @@ const HousingLanding = () => {
 корпоратив, тимбилдинг, цена, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
             />
          </Helmet>
-         <div className="montserrat bg-[#221C1C] text-white relative">
+         <div className="relative text-white montserrat">
 
-            <Header
-               MenuClassName='montserrat bg-brown'
-               isMenuOpen={isMenuOpen}
-               toggleMenu={toggleMenu}
-               links={links}
-               className="montserrat bg-korpHeader text-grey"
-            />
-            <HousingHero />
-            <HousingConcept />
-            <HousingServices />
-            <HousingEntertainment />
-            <HousingCommunity />
-            <HousingFinancies />
-            <HousingStart />
-            <HousingContacts />
-            <HousingJoinus />
 
-            <Footer className="montserrat bg-korpHeader" />
+            <div className='bg-[#221C1C] relative'>
+               <Header
+                  MenuClassName='montserrat bg-black bg-opacity-50 text-white'
+                  isMenuOpen={isMenuOpen}
+                  toggleMenu={toggleMenu}
+                  links={links}
+                  style={{ backgroundColor: "rgba(0, 0, 0, 0.624)" }}
+                  className={`montserrat absolute top-0 w-screen z-[1]  text-white`}
+               />
+               <div className='relative z-[0]'>
+
+                  <HousingHero />
+                  <HousingConcept />
+                  <HousingServices />
+                  <HousingEntertainment />
+                  {/* <HousingEnv /> */}
+                  <HousingCommunity />
+                  <HousingFinancies />
+                  <HousingStart />
+                  <HousingContacts />
+                  <HousingJoinus />
+               </div>
+            </div>
+
+            <Footer className="text-white montserrat bg-ChillBrown" />
          </div>
       </div>
    )
