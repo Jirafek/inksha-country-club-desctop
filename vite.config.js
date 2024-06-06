@@ -16,6 +16,7 @@ export default defineConfig({
 
    resolve: {
       alias: {
+         // src: path.resolve(__dirname, "./src/"),
          hooks: path.resolve(__dirname, "./src/hooks/"),
 
          public: path.resolve(__dirname, "./public/"),

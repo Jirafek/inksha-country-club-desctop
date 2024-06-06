@@ -7,16 +7,20 @@ export default {
          "2xl": "clamp(32px, 5vw, 96px)",
          ultra: "clamp(48px, 10vw, 128px)",
          tarif: "clamp(6px, 5vw, 24px)",
-         xl: "clamp(30px, 5vw, 70px)",
+         xl: "clamp(30px, 4vw, 70px)",
          lg: "clamp(12px, 5vw, 48px)",
          "36px": "clamp(18px, 4vw, 36px)",
          "32px": "clamp(21px, 4vw, 32px)",
          "md+": "clamp(17px, 4vw, 34px)",
          md: "clamp(10px, 4vw, 28px)",
-         "md-": "clamp(6px, 4vw, 18px)",
          extramd: "clamp(10px, 3vw, 28px)",
+         "24px": "clamp(9px, 4vw, 24px)",
+         "20px": "clamp(16px, 4vw, 20px)",
+         "md-": "clamp(6px, 4vw, 18px)",
          sm: "clamp(9px, 3vw, 18px)",
          small: "clamp(6px, 3vw, 18px)",
+         "17px": "clamp(13px, 4vw, 17px)",
+         "14px": "clamp(12px, 4vw, 14px)",
       },
       extend: {
          colors: {
@@ -55,7 +59,8 @@ export default {
             GradCyan: "#019AB0",
             RusDarkBlue: "#0B1E42",
             RusLigthBlue: "#2A5691",
-            RusDarkRed: "#A00000"
+            RusDarkRed: "#A00000",
+            HousingGreen: "#95BC6F"
 
          },
          container: {
