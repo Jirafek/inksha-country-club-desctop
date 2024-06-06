@@ -152,7 +152,7 @@ const Main = () => {
                variants={pumpkin_vars}
                src={logo}
                className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
-               alt=""
+               alt="лого"
             />
          </Link>
          <section
@@ -166,14 +166,14 @@ const Main = () => {
          >
             <Header />
 
-            <div className="absolute h-full left-0 top-0 flex items-center">
+            <div className="absolute top-0 left-0 flex items-center h-full">
                <img
                   className="hidden lg:h-full lg:block"
                   src="/image/main_arrow_big.webp"
                   alt={t('imgAltText')}
                />
 
-               <div className="absolute h-full left-0 top-0 block  w-screen bg-black opacity-70 duration-300 lg:hidden"></div>
+               <div className="absolute top-0 left-0 block w-screen h-full duration-300 bg-black opacity-70 lg:hidden"></div>
 
                <img
                   className="-ml-[300px] hidden max-h-[750px] animate-[arrowAnimationMd_3s_infinite] lg:block 2xl:max-h-[790px] 2xl:animate-[arrowAnimation_5s_infinite]"

@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
          <LazyMotion features={domAnimation} strict>
             <Suspense
                fallback={
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
                      {" "}
                      <img
                         loading='lazy'
@@ -75,35 +75,35 @@ function AppWithDelay() {
 
 
 
-   // if (windowWidth < 768) {
+   if (windowWidth < 768) {
 
-   //    const url = new URL(window.location.href)
-   //    const queryParams = url.searchParams
+      const url = new URL(window.location.href)
+      const queryParams = url.searchParams
 
-   //    const queryString = queryParams.toString()
-
-
-
-   //    switch (true) {
-
-   //       case window.location.pathname.includes('/location'):
-   //          window.location.href = "https://mobile.ikshacountryclub.com/locations-about" + '/?' + queryString
-   //          break
-
-   //       case window.location.search.includes('?korpOpen=1'):
-
-   //          window.location.href = "https://mobile.ikshacountryclub.com/korp" + '/?' + queryString
-   //          break
-
-   //       default:
-   //          window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
-   //          break
-   //    }
+      const queryString = queryParams.toString()
 
 
-   //    // window.location.href = `http://localhost:5173` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
-   //    window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
-   // }
+
+      switch (true) {
+
+         case window.location.pathname.includes('/location'):
+            window.location.href = "https://mobile.ikshacountryclub.com/locations-about" + '/?' + queryString
+            break
+
+         case window.location.search.includes('?korpOpen=1'):
+
+            window.location.href = "https://mobile.ikshacountryclub.com/korp" + '/?' + queryString
+            break
+
+         default:
+            window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+            break
+      }
+
+
+      // window.location.href = `http://localhost:5173` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+      window.location.href = `https://mobile.ikshacountryclub.com` + window.location.hash + (window.location.pathname === '/' ? '' : window.location.pathname) + '/?' + queryString
+   }
    const [isLoading, setIsLoading] = useState(true)
 
    useEffect(() => {
@@ -113,7 +113,7 @@ function AppWithDelay() {
    }, [])
 
    return isLoading ? (
-      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
+      <div className="absolute flex flex-col gap-4 -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
          {" "}
          <p className="text-center text-[22px] font-bold">{t('common.loading')}</p>{" "}
          <img
