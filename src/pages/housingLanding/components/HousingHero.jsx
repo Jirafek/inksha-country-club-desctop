@@ -14,14 +14,14 @@ const HousingHero = () => {
          <div className='absolute inset-0 z-10 flex '>
 
             <div className='relative w-full h-full'>
-               <Reveal duration={1} variants={slideFromLeft()}>
+               <Reveal duration={2} variants={slideFromLeft()}>
                   <div className='text-white rounded-[20px] md:w-auto absolute transform left-1/2 -translate-x-1/2 top-[80px] font-extrabold text-xl text-nowrap bg-[#4D382B] bg-opacity-80 p-5'>
                      ОБРЕТИ ВТОРОЙ ДОМ<br />
                      <span className='text-HousingGreen'>В ИКША КАНТРИ КЛАБ</span>
                   </div>
                </Reveal>
 
-               <Reveal delay={0.5} duration={1} variants={slideAndFade()}>
+               <Reveal delay={0.5} duration={2} variants={slideAndFade()}>
                   <div className='bg-[#4D382B] bg-opacity-80 rounded-[20px] p-5 font-medium md:font-extrabold absolute transform left-1/2 -translate-x-1/2 text-center top-[40vh] md:right-[5vw] md:transform-none md:text-left md:top-[40vh] text-white w-[80%] md:max-w-[700px] md:flex justify-between gap-1 '>
                      <div className='w-auto p-0 m-0 text-36px'>
                         Дома выходного дня для вашего отдыха круглый год
