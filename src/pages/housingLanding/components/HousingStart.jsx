@@ -22,7 +22,7 @@ const HousingStart = () => {
       <div id="howtostart" key="howtostart" className='relative mb-[60px]'>
          <img className='absolute top-0 right-0 z-[0]' src={leaves} alt="Leaves" />
 
-         <div className='relative text-center z-[1]'>
+         <div className='relative text-center md:text-start z-[1]'>
             <div className='flex justify-between gap-1 p-[20px] md:pl-[60px] md:pt-[60px] mb-[20px] items-center'>
                <div className='flex gap-[40px] flex-col'>
                   <h2 className='font-bold text-36px'>КАК<span className='text-brown'> НАЧАТЬ?</span></h2>
@@ -41,7 +41,7 @@ const HousingStart = () => {
                               {`0${i + 1}`}
                            </p>
                            <div>
-                              <div className='font-semibold underline text-20px'>{item[0]}</div>
+                              <a href="#form" className='font-semibold underline text-20px'>{item[0]}</a>
                               <div className='text-17px'>{item[1]}</div>
                            </div>
                         </div>
