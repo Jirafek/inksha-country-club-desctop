@@ -69,6 +69,7 @@ export default {
          },
          screens: {
             "3xl": "2500px",
+            "2xl": "1400px",
             vsm: "355px",
             '900p': '900px',
             "370p": "370px",

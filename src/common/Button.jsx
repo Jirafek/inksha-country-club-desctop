@@ -5,7 +5,7 @@ const Button = ({ children, className, onClick, style, href = "" }) => {
          {href === "" ? <div
             style={style}
             onClick={onClick}
-            className={`z-10 active:bg-slate-400 mt-5 flex text-md-
+            className={`z-10 active:bg-slate-400 mt-2 flex text-md-
           min-h-[30px] text-center  cursor-pointer  items-center justify-center gap-1 rounded-[100px] px-4  font-bold duration-500 hover:opacity-80   ${className || ""} `}
          >
             {children}
@@ -13,7 +13,7 @@ const Button = ({ children, className, onClick, style, href = "" }) => {
          </div> : <a
             style={style}
             href={href}
-            className={`z-10 active:bg-slate-400 mt-5 flex text-md-
+            className={`z-10 active:bg-slate-400 mt-2 flex text-md-
             min-h-[30px] text-center cursor-pointer items-center justify-center gap-1 rounded-[100px] px-4 font-bold duration-500 hover:opacity-80   ${className || ""} `}>
             {children}
             {/* <img src={arrow} alt="" /> */}

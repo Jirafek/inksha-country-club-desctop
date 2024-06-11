@@ -13,10 +13,12 @@ export const Reveal = ({
    delay = 0.25,
    duration = 0.5,
    variants = variant,
-   componentKey = GenerateRandom8Numbers()
+   componentKey = GenerateRandom8Numbers(),
 }) => {
    const ref = useRef(null)
-   const isInView = useInView(ref, { once: true })
+   const isInView = useInView(ref, {
+      once: true,
+   })
    const animation = useAnimation()
 
    useEffect(() => {

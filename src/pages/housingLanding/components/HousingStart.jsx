@@ -45,7 +45,7 @@ const HousingStart = () => {
                               <div className='text-17px'>{item[1]}</div>
                            </div>
                         </div>
-                        <img src={item[2]} className='w-[80%] hidden md:block object-cover rounded-[10px]' alt="Housing option" />
+                        <img src={item[2]} className='w-[80%] hidden md:block object-cover max-h-[120px] max-w-[400px] rounded-[10px]' alt="Housing option" />
                      </div>
                   </Reveal>
                ))}

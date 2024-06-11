@@ -12,20 +12,20 @@ import { getPhoneNumber } from 'utils/helpers'
 
 const HousingHero = () => {
    return (
-      <div className='relative w-full h-screen'>
+      <div className='relative w-full h-screen md:h-[130vh] lg:h-[110vh] xl:h-screen'>
          <img src={bg} className='object-cover w-full h-full' alt="Housing Hero Background" />
          <div className='absolute inset-0 z-10 flex '>
 
             <div className='relative w-full h-full'>
                <Reveal duration={2} variants={slideFromLeft()}>
-                  <div className='text-white rounded-[20px] md:w-auto absolute transform left-1/2 -translate-x-1/2 top-[80px] font-extrabold text-xl text-nowrap bg-[#4D382B] bg-opacity-80 p-5'>
+                  <div className='text-white rounded-[20px] w-[90vw] md:w-auto absolute transform left-1/2 -translate-x-1/2 top-[80px] font-extrabold text-xl text-nowrap bg-[#4D382B] bg-opacity-80 p-3 md:p-5'>
                      ОБРЕТИ ВТОРОЙ ДОМ<br />
                      <span className='text-HousingGreen'>В ИКША КАНТРИ КЛАБ</span>
                   </div>
                </Reveal>
 
                <Reveal delay={0.5} duration={2} variants={slideAndFade()}>
-                  <div className='bg-[#4D382B] bg-opacity-80 rounded-[20px] p-5 font-medium md:font-extrabold absolute transform left-1/2 -translate-x-1/2 text-center top-[40vh] md:right-[5vw] md:transform-none md:text-left md:top-[40vh] text-white w-[90vw] md:w-[80%] md:max-w-[700px] md:flex justify-between gap-1 '>
+                  <div className='bg-[#4D382B] bg-opacity-80 rounded-[20px] w-[90vw] p-5 font-medium md:font-extrabold absolute transform left-1/2 -translate-x-1/2 text-center top-[40vh] md:right-0 md:left-auto md:transform-none md:text-left lg:max-w-[50vw] md:top-[50vh] text-white md:flex justify-between gap-1 '>
                      <div className='w-auto p-0 m-0 text-36px'>
                         Дома выходного дня для вашего отдыха круглый год
                         <span className='block text-center text-md- md:hidden md:self-end md:text-right'>
@@ -40,7 +40,7 @@ const HousingHero = () => {
                   </div>
                </Reveal>
 
-               <div className='bg-[#4D382B] rounded-[20px] bg-opacity-80 p-5 absolute transform md:transform-none text-white w-[90%] md:max-w-[500px] flex flex-col left-1/2 md:left-auto -translate-x-1/2 bottom-5 md:right-[10vw]'>
+               <div className='bg-[#4D382B] rounded-[20px] bg-opacity-80 p-5 absolute transform md:transform-none text-white w-[90%] md:max-w-[400px] flex flex-col left-1/2 -translate-x-1/2 bottom-5 md:left-[5vw] 2xl:right-[100px] 2xl:left-auto'>
                   <div className='flex flex-col justify-between gap-1'>
                      <div className='font-bold text-md-'>
                         Присоединяйся сейчас!
