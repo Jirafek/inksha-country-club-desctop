@@ -1,14 +1,11 @@
 import { m } from "framer-motion"
 import { useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useURLData } from "utils/URLData"
-import { isItWinterNow } from "utils/helpers"
+import { GetCurrentHoliday, isItWinterNow } from "utils/helpers"
 import Header from "./Header"
 import { useTranslation, Trans } from 'react-i18next'
 import bgWinAvif from 'images/welcome_bg_winter.webp'
-
-import logo from 'icons/events/russia.png'
-
 
 
 const heading = {
@@ -36,6 +33,46 @@ const headingLines = {
       },
    },
 }
+
+
+const LandingLogo = () => {
+   const currHolyday = GetCurrentHoliday()
+
+
+   const pumpkin_vars = {
+      initial: {
+         scale: 0.85,
+      },
+      animate: {
+         scale: 1,
+      },
+   }
+
+   const navigate = useNavigate()
+
+   const handleClick = () => {
+      navigate(currHolyday.link)
+   }
+
+   return (
+      <m.img
+         onClick={handleClick}
+         transition={{
+            repeat: Infinity,
+            duration: 1,
+            repeatType: "reverse",
+            repeatDelay: 0.6,
+         }}
+         initial="initial"
+         animate="animate"
+         variants={pumpkin_vars}
+         src={currHolyday.img}
+         className="z-[10000000] h-[150px] w-[150px] cursor-pointer rounded-full absolute right-0 bg-center object-contain shadow-xl"
+         alt="лого"
+      />
+   )
+}
+
 
 const Main = () => {
 
@@ -125,36 +162,12 @@ const Main = () => {
 
    }, [])
 
-   const pumpkin_vars = {
-      initial: {
-         // y: "5px", // Начальная позиция за пределами экрана справа
-         scale: 0.85,
-      },
-      animate: {
-         // y: "-10px", // Конечная позиция за пределами экрана слева
-         scale: 1,
-      },
-   }
+
 
    return (
       <div id='main' className='relative'>
          {/* <div className='fixed top-5 right-5 text-white font-bold rounded-full bg-slate-300 px-4 cursor-pointer z-[10000] text-md' onClick={toggleLanguage}>{i18n.language}</div> */}
-         <Link to="/russiaDay" className="absolute flex justify-center items-center flex-col right-10 top-20 z-[1000]">
-            <m.img
-               transition={{
-                  repeat: Infinity,
-                  duration: 1,
-                  repeatType: "reverse",
-                  repeatDelay: 0.6,
-               }}
-               initial="initial"
-               animate="animate"
-               variants={pumpkin_vars}
-               src={logo}
-               className="z-[10000000] h-[150px] w-[150px] rounded-full   bg-center object-cover shadow-xl"
-               alt="лого"
-            />
-         </Link>
+
          <section
             style={{
                backgroundImage: `url(${isItWinterNow() ? bgWinAvif : '/image/welcome_bg.webp'})`,
@@ -165,7 +178,7 @@ const Main = () => {
             className="relative w-full"
          >
             <Header />
-
+            <LandingLogo />
             <div className="absolute top-0 left-0 flex items-center h-full">
                <img
                   className="hidden lg:h-full lg:block"
