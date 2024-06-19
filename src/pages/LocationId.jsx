@@ -335,7 +335,7 @@ const LocationId = () => {
                 />
             </Helmet>
             <section className="relative min-h-screen w-full bg-[#201E1F] overflow-hidden">
-                <video ref={videoRef} className="w-screen h-screen absolute top-0 left-0" autoPlay loop muted>
+                <video ref={videoRef} className="absolute top-0 left-0 w-screen h-screen" autoPlay loop muted>
                     <source src={'/video/lesnaya.mp4'} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
@@ -343,19 +343,19 @@ const LocationId = () => {
                 {currentLocation.video}
                 {/*<picture>*/}
                 {/*    <source srcSet={`${currentLocation.bigImgAvif} 1x`} type="image/avif" />*/}
-                {/*    <img className="absolute h-screen 2xl:hidden lg:block hidden" src={currentLocation.bigImgWebp} alt={currentLocation.imgAltText} />*/}
+                {/*    <img className="absolute hidden h-screen 2xl:hidden lg:block" src={currentLocation.bigImgWebp} alt={currentLocation.imgAltText} />*/}
                 {/*</picture>*/}
                 {/*<picture>*/}
                 {/*    <source srcSet="/image/logo_big.avif 1x" type="image/avif" />*/}
                 {/*    <img className="absolute top-1/2 -translate-y-1/2 right-[180px] lg:block hidden" src="/image/logo_big.webp" alt={currentLocation.imgAltText} />*/}
                 {/*</picture>*/}
-                <div className="w-screen h-screen bg-black opacity-80 duration-300 absolute top-0 left-0"></div>
+                <div className="absolute top-0 left-0 w-screen h-screen duration-300 bg-black opacity-80"></div>
 
                 {/*<picture>*/}
                 {/*    <source srcSet={`${currentLocation.imgAvif} 1x`} type="image/avif" />*/}
-                {/*    <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.imgWebp} alt={currentLocation.imgAltText} />*/}
+                {/*    <img className="absolute top-0 left-0 hidden h-screen 2xl:block" src={currentLocation.imgWebp} alt={currentLocation.imgAltText} />*/}
                 {/*</picture>*/}
-                <img className="h-screen absolute left-0 top-0 2xl:block hidden" src={currentLocation.imgWebp} alt={currentLocation.imgAltText} />
+                <img className="absolute top-0 left-0 hidden h-screen 2xl:block" src={currentLocation.imgWebp} alt={currentLocation.imgAltText} />
                 <Title bg="#221C1C" text={'Локации'} isNeedBack={true} />
                 <Logo />
                 <div className="lg:block pt-[160px] flex md:flex-row flex-col justify-between lg:pr-0 sm:pr-5">
@@ -381,7 +381,7 @@ const LocationId = () => {
                             }
                         </div>
                     </div>
-                    <div className="flex lg:flex-row flex-col lg:gap-0 gap-4 justify-around items-center z-10 relative md:justify-self-start justify-self-center">
+                    <div className="relative z-10 flex flex-col items-center justify-around gap-4 lg:flex-row lg:gap-0 md:justify-self-start justify-self-center">
                         {
                             currentLocation.title !== t('locationId.data.olympicVillage.title') ?
                                 <>
@@ -400,20 +400,20 @@ const LocationId = () => {
                                         </p>
                                     </div>
                                     <div className="bg-[#221C1C] border border-[#AB8E67] rounded-[15px] py-4 px-8 flex flex-col">
-                                        <h5 className="text-white 2xl:text-[32px] xl:text-[26px] text-[18px] font-semibold">
+                                        {/* <h5 className="text-white 2xl:text-[32px] xl:text-[26px] text-[18px] font-semibold">
                                             {t('locationId.weekendDays')}
-                                        </h5>
+                                        </h5> */}
                                         <h4 className="text-[#AB8E67] 2xl:text-[38px] xl:text-[32px] text-[24px] font-bold">
-                                            {currentLocation.holidays.title}
+                                            от {currentLocation.holidays.title}
                                         </h4>
-                                        <p className="mb-2 text-white 2xl:text-[28px] xl:text-[22px] font-medium">
+                                        {/* <p className="mb-2 text-white 2xl:text-[28px] xl:text-[22px] font-medium">
                                             {currentLocation.holidays.eachPeople}
-                                        </p>
+                                        </p> */}
                                         <p className="text-white 2xl:text-[28px] xl:text-[22px] font-medium">
                                             {currentLocation.holidays.night}
                                         </p>
                                     </div>
-                                    <div className="bg-[#221C1C] border border-[#AB8E67] rounded-[15px] py-4 px-8 flex flex-col">
+                                    {/* <div className="bg-[#221C1C] border border-[#AB8E67] rounded-[15px] py-4 px-8 flex flex-col">
                                         <h5 className="text-white 2xl:text-[32px] xl:text-[26px] text-[18px] font-semibold">
                                             {t('locationId.weekdays')}
                                         </h5>
@@ -426,7 +426,7 @@ const LocationId = () => {
                                         <p className="text-white 2xl:text-[28px] xl:text-[22px] font-medium">
                                             {currentLocation.days.night}
                                         </p>
-                                    </div>
+                                    </div> */}
                                 </>
                                 :
                                 <>
@@ -448,7 +448,7 @@ const LocationId = () => {
                                     }
                                 </>
                         }
-                        <div className="flex flex-col gap-6 relative">
+                        <div className="relative flex flex-col gap-6">
                             <div className="py-4 px-[18px] flex flex-col items-center justify-center bg-[#221C1C] border border-[#AB8E67] rounded-[15px]">
                                 <h5 className="2xl:text-[32px] xl:text-[26px] text-[18px] text-white font-semibold">
                                     {t('locationId.rentalTime')}
