@@ -2,7 +2,7 @@ import { m } from "framer-motion"
 import { useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { useURLData } from "utils/URLData"
-import { GetCurrentHoliday, isItWinterNow } from "utils/helpers"
+import { GetCurrentHoliday, getPhoneNumber, isItWinterNow } from "utils/helpers"
 import Header from "./Header"
 import { useTranslation, Trans } from 'react-i18next'
 import bgWinAvif from 'images/welcome_bg_winter.webp'
@@ -75,10 +75,6 @@ const LandingLogo = () => {
 
 
 const Main = () => {
-
-   const { utm_source, phoneContent } = useURLData()
-   const matchingPhone = phoneContent.find(item => item.utm === utm_source)
-   const phoneNumber = matchingPhone ? '+' + matchingPhone.phone : '+74995055031'
    const { t, i18n } = useTranslation()
 
 
@@ -162,7 +158,9 @@ const Main = () => {
 
    }, [])
 
+   const currentHolyday = GetCurrentHoliday()
 
+   console.log(currentHolyday)
 
    return (
       <div id='main' className='relative'>
@@ -227,12 +225,12 @@ const Main = () => {
             </m.div>
 
             <Link
-               to="/new-year"
+               to={currentHolyday.link}
                className="montery z-[1000] flex h-[60px] w-full items-center justify-between bg-gradient-to-t from-[#AB8E67]/[.6] to-[#4D382B]/[.6] px-5 py-3 text-[18px] font-[700] text-white backdrop-opacity-90 lg:text-[22px]"
             >
-               <div>{t('call')} {phoneNumber}</div>
+               <div>{t('call')} {getPhoneNumber()}</div>
                <div className="text-[#D3AE7C]">
-                  {t('newYearAtIksha')}-{t('limitedSpots')}
+                  {currentHolyday.russian} В Икша Кантри Клаб -{t('limitedSpots')}
                </div>
                <div>{t('specialOffer')}</div>
             </Link>

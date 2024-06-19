@@ -63,46 +63,56 @@ export const getWALink = () => {
 
 
 export const GetCurrentHoliday = () => {
-    const AllLandingsLogos = {
+    const ReturnHolydayValues = {
         newyear: {
             img: ny,
-            link: "/New-Year"
+            link: "/New-Year",
+            russian: "Новый год"
         },
         man: {
             img: man,
-            link: "/defender"
+            link: "/defender",
+            russian: "День защитника отечества "
         },
         russia: {
             img: russ,
-            link: "/russiaDay"
+            link: "/russiaDay",
+            russian: "День России"
         },
         butter: {
             img: butter,
-            link: "/butter"
+            link: "/butter",
+            russian: "Масленица"
         },
         maj: {
             img: maj,
-            link: "/may"
+            link: "/may",
+            russian: "Майские праздники"
         },
         mart: {
             img: mart,
-            link: "/mart"
+            link: "/mart",
+            russian: "8 марта"
         },
         valen: {
             img: valen,
-            link: "/valentine"
+            link: "/valentine",
+            russian: "День Валентина"
         },
         vypusk: {
             img: vypusk,
-            link: "/graduation"
+            link: "/graduation",
+            russian: "Выпускной"
         },
         halloween: {
             img: halloween,
-            link: "/halloween"
+            link: "/halloween",
+            russian: "Хелоуин"
         },
         active: {
             img: active,
-            link: "/active"
+            link: "/active",
+            russian: "Активный отдых"
         }
     }
 
@@ -121,7 +131,7 @@ export const GetCurrentHoliday = () => {
             { name: "mart", start: "08-02", end: "08-03" },          // Международный женский день
             { name: "valen", start: "15-01", end: "14-02" },         // День святого Валентина
             { name: "vypusk", start: "15-05", end: "25-06" },        // Выпускной (примерная дата)
-            { name: "halloween", start: "1-10", end: "31-10" }      // Хэллоуин
+            { name: "halloween", start: "1-10", end: "31-10" },      // Хэллоуин
         ]
 
         const currentDate = `${String(day).padStart(2, '0')}-${String(month).padStart(2, '0')}`
@@ -145,5 +155,5 @@ export const GetCurrentHoliday = () => {
         return "active"
     }
 
-    return AllLandingsLogos[getCurrentHolidayName()]
+    return ReturnHolydayValues[getCurrentHolidayName()]
 }
