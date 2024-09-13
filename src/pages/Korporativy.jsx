@@ -270,7 +270,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                      className="absolute right-7 top-7 z-10 hidden w-[40px] rotate-180 duration-300  sm:block"
                   >
                      {/* <LocationArrow /> */}
-                     <img className="h-9 w-9 object-cover" src={close} alt="" />
+                     <img className="object-cover h-9 w-9" src={close} alt="" />
                   </button>
                   <m.div
                      initial="hidden"
@@ -281,12 +281,12 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                   >
                      <m.div variants={OpenLeft} className="flex justify-center">
                         <h1 className="gradient_title mb-7 text-[20px] font-extrabold sm:mb-12 sm:text-[32px] md:text-[42px] xl:text-[68px]">
-                           {t('korp.heading')}
+                           Корпоративы
                         </h1>
                      </m.div>
                      {isImageOpen && (
                         <div
-                           className="fixed left-0 top-0 z-40 flex h-screen w-screen items-center justify-center bg-black bg-opacity-70"
+                           className="fixed top-0 left-0 z-40 flex items-center justify-center w-screen h-screen bg-black bg-opacity-70"
                            onClick={handleBackdropClick}
                         >
                            <img
@@ -301,7 +301,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                         onSubmit={handleSubmit(onSubmit)}
                      >
                         <Slider ref={sliderRef} {...settingsBig}>
-                           <div className="slick-slider-flex flex flex-col items-center justify-center gap-11 xl:flex-row">
+                           <div className="flex flex-col items-center justify-center slick-slider-flex gap-11 xl:flex-row">
                               <div className="flex flex-col items-center gap-[30px] xl:items-start">
                                  <div className="flex flex-col gap-2">
                                     <div className="flex h-[80px] w-[380px] items-center gap-1 rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] pl-8 text-white sm:w-[400px]">
@@ -316,7 +316,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                        />
                                     </div>
                                     <div className="h-[80px] w-[380px] rounded-xl border-[3px] border-[#AB8E67] bg-[#604E3A] text-white sm:w-[400px]">
-                                       <label className="flex h-full items-center justify-between gap-1 pl-8 pr-4">
+                                       <label className="flex items-center justify-between h-full gap-1 pl-8 pr-4">
                                           <p className="text-[26px] font-semibold">
                                              {t('korp.overnight')}
                                           </p>
@@ -365,13 +365,13 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
 
                                  <Link
                                     to="/korp-landing"
-                                    className="z-10 cursor-pointer pb-5 leading-4 tracking-widest text-white underline"
+                                    className="z-10 pb-5 leading-4 tracking-widest text-white underline cursor-pointer"
                                  >
                                     {t('korp.learnMore')}
                                  </Link>
                               </div>
                               <div className="flex flex-col items-center gap-8 pb-10 xl:pb-0">
-                                 <div className="flex w-full justify-between gap-1">
+                                 <div className="flex justify-between w-full gap-1">
                                     <button
                                        type="button"
                                        onClick={handleImageClick}
@@ -415,10 +415,10 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                  </Slider>
                               </div>
                            </div>{" "}
-                           <div className="flex h-full items-center justify-center">
+                           <div className="flex items-center justify-center h-full">
                               <div className="flex h-[420px] w-[380px] flex-col items-center rounded-[40px] border-[2px] border-[#AB8E67] bg-[#75624A] px-[50px] py-9 sm:h-[500px] sm:w-[500px] lg:h-[760px] lg:w-[770px] lg:px-[90px]">
                                  <p className="mb-8 text-center text-[18px] font-semibold text-white sm:text-[22px] lg:mb-16 lg:text-[32px]">
-                                    {t('korp.leaveUrData')}
+                                    Оставьте свои данные
                                  </p>
                                  <input
                                     placeholder="Имя"
@@ -447,7 +447,7 @@ const Korporativy = ({ isKorpOpen, toggleKorp }) => {
                                           {(inputProps) => (
                                              <input
                                                 type="text"
-                                                placeholder={t('common.name')}
+                                                placeholder='Телефон'
                                                 className={`mb-8 w-full rounded-xl bg-[#604E3A] py-2 pl-[20px] text-[20px] text-white sm:pl-[40px] sm:text-[28px] lg:mb-16 lg:h-[88px] lg:rounded-[20px] lg:py-0 lg:text-[36px]`}
                                                 {...inputProps}
                                              />

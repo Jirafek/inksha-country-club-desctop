@@ -1,65 +1,42 @@
 /* eslint-disable react/prop-types */
 
-import { v4 as uuid4 } from 'uuid'
-import { m } from 'framer-motion'
+import { v4 as uuid4 } from 'uuid';
 
+import { m } from 'framer-motion';
 
+import main2 from 'images/chill/program/002.webp';
+import main9 from 'images/chill/program/009.webp';
+import main10 from 'images/chill/program/010.webp';
+import main12 from 'images/chill/program/012.webp';
+import main14 from 'images/chill/program/014.webp';
+import main19 from 'images/chill/program/019.webp';
+import main23 from 'images/chill/program/023.webp';
+import main25 from 'images/chill/program/025.webp';
+import main28 from 'images/chill/program/028.webp';
+import main36 from 'images/chill/program/036.webp';
 
-// import main30 from 'images/chill/program/030.webp'
+import { Navigation, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/scrollbar";
 
+import korpprev from "icons/swiperprev_black.png";
+import korpnext from "icons/swipernext_black.png";
+import sun from 'icons/buttons/filter/sun.png';
+import winter from 'icons/buttons/filter/winter.png';
+import many from 'icons/buttons/filter/blue/many.png';
+import low from 'icons/buttons/filter/blue/low.png';
 
+import Button from 'common/Button';
 
-import main2 from 'images/chill/program/002.webp'
+import { useEffect, useRef, useState } from 'react';
 
-import main9 from 'images/chill/program/009.webp'
-import main10 from 'images/chill/program/010.webp'
+import ProgramSlider from 'common/landings/ProgramSlider';
 
-import main12 from 'images/chill/program/012.webp'
-
-import main14 from 'images/chill/program/014.webp'
-
-import main19 from 'images/chill/program/019.webp'
-
-import main23 from 'images/chill/program/023.webp'
-
-import main25 from 'images/chill/program/025.webp'
-
-import main28 from 'images/chill/program/028.webp'
-import main36 from 'images/chill/program/036.webp'
-
-
-
-
-import { Navigation, Autoplay } from "swiper/modules"
-
-import { Swiper, SwiperSlide } from "swiper/react"
-
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import "swiper/css/autoplay"
-import "swiper/css/scrollbar"
-
-
-import korpprev from "icons/swiperprev_black.png"
-import korpnext from "icons/swipernext_black.png"
-
-
-import sun from 'icons/buttons/filter/sun.png'
-import winter from 'icons/buttons/filter/winter.png'
-import many from 'icons/buttons/filter/blue/many.png'
-import low from 'icons/buttons/filter/blue/low.png'
-
-import Button from 'common/Button'
-
-
-
-
-
-import s from './../maj.module.scss'
-import { useEffect, useRef, useState } from 'react'
-import ProgramSlider from 'common/landings/ProgramSlider'
+import s from './../maj.module.scss';
 
 const GetProgram = () => {
    const program = [
@@ -97,7 +74,7 @@ const GetProgram = () => {
          price: '1 190 ₽ /чел.',
          number: 9,
          hasAbout: true,
-         desc: '',
+         desc: '* от 10 гостей',
 
 
          time: ['Лето', 'Зима'],
@@ -175,7 +152,7 @@ const GetProgram = () => {
          oldPrice: '12 990 ₽ /чел.',
          number: 12,
          hasAbout: false,
-         desc: '',
+         desc: '* от 10 гостей',
 
 
          time: 'Лето',
@@ -188,7 +165,7 @@ const GetProgram = () => {
          oldPrice: '10 990 ₽ /чел.',
          number: 2,
          hasAbout: true,
-         desc: 'с онлайн-гидом',
+         desc: '* от 10 гостей, с онлайн-гидом',
 
 
          time: ['Зима', 'Лето'],
@@ -199,88 +176,88 @@ const GetProgram = () => {
 
 
 
-   ]
+   ];
 
-   return program
-}
+   return program;
+};
 
 
 const MajProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
-   const program = GetProgram()
+   const program = GetProgram();
 
 
-   const [isManyPeople, setIsManyPeople] = useState(false)
+   const [isManyPeople, setIsManyPeople] = useState(false);
 
 
-   const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [selectedimages, setSelectedimages] = useState(program)
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [selectedimages, setSelectedimages] = useState(program);
 
 
    const filter = () => {
 
       const filteredProgram = program.filter(item => {
 
-         return item.isManyPeople === isManyPeople && item.time.includes(currentTime)
-      })
+         return item.isManyPeople === isManyPeople && item.time.includes(currentTime);
+      });
 
 
-      setSelectedimages(filteredProgram)
+      setSelectedimages(filteredProgram);
 
 
-   }
+   };
 
    useEffect(() => {
-      filter()
-   }, [])
+      filter();
+   }, []);
 
 
    const togglePeople = () => {
 
-      setIsManyPeople(!isManyPeople)
+      setIsManyPeople(!isManyPeople);
 
-   }
+   };
 
 
    const toggleTime = () => {
       if (currentTime === 'Лето') {
-         setTime('Зима')
+         setTime('Зима');
       } else {
-         setTime('Лето')
+         setTime('Лето');
       }
-      filter()
-   }
+      filter();
+   };
 
 
    useEffect(() => {
-      filter()
-   }, [currentTime, isManyPeople])
+      filter();
+   }, [currentTime, isManyPeople]);
 
 
-   const swiperRef = useRef()
+   const swiperRef = useRef();
 
 
    useEffect(() => {
-      const script = document.createElement("script")
-      script.src = "//widget.bronirui-online.ru/js/app.js"
-      script.async = true
+      const script = document.createElement("script");
+      script.src = "//widget.bronirui-online.ru/js/app.js";
+      script.async = true;
 
       const initializeWidget = () => {
          window.znmsWidget.init("#znms-service-widget-module", {
             moduleId: 5026,
             type: 'booking-services',
-         })
+         });
 
 
-      }
-      script.onload = initializeWidget
+      };
+      script.onload = initializeWidget;
 
 
 
-      document.body.appendChild(script)
+      document.body.appendChild(script);
 
-   }, [])
-   console.log()
+   }, []);
+   console.log();
 
    return (
       <div name='proga' id='program' className='relative py-[120px] text-black'>
@@ -368,7 +345,7 @@ const MajProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
 
       </div >
-   )
-}
+   );
+};
 
-export default MajProgram
+export default MajProgram;

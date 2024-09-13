@@ -1,65 +1,42 @@
 /* eslint-disable react/prop-types */
 
-import { v4 as uuid4 } from 'uuid'
-import { m } from 'framer-motion'
+import { v4 as uuid4 } from 'uuid';
 
+import { m } from 'framer-motion';
 
+import main2 from 'images/chill/program/002.webp';
+import main9 from 'images/chill/program/009.webp';
+import main10 from 'images/chill/program/010.webp';
+import main12 from 'images/chill/program/012.webp';
+import main14 from 'images/chill/program/014.webp';
+import main19 from 'images/chill/program/019.webp';
+import main23 from 'images/chill/program/023.webp';
+import main25 from 'images/chill/program/025.webp';
+import main28 from 'images/chill/program/028.webp';
+import main36 from 'images/chill/program/036.webp';
 
-// import main30 from 'images/chill/program/030.webp'
+import { Navigation, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/scrollbar";
 
+import korpprev from "icons/swiperprev_black.png";
+import korpnext from "icons/swipernext_black.png";
+import sun from 'icons/buttons/filter/sun.png';
+import winter from 'icons/buttons/filter/winter.png';
+import many from 'icons/buttons/filter/blue/many.png';
+import low from 'icons/buttons/filter/blue/low.png';
 
+import Button from 'common/Button';
 
-import main2 from 'images/chill/program/002.webp'
+import { useEffect, useRef, useState } from 'react';
 
-import main9 from 'images/chill/program/009.webp'
-import main10 from 'images/chill/program/010.webp'
+import ProgramSlider from 'common/landings/ProgramSlider';
 
-import main12 from 'images/chill/program/012.webp'
-
-import main14 from 'images/chill/program/014.webp'
-
-import main19 from 'images/chill/program/019.webp'
-
-import main23 from 'images/chill/program/023.webp'
-
-import main25 from 'images/chill/program/025.webp'
-
-import main28 from 'images/chill/program/028.webp'
-import main36 from 'images/chill/program/036.webp'
-
-
-
-
-import { Navigation, Autoplay } from "swiper/modules"
-
-import { Swiper, SwiperSlide } from "swiper/react"
-
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import "swiper/css/autoplay"
-import "swiper/css/scrollbar"
-
-
-import korpprev from "icons/swiperprev_black.png"
-import korpnext from "icons/swipernext_black.png"
-
-
-import sun from 'icons/buttons/filter/sun.png'
-import winter from 'icons/buttons/filter/winter.png'
-import many from 'icons/buttons/filter/blue/many.png'
-import low from 'icons/buttons/filter/blue/low.png'
-
-import Button from 'common/Button'
-
-
-
-
-
-import s from './../rus.module.scss'
-import { useEffect, useRef, useState } from 'react'
-import ProgramSlider from 'common/landings/ProgramSlider'
+import s from './../rus.module.scss';
 
 const GetProgram = () => {
    const program = [
@@ -97,7 +74,7 @@ const GetProgram = () => {
          price: '1 190 ₽ /чел.',
          number: 9,
          hasAbout: true,
-         desc: '',
+         desc: '* от 10 гостей',
 
 
          time: ['Лето', 'Зима'],
@@ -175,7 +152,7 @@ const GetProgram = () => {
          oldPrice: '12 990 ₽ /чел.',
          number: 12,
          hasAbout: false,
-         desc: '',
+         desc: '* от 10 гостей',
 
 
          time: 'Лето',
@@ -188,71 +165,71 @@ const GetProgram = () => {
          oldPrice: '10 990 ₽ /чел.',
          number: 2,
          hasAbout: true,
-         desc: 'с онлайн-гидом',
+         desc: '* от 10 гостей, с онлайн-гидом',
 
 
          time: ['Зима', 'Лето'],
          isManyPeople: false,
 
       },
-   ]
-   return program
-}
+   ];
+   return program;
+};
 
 
 const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
-   const program = GetProgram()
-   const [isManyPeople, setIsManyPeople] = useState(false)
-   const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [selectedimages, setSelectedimages] = useState(program)
+   const program = GetProgram();
+   const [isManyPeople, setIsManyPeople] = useState(false);
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [selectedimages, setSelectedimages] = useState(program);
 
 
    const filter = () => {
       const filteredProgram = program.filter(item => {
-         return item.isManyPeople === isManyPeople && item.time.includes(currentTime)
-      })
+         return item.isManyPeople === isManyPeople && item.time.includes(currentTime);
+      });
 
-      setSelectedimages(filteredProgram)
-   }
+      setSelectedimages(filteredProgram);
+   };
 
    useEffect(() => {
-      filter()
-   }, [])
+      filter();
+   }, []);
 
    const togglePeople = () => {
-      setIsManyPeople(!isManyPeople)
-   }
+      setIsManyPeople(!isManyPeople);
+   };
 
    const toggleTime = () => {
       if (currentTime === 'Лето') {
-         setTime('Зима')
+         setTime('Зима');
       } else {
-         setTime('Лето')
+         setTime('Лето');
       }
-      filter()
-   }
+      filter();
+   };
 
    useEffect(() => {
-      filter()
-   }, [currentTime, isManyPeople])
+      filter();
+   }, [currentTime, isManyPeople]);
 
-   const swiperRef = useRef()
+   const swiperRef = useRef();
 
    useEffect(() => {
-      const script = document.createElement("script")
-      script.src = "//widget.bronirui-online.ru/js/app.js"
-      script.async = true
+      const script = document.createElement("script");
+      script.src = "//widget.bronirui-online.ru/js/app.js";
+      script.async = true;
 
       const initializeWidget = () => {
          window.znmsWidget.init("#znms-service-widget-module", {
             moduleId: 5026,
             type: 'booking-services',
-         })
-      }
-      script.onload = initializeWidget
+         });
+      };
+      script.onload = initializeWidget;
 
-      document.body.appendChild(script)
-   }, [])
+      document.body.appendChild(script);
+   }, []);
 
    return (
       <div name='proga' id='program' className='relative bg-RusLigthBlue py-[120px] '>
@@ -263,7 +240,7 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
 
          {/* <div style={{ display: `${isMenuOpen ? 'block' : 'none'}` }} className="absolute py-7 z-10 left-1/2 -translate-x-1/2 lg:top-[210px] top-[180px]  w-[360px] bg-[#5F4D3A] rounded-b-[22px]">
-            <div className="relative w-full pl-12 flex flex-col gap-2 items-start">
+            <div className="relative flex flex-col items-start w-full gap-2 pl-12">
                {
                   types.map((el) => {
                      return (
@@ -315,7 +292,7 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
                   }
 
                </div>
-               <div className="text-center text-white text-sm font-semibold leading-normal tracking-tight">{isManyPeople ? <div>Много людей (от 10)</div> : <div>Мало людей (от 4)</div>}</div>
+               <div className="text-sm font-semibold leading-normal tracking-tight text-center text-white">{isManyPeople ? <div>Много людей (от 10)</div> : <div>Мало людей (от 4)</div>}</div>
 
             </div>
 
@@ -339,26 +316,26 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
                      </div>
                      <div className=' p-[15px] md:p-[30px] '>
                         <div className='text-32px text-RusLigthBlue leading-[41.60px] acariBold'>{item.title}</div>
-                        <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
+                        <div className="font-semibold text-left text-stone-500 ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                         <div className='flex justify-between mb-[20px]'>
                            {item.oldPrice !== '' || undefined ?
                               <div className='flex flex-col items-center justify-center w-full'>
-                                 <div className="text-center text-RusLigthBlue text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                 <div className="text-center text-RusDarkRed  text-36px font-semibold leading-loose">{item.price}</div>
+                                 <div className="font-semibold leading-loose text-center line-through text-RusLigthBlue text-36px">{item.oldPrice}</div>
+                                 <div className="font-semibold leading-loose text-center text-RusDarkRed text-36px">{item.price}</div>
 
 
                               </div>
                               :
                               <div className='flex flex-col'>
-                                 <div className="text-left text-36px text-RusLihborder-RusLigthBlue font-semibold">{item.price}</div>
+                                 <div className="font-semibold text-left text-36px text-RusLihborder-RusLigthBlue">{item.price}</div>
                               </div>
                            }
                         </div>
 
-                        <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
+                        <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0 md:justify-between'>
                            <div onClickCapture={() => { window.znmsWidget.open('#znms-service-widget-module') }} onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-RusLigthBlue">
-                              <div className="text-center text-RusLihborder-RusLigthBlue font-semibold ">Забронировать</div>
+                              <div className="font-semibold text-center text-RusLihborder-RusLigthBlue ">Забронировать</div>
                            </div>
                            {item.hasAbout ?
                               <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
@@ -439,28 +416,28 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
                            <div className=' p-[15px] md:p-[30px] '>
                               <div className='text-32px text-RusLihborder-RusLigthBlue leading-[41.60px] acariBold'>{item.title}</div>
-                              <div className="text-left text-stone-500 font-semibold ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
+                              <div className="font-semibold text-left text-stone-500 ">{item.desc !== '' ? <div>{item.desc}</div> : ''}</div>
 
                               <div className='flex justify-between mb-[20px]'>
                                  {item.oldPrice !== '' ?
                                     <div className='flex flex-col items-center justify-center w-full'>
-                                       <div className="text-center text-RusLihborder-RusLigthBlue text-36px font-semibold line-through leading-loose">{item.oldPrice}</div>
-                                       <div className="text-center text-RusDarkRed  text-36px font-semibold leading-loose">{item.price}</div>
+                                       <div className="font-semibold leading-loose text-center line-through text-RusLihborder-RusLigthBlue text-36px">{item.oldPrice}</div>
+                                       <div className="font-semibold leading-loose text-center text-RusDarkRed text-36px">{item.price}</div>
 
 
                                     </div>
                                     :
                                     <div className='flex flex-col'>
-                                       <div className="text-left text-36px text-RusLihborder-RusLigthBlue font-semibold">{item.price}</div>
+                                       <div className="font-semibold text-left text-36px text-RusLihborder-RusLigthBlue">{item.price}</div>
 
 
                                     </div>
                                  }
                               </div>
 
-                              <div className='flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0 md:justify-between'>
+                              <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:gap-0 md:justify-between'>
                                  <div onClick={() => { window.znmsWidget.open('#znms-service-widget-module') }} className="w-[156.94px] cursor-pointer h-[41.64px] rounded-tr-[20px] flex justify-center items-center rounded-bl-[20px] border-4 border-RusLigthBlue">
-                                    <div className="text-center text-RusLihborder-RusLigthBlue font-semibold ">Забронировать</div>
+                                    <div className="font-semibold text-center text-RusLihborder-RusLigthBlue ">Забронировать</div>
                                  </div>
                                  {item.hasAbout ?
                                     <div onClick={() => { handleProductClick(item.number) }} className="cursor-pointer w-[156.94px] h-[41.64px] rounded-[20px] flex justify-center items-center ">
@@ -485,7 +462,7 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
          </div> */}
 
          <div className={` ${s.banner} mt-[50px] w-screen flex justify-center items-center bottom-0 z-[20] h-[70px] md:h-[90px] `}>
-            <div className='text-white text-center text-md font-semibold'>
+            <div className='font-semibold text-center text-white text-md'>
                Проживание в домике для 6 человек к любому пакету услуг <span className='line-through'>16 990₽</span> <span className='text-NYred'> 9990₽ </span>
 
             </div>
@@ -497,7 +474,7 @@ const RusProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
 
       </div >
-   )
-}
+   );
+};
 
-export default RusProgram
+export default RusProgram;

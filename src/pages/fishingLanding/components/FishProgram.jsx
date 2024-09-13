@@ -1,48 +1,48 @@
 /* eslint-disable react/prop-types */
 
-import { v4 as uuid4 } from 'uuid'
-import { m } from 'framer-motion'
+import { v4 as uuid4 } from 'uuid';
+import { m } from 'framer-motion';
 
-import main1 from 'images/fishing/program/001.webp'
-import main2 from 'images/fishing/program/002.webp'
-import main3 from 'images/fishing/program/003.webp'
-import main4 from 'images/fishing/program/004.webp'
-import main5 from 'images/fishing/program/005.webp'
-import main6 from 'images/fishing/program/006.webp'
+import main1 from 'images/fishing/program/001.webp';
+import main2 from 'images/fishing/program/002.webp';
+import main3 from 'images/fishing/program/003.webp';
+import main4 from 'images/fishing/program/004.webp';
+import main5 from 'images/fishing/program/005.webp';
+import main6 from 'images/fishing/program/006.webp';
 
 // import main30 from 'images/chill/program/030.webp'
 
 
-import { Navigation, Autoplay } from "swiper/modules"
+import { Navigation, Autoplay } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import "swiper/css/autoplay"
-import "swiper/css/scrollbar"
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/scrollbar";
 
 
-import korpprev from "icons/swiperprev_black.png"
-import korpnext from "icons/swipernext_black.png"
+import korpprev from "icons/swiperprev_black.png";
+import korpnext from "icons/swipernext_black.png";
 
 
-import sun from 'icons/buttons/filter/sun.png'
-import winter from 'icons/buttons/filter/winter.png'
-import many from 'icons/buttons/filter/many.png'
-import low from 'icons/buttons/filter/low.png'
+import sun from 'icons/buttons/filter/sun.png';
+import winter from 'icons/buttons/filter/winter.png';
+import many from 'icons/buttons/filter/many.png';
+import low from 'icons/buttons/filter/low.png';
 
-import Button from 'common/Button'
-
-
+import Button from 'common/Button';
 
 
 
-import s from './../fishing.module.scss'
-import { useEffect, useRef, useState } from 'react'
-import ProgramSlider from 'common/landings/ProgramSlider'
+
+
+import s from './../fishing.module.scss';
+import { useEffect, useRef, useState } from 'react';
+import ProgramSlider from 'common/landings/ProgramSlider';
 
 const GetProgram = () => {
    const program = [
@@ -54,7 +54,7 @@ const GetProgram = () => {
          price: '1990 ₽ /чел',
          number: 1,
          hasAbout: false,
-         desc: '',
+         desc: '* от 10 гостей',
          time: 'Лето',
          isManyPeople: false,
       },
@@ -65,7 +65,7 @@ const GetProgram = () => {
          oldPrice: '8990 ₽ /чел.',
          number: 2,
          hasAbout: false,
-         desc: 'с онлайн-гидом',
+         desc: '* от 10 гостей, с онлайн-гидом',
 
 
          time: ['Зима', 'Лето'],
@@ -92,7 +92,7 @@ const GetProgram = () => {
          oldPrice: '8990 ₽ /чел.',
          number: 10,
          hasAbout: false,
-         desc: '',
+         desc: '* от 10 гостей',
 
 
          time: 'Лето',
@@ -126,78 +126,78 @@ const GetProgram = () => {
 
 
 
-   ]
+   ];
 
-   return program
-}
+   return program;
+};
 
 
 
 const FishProgram = () => {
 
-   const program = GetProgram()
+   const program = GetProgram();
 
 
-   const [isManyPeople, setIsManyPeople] = useState(false)
-   const [currentTime, setTime] = useState('Лето')
+   const [isManyPeople, setIsManyPeople] = useState(false);
+   const [currentTime, setTime] = useState('Лето');
 
-   const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [selectedimages, setSelectedimages] = useState(program)
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [selectedimages, setSelectedimages] = useState(program);
 
 
    const filter = () => {
 
       const filteredProgram = program.filter(item => {
 
-         return item.isManyPeople === isManyPeople && item.time.includes(currentTime)
-      })
+         return item.isManyPeople === isManyPeople && item.time.includes(currentTime);
+      });
 
 
-      setSelectedimages(filteredProgram)
+      setSelectedimages(filteredProgram);
 
 
-   }
+   };
 
    useEffect(() => {
-      filter()
-   }, [])
+      filter();
+   }, []);
 
 
    const togglePeople = () => {
 
-      setIsManyPeople(!isManyPeople)
+      setIsManyPeople(!isManyPeople);
 
-   }
+   };
 
 
    const toggleTime = () => {
       if (currentTime === 'Лето') {
-         setTime('Зима')
+         setTime('Зима');
       } else {
-         setTime('Лето')
+         setTime('Лето');
       }
-      filter()
-   }
+      filter();
+   };
 
 
    useEffect(() => {
-      filter()
-   }, [currentTime, isManyPeople])
+      filter();
+   }, [currentTime, isManyPeople]);
 
 
-   const swiperRef = useRef()
+   const swiperRef = useRef();
 
 
    useEffect(() => {
-      const script = document.createElement("script")
-      script.src = "//widget.bronirui-online.ru/js/app.js"
-      script.async = true
+      const script = document.createElement("script");
+      script.src = "//widget.bronirui-online.ru/js/app.js";
+      script.async = true;
 
       const initializeWidget = () => {
          window.znmsWidget.init("#znms-service-widget-module", {
             moduleId: 5026,
             type: 'booking-services',
-         })
+         });
 
          // const customStyles = `
          //  .znms-widget__brononline_popup_full {
@@ -213,15 +213,15 @@ const FishProgram = () => {
          // const styleElement = document.createElement("style")
          // styleElement.innerHTML = customStyles
          // document.head.appendChild(styleElement)
-      }
-      script.onload = initializeWidget
+      };
+      script.onload = initializeWidget;
 
 
 
-      document.body.appendChild(script)
+      document.body.appendChild(script);
 
-   }, [])
-   console.log()
+   }, []);
+   console.log();
 
    return (
       <div name='proga' id='program' className='relative bg-[#081130] py-[10vh] text-black'>
@@ -490,7 +490,7 @@ const FishProgram = () => {
 
 
       </div >
-   )
-}
+   );
+};
 
-export default FishProgram
+export default FishProgram;

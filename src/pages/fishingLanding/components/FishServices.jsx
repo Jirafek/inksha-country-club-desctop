@@ -1,5 +1,5 @@
 // import { useTranslation } from 'react-i18next'
-import s from './../fishing.module.scss'
+import s from './../fishing.module.scss';
 const GetServices = () => {
 
    // const { t } = useTranslation()
@@ -39,7 +39,7 @@ const GetServices = () => {
          },
          {
             title: "Казан ухи из свежепойманной форели",
-            price: '100',
+            price: '5000',
             description: ""
          },
          {
@@ -66,20 +66,20 @@ const GetServices = () => {
 
 
 
-   ]
+   ];
 
 
-   return services
-}
+   return services;
+};
 
 const FishServices = () => {
 
-   const services = GetServices()
+   const services = GetServices();
 
    return (
       <div id='services' className='relative py-[100px] wrapper text-white bg-FBlack '>
          <div>
-            <div className='text-center text-lg font-bold'>Дополнительные услуги</div>
+            <div className='text-lg font-bold text-center'>Дополнительные услуги</div>
             <div className='grid grid-cols-1 md:grid-cols-2 mt-8 mx-[40px] md:mx-auto gap-x-11 max-w-[1200px] content-center '>
 
 
@@ -90,17 +90,17 @@ const FishServices = () => {
                         <div className='flex flex-col'>
                            <div className="text-white text-[16px] md:text-[26px] font-medium  leading-[33.80px] tracking-wide">{item.title}</div>
 
-                           <div className="text-zinc-500 font-medium leading-relaxed tracking-tight">{item.description}</div>
+                           <div className="font-medium leading-relaxed tracking-tight text-zinc-500">{item.description}</div>
                         </div>
                         <div className="text-white text-[16px] md:text-[26px] font-medium  leading-[33.80px] tracking-wide">{item.price}₽</div>
                      </div>
-                  )
+                  );
                })}
             </div>
          </div>
 
          <div className='mt-[120px]'>
-            <div className='text-center text-36px font-bold'>Стоимость услуг</div>
+            <div className='font-bold text-center text-36px'>Стоимость услуг</div>
             <div className='grid grid-cols-1 md:grid-cols-2 mx-[40px] mt-8 md:mx-auto gap-x-11 max-w-[1200px] content-center '>
 
 
@@ -111,23 +111,23 @@ const FishServices = () => {
                         <div className='flex flex-col'>
                            <div className="text-white text-[16px] md:text-[26px] font-medium  leading-[33.80px] tracking-wide">{item.title}</div>
 
-                           <div className="text-zinc-500 font-medium leading-relaxed tracking-tight">{item.description}</div>
+                           <div className="font-medium leading-relaxed tracking-tight text-zinc-500">{item.description}</div>
                         </div>
                         <div className="text-white text-[16px] md:text-[26px] font-medium  leading-[33.80px] tracking-wide">{item.price}₽</div>
                      </div>
-                  )
+                  );
                })}
 
             </div>
          </div>
          <div className='text-center w-full mt-[5vh]'>
 
-            <a className="text-white font-bold mx-auto  text-md text-center underline" target='_blank' href="/pdf/priceList.pdf">Прайс лист</a>
+            <a className="mx-auto font-bold text-center text-white underline text-md" target='_blank' href="/pdf/priceList.pdf">Прайс лист</a>
          </div>
 
 
       </div>
-   )
-}
+   );
+};
 
-export default FishServices
+export default FishServices;

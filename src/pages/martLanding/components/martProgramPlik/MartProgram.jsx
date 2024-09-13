@@ -1,83 +1,72 @@
 /* eslint-disable react/prop-types */
 
-import { v4 as uuid4 } from 'uuid'
-import { m } from 'framer-motion'
+import { v4 as uuid4 } from 'uuid';
 
-import main1 from 'images/chill/program/001.webp'
-import main2 from 'images/chill/program/002.webp'
-import main3 from 'images/chill/program/003.webp'
-import main4 from 'images/chill/program/004.webp'
-import main5 from 'images/chill/program/005.webp'
-import main6 from 'images/chill/program/006.webp'
-import main7 from 'images/chill/program/007.webp'
-import main8 from 'images/chill/program/008.webp'
-import main9 from 'images/chill/program/009.webp'
-import main10 from 'images/chill/program/010.webp'
-import main11 from 'images/chill/program/011.webp'
-import main12 from 'images/chill/program/012.webp'
-import main13 from 'images/chill/program/013.webp'
-import main14 from 'images/chill/program/014.webp'
-import main15 from 'images/chill/program/015.webp'
-import main16 from 'images/chill/program/016.webp'
-import main17 from 'images/chill/program/017.webp'
-import main18 from 'images/chill/program/018.webp'
-import main19 from 'images/chill/program/019.webp'
-import main20 from 'images/chill/program/020.webp'
-import main21 from 'images/chill/program/021.webp'
-import main22 from 'images/chill/program/022.webp'
-import main23 from 'images/chill/program/023.webp'
-import main24 from 'images/chill/program/024.webp'
-import main25 from 'images/chill/program/025.webp'
-import main26 from 'images/chill/program/026.webp'
-import main27 from 'images/chill/program/027.webp'
-import main28 from 'images/chill/program/028.webp'
-import main29 from 'images/chill/program/029.webp'
-import main30 from 'images/chill/program/030.webp'
-import main31 from 'images/chill/program/031.webp'
-import main32 from 'images/chill/program/032.webp'
-import main33 from 'images/chill/program/033.webp'
-import main34 from 'images/chill/program/034.webp'
-import main35 from 'images/chill/program/035.webp'
+import { m } from 'framer-motion';
 
-// import main30 from 'images/chill/program/030.webp'
+import main1 from 'images/chill/program/001.webp';
+import main2 from 'images/chill/program/002.webp';
+import main3 from 'images/chill/program/003.webp';
+import main4 from 'images/chill/program/004.webp';
+import main5 from 'images/chill/program/005.webp';
+import main6 from 'images/chill/program/006.webp';
+import main7 from 'images/chill/program/007.webp';
+import main8 from 'images/chill/program/008.webp';
+import main9 from 'images/chill/program/009.webp';
+import main10 from 'images/chill/program/010.webp';
+import main11 from 'images/chill/program/011.webp';
+import main12 from 'images/chill/program/012.webp';
+import main13 from 'images/chill/program/013.webp';
+import main14 from 'images/chill/program/014.webp';
+import main15 from 'images/chill/program/015.webp';
+import main16 from 'images/chill/program/016.webp';
+import main17 from 'images/chill/program/017.webp';
+import main18 from 'images/chill/program/018.webp';
+import main19 from 'images/chill/program/019.webp';
+import main20 from 'images/chill/program/020.webp';
+import main21 from 'images/chill/program/021.webp';
+import main22 from 'images/chill/program/022.webp';
+import main23 from 'images/chill/program/023.webp';
+import main24 from 'images/chill/program/024.webp';
+import main25 from 'images/chill/program/025.webp';
+import main26 from 'images/chill/program/026.webp';
+import main27 from 'images/chill/program/027.webp';
+import main28 from 'images/chill/program/028.webp';
+import main29 from 'images/chill/program/029.webp';
+import main30 from 'images/chill/program/030.webp';
+import main31 from 'images/chill/program/031.webp';
+import main32 from 'images/chill/program/032.webp';
+import main33 from 'images/chill/program/033.webp';
+import main34 from 'images/chill/program/034.webp';
+import main35 from 'images/chill/program/035.webp';
+import m1 from 'images/mart/program/001.webp';
+import m2 from 'images/mart/program/002.webp';
+import m3 from 'images/mart/program/003.webp';
+import m4 from 'images/mart/program/004.webp';
+import m5 from 'images/mart/program/005.webp';
 
+import { Navigation, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/scrollbar";
 
-import m1 from 'images/mart/program/001.webp'
-import m2 from 'images/mart/program/002.webp'
-import m3 from 'images/mart/program/003.webp'
-import m4 from 'images/mart/program/004.webp'
-import m5 from 'images/mart/program/005.webp'
+import korpprev from "icons/swiperprev_black.png";
+import korpnext from "icons/swipernext_black.png";
+import sun from 'icons/buttons/filter/sun.png';
+import winter from 'icons/buttons/filter/winter.png';
+import many from 'icons/buttons/filter/many.png';
+import low from 'icons/buttons/filter/low.png';
 
-import { Navigation, Autoplay } from "swiper/modules"
+import Button from 'common/Button';
 
-import { Swiper, SwiperSlide } from "swiper/react"
+import { useEffect, useRef, useState } from 'react';
 
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-import "swiper/css/autoplay"
-import "swiper/css/scrollbar"
+import ProgramSlider from 'common/landings/ProgramSlider';
 
-
-import korpprev from "icons/swiperprev_black.png"
-import korpnext from "icons/swipernext_black.png"
-
-
-import sun from 'icons/buttons/filter/sun.png'
-import winter from 'icons/buttons/filter/winter.png'
-import many from 'icons/buttons/filter/many.png'
-import low from 'icons/buttons/filter/low.png'
-
-import Button from 'common/Button'
-
-
-
-
-
-import s from './../../mart.module.scss'
-import { useEffect, useRef, useState } from 'react'
-import ProgramSlider from 'common/landings/ProgramSlider'
+import s from './../../mart.module.scss';
 
 const GetProgram = () => {
    const program = [
@@ -254,7 +243,7 @@ const GetProgram = () => {
          oldPrice: '10 990 ₽ /чел.',
          number: 2,
          hasAbout: true,
-         desc: 'с онлайн-гидом',
+         desc: '* от 10 гостей, с онлайн-гидом',
 
 
          time: ['Зима', 'Лето'],
@@ -268,7 +257,7 @@ const GetProgram = () => {
          price: '1 190 ₽ /чел.',
          number: 9,
          hasAbout: true,
-         desc: '',
+         desc: '* от 10 гостей',
 
 
          time: 'Зима',
@@ -355,88 +344,88 @@ const GetProgram = () => {
 
 
 
-   ]
+   ];
 
-   return program
-}
+   return program;
+};
 
 
 const MartProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
-   const program = GetProgram()
+   const program = GetProgram();
 
 
-   const [isManyPeople, setIsManyPeople] = useState(false)
+   const [isManyPeople, setIsManyPeople] = useState(false);
 
 
-   const [isMenuOpen, setIsMenuOpen] = useState(false)
-   const [selectedimages, setSelectedimages] = useState(program)
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const [selectedimages, setSelectedimages] = useState(program);
 
 
    const filter = () => {
 
       const filteredProgram = program.filter(item => {
 
-         return item.isManyPeople === isManyPeople && item.time.includes(currentTime)
-      })
+         return item.isManyPeople === isManyPeople && item.time.includes(currentTime);
+      });
 
 
-      setSelectedimages(filteredProgram)
+      setSelectedimages(filteredProgram);
 
 
-   }
+   };
 
    useEffect(() => {
-      filter()
-   }, [])
+      filter();
+   }, []);
 
 
    const togglePeople = () => {
 
-      setIsManyPeople(!isManyPeople)
+      setIsManyPeople(!isManyPeople);
 
-   }
+   };
 
 
    const toggleTime = () => {
       if (currentTime === 'Лето') {
-         setTime('Зима')
+         setTime('Зима');
       } else {
-         setTime('Лето')
+         setTime('Лето');
       }
-      filter()
-   }
+      filter();
+   };
 
 
    useEffect(() => {
-      filter()
-   }, [currentTime, isManyPeople])
+      filter();
+   }, [currentTime, isManyPeople]);
 
 
-   const swiperRef = useRef()
+   const swiperRef = useRef();
 
 
    useEffect(() => {
-      const script = document.createElement("script")
-      script.src = "//widget.bronirui-online.ru/js/app.js"
-      script.async = true
+      const script = document.createElement("script");
+      script.src = "//widget.bronirui-online.ru/js/app.js";
+      script.async = true;
 
       const initializeWidget = () => {
          window.znmsWidget.init("#znms-service-widget-module", {
             moduleId: 5026,
             type: 'booking-services',
-         })
+         });
 
 
-      }
-      script.onload = initializeWidget
+      };
+      script.onload = initializeWidget;
 
 
 
-      document.body.appendChild(script)
+      document.body.appendChild(script);
 
-   }, [])
-   console.log()
+   }, []);
+   console.log();
 
    return (
       <div name='proga' id='program' className='relative py-[120px] text-black'>
@@ -523,7 +512,7 @@ const MartProgram = ({ handleProductClick, currentTime, setTime, }) => {
 
 
       </div >
-   )
-}
+   );
+};
 
-export default MartProgram
+export default MartProgram;

@@ -130,7 +130,7 @@ export const GetCurrentHoliday = () => {
             { name: "maj", start: "01-04", end: "01-05" },           // День весны и труда
             { name: "mart", start: "08-02", end: "08-03" },          // Международный женский день
             { name: "valen", start: "15-01", end: "14-02" },         // День святого Валентина
-            { name: "vypusk", start: "15-05", end: "25-06" },        // Выпускной (примерная дата)
+            { name: "vypusk", start: "15-05", end: "18-06" },        // Выпускной (примерная дата)
             { name: "halloween", start: "1-10", end: "31-10" },      // Хэллоуин
         ]
 

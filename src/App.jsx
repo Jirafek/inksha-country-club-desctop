@@ -1,39 +1,54 @@
-import messageIcon from 'icons/messageIcon.webp'
-import loadable from '@loadable/component'
-import Cookies from "js-cookie"
-import NYLanding from 'pages/newYear/NYLanding'
-import { lazy, useEffect, useState } from "react"
-import { Link, Route, Routes } from "react-router-dom"
-import { BooleanParam, useQueryParam } from "use-query-params"
-import { updateURLData, useURLData } from "utils/URLData"
-import Cookie from './common/Cookie'
-import MainPopup from "./common/MainPopup"
-import HelpPopup from './common/popups/helpPopup/HelpPopup'
-import arrow from 'icons/arrow.png'
-import { useTranslation, withTranslation, Trans } from 'react-i18next'
-import ru_icon from 'icons/ru.webp'
-import en_icon from 'icons/eng.webp'
-import global from 'icons/global.webp'
-import { changeLanguage } from 'utils/i18n'
-import ValenLanding from 'pages/valenLanding/ValenLanding'
-import ManLanding from 'pages/manLanding/ManLanding'
-import MartLanding from 'pages/martLanding/MartLanding'
-import ButterLanding from 'pages/butterLanding/ButterLanding'
-import BirthLanding from 'pages/birthLanding/BirthLanding'
-import MajLanding from 'pages/majLanding/MajLanding'
-import GradLanding from 'pages/gradLanding/GradLanding'
-import RusLanding from 'pages/rusLanding/RusLanding'
-import HousingLanding from 'pages/housingLanding/HousingLanding'
+import loadable from '@loadable/component';
+
+import messageIcon from 'icons/messageIcon.webp';
+
+import Cookies from "js-cookie";
+
+import NYLanding from 'pages/newYear/NYLanding';
+
+import { lazy, useEffect, useState } from "react";
+
+import { Link, Route, Routes } from "react-router-dom";
+
+import { BooleanParam, useQueryParam } from "use-query-params";
+
+import { updateURLData, useURLData } from "utils/URLData";
+
+import arrow from 'icons/arrow.png';
+
+import { useTranslation, withTranslation, Trans } from 'react-i18next';
+
+import ru_icon from 'icons/ru.webp';
+import en_icon from 'icons/eng.webp';
+import global from 'icons/global.webp';
+
+import { changeLanguage } from 'utils/i18n';
+
+import ValenLanding from 'pages/valenLanding/ValenLanding';
+import ManLanding from 'pages/manLanding/ManLanding';
+import MartLanding from 'pages/martLanding/MartLanding';
+import ButterLanding from 'pages/butterLanding/ButterLanding';
+import BirthLanding from 'pages/birthLanding/BirthLanding';
+import MajLanding from 'pages/majLanding/MajLanding';
+import GradLanding from 'pages/gradLanding/GradLanding';
+import RusLanding from 'pages/rusLanding/RusLanding';
+import HousingLanding from 'pages/housingLanding/HousingLanding';
+
+import { Helmet } from "react-helmet";
+
+import Cookie from './common/Cookie';
+import MainPopup from "./common/MainPopup";
+import HelpPopup from './common/popups/helpPopup/HelpPopup';
 
 export const LanguageComponent = () => {
-   const { i18n } = useTranslation()
+   const { i18n } = useTranslation();
 
    const toggleLanguage = () => {
-      const newLanguage = i18n.language === "en" ? "ru" : "en"
-      changeLanguage(newLanguage) // Use the changeLanguage function to update i18n and save to localStorage
+      const newLanguage = i18n.language === "en" ? "ru" : "en";
+      changeLanguage(newLanguage); // Use the changeLanguage function to update i18n and save to localStorage
       // window.location.reload()
 
-   }
+   };
 
 
 
@@ -44,19 +59,19 @@ export const LanguageComponent = () => {
          {/* {i18n.language === 'en' ? <img className='w-[100px] h-[50px]' src={en_icon} alt="" /> : <img className='w-[100px] h-[50px]' src={ru_icon} alt='' />} */}
          <img className='w-[40px] h-[40px]' src={global} alt="" />
       </div>
-   )
-}
+   );
+};
 
 const NotFound = () => {
    useEffect(() => {
       let time = setTimeout(() => {
-         window.location.href = 'https://ikshacountryclub.com'
-         clearTimeout(time)
-      }, 40000)
-   }, [])
+         window.location.href = 'https://ikshacountryclub.com';
+         clearTimeout(time);
+      }, 40000);
+   }, []);
    return (
       <section className="relative h-screen bg-[#201E1F]">
-         <div className="flex h-full w-screen flex-col items-center justify-center">
+         <div className="flex flex-col items-center justify-center w-screen h-full">
             <h1 className="text-[64px] text-white">404</h1>
             <Link
                className="border border-[#AB8E67] px-8 py-1 text-[26px] text-white duration-500 hover:bg-[#AB8E67]"
@@ -66,40 +81,40 @@ const NotFound = () => {
             </Link>
          </div>
       </section>
-   )
-}
+   );
+};
 
-const Home = loadable(() => import("pages/Home"))
-const Keytering = loadable(() => import("pages/Keytering"))
-const LocationId = loadable(() => import("pages/LocationId"))
-const Korporativy = loadable(() => import("pages/Korporativy"))
-const FAQ = loadable(() => import("pages/FAQ"))
-const Privacy = loadable(() => import("pages/Privacy"))
-const Thanks = loadable(() => import("pages/Thanks"))
-const Helloween = loadable(() => import("pages/Helloween"))
-const KorpLanding = loadable(() => import("pages/korpLanding/KorpLanding"))
+const Home = loadable(() => import("pages/Home"));
+const Keytering = loadable(() => import("pages/Keytering"));
+const LocationId = loadable(() => import("pages/LocationId"));
+const Korporativy = loadable(() => import("pages/Korporativy"));
+const FAQ = loadable(() => import("pages/FAQ"));
+const Privacy = loadable(() => import("pages/Privacy"));
+const Thanks = loadable(() => import("pages/Thanks"));
+const Helloween = loadable(() => import("pages/Helloween"));
+const KorpLanding = loadable(() => import("pages/korpLanding/KorpLanding"));
 // const NYLanding = loadable(() => import("pages/newYear/NYLanding"));
 
-const BanLanding = loadable(() => import("./pages/banLanding/BanLanding"))
-const ChillLanding = loadable(() => import("./pages/chillLanding/ChillLanding"))
-const FishingLanding = loadable(() => import("./pages/fishingLanding/FishingLanding"))
+const BanLanding = loadable(() => import("./pages/banLanding/BanLanding"));
+const ChillLanding = loadable(() => import("./pages/chillLanding/ChillLanding"));
+const FishingLanding = loadable(() => import("./pages/fishingLanding/FishingLanding"));
 
 
 const ToTheTopComponent = () => {
    return (
-      <div onClick={() => { window.scrollTo(0, 0) }} className='fixed w-[72px] h-[72px] flex items-center border-[2px] border-[#58462E] justify-center bottom-[20px] bg-[#AB8E67] rounded-full cursor-pointer right-[100px] z-[10000]'>
+      <div onClick={() => { window.scrollTo(0, 0); }} className='fixed w-[72px] h-[72px] flex items-center border-[2px] border-[#58462E] justify-center bottom-[20px] bg-[#AB8E67] rounded-full cursor-pointer right-[100px] z-[10000]'>
          <img className='-rotate-90 h-[19px]' src={arrow} alt="" />
       </div>
-   )
-}
+   );
+};
 
 function App() {
-   const { updateData, utm_campaign, utm_content, utm_source } = useURLData()
-   const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false)
-   const [timer, setTimer] = useState(false)
-   const [isHelpButtonActive, setIsHelpButtonActive] = useState(false)
-   const [isTimerOn, setIsTimerOn] = useState(!Cookies.get('isTimerOn'))
-   const { t, i18n } = useTranslation()
+   const { updateData, utm_campaign, utm_content, utm_source } = useURLData();
+   const [isHelpPopupOpen, setIsHelpPopupOpen] = useState(false);
+   const [timer, setTimer] = useState(false);
+   const [isHelpButtonActive, setIsHelpButtonActive] = useState(false);
+   const [isTimerOn, setIsTimerOn] = useState(!Cookies.get('isTimerOn'));
+   const { t, i18n } = useTranslation();
 
 
    // Cookies.set('isTimerOn', '')
@@ -109,26 +124,26 @@ function App() {
       useEffect(() => {
          setTimer(
             setTimeout(() => {
-               setIsHelpPopupOpen(true)
+               setIsHelpPopupOpen(true);
                // setIsHelpButtonActive(true)
-            }, 40000))
-      }, [])
+            }, 40000));
+      }, []);
    }
 
    //бронируй онлайн попап услуг 
    useEffect(() => {
-      const script = document.createElement("script")
-      script.src = "//widget.bronirui-online.ru/js/app.js"
-      script.async = true
+      const script = document.createElement("script");
+      script.src = "//widget.bronirui-online.ru/js/app.js";
+      script.async = true;
       const initializeWidget = () => {
          window.znmsWidget.init("#znms-service-widget-module", {
             moduleId: 5026,
             type: 'booking-services',
-         })
-      }
-      script.onload = initializeWidget
-      document.body.appendChild(script)
-   }, [])
+         });
+      };
+      script.onload = initializeWidget;
+      document.body.appendChild(script);
+   }, []);
 
 
 
@@ -137,61 +152,61 @@ function App() {
    useEffect(() => {
       // Check if the URL contains a fragment identifier
       let time = setTimeout(() => {
-         clearTimeout(time)
+         clearTimeout(time);
          if (window.location.hash) {
-            const welcome = document.getElementById('welcome')
+            const welcome = document.getElementById('welcome');
             // Extract the fragment identifier (e.g., "locations")
             // const fragmentId = window.location.hash.substring(1)
-            const fragmentId = window.location.hash.substring(1).split('/')[0]
+            const fragmentId = window.location.hash.substring(1).split('/')[0];
             // Find the element with the corresponding ID
-            const targetElement = document.getElementById(fragmentId)
+            const targetElement = document.getElementById(fragmentId);
             // If the element is found, scroll to it
             if (targetElement) {
-               targetElement.scrollIntoView({ behavior: 'smooth' })
+               targetElement.scrollIntoView({ behavior: 'smooth' });
             } else {
-               welcome.scrollIntoView({ behavior: 'smooth' })
+               welcome.scrollIntoView({ behavior: 'smooth' });
             }
          }
-      }, 2000)
-   }, [window.location.hash])
+      }, 2000);
+   }, [window.location.hash]);
 
 
 
    useEffect(() => {
-      setUrlParams()
-   }, [])
+      setUrlParams();
+   }, []);
 
 
    const setUrlParams = (isCoockieOnRight = undefined) => {
 
-      const isCookieOn = localStorage.getItem('cookies_on')
-      const urlParams = new URLSearchParams(window.location.search)
+      const isCookieOn = localStorage.getItem('cookies_on');
+      const urlParams = new URLSearchParams(window.location.search);
 
       const urlParamsData = [
          utm_source ? utm_source : urlParams.get("utm_source"),
          utm_campaign ? utm_campaign : urlParams.get("utm_campaign"),
          utm_content ? utm_content : urlParams.get("utm_content"),
-      ]
+      ];
 
       updateData(
          ...urlParamsData
-      )
+      );
 
       if (isCoockieOnRight === undefined && isCookieOn === undefined) {
-         return
+         return;
       }
 
       if (isCoockieOnRight === false) {
-         return
+         return;
       }
 
       const cookieData = {
          utm_source: localStorage.getItem('utm_source'),
          utm_campaign: localStorage.getItem('utm_campaign'),
          utm_content: localStorage.getItem('utm_content'),
-      }
+      };
 
-      const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : ''
+      const UTMSource = urlParams.get("utm_source") ? (urlParams.get("utm_source").toLowerCase().includes('vk') ? 'vkontakte' : urlParams.get("utm_source")) : '';
 
       const settedData = [
          cookieData.utm_source !== undefined && cookieData.utm_source ? cookieData.utm_source : utm_source
@@ -205,120 +220,137 @@ function App() {
          cookieData.utm_content !== undefined && cookieData.utm_content ? cookieData.utm_content : utm_content
             ? utm_content
             : urlParams.get("utm_content") || ""
-      ]
+      ];
 
 
       updateData(
          ...settedData
-      )
+      );
 
       if ((cookieData.utm_source === undefined || !cookieData.utm_source) && UTMSource !== null) {
-         localStorage.setItem('utm_source', UTMSource)
+         localStorage.setItem('utm_source', UTMSource);
       }
       if ((cookieData.utm_campaign === undefined || !cookieData.utm_campaign) && urlParams.get("utm_campaign") !== null) {
-         localStorage.setItem('utm_campaign', urlParams.get("utm_campaign"))
+         localStorage.setItem('utm_campaign', urlParams.get("utm_campaign"));
       }
       if ((cookieData.utm_content === undefined || !cookieData.utm_content) && urlParams.get("utm_content") !== null) {
-         localStorage.setItem('utm_content', urlParams.get("utm_content"))
+         localStorage.setItem('utm_content', urlParams.get("utm_content"));
       }
-   }
+   };
 
-   const [isPopupOpen, setIsPopupOpen] = useState(false)
-   const isCookieOn = localStorage.getItem('cookies_on')
-   const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true')
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+   const isCookieOn = localStorage.getItem('cookies_on');
+   const [isCookieOpen, setIsCookieOpen] = useState(isCookieOn === undefined ? true : isCookieOn !== 'true');
    const togglePopup = () => {
-      setIsPopupOpen((prev) => !prev)
-   }
-   const [isKorpOpen, setIsKorpOpen] = useQueryParam("korpOpen", BooleanParam)
+      setIsPopupOpen((prev) => !prev);
+   };
+   const [isKorpOpen, setIsKorpOpen] = useQueryParam("korpOpen", BooleanParam);
    const toggleKorp = () => {
-      setIsKorpOpen((prev) => !prev)
-   }
+      setIsKorpOpen((prev) => !prev);
+   };
 
    const handleHelpButtonClick = () => {
-      clearTimeout(timer)
-      setIsHelpPopupOpen(!isHelpPopupOpen)
+      clearTimeout(timer);
+      setIsHelpPopupOpen(!isHelpPopupOpen);
 
-   }
+   };
 
 
 
    return (
       <div className='relative'>
-
-
-         <div id="znms-service-widget-module"></div>
-
-         <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
-
-         {isHelpPopupOpen && <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
-
-         {
-            isTimerOn ? (isHelpButtonActive ? <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
-               <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
-            </div> : <div></div>)
-               : <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
-                  <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
-               </div>
-         }
-
-         <ToTheTopComponent />
-
-
-         {/* <LanguageComponent /> */}
-
-
-         <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
-         <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
-
-
-
-
-         {/* routes */}
-         <Routes className="relative">
-            <Route
-               path="/"
-               element={
-                  <Home togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
-               }
+         <Helmet>
+            <title>
+               Загородный клуб Икша Кантри Клаб - Отдых в Подмосковье на берегу
+               Икшинского водохранилища.
+            </title>
+            <meta
+               name="description"
+               content="Загородный клуб Икша Кантри Клаб - Рыбалка, Баня и СПА, водные виды спорта. Приезжайте отдохнуть на берегу Икшинского водохранилища и убедитесь сами.  Уютные домики, Шашлыки, красивые закаты. Выбирайте свой незабываемый отдых недалеко от Москвы"
             />
-            <Route path="/keytering" element={<Keytering />} />
-            <Route path="/location/:id" element={<LocationId />} />
-            {/* <Route
+            <meta
+               name="title"
+               content="Загородный клуб Икша Кантри Клаб - Отдых в подмосковье, Рыбалка, Баня и СПА, водные виды спорта на Икшинском водохранилище."
+            />
+            <meta
+               name="keywords"
+               content="Отдых в Подмосковье, Икша Кантри Клаб, Икша, заказать, забронировать, вопрос, ответ, загородный клуб, подмосковье, баня, шашлык, караоке,
+корпоратив, тимбилдинг, цен, на природе, у воды, водные развлечения, на выходные, спа, рыбалка, недалеко от москвы, рядом с москвой, компания, катание, домик, беседки"
+            />
+         </Helmet>
+         <div className='relative'>
+            <div id="znms-service-widget-module"></div>
+            <Cookie isCookieOpen={isCookieOpen} setIsCookieOpen={setIsCookieOpen} callBack={setUrlParams} />
+
+            {isHelpPopupOpen && <HelpPopup setIsHelpButtonActive={setIsHelpButtonActive} isHelpPopupOpen={isHelpPopupOpen} setIsHelpPopupOpen={setIsHelpPopupOpen} />}
+            {
+               isTimerOn ? (isHelpButtonActive ? <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
+                  <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
+               </div> : <div></div>)
+                  : <div onClick={handleHelpButtonClick} className="fixed bottom-[20px] cursor-pointer right-[180px] z-[10000]">
+                     <img className='w-[72px] h-[72px]' src={messageIcon} alt="" />
+                  </div>
+            }
+
+            <ToTheTopComponent />
+
+
+            {/* <LanguageComponent /> */}
+
+
+            <MainPopup togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
+            <Korporativy toggleKorp={toggleKorp} isKorpOpen={isKorpOpen} />
+
+
+
+
+            {/* routes */}
+            <Routes className="relative">
+               <Route
+                  path="/"
+                  element={
+                     <Home togglePopup={togglePopup} isPopupOpen={isPopupOpen} />
+                  }
+               />
+               <Route path="/keytering" element={<Keytering />} />
+               <Route path="/location/:id" element={<LocationId />} />
+               {/* <Route
                path="/korporativy"
                element={}
             /> */}
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/thanks" element={<Thanks />} />
-            <Route path="/success" element={<Thanks />} />
+               <Route path="/faq" element={<FAQ />} />
+               <Route path="/thanks" element={<Thanks />} />
+               <Route path="/success" element={<Thanks />} />
 
-            <Route
-               path="/rules"
-               element={<Privacy title={"Правила проживания"} />}
-            />
+               <Route
+                  path="/rules"
+                  element={<Privacy title={"Правила проживания"} />}
+               />
 
-            <Route path="/halloween" element={<Helloween />} />
-            <Route path="/korp-landing" element={<KorpLanding />} />
-            <Route path="/New-Year" element={<NYLanding />} />
-            <Route path="/banya" element={<BanLanding />} />
-            <Route path="/fishing" element={<FishingLanding />} />
-            <Route path="/active" element={<ChillLanding />} />
-            <Route path="/valentine" element={<ValenLanding />} />
-            <Route path="/defender" element={<ManLanding />} />
-            <Route path="/mart" element={<MartLanding />} />
-            <Route path="/butter" element={<ButterLanding />} />
-            <Route path="/birthday" element={<BirthLanding />} />
-            <Route path="/may" element={<MajLanding />} />
-            <Route path="/graduation" element={<GradLanding />} />
-            <Route path="/russiaDay" element={<RusLanding />} />
-            <Route path="/housing" element={<HousingLanding />} />
-
-
+               <Route path="/halloween" element={<Helloween />} />
+               <Route path="/korp-landing" element={<KorpLanding />} />
+               <Route path="/New-Year" element={<NYLanding />} />
+               <Route path="/banya" element={<BanLanding />} />
+               <Route path="/fishing" element={<FishingLanding />} />
+               <Route path="/active" element={<ChillLanding />} />
+               <Route path="/valentine" element={<ValenLanding />} />
+               <Route path="/defender" element={<ManLanding />} />
+               <Route path="/mart" element={<MartLanding />} />
+               <Route path="/butter" element={<ButterLanding />} />
+               <Route path="/birthday" element={<BirthLanding />} />
+               <Route path="/may" element={<MajLanding />} />
+               <Route path="/graduation" element={<GradLanding />} />
+               <Route path="/russiaDay" element={<RusLanding />} />
+               <Route path="/housing" element={<HousingLanding />} />
 
 
-            <Route path="*" element={<NotFound />} />
-         </Routes>
+
+
+               <Route path="*" element={<NotFound />} />
+            </Routes>
+         </div>
       </div>
-   )
+   );
 }
 
-export default App
+export default App;

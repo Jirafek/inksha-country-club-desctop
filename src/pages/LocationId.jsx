@@ -1,13 +1,23 @@
-import React, { useState, useEffect, useRef } from "react"
-import { useParams, Navigate, Link } from "react-router-dom"
-import Title from '../components/Title'
-import Logo from '../components/Logo'
-import { v4 as uuid4 } from 'uuid'
-import classNames from 'classnames'
-import Video1 from '../components/Video1'
-import Video2 from '../components/Video2'
-import { Helmet } from "react-helmet"
-import { useTranslation } from 'react-i18next'
+import React, { useState, useEffect, useRef } from "react";
+
+import { useParams, Navigate, Link } from "react-router-dom";
+
+import { v4 as uuid4 } from 'uuid';
+
+import classNames from 'classnames';
+
+import { Helmet } from "react-helmet";
+
+import { useTranslation } from 'react-i18next';
+
+import Logo from '../components/Logo';
+import Title from '../components/Title';
+import Video1 from '../components/Video1';
+import Video2 from '../components/Video2';
+import villa from './../../public/image/villa.webp';
+
+// import villa from './images/villa.webp';
+// import villaMap from './images/villaMap.webp';
 
 // const LocationsData = [
 //     {
@@ -145,7 +155,7 @@ import { useTranslation } from 'react-i18next'
 //     },
 // ]
 const getLocationData = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     const LocationsData = [
         {
@@ -242,7 +252,7 @@ const getLocationData = () => {
             imgAltText: t('locationId.data.olympicVillage.imgAltText'),
             video: '/video/olimp.mp4',
             texts: [
-                t('locationId.data.olympicVillage.texts.0'),
+                "Олимпийский домик 2 спальни, Дуплекс 4 спальни, Вилла 5 спален",
                 t('locationId.data.olympicVillage.texts.1'),
                 t('locationId.data.olympicVillage.texts.2'),
                 t('locationId.data.olympicVillage.texts.3'),
@@ -265,53 +275,82 @@ const getLocationData = () => {
             bigImgWebp: '/image/loc-4-big.webp',
             plash: [
                 {
-                    title: t('locationId.data.olympicVillage.plash.0.title'),
-                    cost: t('locationId.data.olympicVillage.plash.0.cost'),
-                    people: t('locationId.data.olympicVillage.plash.0.people'),
+                    title: "Олимпийский дом",
+                    cost: "от 15000р",
+                    people: "до 6 спальных мест",
                 },
                 {
-                    title: t('locationId.data.olympicVillage.plash.1.title'),
-                    cost: t('locationId.data.olympicVillage.plash.1.cost'),
-                    people: t('locationId.data.olympicVillage.plash.1.people'),
+                    title: "Дуплекс",
+                    cost: "от 20000р",
+                    people: "до 10 спальных мест",
                 },
                 {
-                    title: t('locationId.data.olympicVillage.plash.2.title'),
-                    cost: t('locationId.data.olympicVillage.plash.2.cost'),
-                    people: t('locationId.data.olympicVillage.plash.2.people'),
+                    title: "Вилла делюкс",
+                    cost: "от 30000р",
+                    people: "до 12 спальных мест",
                 },
             ],
         },
-    ]
+        {
+            title: "Вилла",
+            imgAvif: '/image/loc-1.avif',
+            imgWebp: '/image/loc-1.webp',
+            imgAltText: t('locationId.data.forest.imgAltText'),
+            video: <Video1 />,
+            texts: [
+                "5 спален с двуспальными кроватями",
+                "оборудованная по всем современным стандартам кухня с видом на сад",
+                "терраса с видом на воду, в доступе общественный и частный пляжи",
+                "зона для барбекю с мангалом",
+                "в пешей доступности пляж",
+            ],
+            area: "100м2",
+            people: "до 12 человек",
+            holidays: {
+                title: t('locationId.data.forest.holidays.title'),
+                eachPeople: t('locationId.data.forest.holidays.eachPeople'),
+                night: t('locationId.data.forest.holidays.night'),
+            },
+            days: {
+                title: t('locationId.data.forest.days.title'),
+                eachPeople: t('locationId.data.forest.days.eachPeople'),
+                night: t('locationId.data.forest.days.night'),
+            },
+            time: t('locationId.data.forest.time'),
+            bigImgAvif: '/image/loc-1-big.avif',
+            bigImgWebp: '/image/loc-1-big.webp',
+        },
+    ];
 
-    return LocationsData
-}
+    return LocationsData;
+};
 
 
 const LocationId = () => {
-    const LocationsData = getLocationData()
-    const { t } = useTranslation()
-    const { id } = useParams()
-    const [currentLocation, setCurrentLocation] = useState(LocationsData[0])
-    const [currentVideo, setCurrentVideo] = useState(LocationsData[0])
-    const videoRef = useRef(null)
+    const LocationsData = getLocationData();
+    const { t } = useTranslation();
+    const { id } = useParams();
+    const [currentLocation, setCurrentLocation] = useState(LocationsData[0]);
+    const [currentVideo, setCurrentVideo] = useState(LocationsData[0]);
+    const videoRef = useRef(null);
 
     const videous = [
         '/video/lesnaya.mp4',
         '/video/kottegge.mp4',
         '/video/shale.mp4',
         '/video/olimp.mp4'
-    ]
+    ];
 
     if (id !== "1" && id !== "2" && id !== "3" && id !== "4") {
-        return <Navigate to="/" />
+        return <Navigate to="/" />;
     }
 
     useEffect(() => {
-        setCurrentLocation(LocationsData[+id - 1])
-        setCurrentVideo(videous[+id - 1])
-        videoRef.current.src = videous[+id - 1]
-        videoRef.current.load()
-    }, [])
+        setCurrentLocation(LocationsData[+id - 1]);
+        setCurrentVideo(videous[+id - 1]);
+        videoRef.current.src = videous[+id - 1];
+        videoRef.current.load();
+    }, []);
 
 
     return (
@@ -371,12 +410,12 @@ const LocationId = () => {
                                         'text-white',
                                         'text-[28px]',
                                         'font-medium'
-                                    )
+                                    );
                                     return (
                                         <p key={uuid4()} className="text-white 3xl:max-w-[1060px] max-w-[880px] 3xl:text-[28px] text-[24px] text_with_padding font-medium">
                                             {text}
                                         </p>
-                                    )
+                                    );
                                 })
                             }
                         </div>
@@ -465,10 +504,10 @@ const LocationId = () => {
                 </div>
             </section>
         </>
-    )
-}
+    );
+};
 
-export default LocationId
+export default LocationId;
 
 // holidays: {
 //     title: '',

@@ -1,7 +1,7 @@
-import loc1 from "images/korpLanding/locations/003.webp"
-import loc2 from "images/korpLanding/locations/001.webp"
-import loc3 from "images/korpLanding/locations/002.webp"
-import loc4 from "images/korpLanding/locations/004.webp"
+import loc1 from "images/korpLanding/locations/003.webp";
+import loc2 from "images/korpLanding/locations/001.webp";
+import loc3 from "images/korpLanding/locations/002.webp";
+import loc4 from "images/korpLanding/locations/004.webp";
 
 const getLocation = () => {
    const locations = [
@@ -32,10 +32,10 @@ const getLocation = () => {
          price: "от 16 000 руб",
          img: loc4,
          link: '/location/4',
-      },
-   ]
+      }
+   ];
 
-   return locations
-}
+   return locations;
+};
 
-export { getLocation }
+export { getLocation };

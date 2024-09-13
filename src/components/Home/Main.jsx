@@ -73,19 +73,14 @@ const LandingLogo = () => {
    )
 }
 
-
 const Main = () => {
    const { t, i18n } = useTranslation()
 
-
-
    const toggleLanguage = () => {
       if (i18n.language === 'en') {
-
          i18n.changeLanguage('ru')
       } else {
          i18n.changeLanguage('en')
-
       }
    }
 
@@ -216,8 +211,8 @@ const Main = () => {
                      </span>
                   </h1>
                </div>
-               <p className="mb-6 text-[30px] tracking-wider font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[48px]">
-                  <span className='whitespace-nowrap'>{t('outdoorRecreation')}</span> {t('inTheMoscowRegion')}
+               <p className="mb-6 text-[30px] tracking-wider font-semibold text-white md:w-[400px] md:text-[38px] xl:mb-[30px] 2xl:w-[600px] 2xl:text-[40px]">
+                  <span className='whitespace-nowrap'>Аренда дач.<br /> {t('outdoorRecreation')}</span> {t('inTheMoscowRegion')}
                </p>
                <div className="z-0">
                   <div id="znms-widget-1"></div>
